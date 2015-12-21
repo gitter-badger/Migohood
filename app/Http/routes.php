@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Site routes...
+Route::get('/', 'SiteController@home');  //Home
