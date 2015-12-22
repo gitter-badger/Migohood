@@ -1,26 +1,58 @@
 /*************
    SETTINGS
 **************/
+/* General */
 * { box-sizing: border-box; }
 body { display: flex;	min-height: 100vh; flex-direction: column; }
 main { flex: 1 0 auto; }
 
-/*************
-     HOME
-**************/
 /* Navbar */
-#home nav .hide-on-med-and-down ul { margin: 0px 10px 0px 30px; vertical-align: middle; }
-#home nav ul li a:hover { background: none !important; }
-#home nav ul li a #brand { width: 180px; vertical-align: middle;}
+@media only screen and (min-width: 800px) {
+  nav a.button-collapse {
+		display: none;
+	}
 
-#home nav ul li a {
+	nav ul li a #img {
+		width: 180px;
+		vertical-align: middle;
+		margin-left: 20px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	nav a.button-collapse i {
+		color: #5A7178;
+		font-size: 30px;
+		margin-left: 15px;
+	}
+
+	nav .right {
+		display: none !important;
+	}
+
+	nav ul.logo {
+		display: table;
+		margin: 0 auto;
+	}
+
+	nav ul li a #img {
+		width: 200px;
+		vertical-align: middle;
+		margin-left: -20px !important;
+	}
+}
+
+nav ul.right { margin-right: 20px; vertical-align: middle; }
+nav ul li a:hover { background: none !important; }
+
+nav ul li a {
 	font-size: 13px !important;
 	font-weight: 600;
 	color: #5A7178;
   padding: 0 10px;
 }
 
-#home nav .hide-on-med-and-down ul.right .btn {
+nav ul.right .btn {
 	text-align: center;
 	padding: 0rem;
 	width: 120px;
@@ -32,16 +64,21 @@ main { flex: 1 0 auto; }
 	box-shadow: none !important; -webkit-box-shadow:none !important;
 }
 
-#home nav .hide-on-med-and-down ul.right .btn-primary {
+nav ul.right .btn-primary {
 	background: #F2F5F6;
 	color: #6E868D;
+	margin-right: 6px;
 }
 
-#home nav .hide-on-med-and-down ul.right .btn-secundary {
-	background: #1484FF;
+nav ul.right .btn-secundary {
+	background: #007AFF;
 	color: #FFF;
-	margin-left: 6px;
+	margin-left: 8px;
 }
 
-#home nav .hide-on-med-and-down ul.right .btn-primary:hover { background: #EFF4F9 !important; }
-#home nav .hide-on-med-and-down ul.right .btn-secundary:hover {	background: #007AFF !important; }
+nav ul.right .btn-primary:hover { background: #E6ECEE !important; }
+nav ul.right .btn-secundary:hover {	background: #0071EB !important; }
+
+/*************
+     HOME
+**************/
