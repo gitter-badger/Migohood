@@ -1,0 +1,99 @@
+/*************
+   SETTINGS
+**************/
+/* General */
+* { box-sizing: border-box; }
+body { display: flex; min-height: 100vh; flex-direction: column; }
+main { flex: 1 0 auto; }
+
+.panel img {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0);
+	width: 450px;
+	padding: 40px 20px 0px 20px;
+	margin: 0 auto;
+	vertical-align: middle;
+  /*border: 1px solid red;*/ /*Debuggin */
+}
+
+/*
+* Todo
+* - Media helpers
+*/
+
+.panel .container {
+  width: 80%;
+}
+
+.panel-submit {
+  padding-top: 10px;
+  margin: 0 auto;
+  margin-left: 15px;
+}
+
+/* Background img */
+.footer img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  z-index: -1;
+}
+
+/*************
+  FORM FIELDS
+**************/
+.input-field {
+  margin: 8px;
+}
+
+::-webkit-input-placeholder { color: #657F87; }
+:-moz-placeholder { /* Firefox 18- */ color: #657F87; }
+::-moz-placeholder { /* Firefox 19+ */  color: #657F87; }
+:-ms-input-placeholder { color: #657F87; }
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  background: #F6F6F6 !important;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 1px 0px 1px 15px;
+  height: 32px !important;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]) {
+  border: 1px solid #8ea4aa;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/*************
+    BUTTONS
+**************/
+.btn-submit {
+	width: 95%;
+	background: #0071EB;
+	color: #F8F8F8;
+  font-weight: 600;
+  height: 32px;
+  line-height: 32px;
+  text-transform: uppercase;
+	box-shadow: none; -webkit-box-shadow:none;
+}
+
+.btn-submit:hover, .btn-submit:focus {
+	background: #057DFF !important;
+  box-shadow: none; -webkit-box-shadow:none;
+}
