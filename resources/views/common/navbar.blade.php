@@ -11,7 +11,7 @@
     <ul class="right">
       <li><a href="" >Explorar</a></li>
       <li><a href="" >¿Cómo ser Anfitrión?</a></li>
-      <li><a href="{{ url('') }}" class="btn btn-primary">Iniciar Sesión</a></li>
+      <li><a href="{{ url('') }}" class="btn btn-primary waves-effect waves-light">Iniciar Sesión</a></li>
       <li><a href="{{ url('') }}" class="btn btn-secundary waves-effect waves-light">Registrarme</a></li>
     </ul>
 

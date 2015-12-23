@@ -5,7 +5,7 @@
 * { box-sizing: border-box; }
 
 body {
-  background: #F5F8FA !important;
+  background: #EDEFED !important;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -67,7 +67,11 @@ main { flex: 1 0 auto; }
 	}
 }
 
-nav ul.right { margin-right: 20px; vertical-align: middle; }
+nav ul.right {
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
 nav ul li a:hover { background: none !important; }
 
 nav ul li a {
@@ -89,24 +93,25 @@ nav ul.right .btn {
 }
 
 nav ul.right .btn-primary {
-  background: #FFF;
-  color: #485F70;
+  background: rgba(255, 255, 255, 0.2);
+	color: #FFF;
 	margin-right: 6px;
 }
 
 nav ul.right .btn-secundary {
-	background: #007AFF;
-	color: #FFF;
-	margin-left: 8px;
+  background: none !important;
+  color: #FFF;
+  border: 2px solid #FFF;
+  line-height: 34px;
 }
 
-nav ul.right .btn-primary:hover { background: #F2F5F6 !important; }
-nav ul.right .btn-secundary:hover {	background: #0071EB !important; }
+nav ul.right .btn-primary:hover {	background: rgba(255, 255, 255, 0.1) !important; }
+nav ul.right .btn-secundary:hover { background: none !important; }
 
 /*************
      HOME
 **************/
-#welcome {
+#home {
   background: url("/img/welcome.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -114,3 +119,41 @@ nav ul.right .btn-secundary:hover {	background: #0071EB !important; }
   background-size: cover;
   min-height: 90vh;
 }
+
+#home #welcome {
+	padding: 15vh 0 0;
+	text-align: center;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+#home #welcome h1 {
+  color: #FFF;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+#home #welcome h5 {
+  margin-top: 0px;
+  color: #FFF;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+@media only screen and (max-width: 800px) {
+  #home #welcome h1 {
+    font-size: 38px;
+  }
+}
+
+#home #welcome .btn-primary {
+  text-align: center;
+	font-weight: 600;
+	border-radius: 2px;
+	text-transform: capitalize !important;
+  background: #0071EB;
+	color: #FFF;
+  margin-top: 30px;
+}
+
+#home #welcome .btn-primary:hover { background: #057dff !important; }

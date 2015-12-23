@@ -18,6 +18,6 @@
 </body>
 </html>
 
-<script src="/js/jquery.min.js" type="text/javascript"></script>                <!-- Jquery core JS -->
+@yield('footer')
 <script src="/js/materialize.min.js" type="text/javascript"></script>           <!-- Materialize core JS -->
 <script src="/js/init.js" type="text/javascript"></script>                      <!-- Init Custom JS File -->
