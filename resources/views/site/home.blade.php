@@ -5,6 +5,6 @@
 @stop
 @section('content')
 <section id="welcome">
-
+  @include('common.navbar')
 </section>
 @stop

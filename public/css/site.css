@@ -3,31 +3,52 @@
 **************/
 /* General */
 * { box-sizing: border-box; }
-body { display: flex;	min-height: 100vh; flex-direction: column; }
+
+body {
+  background: #F5F8FA !important;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 main { flex: 1 0 auto; }
 
 /* Navbar */
 @media only screen and (min-width: 800px) {
+  nav {
+    background: none !important;
+    box-shadow: none !important;
+    -webkit-box-shadow:none !important;
+  }
+
   nav a.button-collapse {
-		display: none;
-	}
+    display: none;
+  }
 
 	nav ul li a #img {
 		width: 180px;
 		vertical-align: middle;
 		margin-left: 20px;
 	}
+
+  nav ul li a #img2 {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 800px) {
-	nav a.button-collapse i {
+  nav {
+    background: #FFF !important;
+  }
+
+  nav a.button-collapse i {
 		color: #5A7178;
 		font-size: 30px;
 		margin-left: 15px;
 	}
 
 	nav .right {
-		display: none !important;
+		display: none;
 	}
 
 	nav ul.logo {
@@ -35,7 +56,11 @@ main { flex: 1 0 auto; }
 		margin: 0 auto;
 	}
 
-	nav ul li a #img {
+  nav ul li a #img {
+    display: none;
+  }
+
+  nav ul li a #img2 {
 		width: 200px;
 		vertical-align: middle;
 		margin-left: -20px !important;
@@ -48,7 +73,7 @@ nav ul li a:hover { background: none !important; }
 nav ul li a {
 	font-size: 13px !important;
 	font-weight: 600;
-	color: #5A7178;
+  color: #FFF;
   padding: 0 10px;
 }
 
@@ -61,12 +86,11 @@ nav ul.right .btn {
 	font-weight: 600;
 	border-radius: 4px;
 	text-transform: capitalize !important;
-	box-shadow: none !important; -webkit-box-shadow:none !important;
 }
 
 nav ul.right .btn-primary {
-	background: #F2F5F6;
-	color: #6E868D;
+  background: #FFF;
+  color: #485F70;
 	margin-right: 6px;
 }
 
@@ -76,9 +100,17 @@ nav ul.right .btn-secundary {
 	margin-left: 8px;
 }
 
-nav ul.right .btn-primary:hover { background: #E6ECEE !important; }
+nav ul.right .btn-primary:hover { background: #F2F5F6 !important; }
 nav ul.right .btn-secundary:hover {	background: #0071EB !important; }
 
 /*************
      HOME
 **************/
+#welcome {
+  background: url("/img/welcome.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 90vh;
+}
