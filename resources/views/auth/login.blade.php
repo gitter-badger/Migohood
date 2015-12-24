@@ -3,7 +3,7 @@
 @section('id', 'login')
 @section('content')
 <!-- Registration form -->
-<form action="/auth/register" method="POST">
+<form action="/auth/login" method="POST">
     {!! csrf_field() !!}
 
     <div class="input-field">

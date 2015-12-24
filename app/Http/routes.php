@@ -15,19 +15,20 @@
 Route::get('/', 'SiteController@home');  //Home
 
 // Authentication routes...
-/*
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
-Route::post('auth/register', 'Auth\AuthController@postRegister');*/
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('test', function() {  //Debuggin
-  return view('auth.register');
-});
+/*
+* Todo
+* - Password reset
+* - Route for Authenticated users
+*/
 
-Route::get('test2', function() {  //Debuggin
-  return view('auth.login');
+Route::get('home', function() {   /* Debuggin */
+    return view('home');
 });
