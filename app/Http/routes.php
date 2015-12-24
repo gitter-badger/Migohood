@@ -27,3 +27,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');*/
 Route::get('test', function() {  //Debuggin
   return view('auth.register');
 });
+
+Route::get('test2', function() {  //Debuggin
+  return view('auth.login');
+});

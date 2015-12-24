@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="..">
     <meta name="author" content="..">
-    <title>@yield('title')</title>
+    <title>Migohood &vert; @yield('title')</title>
       <link href="/css/materialize.min.css" rel="stylesheet" media="screen,projection"/>        <!-- Materialize core CSS -->
       <link href="/css/materialicons.css" rel="stylesheet">                                     <!-- Material Icons -->
       <link href="/css/site.css" rel="stylesheet">                                              <!-- Style core CSS -->

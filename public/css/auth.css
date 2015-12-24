@@ -8,17 +8,23 @@ main { flex: 1 0 auto; }
 
 .panel img {
   width: 250px;
-  margin-bottom: 10px;
 }
 
 .panel {
   background: rgba(255, 255, 255, 0);
-	width: 450px;
-	padding: 40px 20px 0px 20px;
+	width: 450px; /*Media helper here*/
 	margin: 0 auto;
 	vertical-align: middle;
   /*border: 1px solid red;*/ /*Debuggin */
 }
+
+#register { padding: 40px 20px 0px 20px; }
+#register img { margin-bottom: 10px; }
+#register .panel-submit { padding-top: 10px; }
+
+#login { padding: 80px 20px 0px 20px; }
+#login img { margin-bottom: 20px; }
+#login .panel-submit { padding-top: 20px; }
 
 /*
 * Todo
@@ -26,11 +32,10 @@ main { flex: 1 0 auto; }
 */
 
 .panel .container {
-  width: 80%;
+  width: 80%; /*Media helper here*/
 }
 
 .panel-submit {
-  padding-top: 10px;
   margin: 0 auto;
   margin-left: 15px;
 }
@@ -48,14 +53,16 @@ main { flex: 1 0 auto; }
   FORM FIELDS
 **************/
 .input-field {
-  margin: 8px;
+  margin: 5px;
 }
 
+/* Input - Placeholder */
 ::-webkit-input-placeholder { color: #657F87; }
 :-moz-placeholder { /* Firefox 18- */ color: #657F87; }
 ::-moz-placeholder { /* Firefox 19+ */  color: #657F87; }
 :-ms-input-placeholder { color: #657F87; }
 
+/* Input - Before */
 input[type=text],
 input[type=email],
 input[type=password] {
@@ -70,14 +77,42 @@ input[type=password] {
   box-shadow: none;
 }
 
+/* Input - Focus */
 input[type=text]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
 input[type=email]:focus:not([readonly]) {
-  border: 1px solid #8ea4aa;
+  border: 1px solid #8EA4AA;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
+
+/* Input - Checkbox */
+form p {
+  margin: 0px;
+}
+
+/* Checkbox - Label */
+[type="checkbox"] + label {
+  color: #657F87;
+}
+
+/* Checkbox - Before + label */
+[type="checkbox"] + label:before {
+  border: 2px solid #3B444C;
+}
+
+/* Checkbox - Checked */
+[type="checkbox"]:checked + label:before {
+	border-right: 2px solid #0071EB;
+	border-bottom: 2px solid #0071EB;
+}
+
+/*
+* Todo
+* - Class Validate
+* - Errors
+*/
 
 /*************
     BUTTONS

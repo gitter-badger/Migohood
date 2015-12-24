@@ -1,5 +1,6 @@
 @extends('layouts.auth')
 @section('title', 'Register')
+@section('id', 'register')
 @section('content')
 <!-- Registration form -->
 <form action="/auth/register" method="POST">
@@ -24,7 +25,7 @@
     <div class="input-field">
       <input placeholder="Repetir Contraseña" type="password" name="password_confirmation" class="validate">
     </div>
-    
+
     <div class="panel-submit">
     <button class="btn btn-submit">Registrarme</button>
     </div>
