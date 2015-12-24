@@ -26,6 +26,10 @@ main { flex: 1 0 auto; }
 #login img { margin-bottom: 20px; }
 #login .panel-submit { padding-top: 20px; }
 
+#password { padding: 100px 0px 0px 0px; }
+#password img { margin-bottom: 20px; }
+#password .panel-submit { padding-top: 20px; }
+
 /*
 * Todo
 * - Media helpers
@@ -38,6 +42,24 @@ main { flex: 1 0 auto; }
 .panel-submit {
   margin: 0 auto;
   margin-left: 15px;
+}
+
+.panel-forgot {
+  padding: 20px 0px 0px 0px;
+}
+
+.panel-options {
+  padding-top: 30px;
+}
+
+.panel-forgot a,
+.panel-options a {
+  color: #657F87;
+}
+
+.panel-options a strong {
+  color: #0071EB;
+  font-weight: bold;
 }
 
 /* Background img */
