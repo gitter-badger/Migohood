@@ -84,7 +84,9 @@ nav ul li a {
 nav ul.right .btn {
 	text-align: center;
 	padding: 0rem;
-	width: 120px;
+	/*width: 120px; <- ES */
+  /*width: 100px; <- EN */
+  width: 100px;
 	height: 34px;
 	font-size: 12px !important;
 	font-weight: 600;
@@ -92,8 +94,9 @@ nav ul.right .btn {
 	text-transform: capitalize !important;
 }
 
+/*
 nav ul.right .btn-primary {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0);
 	color: #FFF;
 	margin-right: 6px;
 }
@@ -107,7 +110,16 @@ nav ul.right .btn-secundary {
 
 nav ul.right .btn-primary:hover {	background: rgba(255, 255, 255, 0.3) !important; }
 nav ul.right .btn-secundary:hover { background: none !important; }
+*/
 
+nav ul.right .btn-primary {
+  background: none !important;
+  color: #FFF;
+  border: 2px solid #FFF;
+  line-height: 34px;
+}
+
+nav ul.right .btn-primary:hover {	background: rgba(255, 255, 255, 0.2) !important; }
 /*************
      HOME
 **************/
