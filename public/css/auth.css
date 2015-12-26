@@ -18,17 +18,11 @@ main { flex: 1 0 auto; }
   /*border: 1px solid red;*/ /*Debuggin */
 }
 
+.panel img { margin-bottom: 10px; }
+
 #register { padding: 40px 20px 0px 20px; }
-#register img { margin-bottom: 10px; }
-#register .panel-submit { padding-top: 10px; }
-
 #login { padding: 80px 20px 0px 20px; }
-#login img { margin-bottom: 20px; }
-#login .panel-submit { padding-top: 20px; }
-
 #password { padding: 100px 0px 0px 0px; }
-#password img { margin-bottom: 20px; }
-#password .panel-submit { padding-top: 20px; }
 
 /*
 * Todo
@@ -42,6 +36,7 @@ main { flex: 1 0 auto; }
 .panel-submit {
   margin: 0 auto;
   margin-left: 15px;
+  padding-top: 15px;
 }
 
 .panel-options {
@@ -49,7 +44,7 @@ main { flex: 1 0 auto; }
 }
 
 .panel-options a {
-  color: #657F87;
+  color: #44565B;
 }
 
 .panel-options strong {
@@ -74,17 +69,17 @@ main { flex: 1 0 auto; }
 }
 
 /* Input - Placeholder */
-::-webkit-input-placeholder { color: #657F87; }
-:-moz-placeholder { /* Firefox 18- */ color: #657F87; }
-::-moz-placeholder { /* Firefox 19+ */  color: #657F87; }
-:-ms-input-placeholder { color: #657F87; }
+::-webkit-input-placeholder { color: #44565B; }
+:-moz-placeholder { /* Firefox 18- */ color: #44565B; }
+::-moz-placeholder { /* Firefox 19+ */  color: #44565B; }
+:-ms-input-placeholder { color: #44565B; }
 
 /* Input - Before */
 input[type=text],
 input[type=email],
 input[type=password] {
   background: #F6F6F6 !important;
-  border: 1px solid transparent;
+  border: 2px solid #F3F6F8;
   border-radius: 4px;
   padding: 1px 0px 1px 15px;
   height: 32px !important;
@@ -98,7 +93,7 @@ input[type=password] {
 input[type=text]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
 input[type=email]:focus:not([readonly]) {
-  border: 1px solid #8EA4AA;
+  border: 2px solid #C7D2D5;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -111,7 +106,7 @@ form p {
 
 /* Checkbox - Label */
 [type="checkbox"] + label {
-  color: #657F87;
+  color: #44565B;
 }
 
 /* Checkbox - Before + label */
@@ -125,11 +120,61 @@ form p {
 	border-bottom: 2px solid #0071EB;
 }
 
-/*
-* Todo
-* - Class Validate
-* - Errors
-*/
+/*************
+    ALERT
+**************/
+.alert-content, .alert-content a {
+  font-size: 13px;
+  color: #44565B;
+}
+
+.error-box,
+.success-box {
+  padding: 5px;
+  border-radius: 4px;
+  margin-top: 12px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+}
+
+.error-title,
+.success-title {
+  font-size: 16px;
+}
+
+.error-title i,
+.success-title i {
+	font-size: 25px;
+	margin-right: 3px;
+	vertical-align: middle;
+	margin-bottom: 3px;
+}
+
+/*************
+    ERROR
+**************/
+.error-box {
+  border: 2px solid #FF0000;;
+  color: #FF0000;
+}
+
+.error-title,
+.error-title i {
+  color: #FF0000;
+}
+
+/*************
+    SUCCESS
+**************/
+.success-box {
+  border: 2px solid #3AB54A;
+  color: #3AB54A;
+}
+
+.success-title,
+.success-title i {
+  color: #3AB54A;
+}
 
 /*************
     BUTTONS

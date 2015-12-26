@@ -7,23 +7,23 @@
     {!! csrf_field() !!}
 
     <div class="input-field">
-      <input placeholder="Name" type="text" name="name" value="{{ old('name') }}">
+      <input placeholder="Name" type="text" name="name" value="{{ old('name') }}" required>
     </div>
 
     <div class="input-field">
-      <input placeholder="Last-name" type="text" name="lastname" value="{{ old('lastname') }}">
+      <input placeholder="Last-name" type="text" name="lastname" value="{{ old('lastname') }}" required>
     </div>
 
     <div class="input-field">
-      <input placeholder="E-mail" type="email" name="email" value="{{ old('email') }}">
+      <input placeholder="E-mail" type="email" name="email" value="{{ old('email') }}" required>
     </div>
 
     <div class="input-field">
-      <input placeholder="Password" type="password" name="password">
+      <input placeholder="Password" type="password" name="password" required>
     </div>
 
     <div class="input-field">
-      <input placeholder="Confirm Password" type="password" name="password_confirmation">
+      <input placeholder="Confirm Password" type="password" name="password_confirmation" required>
     </div>
 
     <div class="panel-submit">

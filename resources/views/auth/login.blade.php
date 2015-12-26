@@ -7,11 +7,11 @@
     {!! csrf_field() !!}
 
     <div class="input-field">
-      <input placeholder="E-mail" type="email" name="email" value="{{ old('email') }}">
+      <input placeholder="E-mail" type="email" name="email" value="{{ old('email') }}" required>
     </div>
 
     <div class="input-field">
-      <input placeholder="Password" type="password" name="password">
+      <input placeholder="Password" type="password" name="password" required>
     </div>
 
     <p class="center">

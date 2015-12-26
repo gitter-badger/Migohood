@@ -18,6 +18,7 @@
     <div class="panel" id=@yield('id')>
       <a href="{{ url('/') }}"><img src="/img/brand.png" alt=".." /></a>
     <div class="container">
+      @include('errors.errors')
       @yield('content')
     </div>
     </div>
