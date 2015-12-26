@@ -9,17 +9,17 @@
     </ul>
 
     <ul class="right">
-      <li><a href="" >Explorar</a></li>
-      <li><a href="" >¿Cómo ser Anfitrión?</a></li>
-      <li><a href="{{ url('/auth/login') }}" class="btn btn-primary waves-effect waves-light">Iniciar Sesión</a></li>
-      <li><a href="{{ url('/auth/register') }}" class="btn btn-secundary waves-effect waves-light">Registrarme</a></li>
+      <li><a href="" >Explore</a></li>
+      <li><a href="" >How to be a host?</a></li>
+      <li><a href="{{ url('/auth/login') }}" class="btn btn-primary waves-effect waves-light">Login</a></li>
+      <li><a href="{{ url('/auth/register') }}" class="btn btn-secundary waves-effect waves-light">Sign up</a></li>
     </ul>
 
     <ul class="side-nav" id="mobile">
-      <li><a href="#" class="waves-effect waves-light">Explorar</a></li>
-      <li><a href="#" class="waves-effect waves-light">¿Cómo ser Anfitrión?</a></li>
-      <li><a href="{{ url('/auth/login') }}" class="waves-effect waves-light">Iniciar Sesión</a></li>
-      <li><a href="{{ url('/auth/register') }}" class="waves-effect waves-light">Registrarme</a></li>
+      <li><a href="#" class="waves-effect waves-light">Explore</a></li>
+      <li><a href="#" class="waves-effect waves-light">How to be host?</a></li>
+      <li><a href="{{ url('/auth/login') }}" class="waves-effect waves-light">Login</a></li>
+      <li><a href="{{ url('/auth/register') }}" class="waves-effect waves-light">Sign up</a></li>
     </ul>
 
   </div>

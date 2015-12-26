@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="..">
     <meta name="author" content="..">
-    <title>Migohood &vert; Alquila y alójate con anfitriones alrededor del Mundo</title>
+    <title>Migohood &vert; Rent and stay with hosts around the World</title>
       <link href="/css/materialize.min.css" rel="stylesheet" media="screen,projection"/>        <!-- Materialize core CSS -->
       <link href="/css/materialicons.css" rel="stylesheet">                                     <!-- Material Icons -->
       <link href="/css/site.css" rel="stylesheet">                                              <!-- Style core CSS -->
@@ -23,7 +23,7 @@
     <script type="text/javascript">
     $(function(){
       $(".text").typed({
-        strings: ["Apartamento", "Casa", "Habitación", "Cabaña", "Hogar"],
+        strings: ["Apartment", "House", "Room", "Cabain", "Home"],
         showCursor: false,
         typeSpeed: 60,
         backSpeed: 20
@@ -31,9 +31,9 @@
     });
     </script>
 
-    <h1 class="light">¡Mi <strong><span class="text"></span></strong> está disponible!</h1>
-    <h5>Alquila y alójate con anfitriones alrededor del Mundo</h5>
-    <a href="{{ url('/') }}" class="btn btn-primary waves-effect waves-light">¿Cómo funciona?</a><br>
+    <h1 class="light">My <strong><span class="text"></span></strong> is available!</h1>
+    <h5>Rent and stay with hosts around the World</h5>
+    <a href="{{ url('/') }}" class="btn btn-primary waves-effect waves-light">How it works?</a><br>
 
     </div>
 

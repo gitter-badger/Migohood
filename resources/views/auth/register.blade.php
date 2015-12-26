@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('title', 'Registrar')
+@section('title', 'Register')
 @section('id', 'register')
 @section('content')
 <!-- Registration form -->
@@ -7,31 +7,31 @@
     {!! csrf_field() !!}
 
     <div class="input-field">
-      <input placeholder="Nombre" type="text" name="name" value="{{ old('name') }}">
+      <input placeholder="Name" type="text" name="name" value="{{ old('name') }}">
     </div>
 
     <div class="input-field">
-      <input placeholder="Apellido" type="text" name="lastname" value="{{ old('lastname') }}">
+      <input placeholder="Last-name" type="text" name="lastname" value="{{ old('lastname') }}">
     </div>
 
     <div class="input-field">
-      <input placeholder="Correo" type="email" name="email" value="{{ old('email') }}">
+      <input placeholder="E-mail" type="email" name="email" value="{{ old('email') }}">
     </div>
 
     <div class="input-field">
-      <input placeholder="Contraseña" type="password" name="password">
+      <input placeholder="Password" type="password" name="password">
     </div>
 
     <div class="input-field">
-      <input placeholder="Repetir Contraseña" type="password" name="password_confirmation">
+      <input placeholder="Confirm Password" type="password" name="password_confirmation">
     </div>
 
     <div class="panel-submit">
-    <button class="btn btn-submit">Registrarme</button>
+    <button class="btn btn-submit">Sign up</button>
     </div>
 
     <div class="panel-options">
-    <span>¿Tienes cuenta? </span><a href="{{ url('auth/login') }}"><strong>Inicia Sesión </strong></a>
+     <a href="{{ url('auth/login') }}">Are you a member? <strong>Login now! </strong></a>
     </div>
 
 </form>

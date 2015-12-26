@@ -44,21 +44,16 @@ main { flex: 1 0 auto; }
   margin-left: 15px;
 }
 
-.panel-forgot {
-  padding: 20px 0px 0px 0px;
-}
-
 .panel-options {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
-.panel-forgot a,
 .panel-options a {
   color: #657F87;
 }
 
-.panel-options a strong {
-  color: #0071EB;
+.panel-options strong {
+  /*color: #0071EB;*/
   font-weight: bold;
 }
 
