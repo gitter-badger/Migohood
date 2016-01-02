@@ -16,6 +16,9 @@ class AppController extends Controller
      */
     public function explore()   /* Explore */
     {
+        //Get the authenticated user
+        /*$user = Auth::user();*/
+
         return View('app.explore');
     }
 
