@@ -14,7 +14,7 @@
       @include('common.favicon')
   </head>
 <body>
-<main>
+
   <section id="home">
     @include('common.navbar')
     <div id="welcome">
@@ -38,7 +38,7 @@
     </div>
 
   </section>
-</main>
+
 </body>
 </html>
 

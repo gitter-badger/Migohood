@@ -84,8 +84,8 @@ nav ul li a {
 nav ul.right .btn {
 	text-align: center;
 	padding: 0rem;
-	/*width: 120px; <- ES */
-  /*width: 100px; <- EN */
+	/*width: 120px; <- ES
+    width: 100px; <- EN */
   width: 100px;
 	height: 34px;
 	font-size: 12px !important;
@@ -120,6 +120,7 @@ nav ul.right .btn-primary {
 }
 
 nav ul.right .btn-primary:hover {	background: rgba(255, 255, 255, 0.2) !important; }
+
 /*************
      HOME
 **************/
@@ -133,7 +134,7 @@ nav ul.right .btn-primary:hover {	background: rgba(255, 255, 255, 0.2) !importan
 }
 
 #home #welcome {
-	padding: 15vh 0 0;
+	padding: 12vh 0 0;
 	text-align: center;
 	margin: 0;
 	overflow: hidden;
@@ -141,7 +142,6 @@ nav ul.right .btn-primary:hover {	background: rgba(255, 255, 255, 0.2) !importan
 }
 
 #home #welcome h1 {
-
   color: #FFF;
   margin-bottom: 8px;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
@@ -166,7 +166,7 @@ nav ul.right .btn-primary:hover {	background: rgba(255, 255, 255, 0.2) !importan
 	text-transform: capitalize !important;
   background: #0071EB;
 	color: #FFF;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 #home #welcome .btn-primary:hover { background: #057DFF !important; }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
 
@@ -14,9 +14,7 @@ class SiteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-    //Home
-    public function home()
+    public function home()    /* Home */
     {
         return view('site.home');
     }

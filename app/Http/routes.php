@@ -12,7 +12,7 @@
 */
 
 // Site routes...
-Route::get('/', 'SiteController@home');  //Home
+Route::get('/', 'Site\SiteController@home');  //Home
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -34,11 +34,5 @@ Route::get('password/success', ['middleware' => 'auth', function () {
     return view('auth.success');
 }]);
 
-/*
-* Todo
-* - Route for Authenticated users
-*/
-
-Route::get('home', function() {   /* Debuggin */
-    return view('home');
-});
+// App routes...
+Route::get('explore', 'App\AppController@explore');  //Explore
