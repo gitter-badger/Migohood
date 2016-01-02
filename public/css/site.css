@@ -78,7 +78,7 @@ nav ul li a {
 	font-size: 13px !important;
 	font-weight: 600;
   color: #FFF;
-  padding: 0 10px;
+  padding: 0 12px;
 }
 
 nav ul.right .btn {
@@ -120,6 +120,7 @@ nav ul.right .btn-primary {
 }
 
 nav ul.right .btn-primary:hover {	background: rgba(255, 255, 255, 0.2) !important; }
+nav .name { text-transform: capitalize; }
 
 /*************
      HOME

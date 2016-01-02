@@ -43,4 +43,4 @@
 </html>
 
 <script src="/js/materialize.min.js" type="text/javascript"></script>           <!-- Materialize core JS -->
-<script src="/js/init.js" type="text/javascript"></script>
+<script src="/js/init.js" type="text/javascript"></script>                      <!-- Init core JS -->  
