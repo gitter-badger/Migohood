@@ -1,3 +1,8 @@
+@extends('layouts.app')
+@section('title', 'Explore')
+@section('content')
+
+<!--
 Hello from Explore
 
 @if(Auth::check())
@@ -11,4 +16,6 @@ Hello from Explore
   <li>updated at = {{ Auth::user()->updated_at }}</li>
   </ul>
   <a href="auth/logout">Log out</a>
-@endif
+@endif-->
+
+@stop

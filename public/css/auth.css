@@ -6,6 +6,11 @@
 body { display: flex; min-height: 100vh; flex-direction: column; }
 main { flex: 1 0 auto; }
 
+/*
+* Todo
+* - Media helpers
+*/
+
 .panel img {
   width: 250px;
 }
@@ -23,11 +28,6 @@ main { flex: 1 0 auto; }
 #register { padding: 40px 20px 0px 20px; }
 #login { padding: 80px 20px 0px 20px; }
 #password { padding: 100px 0px 0px 0px; }
-
-/*
-* Todo
-* - Media helpers
-*/
 
 .panel .container {
   width: 80%; /*Media helper here*/

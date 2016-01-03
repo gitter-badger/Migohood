@@ -1,0 +1,139 @@
+/*************
+   SETTINGS
+**************/
+/* General */
+* { box-sizing: border-box; }
+
+body {
+  background: #ECEEF1 !important;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main { flex: 1 0 auto; }
+
+/*
+* Todo
+* - Media helpers
+*/
+
+/*************
+    NAVBAR
+**************/
+#main nav {
+  background: #2D72D9 !important;
+	box-shadow: none !important;
+	-webkit-box-shadow:none !important;
+}
+
+#main nav ul li a {
+	font-size: 13px;
+	font-weight: 600;
+  color: #FFF;
+  padding: 0 10px;
+}
+
+#main nav ul li a:hover {
+  background: none !important;
+}
+
+/* LEFT */
+#main nav ul.left {
+  display: table;
+  margin: 0 auto;
+}
+
+#main nav ul.left li a img {
+  vertical-align: middle;
+  width: 180px;
+  margin-left: 20px;
+}
+
+/* RIGHT */
+#main nav ul.right {
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+#main nav ul.right .btn {
+	text-align: center;
+  vertical-align: middle;
+	padding: 0rem;
+	height: 34px;
+	font-size: 12px !important;
+	font-weight: 500;
+  font-weight: bold;
+	border-radius: 4px;
+	text-transform: capitalize !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+}
+
+#main nav .right .btn-start {
+  color: #FFF;
+  background: #205BB3 !important;
+  width: 140px;
+}
+
+#main nav .right .btn-start i {
+  font-size: 20px !important;
+  height: 34px;
+  line-height: 34px;
+  float: left;
+  margin-left: 15px;
+  margin-right: -5px;
+}
+
+#main nav .right .btn-start:hover {
+  background: #2363C4 !important;
+}
+
+#main nav .right .btn-reg {
+  color: #FFF;
+  background: #205BB3 !important;
+  width: 100px;
+}
+
+#main nav .right .btn-reg:hover {
+  background: #2363C4 !important;
+}
+
+/* Nav-options */
+#main nav .right span {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+#main nav .right img {
+  width: 26px;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+#main nav .right i {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.dropdown-content {
+  min-width: 120px;
+}
+
+.dropdown-content li {
+  min-height: 40px !important;
+  line-height: 40px !important;
+}
+
+.dropdown-content li:hover {
+  background: #FAF6FE !important;
+}
+
+.dropdown-content li > a {
+  font-size: 13px !important;
+  color: #505050 !important;
+  font-weight: normal !important;
+  line-height: 40px !important;
+  margin-left: 16px;
+}
