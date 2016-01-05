@@ -33,7 +33,9 @@
 
       <!-- Update Status Message -->
       @if (session('update_status'))
-          {{ session('update_status') }}
+      <div> {{ session('update_status') }}
+         <a class="close" href="javascript: void(0);">close</a>
+      </div>
       @endif
 
       <!--Edit-->

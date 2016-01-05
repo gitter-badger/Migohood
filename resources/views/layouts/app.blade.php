@@ -53,7 +53,8 @@
 </body>
 </html>
 
-@yield('footer')
 <script src="/js/jquery.min.js" type="text/javascript"></script>                <!-- Jquery core JS -->
 <script src="/js/materialize.min.js" type="text/javascript"></script>           <!-- Materialize core JS -->
 <script src="/js/init.js" type="text/javascript"></script>                      <!-- Init Custom JS File -->
+<script src="/js/app.js" type="text/javascript"></script>                       <!-- App Custom JS File-->
+@yield('footer')
