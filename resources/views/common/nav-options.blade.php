@@ -6,7 +6,7 @@
 
   <ul class="dropdown-content" id="drop">
     <li><a href="#!">Your Profile</a></li>
-    <li><a href="#!">Settings</a></li>
+    <li><a href="{{ url('/settings/profile') }}">Settings</a></li>
     <li><a href="#!">Help</a></li>
     <li><a href="{{ url('auth/logout') }}">Log out</a></li>
   </ul>

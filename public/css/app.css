@@ -18,9 +18,9 @@ main { flex: 1 0 auto; }
 * - Media helpers
 */
 
-/*************
-    NAVBAR
-**************/
+/***************
+  MAIN NAVBAR
+****************/
 #main nav {
   background: #2D72D9 !important;
 	box-shadow: none !important;
@@ -47,7 +47,7 @@ main { flex: 1 0 auto; }
 #main nav ul.left li a img {
   vertical-align: middle;
   width: 180px;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 /* RIGHT */
@@ -106,7 +106,7 @@ main { flex: 1 0 auto; }
 }
 
 #main nav .right img {
-  width: 26px;
+  width: 32px;
   border-radius: 50%;
   vertical-align: middle;
   margin-left: 6px;
@@ -136,4 +136,182 @@ main { flex: 1 0 auto; }
   font-weight: normal !important;
   line-height: 40px !important;
   margin-left: 16px;
+}
+
+/***************
+ OPTIONS NAVBAR
+****************/
+#options .navbar-fixed {
+  z-index: 997;
+}
+
+#options nav {
+  background: #FFF !important;
+	box-shadow: none !important;
+	-webkit-box-shadow:none !important;
+  padding-left: 40px;
+  height: 45px;
+  line-height: 45px;
+}
+
+#options nav ul li {
+  padding: 0px 6px;
+}
+
+#options nav ul li a {
+	font-size: 14px;
+	font-weight: 400;
+  color: #3E4551;
+  padding: 0px 10px;
+}
+
+#options nav ul li a:hover {
+  background: none !important;
+  color: #2D72D9 !important;
+}
+
+/* Active */
+#options nav ul li.active {
+  background: none !important;
+  height: 38px;
+  line-height: 38px;
+}
+
+#options nav ul li.active a {
+  color: #2D72D9 !important;
+  font-weight: bold;
+  margin-top: 4px;
+  border-bottom: 4px solid #2D72D9;
+}
+
+/* Underline Reveal */
+.underline {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /*box-shadow: 0 0 1px rgba(0, 0, 0, 0);*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  overflow: hidden;
+}
+
+.underline:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2D72D9;
+  height: 4px;
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.underline:hover:before, .underline:focus:before, .underline:active:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/*******************
+   PROFILE SETTINGS
+********************/
+.settings .container {
+  width: 85%; /* Media here*/
+}
+
+.box {
+  background: #FFF !important;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  border: 1px solid #E1E1E1;
+}
+
+.box-body {
+  margin: 15px 20px;
+}
+
+.box-title {
+  color: #3E4551;
+  font-size: 14px;
+  border-bottom: 1px solid #E3E2E1;
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.box-title i.material-icons {
+  float: left;
+  font-size: 20px;
+  padding-right: 5px;
+  margin-left: 10px;
+  color: #3E4551;
+}
+
+#edit {
+  padding: 20px 10px 20px 40px;
+}
+
+#edit .left { text-align: right; }
+#edit .right { text-align: left; }
+#edit .left span {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+#edit .left span i {
+  vertical-align: middle;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #4DB771;
+}
+
+#edit .right img {
+  width: 100%;
+  border-radius: 6px;;
+}
+
+#edit .btn {
+ border: none;
+ border-radius: 4px;
+ display: inline-block;
+ height: 32px;
+ line-height: 32px;
+ padding: 0 15px;
+ text-transform: capitalize;
+ vertical-align: middle;
+ box-shadow: none !important;
+ -webkit-box-shadow:none !important;
+}
+
+#edit .btn-upload {
+  font-size: 13px !important;
+  border: 1px solid #E1E1E1;
+  font-weight: 500;
+  color: #5A7178;
+  background: #F2F5F6;
+}
+
+#edit .btn-save {
+  background: #33C96F;
+  color: #F8F8F8;
+  width: 50px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+#edit .btn-save i {
+  font-size: 19px !important;
+  color: #FFF;
 }

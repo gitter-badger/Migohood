@@ -36,3 +36,19 @@ Route::get('password/success', ['middleware' => 'auth', function () {
 
 // App routes...
 Route::get('explore', 'App\AppController@explore');  //Explore
+
+/*
+* Routes for Autenticated users...
+*/
+Route::group(['middleware' => 'auth'], function () {
+  /*
+  * Routes for Settings...
+  */
+    // Profile Settings
+    Route::get('settings/profile', 'Users\UserController@edit');
+
+    // Update avatar...
+    Route::post('avatar/update', 'Users\UserController@avatarUpdate');
+
+
+});
