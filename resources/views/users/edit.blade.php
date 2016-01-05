@@ -23,13 +23,18 @@
 <div class="container col s12">
   <div class="box">
 
-    <!-- Todo **  Errors! -->
-
     <!-- Basic Information -->
     <div class="box-body">
       <div class="box-title">
         <i class="material-icons">person_pin</i>Basic Information
       </div>
+
+      <!-- Todo **  Errors Better visual Aspect! -->
+
+      <!-- Update Status Message -->
+      @if (session('update_status'))
+          {{ session('update_status') }}
+      @endif
 
       <!--Edit-->
       <div class="row" id="edit">

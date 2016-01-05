@@ -80,7 +80,7 @@ class UserController extends Controller
       //Did it Fail?
       if ($validator->fails()) {
         //return redirect('settings/edit')->withErrors($validator);
-        return redirect('settings/profile');
+        return redirect('settings/profile')->with('update_status', 'fail');
       }
 
       //No, It didn't
@@ -108,7 +108,7 @@ class UserController extends Controller
           $user->update(['path'=>'avatars/'.$name]);
         }
 
-        return redirect('settings/profile');
+        return redirect('settings/profile')->with('update_status', 'done');
 
     }
 
