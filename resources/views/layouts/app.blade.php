@@ -19,7 +19,7 @@
         <!--<a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">dehaze</i></a>-->
 
         <ul class="left">
-          <li><a href="{{ url('/explore') }}"><img src="/img/brand-white.png" alt=".."/></a></li>
+          <li><a href="{{ url('/') }}"><img src="/img/brand-white.png" alt=".."/></a></li>
         </ul>
 
         <ul class="right">

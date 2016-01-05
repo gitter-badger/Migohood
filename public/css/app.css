@@ -47,7 +47,7 @@ main { flex: 1 0 auto; }
 #main nav ul.left li a img {
   vertical-align: middle;
   width: 180px;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 /* RIGHT */
@@ -149,7 +149,7 @@ main { flex: 1 0 auto; }
   background: #FFF !important;
 	box-shadow: none !important;
 	-webkit-box-shadow:none !important;
-  padding-left: 40px;
+  padding-left: 30px;
   height: 45px;
   line-height: 45px;
 }
