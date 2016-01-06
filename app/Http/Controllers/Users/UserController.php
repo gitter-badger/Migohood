@@ -79,7 +79,6 @@ class UserController extends Controller
 
       //Did it Fail?
       if ($validator->fails()) {
-        //return redirect('settings/edit')->withErrors($validator);
         return redirect('settings/profile')->with('update_status', 'fail');
       }
 
@@ -98,8 +97,7 @@ class UserController extends Controller
           $user->update(['path'=>'avatars/'.$name]);
 
         }
-        else
-        {
+        else {
           //Destroy last path
           File::delete($user->path);
           //Move file to avatars folder

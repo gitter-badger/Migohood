@@ -29,17 +29,10 @@
         <i class="material-icons">person_pin</i>Basic Information
       </div>
 
-      <!-- Todo **  Errors Better visual Aspect! -->
-
-      <!-- Update Status Message -->
-      @if (session('update_status'))
-      <div> {{ session('update_status') }}
-         <a class="close" href="javascript: void(0);">close</a>
-      </div>
-      @endif
-
       <!--Edit-->
       <div class="row" id="edit">
+
+        @include('alerts.update_profile_pic')
 
         <!-- Change Profile Picture -->
           <div class="col s3 left">

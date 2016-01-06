@@ -161,7 +161,7 @@ main { flex: 1 0 auto; }
 #options nav ul li a {
 	font-size: 14px;
 	font-weight: 400;
-  color: #3E4551;
+  color: #374551;
   padding: 0px 10px;
 }
 
@@ -233,7 +233,7 @@ main { flex: 1 0 auto; }
   background: #FFF !important;
   border-radius: 4px;
   margin-bottom: 8px;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #DDDFE2;
 }
 
 .box-body {
@@ -241,9 +241,9 @@ main { flex: 1 0 auto; }
 }
 
 .box-title {
-  color: #3E4551;
+  color: #374551;
   font-size: 14px;
-  border-bottom: 1px solid #E3E2E1;
+  border-bottom: 1px solid #DDDFE2;
   margin-bottom: 5px;
   font-weight: bold;
   padding-bottom: 10px;
@@ -254,7 +254,7 @@ main { flex: 1 0 auto; }
   font-size: 20px;
   padding-right: 5px;
   margin-left: 10px;
-  color: #3E4551;
+  color: #374551;
 }
 
 #edit {
@@ -297,10 +297,10 @@ main { flex: 1 0 auto; }
 
 #edit .btn-upload {
   font-size: 13px !important;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #DDDFE2;
   font-weight: 500;
-  color: #5A7178;
-  background: #F2F5F6;
+  color: #374551;
+  background: #F3F4F7;
 }
 
 #edit .btn-save {
@@ -314,4 +314,59 @@ main { flex: 1 0 auto; }
 #edit .btn-save i {
   font-size: 19px !important;
   color: #FFF;
+}
+
+/***************
+  ALERT BOXES
+****************/
+.alert-box {
+  border-radius: 4px;
+  padding: 6px 10px 6px 20px;
+  max-width: 400px;
+  text-align: center;
+  font-size: 13px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.alert-box span {
+  font-weight: bold;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.alert-box i {
+  vertical-align: middle;
+  margin-bottom: 3px;
+  margin-right: 5px;
+}
+
+.alert-box a.close i {
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+/* Error */
+.error {
+  background: #FEF5F5;
+  border: 1px solid #EF2427;
+  color: #EF2427;
+  vertical-align: middle;
+}
+
+.error a.close i {
+  color: #EF2427;
+}
+
+/* Success */
+.success {
+  color: #07B63E;
+  background: #F8FFFA;
+  border: 1px solid #07B63E;
+  vertical-align: middle;
+}
+
+.success a.close i {
+  color: #07B63E;
 }

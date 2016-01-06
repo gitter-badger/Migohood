@@ -16,7 +16,7 @@ main { flex: 1 0 auto; }
 }
 
 .panel {
-  background: rgba(255, 255, 255, 0);
+  background: none !important;
 	width: 450px; /*Media helper here*/
 	margin: 0 auto;
 	vertical-align: middle;
@@ -78,8 +78,8 @@ main { flex: 1 0 auto; }
 input[type=text],
 input[type=email],
 input[type=password] {
-  background: #F6F6F6 !important;
-  border: 2px solid #F3F6F8;
+  background: #F3F4F7 !important;
+  border: 1px solid #F3F4F7;
   border-radius: 4px;
   padding: 1px 0px 1px 15px;
   height: 32px !important;
@@ -93,7 +93,7 @@ input[type=password] {
 input[type=text]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
 input[type=email]:focus:not([readonly]) {
-  border: 2px solid #C7D2D5;
+  border: 1px solid #C1C5CB;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
