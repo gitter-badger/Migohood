@@ -52,3 +52,25 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 });
+
+
+//Debuggin
+Route::get('myip', function () {
+  //$ip = $_SERVER['REMOTE_ADDR'];
+  //$ip = Request::ip();
+  $ip = '181.137.219.4'; //Debuggin purposes
+  $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+
+  return $details->city; // -> "Mountain View"
+
+  /*
+  "ip": "8.8.8.8",
+  "hostname": "google-public-dns-a.google.com",
+  "loc": "37.385999999999996,-122.0838",
+  "org": "AS15169 Google Inc.",
+  "city": "Mountain View",
+  "region": "CA",
+  "country": "US",
+  "phone": 650
+  */
+});
