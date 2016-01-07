@@ -32,8 +32,8 @@
           <ul class="right">
             <li><a href="{{ url('/explore') }}">Explore</a></li>
             <li><a href="#" >How to be a host?</a></li> <!-- Add link to how to be a host -->
-            <li id="auth"><a href="#" class="btn btn-primary waves-effect waves-light"><i class="material-icons">library_add</i>New Announce</a></li>  <!-- Add link to create announce -->
-          
+            <li id="auth"><a href="{{ url('/posts/create') }}" class="btn btn-primary waves-effect waves-light"><i class="material-icons">library_add</i>New Announce</a></li>  <!-- Add link to create announce -->
+
               @include('common.nav-options')
 
           </ul>

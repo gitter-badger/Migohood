@@ -223,9 +223,9 @@ main { flex: 1 0 auto; }
 }
 
 /*******************
-   PROFILE SETTINGS
+    BOX SETTINGS
 ********************/
-.settings .container {
+.body .container {
   width: 85%; /* Media here*/
 }
 
@@ -257,6 +257,9 @@ main { flex: 1 0 auto; }
   color: #374551;
 }
 
+/*******************
+   PROFILE SETTINGS
+********************/
 #edit {
   padding: 20px 10px 20px 40px;
 }
@@ -369,4 +372,64 @@ main { flex: 1 0 auto; }
 
 .success a.close i {
   color: #07B63E;
+}
+
+/***************
+   INFO BOXES
+****************/
+.info {
+  background: #FFF !important;
+  border-radius: 8px;
+}
+
+.info-body {
+  padding: 0px 20px;
+  text-align: center;
+}
+
+/*******************
+      POSTS
+********************/
+#create_form {
+  padding: 5px 12px;
+}
+
+div.option {
+  display: inline-block;
+  width: 120px;
+  height: 100px;
+  margin: 20px;
+  padding: 12px;
+  text-align: center;
+  border: 2px solid #DDDFE2;
+  background: #FFF;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #DDDFE2;
+  font-weight: bold;
+}
+
+div.option i {
+  font-size: 50px;
+  color: #DDDFE2;
+}
+
+div.option.active i {
+  color: #2D72D9;
+  font-size: 50px;
+}
+
+div.option.active span  {
+  color: #2D72D9;
+}
+
+div.active {
+  border: 3px solid #2D72D9;
+  background: #FFF;
+  border-radius: 4px;
+  color: #2D72D9;
+}
+
+div.bat:hover {
+  background: #FFF;
 }

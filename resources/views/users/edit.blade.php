@@ -19,7 +19,7 @@
 </div>
 
 <!-- Content -->
-<section class="settings">
+<section class="body">
 <div class="container col s12">
   <div class="box">
 
@@ -35,19 +35,19 @@
         @include('alerts.update_profile_pic')
 
         <!-- Change Profile Picture -->
-          <div class="col s3 left">
+          <div class="col s2 left">
             <span>Profile Picture</span>
           </div>
 
-          <div class="col s9 row right">
+          <div class="col s10 row right">
 
             <div class="col s2">
              <img class="materialboxed" src =" {{ url(Auth::user()->path) }} " alt="..."/>
             </div>
 
-            <div class="col s5">
+            <div class="col s4">
               <!-- Change picture Form-->
-              <form method="post" action="{{ url('avatar/update')}}" enctype="multipart/form-data">
+              <form method="post" action="{{ url('/avatar/update') }}" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="file-field input-field">
                   <div class="btn btn-upload">
@@ -61,8 +61,17 @@
               <!-- Change picture -->
             </div>
 
-            <div class="col s5 info">
-              <!-- Here goes a message -->
+            <div class="col s6">
+              <div class="info">
+                <div class="info-body">
+                  <h4 class="light">Why a Picture?</h4>
+                  <p class="light">
+                    When you post a picture, you give your potential clients more confidence,
+                    we mean, they have a good sensation looking a face instead a default picture,
+                    don't you think? So, Start adding a picture. Make sure your face appears there.
+                  </p>
+                </div>
+              </div>
             </div>
 
           </div>
