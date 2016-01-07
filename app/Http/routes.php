@@ -50,6 +50,11 @@ Route::group(['middleware' => 'auth'], function () {
     // Update avatar...
     Route::post('avatar/update', 'Users\UserController@avatarUpdate');
 
+  /*
+  * Routes for Projects...
+  */
+    // Create Posts
+    Route::get('posts/create', 'Posts\PostController@create');
 
 });
 
