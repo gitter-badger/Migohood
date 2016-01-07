@@ -1,0 +1,104 @@
+/***************
+    SETTINGS
+****************/
+#explore {
+  padding: 10px;
+}
+
+.search {
+  height: 80vh;
+  background: #FFF;
+}
+
+/***************
+   ANNOUNCES
+****************/
+.announce-body {
+  background: #FFF;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.16), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  margin: 0.5rem 0 0.7rem 0;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.announce-pic img {
+  width: 100%;
+  margin-bottom: -45px;
+  overflow: hidden;
+  border-radius: 4px 4px 0 0;
+  height: 160px;
+}
+
+.announce-title {
+  position: relative;
+  height: 120px;
+}
+
+.announce-title img {
+  width: 55px;
+  margin-left: 10px;
+  border-radius: 50%;
+  float: left;
+}
+
+
+/*
+.announce-title .opc {
+  text-align: right !important;
+}
+
+.announce-title .opc span {
+  font-size: 30px;
+  border-radius: 50%;
+  padding: 5px;
+  color: #FFF;
+
+}*/
+
+
+
+
+
+
+/***************
+   PAGINATION
+****************/
+.pagination li {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0 5px;
+  line-height: 25px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/*
+.pagination li a {
+  color: #444;
+}
+
+.pagination li.active a {
+  color: #fff;
+}*/
+
+.pagination li.active {
+  background-color: #2D72D9;
+}
+
+/*.pagination li.disabled a {
+  cursor: default;
+  color: #999;
+}
+*/
+.pagination li i {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+/*
+.pagination li.pages ul li {
+  display: inline-block;
+  float: none;
+}*/
