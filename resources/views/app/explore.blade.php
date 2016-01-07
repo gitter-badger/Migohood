@@ -8,7 +8,7 @@
 <!-- Content-->
 <section class="row" id="explore">
   <div class="col s3 search">
-    
+
   </div>
   <div class="col s9 row">
      @include('common.announces')

@@ -10,6 +10,7 @@
       <link href="/css/materialicons.css" rel="stylesheet">                                     <!-- Material Icons -->
       <link href="/css/app.css" rel="stylesheet">                                               <!-- Style core CSS -->
       @include('common.favicon')
+      @yield('header')
   </head>
   <!-- Navbar -->
   <header id="main">
