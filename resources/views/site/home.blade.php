@@ -1,92 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="..">
-    <meta name="author" content="..">
-    <title>Migohood &vert; Rent and stay with hosts around the World</title>
-      <link href="/css/materialize.min.css" rel="stylesheet" media="screen,projection"/>        <!-- Materialize core CSS -->
-      <link href="/css/materialicons.css" rel="stylesheet">                                     <!-- Material Icons -->
-      <link href="/css/site.css" rel="stylesheet">                                              <!-- Style core CSS -->
-      <script src="/js/jquery.min.js" type="text/javascript"></script>                          <!-- Jquery core JS -->
-      <script src="/js/typed.js" type="text/javascript"></script>                               <!-- Typed core JS -->
-      @include('common.favicon')
-  </head>
-<body>
+@extends('layouts.site')
+@section('title', 'Rent and stay with hosts... or offer services around the World')
+@section('content')
 
-  <section id="home">
+<!-- Content-->
+<section id="home">
 
-    <!-- Navbar -->
-    <nav role="navigation">
-      <div class="nav-wrapper">
-        <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">dehaze</i></a>
+  <div id="box">
+    <h1 class="light">Mine is yours!</h1>
+    <p class="light">Rent and stay with hosts or offer your services around the world.</p>
+    <p class="light">Discover places and services near you <strong>has never been so easy!</strong></p>
 
-        <ul class="logo">
-          <li><a href="{{ url('/') }}"><img id="img" src="/img/brand-white.png" alt=".."/></a></li>
-          <li><a href="{{ url('/') }}"><img id="img2" src="/img/brand.png" alt=".."/></a></li>
-        </ul>
+    <!-- Form -->
+    <form class="row" action="" method="">
 
-        <!-- Authenticated users -->
-        @if(Auth::check())
-          <ul class="right">
-            <li><a href="{{ url('/explore') }}">Explore</a></li>
-            <li><a href="#" >How to be a host?</a></li> <!-- Add link to how to be a host -->
-            <li id="auth"><a href="{{ url('/posts/create') }}" class="btn btn-primary waves-effect waves-light"><i class="material-icons">library_add</i>New Announce</a></li>  <!-- Add link to create announce -->
-
-              @include('common.nav-options')
-
-          </ul>
-
-          <ul class="side-nav" id="mobile"> <!-- Todo Sidenav -->
-            <li><a href="{{ url('/explore') }}" class="waves-effect waves-light">Explore</a></li>
-            <li><a href="{{ url('/auth/logout') }}" class="waves-effect waves-light">Logout</a></li>
-          </ul>
-
-        <!-- No Authenticated users -->
-        @else
-          <ul class="right">
-            <li><a href="{{ url('/explore') }}" >Explore</a></li>
-            <li><a href="#" >How to be a host?</a></li> <!-- Add link to how to be a host -->
-            <li><a href="{{ url('/auth/register') }}" class="btn btn-primary waves-effect waves-light">Sign up</a></li>
-            <li><a href="{{ url('/auth/login') }}">Login</a></li>
-          </ul>
-
-          <ul class="side-nav" id="mobile">
-            <li><a href="{{ url('/explore') }}" class="waves-effect waves-light">Explore</a></li>
-            <li><a href="#" class="waves-effect waves-light">How to be host?</a></li> <!-- Add link to how to be a host -->
-            <li><a href="{{ url('/auth/register') }}" class="waves-effect waves-light">Sign up</a></li>
-            <li><a href="{{ url('/auth/login') }}" class="waves-effect waves-light">Login</a></li>
-          </ul>
-        @endif
-
+      <div class="col s10">
+        <input placeholder="Start typing your city or country" type="text" name="" value="" required>
       </div>
-    </nav>
 
-    <div id="welcome">
+      <div class="col s2">
+        <button class="btn  waves-effect waves-light"><i class="material-icons">search</i></button>
+      </div>
 
-    <!-- Typing & Erasing -->
-    <script type="text/javascript">
-    $(function(){
-      $(".text").typed({
-        strings: ["Apartment", "House", "Room", "Cabain", "Home"],
-        showCursor: false,
-        typeSpeed: 60,
-        backSpeed: 20
-        });
-    });
-    </script>
+    </form>
+    <!-- Form -->
 
-    <h1 class="light">My <strong><span class="text"></span></strong> is available!</h1>
-    <h5>Rent and stay with hosts around the World</h5>
-    <a href="{{ url('/') }}" class="btn btn-primary waves-effect waves-light">How it works?</a><br>
+    <div class="divider"></div>
 
-    </div>
+    <span class="light">...or find out <a href="#" class="underline"><strong>How it works</strong></a></span>
 
-  </section>
+  </div>
 
-</body>
-</html>
 
-<script src="/js/materialize.min.js" type="text/javascript"></script>           <!-- Materialize core JS -->
-<script src="/js/init.js" type="text/javascript"></script>                      <!-- Init core JS -->
+  <div class="footer">
+    <img src="/img/back-foot01.png" alt=".." />
+  </div>
+</section>
+<!-- Content-->
+
+@stop
