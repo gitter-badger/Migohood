@@ -7,7 +7,7 @@
     <meta name="author" content="..">
     <title>Migohood &vert; @yield('title')</title>
       <link href="/css/materialize.min.css" rel="stylesheet" media="screen,projection"/>        <!-- Materialize core CSS -->
-      <link href="/css/materialicons.css" rel="stylesheet">                                     <!-- Material Icons -->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">     <!--Import Google Icon Font-->
       <link href="/css/app.css" rel="stylesheet">                                               <!-- Style core CSS -->
       @include('common.favicon')
       @yield('header')
