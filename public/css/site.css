@@ -285,9 +285,9 @@ input[type=text]:focus:not([readonly]) {
 /* Background img */
 .footer img {
   position: absolute;
-  width: 78%;
+  width: 75%;
   height: auto;
-  margin-top: -360px;
+  margin-top: -340px;
   right: 0;
   z-index: -1;
   border-bottom: 2px solid #B5B9BB;
