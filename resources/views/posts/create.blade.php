@@ -43,7 +43,7 @@
             </div>
 
             <div class="option tab bat" onclick="show('form_service')">
-                <i class="material-icons">location_city</i><br>
+                <i class="material-icons">business_center</i><br>
                 <span>Service</span>
             </div>
 
@@ -65,11 +65,10 @@
             <div class="info-body">
               <h4 class="light">Let's get Started</h4>
               <p class="light">
-                Post your spaces or service to all to start making money.
-                Remember that people who come to your city need you.
-                Migohood's Users can select certain filters on the
-                of the space to conduct their searches and find the
-                accommodation they want and need.
+                Post your spaces or service to all to start making money,
+                remember that people who come to your city need you.
+                Migohood's Users can select certain filters to conduct their
+                searches and find the accommodation or services they want and need.
               </p>
             </div>
           </div>

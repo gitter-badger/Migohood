@@ -22,7 +22,7 @@ main { flex: 1 0 auto; }
   MAIN NAVBAR
 ****************/
 #main nav {
-  background: #2D72D9 !important;
+  background: #02A4F5 !important;
 	box-shadow: none !important;
 	-webkit-box-shadow:none !important;
 }
@@ -72,7 +72,7 @@ main { flex: 1 0 auto; }
 
 #main nav .right .btn-start {
   color: #FFF;
-  background: #205BB3 !important;
+  background: #028ACE !important;
   width: 140px;
 }
 
@@ -86,17 +86,17 @@ main { flex: 1 0 auto; }
 }
 
 #main nav .right .btn-start:hover {
-  background: #2363C4 !important;
+  background: #0297E1 !important;
 }
 
 #main nav .right .btn-reg {
   color: #FFF;
-  background: #205BB3 !important;
+  background: #028ACE !important;
   width: 100px;
 }
 
 #main nav .right .btn-reg:hover {
-  background: #2363C4 !important;
+  background: #0297E1 !important;
 }
 
 /* Nav-options */
@@ -167,7 +167,7 @@ main { flex: 1 0 auto; }
 
 #options nav ul li a:hover {
   background: none !important;
-  color: #2D72D9 !important;
+  color: #02A4F5 !important;
 }
 
 /* Active */
@@ -178,10 +178,10 @@ main { flex: 1 0 auto; }
 }
 
 #options nav ul li.active a {
-  color: #2D72D9 !important;
+  color: #02A4F5 !important;
   font-weight: bold;
   margin-top: 4px;
-  border-bottom: 4px solid #2D72D9;
+  border-bottom: 4px solid #02A4F5;
 }
 
 /* Underline Reveal */
@@ -205,7 +205,7 @@ main { flex: 1 0 auto; }
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2D72D9;
+  background: #02A4F5;
   height: 4px;
   -webkit-transform: translateY(4px);
   transform: translateY(4px);
@@ -377,14 +377,23 @@ main { flex: 1 0 auto; }
 /***************
    INFO BOXES
 ****************/
+/*
 .info {
   background: #FFF !important;
   border-radius: 8px;
 }
-
+*/
 .info-body {
-  padding: 0px 20px;
+  padding: 2px 20px;
   text-align: center;
+}
+
+.info {
+	position: relative;
+	background: #F7F8FA;
+  border-radius: 8px;
+	border-left: 6px solid #E4E5E7;
+
 }
 
 /*******************
@@ -415,19 +424,19 @@ div.option i {
 }
 
 div.option.active i {
-  color: #2D72D9;
+  color: #02A4F5;
   font-size: 50px;
 }
 
 div.option.active span  {
-  color: #2D72D9;
+  color: #02A4F5;
 }
 
 div.active {
-  border: 3px solid #2D72D9;
+  border: 3px solid #02A4F5;
   background: #FFF;
   border-radius: 4px;
-  color: #2D72D9;
+  color: #02A4F5;
 }
 
 div.bat:hover {

@@ -181,8 +181,8 @@ form p {
 **************/
 .btn-submit {
 	width: 95%;
-	background: #0071EB;
-	color: #F8F8F8;
+	background: #02A4F5;
+	color: #FFF;
   font-weight: 600;
   height: 32px;
   line-height: 32px;
@@ -191,6 +191,6 @@ form p {
 }
 
 .btn-submit:hover, .btn-submit:focus {
-	background: #057DFF !important;
+	background: #0297E1 !important;
   box-shadow: none; -webkit-box-shadow:none;
 }

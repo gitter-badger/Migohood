@@ -73,7 +73,7 @@ main { flex: 1 0 auto; }
 
 #main nav .right .btn-start {
   color: #FFF;
-  background: #0A86F7 !important;
+  background: #02A4F5 !important;
   width: 140px;
 }
 
@@ -87,17 +87,17 @@ main { flex: 1 0 auto; }
 }
 
 #main nav .right .btn-start:hover {
-  background: #087CE6 !important;
+  background: #0297E1 !important;
 }
 
 #main nav .right .btn-reg {
   color: #FFF;
-  background: #0A86F7 !important;
+  background: #02A4F5 !important;
   width: 100px;
 }
 
 #main nav .right .btn-reg:hover {
-  background: #087CE6 !important;
+  background: #0297E1 !important;
 }
 
 /* Nav-options */
@@ -185,12 +185,12 @@ main { flex: 1 0 auto; }
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-  background: #0A86F7 !important;
+  background: #02A4F5 !important;
   border-radius: 4px;
 }
 
 #box form .btn:hover {
-  background: #087CE6 !important;
+  background: #0297E1 !important;
 }
 
 #box form .btn i {
@@ -241,7 +241,11 @@ input[type=text]:focus:not([readonly]) {
 }
 
 #box span a {
-  color: #0A86F7;
+  color: #02A4F5;
+}
+
+#box span a:hover {
+  color: #0297E1;
 }
 
 /* Underline Reveal */
@@ -265,7 +269,7 @@ input[type=text]:focus:not([readonly]) {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #087CE6;
+  background: #0297E1;
   height: 2px;
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
