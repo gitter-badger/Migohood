@@ -38,10 +38,17 @@ class User extends Model implements AuthenticatableContract,
     protected $hidden = ['password', 'remember_token'];
 
     /**
-     * Get the post for the User.
+     * Get the places for the User.
      */
-    public function posts() {
-       return $this->hasMany('App\Post');
+    public function places() {
+       return $this->hasMany('App\Place');
+    }
+
+    /**
+     * Get the services for the User.
+     */
+    public function services() {
+       return $this->hasMany('App\Service');
     }
 
 }

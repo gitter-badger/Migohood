@@ -47,14 +47,20 @@ Route::group(['middleware' => 'auth'], function () {
     // Profile Settings
     Route::get('settings/profile', 'Users\UserController@edit');
 
-    // Update avatar...
+    // Update avatar
     Route::post('avatar/update', 'Users\UserController@avatarUpdate');
 
   /*
-  * Routes for Projects...
+  * Routes for Posts...
   */
     // Create Posts
-    Route::get('posts/create', 'Posts\PostController@create');
+    Route::get('create', 'Posts\PostController@create');
+
+    // Post Place
+    Route::post('place', 'Posts\PostController@PlaceStore');
+
+    // Post Service
+    Route::post('service', 'Posts\PostController@ServiceStore');
 
 });
 

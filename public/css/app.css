@@ -152,6 +152,7 @@ main { flex: 1 0 auto; }
   padding-left: 30px;
   height: 45px;
   line-height: 45px;
+  border-bottom: 1px solid #F2F3F4;
 }
 
 #options nav ul li {
@@ -308,7 +309,7 @@ main { flex: 1 0 auto; }
 
 #edit .btn-save {
   background: #33C96F;
-  color: #F8F8F8;
+  color: #FFF;
   width: 50px;
   margin-left: 10px;
   vertical-align: middle;
@@ -317,6 +318,14 @@ main { flex: 1 0 auto; }
 #edit .btn-save i {
   font-size: 19px !important;
   color: #FFF;
+}
+
+#edit .btn-upload:hover {
+  background: #E4E6ED;
+}
+
+#edit .btn-save:hover {
+  background: #2FB966;
 }
 
 /***************
@@ -377,30 +386,27 @@ main { flex: 1 0 auto; }
 /***************
    INFO BOXES
 ****************/
-/*
-.info {
-  background: #FFF !important;
-  border-radius: 8px;
-}
-*/
-.info-body {
-  padding: 2px 20px;
-  text-align: center;
-}
-
 .info {
 	position: relative;
 	background: #F7F8FA;
-  border-radius: 8px;
-	border-left: 6px solid #E4E5E7;
+  border-radius: 6px;
+	border-left: 7px solid #E4E5E7;
+}
 
+.info-body {
+  padding: 2px 20px;
+  text-align: center;
 }
 
 /*******************
       POSTS
 ********************/
 #create_form {
-  padding: 5px 12px;
+  padding: 15px;
+}
+
+#new {
+  margin: 20px 0px;
 }
 
 div.option {
@@ -410,17 +416,17 @@ div.option {
   margin: 20px;
   padding: 12px;
   text-align: center;
-  border: 2px solid #DDDFE2;
+  border: 2px solid #D2D5D9;
   background: #FFF;
   border-radius: 4px;
   cursor: pointer;
-  color: #DDDFE2;
+  color: #D2D5D9;
   font-weight: bold;
 }
 
 div.option i {
   font-size: 50px;
-  color: #DDDFE2;
+  color: #D2D5D9;
 }
 
 div.option.active i {
@@ -442,3 +448,142 @@ div.active {
 div.bat:hover {
   background: #FFF;
 }
+
+#place .options {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+#place .row {
+  margin-bottom: 0px;
+}
+
+#place .btn {
+  border: none;
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 30px;
+  text-transform: capitalize;
+  vertical-align: middle;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+}
+
+#place .btn-save {
+  background: #02A4F5;
+  color: #FFF;
+  vertical-align: middle;
+}
+
+#place .btn-save:hover {
+  background: #0297E2;
+}
+
+#place .left { text-align: right; }
+#place .right { text-align: left; }
+
+#place .left span {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+#place .option input {
+  display: none;
+}
+
+#place .option {
+  width: 100px;
+  height: 90px;
+  font-size: 14px;
+}
+
+#place .option i {
+  font-size: 40px;
+}
+
+#place .input {
+  margin-left: 20px;
+  width: 80%;
+}
+
+#place .next {
+ padding: 30px 80px 0px 0px;
+}
+
+/* Forms */
+select {
+  background: #F5F5F5;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  height: 2rem;
+  line-height: 2rem;
+  width: 420px;
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+select:active {
+  border: 1px solid #C1C5CB;
+}
+
+/* Input - Placeholder */
+::-webkit-input-placeholder { color: #44565B; }
+:-moz-placeholder { /* Firefox 18- */ color: #44565B; }
+::-moz-placeholder { /* Firefox 19+ */  color: #44565B; }
+:-ms-input-placeholder { color: #44565B; }
+
+/* Input - Before */
+input[type=text],
+input[type=email],
+input[type=password] {
+  background: #F5F5F5 !important;
+  border: 1px solid #E1E1E1;
+  width: 410px;
+  border-radius: 4px;
+  height: 2rem !important;
+  outline: none;
+  font-size: 13px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding-left: 10px;
+}
+
+/* Input - Focus */
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]) {
+  border: 1px solid #C1C5CB;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Textarea *//*
+textarea {
+  height: 2rem;
+}
+
+textarea.materialize-textarea {
+  padding: 0;
+  min-height: 2rem;
+  font-size: 13px;
+  padding-left: 10px;
+  width: 420px;
+}
+
+textarea.materialize-textarea {
+  background-color: #F5F5F5 !important;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  height: 2rem;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) {
+  border: 1px solid #C1C5CB;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}*/

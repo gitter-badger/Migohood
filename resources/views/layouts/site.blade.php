@@ -9,7 +9,7 @@
       <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
       <link href="/css/materialize.min.css" rel="stylesheet" media="screen,projection"/>        <!-- Materialize core CSS -->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">     <!--Import Google Icon Font-->
-      <link href="/css/site.css" rel="stylesheet">                                              <!-- Style core CSS -->      
+      <link href="/css/site.css" rel="stylesheet">                                              <!-- Style core CSS -->
       @yield('header')
   </head>
   <!-- Navbar -->
@@ -27,7 +27,7 @@
           <!-- Authenticated users -->
           @if(Auth::check())
             <li><a href="{{ url('/explore') }}">Explore</a></li>
-            <li><a href="{{ url('/posts/create') }}" class="btn btn-start waves-effect waves-light"><i class="material-icons">library_add</i>New Announce</a></li>
+            <li><a href="{{ url('/create') }}" class="btn btn-start waves-effect waves-light"><i class="material-icons">library_add</i>New Announce</a></li>
 
             @include('common.nav-options')
 
