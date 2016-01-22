@@ -25,7 +25,7 @@ class CreatePlacesTable extends Migration
             $table->string('other')->nullable();
             $table->string('accomodance');
             $table->string('capacity');
-            $table->string('country');
+                        
             $table->string('public')->nullable();
 
             $table->timestamps();

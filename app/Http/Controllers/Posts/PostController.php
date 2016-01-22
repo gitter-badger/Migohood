@@ -39,8 +39,7 @@ class PostController extends Controller
     public function PlaceStore(Request $request)
     {
       //Debugging
-      return 'Type: '.$request->type.' - Acommodance: '.$request->accomodance.' - Capacity: '.$request->capacity.' - Country: '.$request->country;
-
+      return 'Type: '.$request->type.' - Acommodance: '.$request->accomodance.' - Capacity: '.$request->capacity;
       /*
       switch ($request->type) {
         case 1:

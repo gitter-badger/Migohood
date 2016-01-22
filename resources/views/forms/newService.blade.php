@@ -24,7 +24,7 @@
         <option value='Other'> Other</option>
       </select>
     </div>
-  </div>
+  </div><br>
   <!-- Type -->
 
   <!-- Other Service -->
