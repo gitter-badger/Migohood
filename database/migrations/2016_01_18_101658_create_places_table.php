@@ -18,17 +18,20 @@ class CreatePlacesTable extends Migration
             $table->foreign('user_id')
               ->references('id')->on('users')
               ->onDelete('cascade');
+            $table->timestamps();
 
-            //Default
-            $table->string('title');
+            //Create
+            $table->string('name');
+            $table->string('default_title');
             $table->string('type');
-            $table->string('other')->nullable();
             $table->string('accomodance');
-            $table->string('capacity');
-                        
+            $table->string('thumbnail')->default('/img/thumbnail-default.jpg');
+
+            $table->string('other')->nullable();
+
+            $table->string('title');
             $table->string('public')->nullable();
 
-            $table->timestamps();
         });
     }
 

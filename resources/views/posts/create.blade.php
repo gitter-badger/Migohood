@@ -31,23 +31,21 @@
       <!-- Box-body -->
       <div class="box-body">
         <div class="box-title">
-          <i class="material-icons">library_add</i>Create Announce
+          <i class="material-icons">library_add</i>Create New Announce
         </div>
 
       <!-- Create_Form -->
       <div class="row" id="create_form">
+            <div class="col s11 offset-s1">
+              <div class="option active tab bat" onclick="show('form_space')">
+                <i class="material-icons">pin_drop</i><br>
+                <span>Space</span>
+              </div>
 
-        <!-- Left -->
-        <div class="col s12 l8 row">
-
-            <div class="option active tab bat" onclick="show('form_space')">
-              <i class="material-icons">pin_drop</i><br>
-              <span>Space</span>
-            </div>
-
-            <div class="option tab bat" onclick="show('form_service')">
-                <i class="material-icons">business_center</i><br>
-                <span>Service</span>
+              <div class="option tab bat" onclick="show('form_service')">
+                  <i class="material-icons">business_center</i><br>
+                  <span>Service</span>
+              </div>
             </div>
 
             <!-- Form_Space -->
@@ -60,23 +58,6 @@
               @include('forms.newService')
             </div>
 
-        </div>
-        <!-- Left -->
-        <!-- Right -->
-        <div class="col s12 l4">
-          <div class="info">
-            <div class="info-body">
-              <h4 class="light">Let's get Started</h4>
-              <p class="light">
-                Post your spaces or service to all to start making money,
-                remember that people who come to your city need you.
-                Migohood's Users can select certain filters to conduct their
-                searches and find the accommodation or services they want and need.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Right -->
        </div>
       <!-- Create form -->
       </div>

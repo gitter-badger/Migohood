@@ -17,7 +17,7 @@ main { flex: 1 0 auto; }
 
 .panel {
   background: none !important;
-	width: 450px; /*Media helper here*/
+	width: 420px; /*Media helper here*/
 	margin: 0 auto;
 	vertical-align: middle;
   /*border: 1px solid red;*/ /*Debuggin */
@@ -102,6 +102,10 @@ input[type=email]:focus:not([readonly]) {
 /* Input - Checkbox */
 form p {
   margin: 0px;
+}
+
+form p label a {
+  font-weight: bold;
 }
 
 /* Checkbox - Label */

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use Auth;
-use File;
+//use File;
 use Validator;
 //
 
@@ -13,60 +13,52 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    //Dashboard
+    public function Dashboard()
     {
-        //
+        return view('users.dashboard');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //Inbox
+    public function Inbox()
+    {
+        return view('users.inbox');
+    }
+
+    //MySpaces
+    public function MySpaces()
+    {
+        return view('users.spaces');
+    }
+
+    //MyServices
+    public function MyServices()
+    {
+        return view('users.services');
+    }
+
+    /*******************
+          Users ...
+    *******************/
     public function edit()
     {
       return view('users.edit');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //AvatarUpdate
     public function avatarUpdate(Request $request)
     {
+        /*
       //Validate the Request
       $validator = Validator::make($request->all(), [
         'image' => 'required|image',
@@ -107,7 +99,7 @@ class UserController extends Controller
         }
 
         return redirect('settings/profile')->with('update_status', 'done');
-
+        */
     }
 
     /*

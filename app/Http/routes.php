@@ -10,10 +10,15 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+/*********************
+  Routes for Site...
+**********************/
+// Home...
+Route::get('/', 'Site\SiteController@home');
 
-// Site routes...
-Route::get('/', 'Site\SiteController@home');  //Home
-
+/******************************
+  Routes for Authentication...
+******************************/
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -34,33 +39,54 @@ Route::get('password/success', ['middleware' => 'auth', function () {
     return view('auth.success');
 }]);
 
-// App routes...
-Route::get('explore', 'App\AppController@explore');  //Explore
+/************************************
+  Routes for No Autenticated users...
+************************************/
+// Explore...
+Route::get('explore', 'App\AppController@explore');
 
-/*
-* Routes for Autenticated users...
-*/
+/************************************
+    Routes for Autenticated users...
+************************************/
 Route::group(['middleware' => 'auth'], function () {
-  /*
-  * Routes for Settings...
-  */
-    // Profile Settings
+  /**********************
+      Routes for App...
+  **********************/
+    // Dashboard
+    Route::get('dashboard', 'Users\UserController@Dashboard');
+
+    // Inbox
+    Route::get('inbox', 'Users\UserController@Inbox');
+
+    // User Spaces
+    Route::get('myspaces', 'Users\UserController@MySpaces');
+
+    // Services
+    Route::get('myservices', 'Users\UserController@MyServices');
+
+  /**************************
+      Routes for Settings...
+  **************************/
+    // Profile
     Route::get('settings/profile', 'Users\UserController@edit');
 
     // Update avatar
-    Route::post('avatar/update', 'Users\UserController@avatarUpdate');
+    //Route::post('avatar/update', 'Users\UserController@avatarUpdate');
 
-  /*
-  * Routes for Posts...
-  */
-    // Create Posts
+  /**********************
+    Routes for Posts...
+  **********************/
+    // Create
     Route::get('create', 'Posts\PostController@create');
 
-    // Post Place
-    Route::post('place', 'Posts\PostController@PlaceStore');
+    // Post Space (Step 1)
+    Route::post('space', 'Posts\PostController@Space');
+
+    // Post Space (Step 2)
+    Route::post('space/main', 'Posts\PostController@SpaceMain');
 
     // Post Service
-    Route::post('service', 'Posts\PostController@ServiceStore');
+    //Route::post('service', 'Posts\PostController@ServiceStore');
 
 });
 

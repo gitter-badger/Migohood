@@ -20,12 +20,13 @@ class CreateServicesTable extends Migration
               ->onDelete('cascade');
 
             //Default
+            /*
             $table->string('type');
             $table->string('title')->nullable();;
-            $table->string('description')->nullable();;            
+            $table->string('description')->nullable();;
             $table->string('other')->nullable();
 
-            $table->string('public')->nullable();
+            $table->string('public')->nullable();*/
 
             $table->timestamps();
         });

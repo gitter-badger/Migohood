@@ -27,6 +27,7 @@
           <!-- Authenticated users -->
           @if(Auth::check())
             <li><a href="{{ url('/explore') }}">Explore</a></li>
+            <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
             <li><a href="{{ url('/create') }}" class="btn btn-start waves-effect waves-light"><i class="material-icons">library_add</i>New Announce</a></li>
 
             @include('common.nav-options')

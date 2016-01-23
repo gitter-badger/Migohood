@@ -386,6 +386,7 @@ main { flex: 1 0 auto; }
 /***************
    INFO BOXES
 ****************/
+/*
 .info {
 	position: relative;
 	background: #F7F8FA;
@@ -396,13 +397,40 @@ main { flex: 1 0 auto; }
 .info-body {
   padding: 2px 20px;
   text-align: center;
+}*/
+
+.info {
+  margin: 5px 0px 0px 0px;
+  position: relative;
+  background: #FFF;
+  border-radius: 6px;
+  border-left: 10px solid #E1E1E1;
+  border-top: 2px solid #E4E5E7;
+  border-right: 2px solid #E4E5E7;
+  border-bottom: 2px solid #E4E5E7;
 }
+
+.info-body {
+  padding: 2px 20px;
+  text-align: center;
+}
+
+.info-body i {
+  font-size: 80px;
+  margin-top: 5px;
+}
+
+.info-body h4 {
+  margin: 0px;
+}
+
+#yellow { color: #FFDB00; }
 
 /*******************
       POSTS
 ********************/
 #create_form {
-  padding: 15px;
+  padding: 0px 20px;
 }
 
 #new {
@@ -416,7 +444,7 @@ div.option {
   margin: 20px;
   padding: 12px;
   text-align: center;
-  border: 2px solid #D2D5D9;
+  border: 2px solid #DDDFE2;
   background: #FFF;
   border-radius: 4px;
   cursor: pointer;
@@ -512,6 +540,17 @@ div.bat:hover {
  padding: 30px 80px 0px 0px;
 }
 
+#place h5 {
+  vertical-align: middle;
+}
+
+#place h5 i {
+  font-size: 26px;
+  vertical-align: middle;
+  margin-bottom: 3px;
+  margin-right: 5px;
+}
+
 /* Forms */
 select {
   background: #F5F5F5;
@@ -519,7 +558,6 @@ select {
   border-radius: 4px;
   height: 2rem;
   line-height: 2rem;
-  width: 420px;
   font-size: 13px;
   padding-left: 10px;
 }
@@ -528,13 +566,18 @@ select:active {
   border: 1px solid #C1C5CB;
 }
 
+p.label {
+  font-weight: 500;
+  font-size: 13px;
+}
+
 /* Input - Placeholder */
 ::-webkit-input-placeholder { color: #44565B; }
 :-moz-placeholder { /* Firefox 18- */ color: #44565B; }
 ::-moz-placeholder { /* Firefox 19+ */  color: #44565B; }
 :-ms-input-placeholder { color: #44565B; }
 
-/* Input - Before */
+/* Input - Before
 input[type=text],
 input[type=email],
 input[type=password] {
@@ -549,9 +592,9 @@ input[type=password] {
   -moz-box-shadow: none;
   box-shadow: none;
   padding-left: 10px;
-}
+}*/
 
-/* Input - Focus */
+/* Input - Focus *//*
 input[type=text]:focus:not([readonly]),
 input[type=password]:focus:not([readonly]),
 input[type=email]:focus:not([readonly]) {

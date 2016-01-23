@@ -282,6 +282,11 @@
       </select>
     </div>
 
+    <p class="center"><br>
+        <input type="checkbox" name="agree" id="check" checked/>
+        <label for="check">I'm agree with <a href="#">Terms and conditions</a></label>
+    </p>
+
     <div class="panel-submit">
     <button class="btn btn-submit">Sign up</button>
     </div>

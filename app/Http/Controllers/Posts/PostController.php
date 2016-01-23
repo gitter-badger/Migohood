@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Posts;
 
 use Illuminate\Http\Request;
 use App\Place;
+use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -15,60 +16,81 @@ class PostController extends Controller
         //
     }
 
-
+    //Create Post
     public function create()
     {
         return view('posts.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /*
-    * Routes for Spaces...
-    */
+    /*******************
+          Spaces ...
+    *******************/
+
     //Store
-    public function PlaceStore(Request $request)
-    {
-      //Debugging
-      return 'Type: '.$request->type.' - Acommodance: '.$request->accomodance.' - Capacity: '.$request->capacity;
-      /*
-      switch ($request->type) {
-        case 1:
-          $title = "Department";
-        break;
-        case 2:
-          $title = "Department";
-        break;
-        case 3:
-          $title = "Room &amp; Breakfast";
-        break;
-      }
+    public function Space(Request $request) {
 
+
+    /*
       $request->user()->places()->create([
-          'title' => 'No title',
-          'type' => $request->type,
-      ]);
+        'default_title' => $request->type.'/'.$request->accomodance,
+        'type' => $request->type,
+        'accomodance' => $request->accomodance,
+      ]);*/
 
-      return $title;*/
+      // Redirect
+      //$space = Place::where(['default_title'=>$request->name])->firstOrFail();
+
+      //Send Initial Choice
+      return view('spaces.main')->with('previous', $request);
 
       //return Redirect('places/' . $place->id );
+
+
+    //return $request;
     }
 
+
+    //Store
+    public function SpaceMain(Request $request) {
+
+      if($request->type=='Other') {
+        return $request->other;
+      }
+
+      return $request->type.'.'.$request->accomodance.' '.$request->capacity;
     /*
-    * Routes for Services...
-    */
+      $request->user()->places()->create([
+        'default_title' => $request->type.'/'.$request->accomodance,
+        'type' => $request->type,
+        'accomodance' => $request->accomodance,
+      ]);*/
+
+      // Redirect
+      //$space = Place::where(['default_title'=>$request->name])->firstOrFail();
+
+      //Send Initial Choice
+      //return view('spaces.main')->with('previous', $request);
+
+      //return Redirect('places/' . $place->id );
+
+
+    //return $request;
+    }
+
+
+    /*******************
+          Services ...
+    *******************/
     //Store
     public function ServiceStore(Request $request)
     {
+      /*
       $Type = $request->type;
 
       //Debugging
@@ -77,7 +99,7 @@ class PostController extends Controller
       }
       else {
         return 'Type: '.$request->type.' - Other: '.$request->other.' - Title: '.$request->title.' - Description: '.$request->title;
-      }
+      }*/
 
     }
 

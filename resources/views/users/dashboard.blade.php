@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Profile Settings')
+@section('title', 'Dashboard')
 @section('content')
 <!-- Options NavBar -->
 <div id="options">
@@ -8,9 +8,10 @@
   <div class="nav-wrapper">
 
     <ul class="left">
-      <li class="active"><a href="{{ url('/settings/profile') }}">Profile</a></li>
-      <li><a href="#" class="underline">Account</a></li>
-      <li><a href="#" class="underline">Security</a></li>
+      <li class="active"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+      <li><a href="{{ url('/inbox') }}" class="underline">Inbox</a></li>
+      <li><a href="{{ url('/myspaces') }}" class="underline">Spaces</a></li>
+      <li><a href="{{ url('/myservices') }}" class="underline">Services</a></li>
     </ul>
 
   </div>
@@ -19,11 +20,12 @@
 </div>
 
 <!-- Content -->
+<!--
 <section class="body">
 <div class="container col s12">
-  <!-- Box -->
+
   <div class="box">
-    <!-- Box-body -->
+
     <div class="box-body">
       <div class="box-title">
         <i class="material-icons">person_pin</i>Basic Information
@@ -31,9 +33,9 @@
 
 
     </div>
-    <!-- Box-body -->
+
   </div>
-  <!-- Box -->
+
 </div>
-</section>
+</section>-->
 @stop
