@@ -35,6 +35,7 @@
           <!-- No Authenticated users -->
           @else
             <li><a href="{{ url('/explore') }}">Explore</a></li>
+            <li><a href="{{ url('/help') }}">Help</a></li>
             <li><a href="#">How to be a host?</a></li>
             <li><a href="{{ url('/auth/register') }}" class="btn btn-reg waves-effect waves-light">Sign up</a></li>
             <li><a href="{{ url('/auth/login') }}">Login</a></li>
@@ -69,61 +70,7 @@
 </section>
 <!-- Foot -->
 
-<!-- Footer -->
-<footer class="page-footer">
-
-  <div class="foot container row">
-
-    <div class="col s4 img">
-        <a href="{{ url('/') }}"><img src="/img/app/brand-white.png" alt=".."/></a>
-    </div>
-
-    <div class="col s2">
-      <h5>Find Out</h5>
-      <ul>
-        <li><a href="#!">Explore</a></li>
-        <li><a href="#!">How it Works?</a></li>
-        <li><a href="#!">How to be a Host?</a></li>
-      </ul>
-    </div>
-
-      <div class="col s2">
-      <h5>About</h5>
-      <ul>
-        <li><a href="#!">Company</a></li>
-        <li><a href="#!">Contact us</a></li>
-        <li><a href="#!">Press</a></li>
-      </ul>
-     </div>
-
-    <div class="col s2">
-      <h5>Legal</h5>
-      <ul>
-        <li><a href="#!">Term of Use</a></li>
-        <li><a href="#!">Privacy Policy</a></li>
-        <li><a href="#!">Support</a></li>
-      </ul>
-     </div>
-
-     <div class="col s2">
-       <h5>Connect</h5>
-       <ul>
-         <li><a href="#!">Facebook</a></li>
-         <li><a href="#!">Google</a></li>
-         <li><a href="#!">Twitter</a></li>
-         <li><a href="#!">Github</a></li>
-       </ul>
-      </div>
-
-  </div>
-
-  <div class="footer-copyright">
-    <div class="center">
-      © 2016 All rights reserved. Crafted with <span>&#10084;</span> by The Migohood's Team
-    </div>
-  </div>
-</footer>
-<!-- Footer -->
+  @include('common.footer')
 
 </body>
 </html>

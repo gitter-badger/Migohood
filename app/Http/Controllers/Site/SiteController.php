@@ -9,14 +9,28 @@ use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function home()    /* Home */
+    //Home
+    public function home()
     {
         return view('site.home');
+    }
+
+    //Help
+    public function help()
+    {
+        return view('help.center');
+    }
+
+    //Terms
+    public function terms()
+    {
+        return view('help.terms');
+    }
+
+    //Terms_es
+    public function terms_es()
+    {
+        return view('help.terms_es');
     }
 
 }
