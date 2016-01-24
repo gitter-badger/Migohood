@@ -18,6 +18,38 @@ main { flex: 1 0 auto; }
 * - Media helpers
 */
 
+/* Footer */
+footer.page-footer {
+  margin-top: 10px;
+  padding-top: 20px;
+  color: #212B3A;
+  background-color: #212B3A;
+}
+
+/* Foot */
+footer.page-footer .foot.container { width: 90%; }
+footer.page-footer .foot h5 { color: #FFF; }
+footer.page-footer .foot li a { color: #BCC3CB; }
+footer.page-footer .foot li a:hover { color: #E8EBED; }
+footer.page-footer .foot li { margin-bottom: 5px; }
+footer.page-footer .foot .img { padding: 40px 0px 0px 0px; }
+footer.page-footer .foot img { width: 300px; }
+
+/* Footer Copyright */
+footer.page-footer .footer-copyright span { color: red; }
+footer.page-footer .footer-copyright a { color: #BCC3CB; }
+
+footer.page-footer .footer-copyright {
+  overflow: hidden;
+  height: 40px;
+  line-height: 40px;
+  color: #BCC3CB;
+  font-size: 13px;
+  background-color: #1A222D;
+  font-weight: 500;
+}
+
+
 /***************
   MAIN NAVBAR
 ****************/

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('country');
             $table->string('password', 60);
 
-            $table->string('path')->default('/img/default.jpg');
+            $table->string('path')->default('/img/app/default.jpg');
             $table->rememberToken();
             $table->timestamps();
         });

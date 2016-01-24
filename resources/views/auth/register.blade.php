@@ -27,7 +27,7 @@
     </div>
 
     <div class="input-field">
-      <select class="browser-default" name="country" value="{{ old('country') }}" placeholder="Confirm Password">
+      <select class="browser-default" name="country" value="{{ old('country') }}" required>
         <option value="" disabled selected>Country</option>
         <option value='Afghanistan'>Afghanistan</option>
         <option value='Aland Islands'>Aland Islands</option>

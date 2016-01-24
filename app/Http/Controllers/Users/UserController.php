@@ -82,7 +82,7 @@ class UserController extends Controller
         $name = 'user_'.$user->id.'.'.$request->file('image')->getClientOriginalExtension();
 
         //User path is default?
-        if($user->path == '/img/default.jpg') {
+        if($user->path == '/img/app/default.jpg') {
           //Move file to avatars folder
           $request->file('image')->move('avatars', $name);
           //Save new path

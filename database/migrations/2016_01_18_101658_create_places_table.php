@@ -25,7 +25,7 @@ class CreatePlacesTable extends Migration
             $table->string('default_title');
             $table->string('type');
             $table->string('accomodance');
-            $table->string('thumbnail')->default('/img/thumbnail-default.jpg');
+            $table->string('thumbnail')->default('/img/app/thumbnail-default.jpg');
 
             $table->string('other')->nullable();
 
