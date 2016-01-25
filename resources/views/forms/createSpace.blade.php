@@ -1,10 +1,10 @@
 <!-- Create Space -->
 <!-- Form Left -->
-<form form action="/space/main" method="POST" class="col s8 row" id="place">
+<form form action="/space/basic" method="POST" class="col s12 row" id="place">
   {{ csrf_field() }}
 <div class="col s12 row">
 
-  <h5 class="light"><i class="material-icons">content_paste</i>Listing</h5>
+  <h5 class="light"><i class="material-icons">event_note</i>Basic</h5>
 
   <!--Type -->
   <div class="col s4">
@@ -128,7 +128,6 @@
 
 
 <div class="col s12">
-  <br>
   <h5 class="light"><i class="material-icons">hot_tub</i>Rooms and Beds</h5>
 
   <!-- Bedrooms -->
@@ -203,27 +202,8 @@
 </div>
 
 <div class="next right">
-  <button type="submit" class="btn btn-save">NEXT</button>
+  <button type="submit" class="btn btn-save">CREATE</button>
 </div>
 
 </form>
 <!-- Form Left -->
-
-<!-- Info Right -->
-<div class="col s4">
-  <div class="info">
-   <div class="info-body">
-     <span id="yellow"><i class="material-icons">star_half</i></span>
-
-     <h4 class="light">Let's Start!</h4>
-     <p class="light">
-       Post your space to everyone and start to make money is really easy!
-       Migohood's Users can select certain filters to conduct their
-       searches and find the accommodation that they want and need,
-       so, that's the reason why you have to check some details before start
-       a new announce!
-     </p>
-   </div>
- </div>
-</div>
-<!-- Info Right -->

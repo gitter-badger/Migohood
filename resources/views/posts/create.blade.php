@@ -24,10 +24,10 @@
 
 <!-- Content -->
 <section class="body" id="new">
-  <div class="container col s12">
-
+  <!-- Container -->
+  <div class="container row">
     <!-- Box -->
-    <div class="box">
+    <div class="box col s9">
       <!-- Box-body -->
       <div class="box-body">
         <div class="box-title">
@@ -65,6 +65,26 @@
     </div>
     <!-- Box -->
 
+    <!-- Info Right -->
+    <div class="col s3">
+      <div class="info">
+       <div class="info-body">
+         <!--<span id="yellow"><i class="material-icons">star_half</i></span>-->
+         <img src="/img/app/place.png" alt="" />
+
+         <h4 class="light">Let's Start!</h4>
+         <p class="light">
+           Post your space to everyone and start to make money is really easy!
+           Migohood's Users can select certain filters to conduct their
+           searches and find the accommodation that they want and need,
+           so, that's the reason why you have to check some details before start
+           a new announce!
+         </p>
+       </div>
+     </div>
+    </div>
+    <!-- Info Right -->
   </div>
+  <!-- Container -->
 </section>
 @stop

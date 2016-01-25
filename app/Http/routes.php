@@ -48,13 +48,19 @@ Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback
 /************************************
   Routes for No Autenticated users...
 ************************************/
-// Explore...
-Route::get('explore', 'App\AppController@explore');
+Route::get('explore', 'App\AppController@explore');             // Explore...
+
+// Show Space...
+Route::get('space/{hash}', [
+    'uses' => 'Posts\PostController@showSpace',
+    'as' => 'space.show',
+]);
 
 /************************************
     Routes for Autenticated users...
 ************************************/
 Route::group(['middleware' => 'auth'], function () {
+
   /**********************
       Routes for App...
   **********************/
@@ -85,11 +91,20 @@ Route::group(['middleware' => 'auth'], function () {
     // Create
     Route::get('create', 'Posts\PostController@create');
 
-    // Post Space (Step 1)
+    /**
+    * Post Space
+    */
+    // Step 1
     Route::post('space', 'Posts\PostController@Space');
 
-    // Post Space (Step 2)
-    Route::post('space/main', 'Posts\PostController@SpaceMain');
+    // Step 2
+    Route::post('space/basic', 'Posts\PostController@SpaceBasic');
+
+    //Step 3
+    Route::get('space/{hash}/main', [
+        'uses' => 'Posts\PostController@SpaceMain',
+        'as' => 'space.main',
+    ]);
 
     // Post Service
     //Route::post('service', 'Posts\PostController@ServiceStore');

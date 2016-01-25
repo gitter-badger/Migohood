@@ -49,7 +49,6 @@ footer.page-footer .footer-copyright {
   font-weight: 500;
 }
 
-
 /***************
   MAIN NAVBAR
 ****************/
@@ -435,11 +434,7 @@ footer.page-footer .footer-copyright {
   margin: 5px 0px 0px 0px;
   position: relative;
   background: #FFF;
-  border-radius: 6px;
-  border-left: 10px solid #E1E1E1;
-  border-top: 2px solid #E4E5E7;
-  border-right: 2px solid #E4E5E7;
-  border-bottom: 2px solid #E4E5E7;
+  border: 1px solid #DDDFE2;
 }
 
 .info-body {
@@ -447,16 +442,15 @@ footer.page-footer .footer-copyright {
   text-align: center;
 }
 
-.info-body i {
-  font-size: 80px;
-  margin-top: 5px;
-}
-
 .info-body h4 {
   margin: 0px;
 }
 
-#yellow { color: #FFDB00; }
+.info-body img {
+  width: 110px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
 
 /*******************
       POSTS
@@ -467,6 +461,10 @@ footer.page-footer .footer-copyright {
 
 #new {
   margin: 20px 0px;
+}
+
+#new .container {
+  width: 90%;
 }
 
 div.option {
@@ -574,6 +572,7 @@ div.bat:hover {
 
 #place h5 {
   vertical-align: middle;
+  padding-top: 25px;
 }
 
 #place h5 i {
@@ -662,3 +661,23 @@ textarea.materialize-textarea:focus:not([readonly]) {
   -moz-box-shadow: none;
   box-shadow: none;
 }*/
+
+/**********
+   PLACE
+***********/
+#place .container {
+  width: 70%;
+}
+
+.place-box {
+  padding: 15px;
+}
+
+.place-box img {
+  width: 100%;
+}
+
+.place-box h5 {
+  padding: 0px;
+  margin: 0px !important;
+}

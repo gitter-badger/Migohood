@@ -19,14 +19,23 @@ class CreateServicesTable extends Migration
               ->references('id')->on('users')
               ->onDelete('cascade');
 
-            //Default
+            //Create
             /*
             $table->string('type');
-            $table->string('title')->nullable();;
-            $table->string('description')->nullable();;
-            $table->string('other')->nullable();
+            $table->string('other');
+            $table->string('accomodance');
+            $table->string('capacity');
+            $table->string('bedrooms');
+            $table->string('beds');
+            $table->string('bathrooms');
 
-            $table->string('public')->nullable();*/
+            $table->string('def_title');
+            $table->string('thumbnail')->default('/img/app/thumbnail.png');
+
+            $table->string('public')->nullable();
+
+            $table->string('title');
+            $table->string('description')->nullable();*/
 
             $table->timestamps();
         });

@@ -18,7 +18,26 @@ class Place extends Model
    *
    * @var array
    */
-  protected $fillable = ['name', 'default_title', 'type', 'accomodance', 'other', 'thumbnail'];
+  protected $fillable =
+  [
+    'hash',
+    'type',
+    'other',
+    'accomodance',
+    'capacity',
+    'bedrooms',
+    'beds',
+    'bathrooms',
+
+    'def_title',
+    'thumbnail',
+
+    'public',
+    'where',
+
+    'title',
+    'description'
+  ];
 
   /**
   * Get the User that owns the places.

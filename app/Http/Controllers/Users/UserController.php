@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Users;
 
 use Auth;
 //use File;
+use App\Place;
 use Validator;
 //
 
@@ -28,7 +29,10 @@ class UserController extends Controller
     //MySpaces
     public function MySpaces()
     {
-        return view('users.spaces');
+      //List of places
+      $user = Auth::user();
+      $places = $user::find(1)->places;
+      return view('users.spaces', ['places' => $places]);
     }
 
     //MyServices

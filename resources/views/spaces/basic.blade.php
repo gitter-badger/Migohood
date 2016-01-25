@@ -1,7 +1,5 @@
 @extends('layouts.app')
-@section('title')
-  Main - {{ $space->def_title }}
-@stop
+@section('title') New Announce: {{ $previous->type }} - {{ $previous->accomodance }} @stop
 @section('content')
 <section class="body" id="new">
   <!-- Container -->
@@ -12,7 +10,7 @@
       <div class="box-body">
       <!-- Create_Form -->
       <div class="row" id="create_form">
-        @include('forms.createMainSpace')
+        @include('forms.createSpace')
        </div>
       <!-- Create form -->
       </div>
@@ -25,11 +23,11 @@
       <div class="info">
        <div class="info-body">
          <!--<span id="yellow"><i class="material-icons">star_half</i></span>-->
-         <img src="/img/app/search.png" alt="" />
+         <img src="/img/app/smart.png" alt="" />
 
-         <h4 class="light">Place created!</h4>
-         <p class="light"> Watch it as a previous, following this link</p>
-           <a class="btn" href="{{ url('/space/'.$space->hash) }}">Go!</a>.
+         <h4 class="light">Tips!</h4>
+         <p class="light">
+           Every space on Migohood is unique. Highlight what makes your listing welcoming so that it stands out to guests who want to stay in your area.
          </p>
        </div>
      </div>
