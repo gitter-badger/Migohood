@@ -147,8 +147,7 @@ main { flex: 1 0 auto; }
 
 /* Box */
 #box {
-  padding: 50px 0px 0px 10px;
-  width: 650px;
+  padding-top: 60px;
   text-align: center;
 }
 
@@ -157,6 +156,13 @@ main { flex: 1 0 auto; }
   padding: 0px;
   margin: 0px;
   margin-bottom: 18px;
+}
+
+#box p.first {
+  color: #4C5862;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
 }
 
 #box p {
@@ -198,10 +204,10 @@ main { flex: 1 0 auto; }
 }
 
 /* Input - Placeholder */
-::-webkit-input-placeholder { color: #798997; }
-:-moz-placeholder { /* Firefox 18- */ color: #798997; }
-::-moz-placeholder { /* Firefox 19+ */  color: #798997; }
-:-ms-input-placeholder { color: #798997; }
+::-webkit-input-placeholder { text-align: center; color: #798997; }
+:-moz-placeholder { /* Firefox 18- */  text-align: center; color: #798997; }
+::-moz-placeholder { /* Firefox 19+ */  text-align: center; color: #798997; }
+:-ms-input-placeholder { text-align: center; color: #798997; }
 
 /* Input - Before */
 input[type=text] {
@@ -239,13 +245,8 @@ input[type=text]:focus:not([readonly]) {
   padding: 0px;
 }
 
-#box span a {
-  color: #02A4F5;
-}
-
-#box span a:hover {
-  color: #0297E1;
-}
+#box span a { color: #02A4F5; }
+#box span a:hover { color: #0297E1; }
 
 /* Underline Reveal */
 .underline {
@@ -253,7 +254,6 @@ input[type=text]:focus:not([readonly]) {
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  /*box-shadow: 0 0 1px rgba(0, 0, 0, 0);*/
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
@@ -288,14 +288,21 @@ input[type=text]:focus:not([readonly]) {
 /* Background img */
 .footer img {
   position: absolute;
-  width: 75%;
+  width: 80%;
   height: auto;
-  margin-top: -300px;
+  margin-top: -350px;
   right: 0;
   z-index: -1;
-  border-bottom: 2px solid #D2D7DC;
   padding-bottom: 0px;
+  border-bottom: 2px solid #D2D7DC;
 }
+
+/***************
+      INFO
+****************/
+#info { padding: 40px 0px 20px 0px; }
+#info .img { text-align: left; }
+#info .img img { width: 280px; }
 
 /***************
   INTRODUCTION

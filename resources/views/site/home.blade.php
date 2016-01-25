@@ -1,12 +1,12 @@
 @extends('layouts.site')
-@section('title', 'Rent and stay with hosts... or offer services around the World')
+@section('title', 'Rent from and stay with hosts... or offer services around the World')
 @section('content')
 
 <!-- Welcome -->
 <section id="home">
   <div id="box">
     <h1 class="light">Mine is yours!</h1>
-    <p class="light">Rent and stay with hosts or offer your services around the world.</p>
+    <p class="light first">Rent from and stay with hosts or offer your services around the world.</p>
     <p class="light">Discover places and services near you <strong>has never been so easy!</strong></p>
 
     <!-- Form -->
@@ -26,11 +26,20 @@
     <span class="light">...or find out <a href="#" class="underline"><strong>How it works</strong></a></span>
   </div>
 
-  <div class="footer">
+  <div class="footer center">
     <img src="/img/site/back-foot01.png" alt=".." />
   </div>
 </section>
 <!-- Welcome -->
+
+<section class="container" id="info">
+  <!-- Img -->
+  <div class="col s4 img">
+    <img src="/img/site/couple.png" alt="" />
+  </div>
+</section>
+
+<div class="container divider"></div>
 
 <!-- Second -->
 <!--
