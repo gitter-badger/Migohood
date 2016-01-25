@@ -23,6 +23,10 @@
     <button class="btn btn-submit">Login</button>
     </div>
 
+    <div class="panel-social">
+    <a href="{{ url('auth/facebook') }}" class="btn btn-facebook">Log in with <span>Facebook</span></a>
+    </div>
+
     <div class="panel-options">
       <a href="{{ url('auth/register') }}">Not a member? <strong>Sign up now! </strong></a>
     </div>

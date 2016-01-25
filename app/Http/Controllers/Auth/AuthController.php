@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use Validator;
+use Socialite;
+use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -45,10 +47,9 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'lastname' => 'required|max:255',
-            'country' => 'required',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
+            'country' => 'required',
             'agree' => 'required',
         ]);
     }
@@ -63,10 +64,52 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
-            'lastname' => $data['lastname'],
-            'country' => $data['country'],
             'email' => $data['email'],
+            'country' => $data['country'],
+            'avatar' => $data['avatar'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    /****************
+    * Other Services
+    *****************/
+    /**
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToFacebook()
+    {
+      return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     *  Obtain the user information from Facebook.
+     *
+     * @return Response
+     */
+    public function handleFacebookCallback()
+    {
+        $user = Socialite::driver('facebook')->user();
+
+        $data = [
+          'name'=>$user->getName(),
+          'email'=>$user->getEmail(),
+          'password'=>$user->token,
+          'avatar'=>$user->getAvatar(),
+          'country'=>'Colombia',
+        ];
+
+        $userDB = User::where('email', $user->email)->first();
+
+        if(!is_null($userDB)) {
+          Auth::login($userDB);
+        }
+        else {
+          Auth::login($this->create($data));
+        }
+
+        return redirect('/explore');
     }
 }

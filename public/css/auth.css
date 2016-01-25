@@ -25,7 +25,7 @@ main { flex: 1 0 auto; }
 
 .panel img { margin-bottom: 15px; }
 
-#register { padding: 20px 20px 0px 20px; }
+#register { padding: 40px 20px 0px 20px; }
 #login { padding: 80px 20px 0px 20px; }
 #password { padding: 100px 0px 0px 0px; }
 
@@ -34,6 +34,12 @@ main { flex: 1 0 auto; }
 }
 
 .panel-submit {
+  margin: 0 auto;
+  margin-left: 15px;
+  padding-top: 15px;
+}
+
+.panel-social {
   margin: 0 auto;
   margin-left: 15px;
   padding-top: 15px;
@@ -199,7 +205,7 @@ select {
     BUTTONS
 **************/
 .btn-submit {
-	width: 95%;
+	width: 100%;
 	background: #02A4F5;
 	color: #FFF;
   font-weight: 600;
@@ -211,5 +217,25 @@ select {
 
 .btn-submit:hover, .btn-submit:focus {
 	background: #0297E1 !important;
+  box-shadow: none; -webkit-box-shadow:none;
+}
+
+.btn-facebook {
+	width: 100%;
+	background: #3B5998;
+	color: #FFF;
+  font-weight: 400;
+  height: 32px;
+  line-height: 32px;
+  text-transform: capitalize;
+	box-shadow: none; -webkit-box-shadow:none;
+}
+
+.btn-facebook span {
+  font-weight: 600;
+}
+
+.btn-facebook:hover, .btn-facebook:focus {
+	background: #466AB4 !important;
   box-shadow: none; -webkit-box-shadow:none;
 }
