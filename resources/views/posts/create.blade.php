@@ -70,7 +70,7 @@
       <div class="info">
        <div class="info-body">
          <!--<span id="yellow"><i class="material-icons">star_half</i></span>-->
-         <img src="/img/app/place.png" alt="" />
+         <img src="/img/app/map.png" alt="" />
 
          <h4 class="light">Let's Start!</h4>
          <p class="light">

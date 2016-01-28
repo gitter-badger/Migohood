@@ -41,6 +41,8 @@ Route::get('password/success', ['middleware' => 'auth', function () {
     return view('auth.success');
 }]);
 
+
+
 // Facebook Routes ...
 Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebook');
 Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback');
@@ -61,6 +63,7 @@ Route::get('space/{hash}', [
 ************************************/
 Route::group(['middleware' => 'auth'], function () {
 
+   Route::get('test', 'Users\UserController@test');
   /**********************
       Routes for App...
   **********************/
@@ -99,12 +102,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Step 2
     Route::post('space/basic', 'Posts\PostController@SpaceBasic');
-
-    //Step 3
-    Route::get('space/{hash}/main', [
-        'uses' => 'Posts\PostController@SpaceMain',
-        'as' => 'space.main',
-    ]);
 
     // Post Service
     //Route::post('service', 'Posts\PostController@ServiceStore');

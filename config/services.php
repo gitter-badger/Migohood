@@ -37,7 +37,7 @@ return [
     'facebook' => [
       'client_id' => env('FB_ID'),
       'client_secret' => env('FB_KEY'),
-      'redirect' => 'http://localhost:8000/auth/facebook/callback',
+      'redirect' => env('FB_CALL'),
     ],
 
 ];

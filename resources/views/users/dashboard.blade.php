@@ -8,10 +8,10 @@
   <div class="nav-wrapper">
 
     <ul class="left">
+      <li class="active"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+      <li><a href="{{ url('/inbox') }}" class="underline">Inbox</a></li>
       <li><a href="{{ url('/myspaces') }}" class="underline">Spaces</a></li>
       <li><a href="{{ url('/myservices') }}" class="underline">Services</a></li>
-      <li class="active"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-      <li><a href="{{ url('/inbox') }}"  class="underline">Inbox</a></li>
     </ul>
 
   </div>

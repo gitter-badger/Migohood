@@ -17,7 +17,7 @@ class UserController extends Controller
     //Dashboard
     public function Dashboard()
     {
-        return view('users.dashboard');
+       return view('users.dashboard');
     }
 
     //Inbox
@@ -31,7 +31,8 @@ class UserController extends Controller
     {
       //List of places
       $user = Auth::user();
-      $places = $user::find(1)->places;
+      $places = $user->places;
+
       return view('users.spaces', ['places' => $places]);
     }
 
