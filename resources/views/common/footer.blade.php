@@ -10,7 +10,7 @@
     <div class="col s2">
       <h5>Find Out</h5>
       <ul>
-        <li><a href="#!">Explore</a></li>
+        <li><a href="{{ url('explore') }}">Explore</a></li>
         <li><a href="#!">How it Works?</a></li>
         <li><a href="#!">How to be a Host?</a></li>
       </ul>
@@ -30,7 +30,7 @@
       <ul>
         <li><a href="{{ url('help') }}">Help Center</a></li>
         <li><a href="{{ url('terms') }}">Term of Use</a></li>
-        <li><a href="#!">Privacy Policy</a></li>
+        <li><a href="{{ url('terms') }}">Privacy Policy</a></li>
         <li><a href="#!">Support</a></li>
       </ul>
      </div>
@@ -41,7 +41,7 @@
          <li><a href="#!">Facebook</a></li>
          <li><a href="#!">Google</a></li>
          <li><a href="#!">Twitter</a></li>
-         <li><a href="#!">Github</a></li>
+         <li><a href="https://github.com/yammadev/Migohood">Github</a></li>
        </ul>
       </div>
 

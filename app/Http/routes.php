@@ -100,12 +100,6 @@ Route::group(['middleware' => 'auth'], function () {
     // Step 2
     Route::post('space/basic', 'Posts\PostController@SpaceBasic');
 
-    //Step 3
-    Route::get('space/{hash}/main', [
-        'uses' => 'Posts\PostController@SpaceMain',
-        'as' => 'space.main',
-    ]);
-
     // Post Service
     //Route::post('service', 'Posts\PostController@ServiceStore');
 

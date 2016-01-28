@@ -33,6 +33,7 @@ class PostController extends Controller
           Spaces ...
     *******************/
     // Show
+    /*
     public function showSpace($hash)
     {
       //Get the place
@@ -43,7 +44,7 @@ class PostController extends Controller
 
       return view('spaces.show', ['space' => $space, 'owner' => $owner ]);
 
-    }
+    }*/
 
     /**
     * Create
@@ -59,26 +60,31 @@ class PostController extends Controller
     public function SpaceBasic(Request $request)
     {
       //Identifier
-      $hash = str_random(30);
+      $hash = str_random(40);
       $search = Place::where('hash', $hash)->first();
 
       //If Hash exists, Rehash
       if(!is_null($search)) {
-        $hash = str_random(30);
+        $hash = str_random(40);
       }
 
       //Type is Other?
-      if($request->type=='Other') { //Then Save default title and Category
-        $def_title = $request->type.' ('.$request->other.') / '.$request->accomodance;
-        $other = $request->other;
+      if($request->type=='Other') { //Then Save Category
+        //$def_title = $request->type.' ('.$request->other.') / '.$request->accomodance;
+        $other = $request->other_input;
       }
       else { //Anyway save default title but no Category
-        $def_title = $request->type.' / '.$request->accomodance;
         $other = 'NULL';
       }
 
-      //Next Path
-      $uri = 'space/' . $hash . '/main';
+      //Is the zic code empty?
+      /*
+      if($request->zip==' ') {
+        $zip = 'NULL';
+      }
+      else {
+        $zip = $request->zip;
+      }*/
 
       //Create Place
       $request->user()->places()->create([
@@ -90,22 +96,20 @@ class PostController extends Controller
         'bedrooms' => $request->bedrooms,
         'beds' => $request->beds,
         'bathrooms' => $request->bathrooms,
-        'def_title' => $def_title,
-
-        'where'=> $uri,
+        'price' => $request->price,
+        'per' => $request->per,
+        'coin' => $request->coin,
+        'title' => $request->title,
+        'description' => $request->description,
+        'country' => $request->country,
+        'city' => $request->city,
+        'address' => $request->address,
+        //'zip' => $zip,
+        'zip' => $request->zip,
       ]);
 
       // Redirect
-      return Redirect($uri);
-    }
-
-    // Store (Step 3)
-    public function SpaceMain($hash)
-    {
-      //Get the place
-      $space = Place::where('hash', $hash)->first();
-
-      return view('spaces.main', ['space' => $space ]);
+      return Redirect('/myspaces');
 
     }
 

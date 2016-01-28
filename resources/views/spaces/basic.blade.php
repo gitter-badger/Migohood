@@ -23,11 +23,12 @@
       <div class="info">
        <div class="info-body">
          <!--<span id="yellow"><i class="material-icons">star_half</i></span>-->
-         <img src="/img/app/smart.png" alt="" />
+         <img src="/img/app/graph.png" alt="" />
 
-         <h4 class="light">Tips!</h4>
+         <h4 class="light">How to?</h4>
          <p class="light">
            Every space on Migohood is unique. Highlight what makes your listing welcoming so that it stands out to guests who want to stay in your area.
+           Migohood hosters can increase their rates adding extra features, and you know what's cool? you put the price you want!
          </p>
        </div>
      </div>

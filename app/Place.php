@@ -21,22 +21,28 @@ class Place extends Model
   protected $fillable =
   [
     'hash',
+    'thumbnail',
+
     'type',
     'other',
     'accomodance',
     'capacity',
+
     'bedrooms',
     'beds',
     'bathrooms',
 
-    'def_title',
-    'thumbnail',
-
-    'public',
-    'where',
+    'price',
+    'per',
+    'coin',
 
     'title',
-    'description'
+    'description',
+
+    'country',
+    'city',
+    'address',
+    'zip'
   ];
 
   /**

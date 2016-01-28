@@ -5,7 +5,7 @@
 * { box-sizing: border-box; }
 
 body {
-  background: #ECEEF1 !important;
+  background: #F6F8FA !important;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -264,7 +264,7 @@ footer.page-footer .footer-copyright {
 .box {
   background: #FFF !important;
   border-radius: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   border: 1px solid #DDDFE2;
 }
 
@@ -292,6 +292,7 @@ footer.page-footer .footer-copyright {
 /*******************
    PROFILE SETTINGS
 ********************/
+/*
 #edit {
   padding: 20px 10px 20px 40px;
 }
@@ -358,7 +359,7 @@ footer.page-footer .footer-copyright {
 #edit .btn-save:hover {
   background: #2FB966;
 }
-
+*/
 /***************
   ALERT BOXES
 ****************/
@@ -573,6 +574,7 @@ div.bat:hover {
 #place h5 {
   vertical-align: middle;
   padding-top: 25px;
+  text-align: center;
 }
 
 #place h5 i {
@@ -662,9 +664,265 @@ textarea.materialize-textarea:focus:not([readonly]) {
   box-shadow: none;
 }*/
 
-/**********
-   PLACE
-***********/
+/* Input - Before */
+input[type=text] {
+  background: #F5F5F5 !important;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  height: 2rem !important;
+  outline: none;
+  font-size: 13px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding-left: 10px;
+  margin-top: 0px;
+}
+
+/* Input - Focus */
+input[type=text]:focus:not([readonly]) {
+  border: 1px solid #C1C5CB;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* PRICE */
+.price-box {
+  background: #21B4FD !important;
+  height: auto;
+  padding: 0px 10px 10px 0px;
+  border-radius: 4px;
+}
+
+.price-box h5 { color: #FFF; }
+.price { padding: 0px 20px 10px 20px; }
+
+/* Input - Placeholder */
+.price-box ::-webkit-input-placeholder { font-size: 14px; color: #FFF; }
+.price-box :-moz-placeholder { font-size: 14px; /* Firefox 18- */ color: #FFF; }
+.price-box ::-moz-placeholder { font-size: 14px; /* Firefox 19+ */  color: #FFF; }
+.price-box :-ms-input-placeholder { font-size: 14px; color: #FFF; }
+
+/* Input - Before */
+.price-box .price input[type=text] {
+  background: none !important;
+  border: 1px solid #21B4FD;  border-bottom: 3px solid #FFF;
+  color: #FFF;
+  border-radius: 4px;
+  height: 2.3rem !important;
+  outline: none;
+  font-size: 25px;
+  font-weight: 400;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  margin-top: 0px;
+  text-align: center;
+}
+
+/* Input - Focus */
+.price-box input[type=text]:focus:not([readonly]) {
+  border: 1px solid #21B4FD;
+  border-bottom: 3px solid #FFF;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/************
+ BOX NOTHING
+*************/
+.box-nothing {
+  text-align: center;
+  padding: 50px 0px;
+  margin-bottom: 10px;
+}
+
+.box-nothing i {
+  color: #DDDFE2;
+  font-size: 92px;
+  padding-bottom: 0px;
+}
+
+.box-nothing h5 {
+  color: #6A727D;
+  margin: 0px;
+}
+
+.box-nothing p {
+  color: #B2B7Be;
+  font-weight: 400;
+}
+
+.box-nothing .btn {
+  text-align: center;
+  vertical-align: middle;
+	height: 34px;
+	border-radius: 4px;
+	text-transform: capitalize !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+  margin: 15px 0px;
+  /* background: #1A8AF3 !important; */
+  background: #02A4F5 !important;
+}
+
+.box-nothing .btn:hover {
+  background: #0297E2;
+}
+
+/************
+    PLACES
+*************/
+.myplaces {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Place Box */
+.place-box .row,
+.place-box .col  {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.place-box {
+  background: #FFF !important;
+  border-radius: 3px;
+  padding: 0px;
+  height: 200px;
+  border: 1px solid #DDDFE2;
+}
+
+/**
+ * Place Box - Left
+ **/
+.place-box img {
+  width: 100% !important;
+  height: 199px;
+  border-radius: 4px;
+  border-bottom: 1px solid #DDDFE2;
+}
+
+.place-box .img .change {
+  margin-top: -90px;
+  margin-left: -7px;
+  padding: 0px;
+  position: absolute;
+}
+
+.place-box .img .change .btn {
+  padding: 0px 12px;
+  font-size: 13px;
+  text-transform: capitalize !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+  background: #1CCC54 !important;
+}
+
+.place-box .img .change .btn:hover { background: #1edd5b !important; }
+
+/**
+ * Place Box - Center
+ **/
+/* Top */
+.place-box .top {
+  padding: 10px 10px 0px 20px !important;
+}
+
+.place-box .top .first {
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 0px;
+  color: #9DA3AC;
+  padding-bottom: 0px;
+}
+
+.place-box .top .second {
+  padding: 0px !important;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.place-box .top .third {
+  font-size: 12px;
+}
+
+.place-box .top .third span {
+  border-radius: 4px;
+  padding: 6px 15px;
+  background: #02A4F5;
+  color: #FFF;
+}
+/* Middle */
+.place-box .middle {
+  vertical-align: middle;
+  color: #5D6C78;
+  padding: 0px 0px 0px 20px !important;
+}
+
+/* Bottom */
+.place-box .bottom {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.place-box .bottom i {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.place-box .bottom .boxy {
+  border-right: 1px solid #DDDFE2;
+}
+
+.place-box .bottom .tag {
+  font-weight: 300;
+  border-right: 1px solid #DDDFE2;
+}
+
+/**
+ * Place Box - Right
+ **/
+.place-box .price {
+  text-align: center;
+}
+
+.place-box .price-body {
+  margin: 18px 0px 10px 0px;
+  border-left: 1px solid #DDDFE2;
+}
+
+.place-box .price-body h5 {
+  font-size: 35px;
+}
+
+.place-box .price-body p.second {
+  font-size: 20px;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.place-box .price-body p.third {
+  font-size: 12px;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.place-box .price .btn {
+  padding: 0px 25px;
+  font-size: 13px;
+  text-transform: capitalize !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+  background: #3B4C60 !important;
+}
+
+
+/*
 #place .container {
   width: 70%;
 }
@@ -681,3 +939,4 @@ textarea.materialize-textarea:focus:not([readonly]) {
   padding: 0px;
   margin: 0px !important;
 }
+*/

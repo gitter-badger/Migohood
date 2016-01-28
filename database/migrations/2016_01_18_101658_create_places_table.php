@@ -19,26 +19,35 @@ class CreatePlacesTable extends Migration
               ->references('id')->on('users')
               ->onDelete('cascade');
 
-            //Create
+            $table->timestamps();
             $table->string('hash');
+            $table->string('thumbnail')->default('/img/app/thumbnail.png');
+
+            /* 1 */
             $table->string('type');
             $table->string('other');
             $table->string('accomodance');
             $table->string('capacity');
+
+            /* 2 */
             $table->string('bedrooms');
             $table->string('beds');
             $table->string('bathrooms');
 
-            $table->string('def_title');
-            $table->string('thumbnail')->default('/img/app/thumbnail.png');
+            /* 3 */
+            $table->string('price');
+            $table->string('per');
+            $table->string('coin');
 
-            $table->string('public')->nullable();
-            $table->string('where')->nullable();
-
+            /* 4 */
             $table->string('title');
-            $table->string('description')->nullable();
+            $table->string('description');
 
-            $table->timestamps();
+            /* 5 */
+            $table->string('country');
+            $table->string('city');
+            $table->string('address');
+            $table->string('zip');
 
         });
     }
