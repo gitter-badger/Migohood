@@ -44,8 +44,8 @@ Route::get('password/success', ['middleware' => 'auth', function () {
 
 
 // Facebook Routes ...
-Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebook');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback');
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
 
 /************************************
   Routes for No Autenticated users...
