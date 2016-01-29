@@ -33,7 +33,7 @@ class UserController extends Controller
       $user = Auth::user();
       $places = $user->places;
 
-      return view('users.spaces', ['places' => $places]);
+      return view('users.spaces', ['places' => $places]); 
     }
 
     //MyServices
