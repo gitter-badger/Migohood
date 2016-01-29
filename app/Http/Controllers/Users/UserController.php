@@ -30,10 +30,10 @@ class UserController extends Controller
     public function MySpaces()
     {
       //List of places
-      $user = Auth::user();
-      $places = $user->places;
+      //$user = Auth::user();
+      $places = Auth::user()->places;
 
-      return view('users.spaces', ['places' => $places]);  
+      return view('users.spaces', ['places' => $places]);
     }
 
     //MyServices

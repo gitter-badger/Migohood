@@ -250,7 +250,7 @@
       <h5 class="light"><i class="material-icons">filter_center_focus</i>5. Location</h5>
 
       <!-- Country -->
-      <input type="text" name="country" placeholder="{{ Auth::user()->country }}" required />
+      <input type="text" name="country" placeholder="{{ Auth::user()->country }}"/>
 
       <!-- City -->
       <input type="text" name="city" placeholder="City" required />
