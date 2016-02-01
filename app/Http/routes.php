@@ -13,10 +13,20 @@
 /*********************
   Routes for Site...
 **********************/
-Route::get('/', 'Site\SiteController@home');        // Home...
-Route::get('help', 'Site\SiteController@help');     // Help...
-Route::get('terms', 'Site\SiteController@terms');   // Terms & Conditions ...
-Route::get('terms_es', 'Site\SiteController@terms_es');   // Terms & Conditions ...
+// Home...
+Route::get('/', 'SiteController@home');
+
+/*************************
+  Routes for HelpCenter...
+**************************/
+// Help...
+Route::get('help', 'SiteController@help');
+
+// Terms & Conditions ...
+Route::get('terms', 'SiteController@terms');
+
+// Terms & Conditions ...
+Route::get('terms_es', 'SiteController@terms_es');
 
 /******************************
   Routes for Authentication...
@@ -41,70 +51,83 @@ Route::get('password/success', ['middleware' => 'auth', function () {
     return view('auth.success');
 }]);
 
-
-
 // Facebook Routes ...
-Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebook');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback');
 
 /************************************
   Routes for No Autenticated users...
 ************************************/
-Route::get('explore', 'App\AppController@explore');             // Explore...
+Route::get('explore', 'AppController@explore');             // Explore...
 
 // Show Space...
+/*
 Route::get('space/{hash}', [
     'uses' => 'Posts\PostController@showSpace',
     'as' => 'space.show',
-]);
+]);*/
 
 /************************************
     Routes for Autenticated users...
 ************************************/
 Route::group(['middleware' => 'auth'], function () {
 
-   Route::get('test', 'Users\UserController@test');
   /**********************
       Routes for App...
   **********************/
     // Dashboard
-    Route::get('dashboard', 'Users\UserController@Dashboard');
+    Route::get('dashboard', 'AppController@Dashboard');
 
     // Inbox
-    Route::get('inbox', 'Users\UserController@Inbox');
+    Route::get('inbox', 'AppController@Inbox');                                // Inbox - Received
+    Route::get('inbox/sent', 'AppController@InboxSent');                       // Inbox - Sent
+    Route::get('inbox/archived', 'AppController@InboxArchived');               // Inbox - ArchivedAppController
 
-    // User Spaces
-    Route::get('myspaces', 'Users\UserController@MySpaces');
+    // My Spaces
+    Route::get('myspaces', 'AppController@MySpaces');                          // My Spaces - All
+    Route::get('myspaces/listed', 'AppController@MySpacesListed');             // My Spaces - Listed
+    Route::get('myspaces/notlisted', 'AppController@MySpacesNotListed');       // My Spaces - Listed
 
-    // Services
-    Route::get('myservices', 'Users\UserController@MyServices');
+    // My Offices
+    Route::get('myoffices', 'AppController@MyOffices');                        // My Offices - All
+    Route::get('myoffices/listed', 'AppController@MyOfficesListed');           // My Offices - Listed
+    Route::get('myoffices/notlisted', 'AppController@MyOfficesNotListed');     // My Offices - Listed
 
-  /**************************
-      Routes for Settings...
-  **************************/
-    // Profile
-    Route::get('settings/profile', 'Users\UserController@edit');
+    // My Services
+    Route::get('myservices', 'AppController@MyServices');                      // My Services - All
+    Route::get('myservices/listed', 'AppController@MyServicesListed');         // My Services - Listed
+    Route::get('myservices/notlisted', 'AppController@MyServicesNotListed');   // My Services - Listed
+
+    // Create
+    Route::post('create', 'AppController@create');
+
+    // Create Spaces
+    Route::get('create/spaces', 'AppController@createSpaces');
+
+    // Create Service
+    Route::get('create/services', 'AppController@createServices');
+
+
+  /**********************
+    Routes for Spaces ...
+  **********************/
+    // Create Space
+    Route::post('space/create', 'SpaceController@create');
+
+    // Preview
+    Route::get('space/{hash}/preview', [
+        'uses' => 'SpaceController@preview',
+        'as' => 'space.preview',
+    ]);
+
+    // Basics
+    Route::get('space/{hash}/basics', [
+        'uses' => 'SpaceController@basics',
+        'as' => 'space.basics',
+    ]);
 
     // Update avatar
     //Route::post('avatar/update', 'Users\UserController@avatarUpdate');
-
-  /**********************
-    Routes for Posts...
-  **********************/
-    // Create
-    Route::get('create', 'Posts\PostController@create');
-
-    /**
-    * Post Space
-    */
-    // Step 1
-    Route::post('space', 'Posts\PostController@Space');
-
-    // Step 2
-    Route::post('space/basic', 'Posts\PostController@SpaceBasic');
-
-    // Post Service
-    //Route::post('service', 'Posts\PostController@ServiceStore');
 
 });
 

@@ -25,7 +25,7 @@
   </div>
 </main>
 <!-- Footer Img -->
-<div class="footer">
+<div class="footer center">
   <img src="/img/site/back-foot02.png" alt=".." />
 </div>
 

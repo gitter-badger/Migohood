@@ -52,6 +52,7 @@ main { flex: 1 0 auto; }
 #intro .back img {
   width: 1000px;
   z-index: -1;
+  border-bottom: 2px solid #2571BA;
 }
 
 

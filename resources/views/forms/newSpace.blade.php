@@ -1,5 +1,5 @@
 <!-- New Space -->
-<form form action="/space" method="POST" id="place">
+<form form action="/space/create" method="POST" id="new_space">
   {{ csrf_field() }}
 
   <!-- Type -->

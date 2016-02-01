@@ -24,23 +24,7 @@
         </ul>
 
         <ul class="right">
-          <!-- Authenticated users -->
-          @if(Auth::check())
-            <li><a href="{{ url('/explore') }}">Explore</a></li>
-            <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-            <li><a href="{{ url('/create') }}" class="btn btn-start waves-effect waves-dark"><i class="material-icons">library_add</i>New Announce</a></li>
-
-            @include('common.nav-options')
-
-          <!-- No Authenticated users -->
-          @else
-          <li><a href="{{ url('/explore') }}">Explore</a></li>
-          <li><a href="{{ url('/help') }}">Help</a></li>
-          <li><a href="#">How to be a host?</a></li>
-          <li><a href="{{ url('/auth/register') }}" class="btn btn-reg waves-effect waves-light">Sign up</a></li>
-          <li><a href="{{ url('/auth/login') }}">Login</a></li>
-          @endif
-
+          @include('common.options')
         </ul>
 
         <!-- Todo  Side nav -->
@@ -48,7 +32,9 @@
       </div>
     </nav>
     </div>
+    @include('common.modal')
   </header>
+  <!-- Navbar -->
 
 <body>
 <main>

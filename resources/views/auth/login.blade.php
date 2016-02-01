@@ -24,7 +24,11 @@
     </div>
 
     <div class="panel-social">
-    <a href="{{ url('auth/facebook') }}" class="btn btn-facebook">Log in with <span>Facebook</span></a>
+      <a href="{{ url('auth/facebook') }}" class="btn btn-facebook">Log in with <span>Facebook</span></a>
+    </div>
+
+    <div class="panel-social">
+      <a href="{{ url('') }}" class="btn btn-google">Log in with <span>Google</span></a>
     </div>
 
     <div class="panel-options">
