@@ -31,6 +31,7 @@
       </div>
     </nav>
     </div>
+    @include('common.modal')
   </header>
   <!-- Navbar -->
 <body>

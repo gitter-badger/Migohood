@@ -7,7 +7,7 @@
   <div id="box">
     <h1 class="light">Mine is yours!</h1>
     <p class="light first">Rent from and stay with hosts or offer your services around the world.</p>
-    <p class="light">Discovering places and services near you <strong>has never been so easy!</strong></p>
+    <p class="light">Discovering places, offices and services near you <strong>has never been so easy!</strong></p>
 
     <!-- Form -->
     <form class="row" action="" method="">

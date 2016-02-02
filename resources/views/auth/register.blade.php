@@ -26,7 +26,7 @@
       <input placeholder="Confirm Password" type="password" name="password_confirmation" required>
     </div>
 
-    <p class="center"><br>
+    <p class="center">
       <input type="checkbox" name="agree" id="check" checked/>
       <label for="check">I'm agree with <a href="#">Terms and conditions</a></label>
     </p>
@@ -39,7 +39,7 @@
     <div class="panel-social">
       <a href="{{ url('auth/facebook') }}" class="btn btn-facebook">Sign up with <span>Facebook</span></a>
     </div>
-    
+
     <div class="panel-social">
       <a href="{{ url('') }}" class="btn btn-google">Sign up with <span>Google</span></a>
     </div>

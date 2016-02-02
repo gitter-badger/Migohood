@@ -29,7 +29,7 @@
   <h4>What are you wating for?</h4>
   <p class="second">Thousand of people are on Migohood. Wait no more, Join Migohood today!</p>
   <a href="{{ url('/auth/register') }}" class="btn btn-reg waves-effect waves-light">Register Now </a><span>or</span>
-  <a href="#" class="btn btn-read waves-effect waves-dark">Read more</a>
+  <a href="{{ url('help') }}" class="btn btn-read waves-effect waves-dark">Read more</a>
 </section>
 <!-- Foot -->
 @include('common.footer')

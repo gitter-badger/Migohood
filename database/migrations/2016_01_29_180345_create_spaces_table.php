@@ -20,32 +20,32 @@ class CreateSpacesTable extends Migration
               ->onDelete('cascade');
             $table->timestamps();
 
-            $table->string('link');
-            $table->string('public');
-
             $table->string('hash');
             $table->string('thumbnail')->default('/img/app/thumbnail.png');
+            $table->string('notpublic');
+            $table->string('public');
 
+            //Basics
             $table->string('type');
-            $table->string('other')->nullable();
             $table->string('accomodance');
+            $table->string('capacity')->default('null');
+            $table->string('bedrooms')->default('null');
+            $table->string('beds')->default('null');
+            $table->string('bathrooms')->default('null');
 
-            $table->string('capacity');
-            $table->string('bedrooms');
-            $table->string('beds');
-            $table->string('bathrooms');
+            //Description
+            $table->string('title')->default('null');
+            $table->string('description')->default('null');
 
-            $table->string('price');
-            $table->string('per');
-            $table->string('coin');
+            $table->string('price')->default('null');
+            $table->string('per')->default('null');
+            $table->string('coin')->default('null');
 
-            $table->string('title');
-            $table->string('description');
-
-            $table->string('country');
-            $table->string('city');
-            $table->string('address');
-            $table->string('zip');
+            $table->string('country')->default('null');
+            $table->string('city')->default('null');
+            $table->string('address')->default('null');
+            $table->string('location_references')->default('null');
+            $table->string('zip')->default('null');
 
         });
     }

@@ -16,6 +16,7 @@ function show( elem ) {
 }
 
 //Show Input (Services)
+/*
 function ShowInput() {
   var x = document.getElementById("Select").value;
 
@@ -25,4 +26,4 @@ function ShowInput() {
   else {
     document.getElementById("other_service").style.display = 'none';
   }
-}
+}*/

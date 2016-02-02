@@ -60,12 +60,11 @@ Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback
 ************************************/
 Route::get('explore', 'AppController@explore');             // Explore...
 
-// Show Space...
-/*
+// Show Space
 Route::get('space/{hash}', [
-    'uses' => 'Posts\PostController@showSpace',
+    'uses' => 'SpaceController@show',
     'as' => 'space.show',
-]);*/
+]);
 
 /************************************
     Routes for Autenticated users...
@@ -84,27 +83,24 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('inbox/archived', 'AppController@InboxArchived');               // Inbox - ArchivedAppController
 
     // My Spaces
-    Route::get('myspaces', 'AppController@MySpaces');                          // My Spaces - All
-    Route::get('myspaces/listed', 'AppController@MySpacesListed');             // My Spaces - Listed
+    Route::get('myspaces', 'AppController@MySpacesListed');                          // My Spaces - All
     Route::get('myspaces/notlisted', 'AppController@MySpacesNotListed');       // My Spaces - Listed
 
     // My Offices
-    Route::get('myoffices', 'AppController@MyOffices');                        // My Offices - All
-    Route::get('myoffices/listed', 'AppController@MyOfficesListed');           // My Offices - Listed
+    Route::get('myoffices', 'AppController@MyOfficesListed');           // My Offices - Listed
     Route::get('myoffices/notlisted', 'AppController@MyOfficesNotListed');     // My Offices - Listed
 
-    // My Services
-    Route::get('myservices', 'AppController@MyServices');                      // My Services - All
-    Route::get('myservices/listed', 'AppController@MyServicesListed');         // My Services - Listed
+    // My Services                     // My Services - All
+    Route::get('myservices', 'AppController@MyServicesListed');         // My Services - Listed
     Route::get('myservices/notlisted', 'AppController@MyServicesNotListed');   // My Services - Listed
 
-    // Create
+    // Redirect to Create Spaces or Services
     Route::post('create', 'AppController@create');
 
-    // Create Spaces
+    // Show view for Create Spaces
     Route::get('create/spaces', 'AppController@createSpaces');
 
-    // Create Service
+    // Show view for Create Services
     Route::get('create/services', 'AppController@createServices');
 
 
@@ -114,17 +110,79 @@ Route::group(['middleware' => 'auth'], function () {
     // Create Space
     Route::post('space/create', 'SpaceController@create');
 
-    // Preview
-    Route::get('space/{hash}/preview', [
-        'uses' => 'SpaceController@preview',
-        'as' => 'space.preview',
-    ]);
-
-    // Basics
+    // Basics - Get
     Route::get('space/{hash}/basics', [
         'uses' => 'SpaceController@basics',
         'as' => 'space.basics',
     ]);
+
+    // Description - Get
+    Route::get('space/{hash}/description', [
+        'uses' => 'SpaceController@description',
+        'as' => 'space.description',
+    ]);
+
+    // Location - Get
+    Route::get('space/{hash}/location', [
+        'uses' => 'SpaceController@location',
+        'as' => 'space.location',
+    ]);
+
+    // Photos - Get
+    Route::get('space/{hash}/photos', [
+        'uses' => 'SpaceController@photos',
+        'as' => 'space.photos',
+    ]);
+
+    // Pricing - Get
+    Route::get('space/{hash}/pricing', [
+        'uses' => 'SpaceController@pricing',
+        'as' => 'space.pricing',
+    ]);
+
+    // Basics - Update
+    Route::post('space/{hash}/basics/update', [
+        'uses' => 'SpaceController@updateBasics',
+        'as' => 'space.basics.update',
+    ]);
+
+    // Description - Update
+    Route::post('space/{hash}/description/update', [
+        'uses' => 'SpaceController@updateDescription',
+        'as' => 'space.description.update',
+    ]);
+
+    // Location - Update
+    Route::post('space/{hash}/location/update', [
+        'uses' => 'SpaceController@updateLocation',
+        'as' => 'space.location.update',
+    ]);
+
+    // Photo - Update (Thunbnail)
+    Route::post('space/{hash}/thumbnail/update', [
+        'uses' => 'SpaceController@updateThumbnail',
+        'as' => 'space.thumbnail.update',
+    ]);
+
+    // Photo - Update (Gallery)
+    Route::post('space/{hash}/gallery/update', [
+        'uses' => 'SpaceController@updateGallery',
+        'as' => 'space.gallery.update',
+    ]);
+
+    // Pricing - Update
+    Route::post('space/{hash}/pricing/update', [
+        'uses' => 'SpaceController@updatePricing',
+        'as' => 'space.pricing.update',
+    ]);
+
+    // Upload
+    /*
+    Route::post('spaces/upload/{hash}', [
+        'uses' => 'SpaceController@UploadMultiple',
+        'as' => 'space.location.update',
+    ]);*/
+
 
     // Update avatar
     //Route::post('avatar/update', 'Users\UserController@avatarUpdate');

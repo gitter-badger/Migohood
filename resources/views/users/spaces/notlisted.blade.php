@@ -26,8 +26,7 @@
 <div class="col s2">
   <div class="menu container">
     <ul>
-      <a href="{{ url('/myspaces') }}"><li><i class="material-icons left">dns</i>All Spaces</li></a>
-      <a href="{{ url('/myspaces/listed') }}"><li><i class="material-icons left">layers</i>Listed </li></a>
+      <a href="{{ url('/myspaces') }}"><li><i class="material-icons left">layers</i>Listed </li></a>
       <a href="{{ url('/myspaces/notlisted') }}"><li class="active"><i class="material-icons left">layers_clear</i>Not Listed</li></a>
     </ul>
  </div>
@@ -35,7 +34,7 @@
 <!-- Menu Left -->
 
 <div class="container col s10">
-
+  @if (count($spaces) == 0)
   <!-- Box Nothing -->
   <div class="box">
     <div class="box-nothing">
@@ -46,7 +45,27 @@
     </div>
   </div>
   <!-- Box Nothing -->
+  @else
+  <div class="row">
+  <!-- Notlisted Spaces -->
+  @foreach ($spaces as $space)
+    <div class="col s3">
+      <div class="not_listed">
+        <div class="not_listed_body">
+          <img class="materialboxed" src="{{ $space->thumbnail}}" alt="" />
+          <div class="not_listed_content center">
+            <h6 class="light">{{ $space->type }} , {{ $space->accomodance }}</h6>
+            <span>Last Updated {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $space->updated_at)->diffForHumans() }} </span>
+            <a href="{{ url($space->notpublic)}} "  class="btn">Continue Editing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endforeach
+  <!-- Notlisted Spaces -->
+  </div>
 
+  @endif
 </div>
 </section>
 

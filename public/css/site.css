@@ -138,6 +138,81 @@ main { flex: 1 0 auto; }
   margin-left: 16px;
 }
 
+div.option {
+  display: inline-block;
+  width: 120px;
+  height: 100px;
+  margin: 20px 10px;
+  padding: 12px;
+  text-align: center;
+  border: 2px solid #DDDFE2;
+  background: #FFF;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #D2D5D9;
+  font-weight: bold;
+}
+
+div.option i {
+  font-size: 50px;
+  color: #D2D5D9;
+}
+
+div.option.active i {
+  color: #02A4F5;
+  font-size: 50px;
+}
+
+div.option.active span  {
+  color: #02A4F5;
+}
+
+div.active {
+  border: 3px solid #02A4F5;
+  background: #FFF;
+  border-radius: 4px;
+  color: #02A4F5;
+}
+
+div.bat:hover {
+  background: #FFF;
+}
+
+/*******************
+       MODAL
+********************/
+.modal-content {
+  padding: 20px;
+}
+
+#modal .btn {
+  border: none;
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 35px;
+  text-transform: capitalize;
+  vertical-align: middle;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+}
+
+#modal .submit {
+  margin: 0 auto;
+}
+
+.btn-modal {
+  background: #02A4F5;
+  color: #FFF;
+  vertical-align: middle;
+}
+
+.btn-modal:hover,
+.btn-modal:focus {
+  background: #0297E2;
+}
+
+
 /***************
       HOME
 ****************/

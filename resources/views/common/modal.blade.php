@@ -21,7 +21,7 @@
       </div>
 
       <div class="next center">
-        <button type="submit" class="btn btn-modal">NEXT</button>
+        <button type="submit" class="btn btn-modal">Continue</button>
       </div>
 
     </form>

@@ -26,8 +26,7 @@
 <div class="col s2">
   <div class="menu container">
     <ul>
-      <a href="{{ url('/myservices') }}"><li><i class="material-icons left">dns</i>All Services</li></a>
-      <a href="{{ url('/myservices/listed') }}"><li><i class="material-icons left">layers</i>Listed </li></a>
+      <a href="{{ url('/myservices') }}"><li><i class="material-icons left">layers</i>Listed </li></a>
       <a href="{{ url('/myservices/notlisted') }}"><li class="active"><i class="material-icons left">layers_clear</i>Not Listed</li></a>
     </ul>
  </div>

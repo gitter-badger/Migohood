@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth;
+use DB;
+use App\Space;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -39,38 +41,27 @@ class AppController extends Controller
       /*******************
             My Spaces
       *******************/
-      //MySpaces
-      public function MySpaces()
-      {
-        //List of places
-        //$user = Auth::user();
-        //$spaces = Auth::user()->spaces;
-
-        //return view('users/spaces.all', ['spaces' => $spaces]);
-        return view('users/spaces.all');
-      }
-
       //MySpaces - Listed
       public function MySpacesListed()
       {
-        return view('users/spaces.listed');
+        $spaces = DB::table('spaces')
+                    ->where('user_id', Auth::user()->id)
+                    ->where('public', 'yes')->get();
+        return view('users/spaces.listed', ['spaces' => $spaces]);
       }
 
       //MySpaces - Not Listed
       public function MySpacesNotListed()
       {
-        return view('users/spaces.notlisted');
+        $spaces = DB::table('spaces')
+                    ->where('user_id', Auth::user()->id)
+                    ->where('public', 'no')->get();
+        return view('users/spaces.notlisted', ['spaces' => $spaces]);
       }
 
     /*******************
           My Offices
     *******************/
-       //MyOffices
-       public function MyOffices()
-       {
-         return view('users/offices.all');
-       }
-
        //MyOffices - Listed
        public function MyOfficesListed()
        {
@@ -86,12 +77,6 @@ class AppController extends Controller
    /*******************
        My Services
    *******************/
-      //MyServices
-      public function MyServices()
-      {
-        return view('users/services.all');
-      }
-
       //MyServices - Listed
       public function MyServicesListed()
       {

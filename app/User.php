@@ -40,15 +40,9 @@ class User extends Model implements AuthenticatableContract,
     /**
      * Get the Spaces for the User.
      */
-    public function spaces() {
+    public function spaces()
+    {
        return $this->hasMany('App\Space');
-    }
-
-    /**
-     * Get the services for the User.
-     */
-    public function services() {
-       return $this->hasMany('App\Service');
     }
 
 }

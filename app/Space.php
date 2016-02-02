@@ -22,30 +22,32 @@ class Space extends Model
   [
     'hash',
     'thumbnail',
+    'notpublic',
+    'public',
 
-    'steps',
-    'link',
-
+    //Basic
     'type',
-    'other',
     'accomodance',
     'capacity',
-
     'bedrooms',
     'beds',
     'bathrooms',
 
-    'price',
-    'per',
-    'coin',
-
+    //Description
     'title',
     'description',
 
+    //Location
     'country',
     'city',
     'address',
-    'zip'
+    'location_references',
+    'zip',
+
+    'price',
+    'per',
+    'coin'
+
   ];
 
   /**
@@ -55,4 +57,13 @@ class Space extends Model
   {
       return $this->belongsTo('App\User');
   }
+
+  /**
+   * Get the Spaces for the User.
+   */
+  public function photos()
+  {  
+     return $this->hasMany('App\Photo');
+  }
+
 }
