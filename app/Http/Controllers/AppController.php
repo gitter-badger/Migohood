@@ -11,98 +11,100 @@ use App\Http\Controllers\Controller;
 
 class AppController extends Controller
 {
-    //Dashboard
-    public function Dashboard()
-    {
-       return view('users.dashboard');
-    }
+      //Spaces
+      public function spaces() {
+        return View('app.spaces');
+      }
 
-    /*******************
-          Inbox
-    *******************/
-       //Inbox
-       public function Inbox()
-       {
-         return view('users/inbox.received');
-       }
+      //Services
+      public function services() {
+        return View('app.services');
+      }
 
-       //Inbox - Sent
-       public function InboxSent()
-       {
-         return view('users/inbox.sent');
-       }
-
-       //Inbox - Trash
-       public function InboxArchived()
-       {
-         return view('users/inbox.archived');
-       }
+      //Dashboard
+      public function Dashboard() {
+        return view('users.dashboard');
+      }
 
       /*******************
-            My Spaces
+            Inbox
       *******************/
-      //MySpaces - Listed
-      public function MySpacesListed()
-      {
-        $spaces = DB::table('spaces')
-                    ->where('user_id', Auth::user()->id)
-                    ->where('public', 'yes')->get();
-        return view('users/spaces.listed', ['spaces' => $spaces]);
-      }
+     //Inbox
+     public function Inbox()
+     {
+       return view('users/inbox.received');
+     }
 
-      //MySpaces - Not Listed
-      public function MySpacesNotListed()
-      {
-        $spaces = DB::table('spaces')
-                    ->where('user_id', Auth::user()->id)
-                    ->where('public', 'no')->get();
-        return view('users/spaces.notlisted', ['spaces' => $spaces]);
-      }
+     //Inbox - Sent
+     public function InboxSent()
+     {
+       return view('users/inbox.sent');
+     }
+
+     //Inbox - Trash
+     public function InboxArchived()
+     {
+       return view('users/inbox.archived');
+     }
+
+    /*******************
+          My Spaces
+    *******************/
+    //MySpaces - Listed
+    public function MySpacesListed()
+    {
+      $spaces = DB::table('spaces')
+                  ->where('user_id', Auth::user()->id)
+                  ->where('public', 'yes')->get();
+      return view('users/spaces.listed', ['spaces' => $spaces]);
+    }
+
+    //MySpaces - Not Listed
+    public function MySpacesNotListed()
+    {
+      $spaces = DB::table('spaces')
+                  ->where('user_id', Auth::user()->id)
+                  ->where('public', 'no')->get();
+      return view('users/spaces.notlisted', ['spaces' => $spaces]);
+    }
 
     /*******************
           My Offices
     *******************/
-       //MyOffices - Listed
-       public function MyOfficesListed()
-       {
-         return view('users/offices.listed');
-       }
+   //MyOffices - Listed
+   public function MyOfficesListed()
+   {
+     $offices = DB::table('offices')
+                 ->where('user_id', Auth::user()->id)
+                 ->where('public', 'yes')->get();
+     return view('users/offices.listed', ['offices' => $offices]);
+   }
 
-       //MySpaces - Not Listed
-       public function MyOfficesNotListed()
-       {
-         return view('users/offices.notlisted');
-       }
+   //MySpaces - Not Listed
+   public function MyOfficesNotListed()
+   {
+     $offices = DB::table('offices')
+                 ->where('user_id', Auth::user()->id)
+                 ->where('public', 'no')->get();
+     return view('users/offices.notlisted', ['offices' => $offices]);
+   }
 
-   /*******************
-       My Services
-   *******************/
-      //MyServices - Listed
-      public function MyServicesListed()
-      {
-        return view('users/services.listed');
-      }
-
-      //MyServices - Not Listed
-      public function MyServicesNotListed()
-      {
-        return view('users/services.notlisted');
-      }
-
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    //Explore
-    public function explore()
+     /*******************
+         My Services
+     *******************/
+    //MyServices - Listed
+    public function MyServicesListed()
     {
-        //Get the authenticated user
-        /*$user = Auth::user();*/
-
-        return View('app.explore');
+      return view('users/services.listed');
     }
+
+    //MyServices - Not Listed
+    public function MyServicesNotListed()
+    {
+      return view('users/services.notlisted');
+    }
+
+
 
     /**
      * CREATE ANNOUNCES - Resources

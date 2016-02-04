@@ -45,4 +45,21 @@ class User extends Model implements AuthenticatableContract,
        return $this->hasMany('App\Space');
     }
 
+    /**
+     * Get the Offices for the User.
+     */
+    public function offices()
+    {
+       return $this->hasMany('App\Office');
+    }
+
+
+    /**
+     * Get the Services for the User.
+     */
+    public function services()
+    {
+       return $this->hasMany('App\Service');
+    }
+
 }

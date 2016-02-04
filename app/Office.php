@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Space extends Model
+class Office extends Model
 {
   /**
    * The database table used by the model.
    *
    * @var string
    */
-  protected $table = 'spaces';
+  protected $table = 'offices';
 
   /**
    * The attributes that are mass assignable.
@@ -22,16 +22,12 @@ class Space extends Model
   [
     'hash',
     'thumbnail',
-    'notpublic',
     'public',
 
     //Basic
     'type',
     'accomodance',
     'capacity',
-    'bedrooms',
-    'beds',
-    'bathrooms',
 
     //Description
     'title',
@@ -51,38 +47,23 @@ class Space extends Model
 
     //Extras
     /* Amenities */
-    'towels',
-    'bed_sheets',
-    'soap',
-    'toilet_paper',
-    'shampoo',
-    'tv',
+    'bathroom',
+    'tv_cable',
     'air_conditioning',
     'heating',
-    'kitchen',
     'wifi',
-    'iron',
-    'breakfast',
 
     /* Other */
-    'hot_tub',
-    'washer',
-    'pool',
-    'dryer',
     'parking',
-    'gym',
     'elevator',
-    'workspace',
+    'room_meeting',
 
     /* Special */
-    'family_kid_friendly',
-    'smoking_allowed',
-    'pets_allowed'
-
+    'smoking_allowed'
   ];
 
   /**
-  * Get the User that owns the spaces.
+  * Get the User that owns the office.
   */
   public function user()
   {

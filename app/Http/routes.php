@@ -55,16 +55,15 @@ Route::get('password/success', ['middleware' => 'auth', function () {
 Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebook');
 Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback');
 
+// Goole Routes ...
+Route::get('auth/google', 'Auth\AuthController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\AuthController@handleGoogleCallback');
+
 /************************************
   Routes for No Autenticated users...
 ************************************/
-Route::get('explore', 'AppController@explore');             // Explore...
-
-// Show Space
-Route::get('space/{hash}', [
-    'uses' => 'SpaceController@show',
-    'as' => 'space.show',
-]);
+Route::get('spaces', 'AppController@spaces');             // Spaces...
+Route::get('services', 'AppController@services');         // Services...
 
 /************************************
     Routes for Autenticated users...
@@ -74,6 +73,19 @@ Route::group(['middleware' => 'auth'], function () {
   /**********************
       Routes for App...
   **********************/
+    // Show Space
+    Route::get('space/{hash}', [
+        'uses' => 'SpaceController@show',
+        'as' => 'space.show',
+    ]);
+
+    // Show Office
+    Route::get('office/{hash}', [
+        'uses' => 'OfficeController@show',
+        'as' => 'office.show',
+    ]);
+
+
     // Dashboard
     Route::get('dashboard', 'AppController@Dashboard');
 
@@ -83,16 +95,16 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('inbox/archived', 'AppController@InboxArchived');               // Inbox - ArchivedAppController
 
     // My Spaces
-    Route::get('myspaces', 'AppController@MySpacesListed');                          // My Spaces - All
-    Route::get('myspaces/notlisted', 'AppController@MySpacesNotListed');       // My Spaces - Listed
+    Route::get('myspaces', 'AppController@MySpacesListed');                    // My Spaces - All
+    Route::get('myspaces/notlisted', 'AppController@MySpacesNotListed');       // My Spaces - Not Listed
 
     // My Offices
-    Route::get('myoffices', 'AppController@MyOfficesListed');           // My Offices - Listed
-    Route::get('myoffices/notlisted', 'AppController@MyOfficesNotListed');     // My Offices - Listed
+    Route::get('myoffices', 'AppController@MyOfficesListed');                  // My Offices - All
+    Route::get('myoffices/notlisted', 'AppController@MyOfficesNotListed');     // My Offices - Not Listed
 
-    // My Services                     // My Services - All
-    Route::get('myservices', 'AppController@MyServicesListed');         // My Services - Listed
-    Route::get('myservices/notlisted', 'AppController@MyServicesNotListed');   // My Services - Listed
+    // My Services
+    Route::get('myservices', 'AppController@MyServicesListed');                // My Services - All
+    Route::get('myservices/notlisted', 'AppController@MyServicesNotListed');   // My Services - Not Listed
 
     // Redirect to Create Spaces or Services
     Route::post('create', 'AppController@create');
@@ -140,6 +152,12 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'space.pricing',
     ]);
 
+    // Extras - Get
+    Route::get('space/{hash}/extras', [
+        'uses' => 'SpaceController@extras',
+        'as' => 'space.extras',
+    ]);
+
     // Basics - Update
     Route::post('space/{hash}/basics/update', [
         'uses' => 'SpaceController@updateBasics',
@@ -176,37 +194,45 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'space.pricing.update',
     ]);
 
-    // Upload
-    /*
-    Route::post('spaces/upload/{hash}', [
-        'uses' => 'SpaceController@UploadMultiple',
-        'as' => 'space.location.update',
-    ]);*/
+    // Extras - Update
+    Route::post('space/{hash}/extras/update', [
+        'uses' => 'SpaceController@updateExtras',
+        'as' => 'space.extras.update',
+    ]);
+
+    /**********************
+      Routes for Offices  ...
+    **********************/
+    // Create office
+    Route::post('office/create', 'OfficeController@create');
+
+    // Office - Get
+    Route::get('office/{hash}/edit', [
+        'uses' => 'OfficeController@edit',
+        'as' => 'office.edit',
+    ]);
+
+    // Office - Update
+    Route::post('office/{hash}/update', [
+        'uses' => 'OfficeController@update',
+        'as' => 'office.update',
+    ]);
+
+    // Photo - Update (Thunbnail)
+    Route::post('office/{hash}/thumbnail/update', [
+        'uses' => 'OfficeController@updateThumbnail',
+        'as' => 'office.thumbnail.update',
+    ]);
+
+    // Photo - Update (Gallery)
+    Route::post('office/{hash}/gallery/update', [
+        'uses' => 'OfficeController@updateGallery',
+        'as' => 'office.gallery.update',
+    ]);
+
 
 
     // Update avatar
     //Route::post('avatar/update', 'Users\UserController@avatarUpdate');
 
-});
-
-
-//Debuggin
-Route::get('myip', function () {
-  //$ip = $_SERVER['REMOTE_ADDR'];
-  //$ip = Request::ip();
-  $ip = '181.137.219.4'; //Debuggin purposes
-  $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
-
-  return $details->city; // -> "Mountain View"
-
-  /*
-  "ip": "8.8.8.8",
-  "hostname": "google-public-dns-a.google.com",
-  "loc": "37.385999999999996,-122.0838",
-  "org": "AS15169 Google Inc.",
-  "city": "Mountain View",
-  "region": "CA",
-  "country": "US",
-  "phone": 650
-  */
 });

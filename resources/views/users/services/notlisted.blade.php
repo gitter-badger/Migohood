@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Services Not Listed')
+@section('title', 'Services Listed')
 @section('content')
 <!-- Options NavBar -->
 <div id="options">
@@ -11,7 +11,7 @@
       <li><a href="{{ url('/dashboard') }}" class="underline">Dashboard</a></li>
       <li><a href="{{ url('/inbox') }}" class="underline">Inbox</a></li>
       <li><a href="{{ url('/myspaces') }}" class="underline">Spaces</a></li>
-      <li><a href="{{ url('/myoffices') }}" class="underlin">Offices</a></li>
+      <li><a href="{{ url('/myoffices') }}" class="underline">Offices</a></li>
       <li class="active"><a href="{{ url('/myservices') }}">Services</a></li>
     </ul>
 
@@ -26,8 +26,8 @@
 <div class="col s2">
   <div class="menu container">
     <ul>
-      <a href="{{ url('/myservices') }}"><li><i class="material-icons left">layers</i>Listed </li></a>
-      <a href="{{ url('/myservices/notlisted') }}"><li class="active"><i class="material-icons left">layers_clear</i>Not Listed</li></a>
+      <a href="{{ url('/myservices') }}"><li class="active"><i class="material-icons left">layers</i>Listed </li></a>
+      <a href="{{ url('/myservices/notlisted') }}"><li class="active"><i class="material-icons left">layers</i>Not Listed </li></a>
     </ul>
  </div>
 </div>
@@ -46,9 +46,7 @@
   </div>
   <!-- Box Nothing -->
 
-
   </div>
 
 </section>
-
 @stop

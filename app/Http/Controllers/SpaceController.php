@@ -134,7 +134,6 @@ class SpaceController extends Controller
       return view('spaces/create.photos', ['space' => $space, 'photos' => $photos]);
     }
 
-
     /*******************
         Pricing - GET
     ********************/
@@ -157,6 +156,29 @@ class SpaceController extends Controller
       return view('spaces/create.pricing', ['space' => $space]);
     }
 
+    /*******************
+        Extras - GET
+    ********************/
+    public function extras($hash)
+    {
+      //Search Space
+      $space = Space::where('hash', $hash)->first();
+
+      //Is it null?
+      if(is_null($space)) {
+        return view('errors.404'); //404 Not found
+      } //If Null
+
+      //Is it not the owner?
+      if(Auth::user()->id != $space->user_id) {
+        return view('errors.400'); //400 Bad Request
+      }
+
+      //Return with space
+      return view('spaces/create.extras', ['space' => $space]);
+    }
+
+
     /***********************
       Basics Update - POST
     ************************/
@@ -165,9 +187,14 @@ class SpaceController extends Controller
         //Search Space by hash
         $space = Space::where('hash', $hash)->first();
 
-        //If Null
+        //Is it null?
         if(is_null($space)) {
-          return "400"; //Bad request
+          return view('errors.404'); //404 Not found
+        } //If Null
+
+        //Is it not the owner?
+        if(Auth::user()->id != $space->user_id) {
+          return view('errors.400'); //400 Bad Request
         }
 
         //Save Basics Updates
@@ -195,11 +222,15 @@ class SpaceController extends Controller
         //Search Space by hash
         $space = Space::where('hash', $hash)->first();
 
-        //If Null
+        //Is it null?
         if(is_null($space)) {
-          return "400"; //Bad request
-        }
+          return view('errors.404'); //404 Not found
+        } //If Null
 
+        //Is it not the owner?
+        if(Auth::user()->id != $space->user_id) {
+          return view('errors.400'); //400 Bad Request
+        }
         //Save Basics Updates
         $space->title = $request->title;
         $space->description = $request->description;
@@ -221,9 +252,14 @@ class SpaceController extends Controller
         //Search Space by hash
         $space = Space::where('hash', $hash)->first();
 
-        //If Null
+        //Is it null?
         if(is_null($space)) {
-          return "400"; //Bad request
+          return view('errors.404'); //404 Not found
+        } //If Null
+
+        //Is it not the owner?
+        if(Auth::user()->id != $space->user_id) {
+          return view('errors.400'); //400 Bad Request
         }
 
         //Save Basics Updates
@@ -248,6 +284,16 @@ class SpaceController extends Controller
     public function updateThumbnail(Request $request, $hash) {
       //Search Space
       $space = Space::where('hash', $hash)->first();
+
+      //Is it null?
+      if(is_null($space)) {
+        return view('errors.404'); //404 Not found
+      } //If Null
+
+      //Is it not the owner?
+      if(Auth::user()->id != $space->user_id) {
+        return view('errors.400'); //400 Bad Request
+      }
 
       //  $file = Input::hasFile('file');
         $file = $request->file('file');
@@ -287,6 +333,16 @@ class SpaceController extends Controller
     public function updateGallery(Request $request, $hash) {
       //Search Space by hash
       $space = Space::where('hash', $hash)->first();
+
+      //Is it null?
+      if(is_null($space)) {
+        return view('errors.404'); //404 Not found
+      } //If Null
+
+      //Is it not the owner?
+      if(Auth::user()->id != $space->user_id) {
+        return view('errors.400'); //400 Bad Request
+      }
 
       //Get all files in the request
       $files = $request->file('file');
@@ -342,7 +398,7 @@ class SpaceController extends Controller
         //Save Basics Updates
         $space->price = $request->price;
         $space->per = $request->per;
-        $space->coin = $request->coin;
+        $space->currency = $request->currency;
         $space->save();
         /*
         if($space->capacity or $space->bedrooms or $space->beds or $space->bathrooms == 'null') {
@@ -386,6 +442,124 @@ class SpaceController extends Controller
         $space->save();
 
         //Return
+        return redirect('space/'.$hash.'/extras');
+    }
+
+    /****************************
+        Extras Update - POST
+    ****************************/
+    public function updateExtras(Request $request, $hash)
+    {
+        //Search Space by hash
+        $space = Space::where('hash', $hash)->first();
+
+        //Is it null?
+        if(is_null($space)) {
+          return view('errors.404'); //404 Not found
+        } //If Null
+
+        //Is it not the owner?
+        if(Auth::user()->id != $space->user_id) {
+          return view('errors.400'); //400 Bad Request
+        }
+
+        /* Amenities */
+        if($request->towels == 'yes') {
+          $space->towels = $request->towels;
+        }
+
+        if($request->bed_sheets == 'yes') {
+          $space->bed_sheets = $request->bed_sheets;
+        }
+
+        if($request->soap == 'yes') {
+          $space->soap = $request->soap;
+        }
+
+        if($request->toilet_paper == 'yes') {
+          $space->toilet_paper = $request->toilet_paper;
+        }
+
+        if($request->shampoo == 'yes') {
+          $space->shampoo = $request->shampoo;
+        }
+
+        if($request->tv == 'yes') {
+          $space->tv = $request->tv;
+        }
+
+        if($request->air_conditioning == 'yes') {
+          $space->air_conditioning = $request->air_conditioning;
+        }
+
+        if($request->heating == 'yes') {
+          $space->heating = $request->heating;
+        }
+
+        if($request->kitchen == 'yes') {
+          $space->kitchen = $request->kitchen;
+        }
+
+        if($request->wifi == 'yes') {
+          $space->wifi = $request->wifi;
+        }
+
+        if($request->iron == 'yes') {
+          $space->iron = $request->iron;
+        }
+
+        if($request->breakfast == 'yes') {
+          $space->breakfast = $request->breakfast;
+        }
+
+        /* Other */
+        if($request->hot_tub == 'yes') {
+          $space->hot_tub = $request->hot_tub;
+        }
+
+        if($request->washer == 'yes') {
+          $space->washer = $request->washer;
+        }
+
+        if($request->pool == 'yes') {
+          $space->pool = $request->pool;
+        }
+
+        if($request->dryer == 'yes') {
+          $space->dryer = $request->dryer;
+        }
+
+        if($request->parking == 'yes') {
+          $space->parking = $request->parking;
+        }
+
+        if($request->gym == 'yes') {
+          $space->gym = $request->gym;
+        }
+
+        if($request->elevator == 'yes') {
+          $space->elevator = $request->elevator;
+        }
+
+        if($request->workspace == 'yes') {
+          $space->workspace = $request->workspace;
+        }
+
+        /* Special */
+        if($request->family_kid_friendly == 'yes') {
+          $space->family_kid_friendly = $request->family_kid_friendly;
+        }
+
+        if($request->smoking_allowed == 'yes') {
+          $space->smoking_allowed = $request->smoking_allowed;
+        }
+
+        if($request->pets_allowed == 'yes') {
+          $space->pets_allowed = $request->pets_allowed;
+        }
+
+        $space->save();
+
         return redirect('/myspaces');
     }
 

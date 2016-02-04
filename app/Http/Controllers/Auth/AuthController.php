@@ -25,7 +25,7 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    protected $redirectPath = '/explore';
+    protected $redirectPath = '/spaces';
 
     /**
      * Create a new authentication controller instance.
@@ -69,25 +69,15 @@ class AuthController extends Controller
         ]);
     }
 
-    /****************
-    * Other Services
-    *****************/
-    /**
-     * Redirect the user to the Facebook authentication page.
-     *
-     * @return Response
-     */
 
+     /****************************
+              FACEBOOK
+     ****************************/
     public function redirectToFacebook()
     {
       return Socialite::driver('facebook')->redirect();
     }
 
-    /**
-     *  Obtain the user information from Facebook.
-     *
-     * @return Response
-     */
     public function handleFacebookCallback()
     {
         try {
@@ -100,7 +90,31 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        return redirect('/explore');
+        return redirect('/spaces');
+    }
+
+    /****************************
+             FACEBOOK
+    ****************************/
+    public function redirectToGoogle()
+    {
+      return Socialite::driver('google')->redirect();
+    }
+
+    public function handleGoogleCallback()
+    {
+
+        try {
+            $user = Socialite::driver('google')->user();
+        } catch (ClientException $e) {
+            return redirect('auth/google');
+        }
+
+        $authUser = $this->findOrCreateUser($user);
+
+        Auth::login($authUser, true);
+
+        return redirect('/spaces');
     }
 
         /**

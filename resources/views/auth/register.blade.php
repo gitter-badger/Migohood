@@ -41,7 +41,7 @@
     </div>
 
     <div class="panel-social">
-      <a href="{{ url('') }}" class="btn btn-google">Sign up with <span>Google</span></a>
+      <a href="{{ url('auth/google') }}" class="btn btn-google">Sign up with <span>Google</span></a>
     </div>
 
     <div class="panel-options">

@@ -19,6 +19,7 @@
 </nav>
 </div>
 </div>
+
 <!-- Content -->
 <section class="body row">
 
@@ -34,19 +35,39 @@
 <!-- Menu Left -->
 
 <div class="container col s10">
-
+  @if (count($offices) == 0)
   <!-- Box Nothing -->
   <div class="box">
     <div class="box-nothing">
-      <i class="material-icons">business_center</i>
+      <i class="material-icons">location_city</i>
       <h5 class="light">Woops! It looks lonely here. </h5>
-      <p class="light">You don't have any office, start one clicking bellow! </p>
-      <a href="{{ url('create/spaces') }}" class="btn btn-new">Create Office</a>
+      <p class="light">You don't have any space, start one clicking bellow! </p>
+      <a href="{{ url('create/spaces') }}" class="btn btn-new">Create Space</a>
     </div>
   </div>
   <!-- Box Nothing -->
-
+  @else
+  <div class="row">
+  <!-- Notlisted Offices -->
+  @foreach ($offices as $office)
+    <div class="col s3">
+      <div class="not_listed">
+        <div class="not_listed_body">
+          <img class="materialboxed" src="{{ $office->thumbnail}}" alt="" />
+          <div class="not_listed_content center">
+            <h6 class="light">{{ $office->type }} , {{ $office->accomodance }}</h6>
+            <span>Last Updated {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $office->updated_at)->diffForHumans() }} </span>
+            <a href="{{ route('office.edit', ['hash' => $office->hash ]) }} "  class="btn">Continue Editing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  @endforeach
+  <!-- Notlisted Offices -->
   </div>
 
+  @endif
+</div>
 </section>
+
 @stop

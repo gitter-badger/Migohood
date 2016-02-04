@@ -34,9 +34,8 @@
             </div>
 
             <!-- Form_Office -->
-            <div id="form_office" class="dynamic_link" style="display:none">
-
-              newOffice
+            <div id="form_office" class="dynamic_link container" style="display:none">
+              @include('forms.newOffice')
             </div>
 
        </div>

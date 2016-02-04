@@ -217,12 +217,12 @@ div.bat:hover {
       HOME
 ****************/
 #home {
-  height: 90vh;
+  height: 100vh;
 }
 
 /* Box */
 #box {
-  padding-top: 60px;
+  padding-top: 15vh;
   text-align: center;
 }
 
@@ -250,8 +250,9 @@ div.bat:hover {
 
 /* Box Form */
 #box form {
-  width: 450px;
-  margin-top: 30px;
+  width: 40%;
+  margin-top: 4vh;
+  /* margin-top: 30px; */
 }
 
 #box form .input-field {
@@ -310,7 +311,7 @@ input[type=text]:focus:not([readonly]) {
   width: 100px;
   margin: 0 auto;
   background: #D2D7DC;
-  margin-bottom: 25px;
+  margin-bottom: 4vh;
 }
 
 #box span {
@@ -363,13 +364,14 @@ input[type=text]:focus:not([readonly]) {
 /* Background img */
 .footer img {
   position: absolute;
-  width: 70%;
+  width: 75%;
   height: auto;
-  margin-top: -35vh;
   right: 0;
+  bottom: 0;
   z-index: -1;
   padding-bottom: 0px;
   border-bottom: 2px solid #D2D7DC;
+  margin-bottom: 5px;
 }
 
 /***************
@@ -380,8 +382,106 @@ input[type=text]:focus:not([readonly]) {
 #info .img img { width: 280px; }
 
 /***************
-  INTRODUCTION
+      WHY
 ****************/
+#why {
+  padding: 10px 0px;
+  text-align: center;
+  background: #F8F8F8;
+  padding: 20px 0px;
+}
+
+#why img {
+  width: 140px;
+}
+
+#why h5 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#why p.second {
+  font-size: 14px;
+  color: #7E8082;
+}
+
+#why h5.web { color: #FFA94D; }
+#why h5.new { color: #9587F4; }
+#why h5.search { color: #6BB2F2; }
+#why h5.pay { color: #75CC95; }
+
+/***************
+      BOX
+****************/
+#boxes {
+  padding: 20px 15px;
+}
+
+.box {
+  padding: 10px 0px;
+}
+
+.box-body {
+  border: 1px solid #E7E9EB;
+  border-radius: 4px;
+  background: #FFF;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.box-body img {
+  width: 100%;
+  height: 180px;
+  border-radius: 4px;
+}
+
+.box-content {
+  padding: 0px 0px 10px 0px;
+}
+
+.box-body h6 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #5B5A5C;
+}
+
+.box-body span {
+  font-size: 12px;
+  color: #9CA299;
+}
+
+.box-footer {
+  text-align: center;
+  padding: 10px 5px 0px 22px;
+}
+
+.box-footer i {
+  color: #9CA299;
+  vertical-align: middle;
+  font-size: 22px;
+  padding: 0px 5px;
+}
+
+.box-footer .star i {
+  color: #FFB106;
+}
+
+.box-footer .hearth i {
+  color: #EE5C55;
+}
+
+.box-footer .comments i {
+  color: #02A4F5;
+}
+
+
+/*
+#why p.second {
+  color: #5D6C78;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 5px 0px 30px 0px;
+}*/
+
 /*
 #intro {
   background: #EF1C3F url("/img/site/back.png");

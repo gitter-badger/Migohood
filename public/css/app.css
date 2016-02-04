@@ -1,6 +1,63 @@
 /*************
    SETTINGS
 **************/
+
+#search_box {
+  padding: 0px 22px;
+}
+
+#search_box input[type=text] {
+  background-color: #FFF;
+  height: 2rem;
+  border: 2px solid #E7E9EB;
+  border-radius: 5px;
+  line-height: 2rem;
+  font-size: 1rem;
+  margin: 10px 0 15px 0;
+  padding: 0px 5px;
+  display: block;
+  color: #475968;
+}
+
+/* Input - Focus */
+#search_box input[type=text]:focus:not([readonly]) {
+  border: 2px solid #E7E9EB;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #475968;
+}
+
+#search_box ::-webkit-input-placeholder {
+  color: #475968;
+}
+
+#search_box :-moz-placeholder {
+  /* Firefox 18- */
+  color: #475968;
+}
+
+#search_box ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #475968;
+}
+
+#search_box :-ms-input-placeholder {
+  color: #475968;
+}
+
+#search_box input[type=text] + label {
+  font-size: 14px;
+  color: #475968;
+  font-weight: 500;
+}
+
+#search_box input[type=text]:focus:not([readonly]) + label {
+  font-size: 14px;
+  color: #475968;
+  font-weight: 500;
+}
+
 /* General */
 * { box-sizing: border-box; }
 
@@ -506,6 +563,29 @@ div.bat:hover {
   margin-right: 5px;
 }
 
+#new_office h5 {
+  margin-bottom: 0px;
+}
+
+#new_office .next {
+ padding: 30px 80px 0px 0px;
+}
+
+#new_office .btn-save {
+  background: #02A4F5;
+  color: #FFF;
+  vertical-align: middle;
+}
+
+#new_office .btn-save:hover {
+  background: #0297E2;
+}
+
+#edit_office .title {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
 /*********
    EDIT
 **********/
@@ -701,10 +781,40 @@ input[type=text]:focus:not([readonly]) + label {
   font-weight: 500;
 }
 
+/* Input - Checkbox */
+form p {
+  margin: 0px;
+}
+
+form p label a {
+  font-weight: bold;
+}
+
+/* Checkbox - Label */
+[type="checkbox"] + label {
+  color: #44565B;
+}
+
+/* Checkbox - Before + label */
+[type="checkbox"] + label:before {
+  border: 2px solid #3B444C;
+}
+
+/* Checkbox - Checked */
+[type="checkbox"]:checked + label:before {
+	border-right: 2px solid #0071EB;
+	border-bottom: 2px solid #0071EB;
+}
+
+.extras p {
+  margin: 20px 0px;
+}
+
 .thumb img {
   width: 250px;
   height: 200px;
   border-radius: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 #pic {
@@ -759,6 +869,13 @@ input[type=text]:focus:not([readonly]) + label {
   vertical-align: middle;
 }
 
+.pics img {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
 
 /***************
    INFO BOXES
@@ -833,7 +950,7 @@ input[type=text]:focus:not([readonly]) + label {
     PLACES
 *************/
 .myplaces {
-  padding-right: 15px;
+  padding-right: 20px;
 }
 
 /* Place Box */
@@ -1022,4 +1139,34 @@ input[type=text]:focus:not([readonly]) + label {
 
 .not_listed_body  .btn:hover {
   background: #21B4FD !important;
+}
+
+/************
+  DASHBOARD
+*************/
+.profiler {
+
+}
+
+.profiler_body {
+  background: #FFF;
+  border-radius: 4px;
+  border: 1px solid #E7E9EB;
+}
+
+.profiler_body img {
+  width: 100%;
+}
+
+/************
+    SPACE
+*************/
+.space {
+  padding: 20px;
+}
+
+.space img {
+  width: 100%;
+  height: 250px;
+  border-radius: 3px;
 }

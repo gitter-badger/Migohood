@@ -10,7 +10,8 @@
     <div class="col s2">
       <h5>Find Out</h5>
       <ul>
-        <li><a href="{{ url('explore') }}">Explore</a></li>
+        <li><a href="{{ url('spaces') }}">Spaces</a></li>
+        <li><a href="{{ url('services') }}">Services</a></li>
         <li><a href="#!">How it Works?</a></li>
         <li><a href="#!">How to be a Host?</a></li>
       </ul>

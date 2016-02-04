@@ -11,7 +11,7 @@
       <li><a href="{{ url('/dashboard') }}" class="underline">Dashboard</a></li>
       <li><a href="{{ url('/inbox') }}" class="underline">Inbox</a></li>
       <li class="active"><a href="{{ url('/myspaces') }}">Spaces</a></li>
-      <li><a href="{{ url('/myoffices') }}" class="underlin">Offices</a></li>
+      <li><a href="{{ url('/myoffices') }}" class="underline">Offices</a></li>
       <li><a href="{{ url('/myservices') }}" class="underline">Services</a></li>
     </ul>
 
@@ -127,7 +127,7 @@
         <div class="col s3 price">
           <div class="price-body">
             <h5 class="truncate light">{{ $space->price }}</h5>
-            <p class="second">{{ $space->coin }}</p>
+            <p class="second">{{ $space->currency }}</p>
             <p class="third light">per {{ $space->per }}</p>
           </div>
           <a href="{{ route('space.show', ['hash' => $space->hash ]) }}" class="btn">Open</a>

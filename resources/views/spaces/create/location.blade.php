@@ -9,7 +9,7 @@
     <a href="{{ route('space.location', ['hash' => $space->hash ]) }}"><li  class="active"><i class="material-icons left">location_on</i>Location</li></a>
     <a href="{{ route('space.photos', ['hash' => $space->hash ]) }}"><li><i class="material-icons left">add_a_photo</i>Photos</li></a>
     <a href="{{ route('space.pricing', ['hash' => $space->hash ]) }}"><li><i class="material-icons left">receipt</i>Pricing</li></a>
-    <!--<a href="#"><li><i class="material-icons left">star</i>Extras</li></a>-->
+    <a href="{{ route('space.extras', ['hash' => $space->hash ]) }}"><li><i class="material-icons left">star</i>Extras</li></a>
   </ul>
 @stop
 
@@ -17,7 +17,7 @@
   <!-- Title -->
   <div class="title">
      <h5>Location</h5>
-     <p  class="light">Provide accurated as posible your address </p>
+     <p  class="light">Provide as accurated as posible your address </p>
      <div class="divider"></div>
   </div>
 
@@ -65,7 +65,7 @@
   <div class="col s12 submit">
     <div class="left">
       <a href="{{ route('space.show', ['hash' => $space->hash ]) }}" class="btn btn-back">
-         @if($space->public == 'no') Preview @else Show @endif
+        @if($space->public == 'no') Preview @else Show @endif
       </a>
     </div>
 

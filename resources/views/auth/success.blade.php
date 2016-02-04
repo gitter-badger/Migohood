@@ -10,7 +10,7 @@
    <div class="alert-content">
      Your password has been reset! <br>
      Redirect to
-     <strong><a href="{{ url('/explore') }}">Home</a></strong> or     
+     <strong><a href="{{ url('/spaces') }}">Home</a></strong> or     
      <strong><a href="{{ url('/') }}">Main website </a></strong>
    </div>
  </div>
