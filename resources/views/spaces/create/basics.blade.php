@@ -4,12 +4,12 @@
 @stop
 @section('menu')
   <ul>
-    <a href="{{ route('space.basics', ['hash' => $space->hash ]) }}"><li class="active"><i class="material-icons left">library_books</i>Basics</li></a>
-    <a href="{{ route('space.description', ['hash' => $space->hash ]) }}"><li><i class="material-icons left">border_color</i>Description</li></a>
-    <a href="{{ route('space.location', ['hash' => $space->hash ]) }}"><li><i class="material-icons left">location_on</i>Location</li></a>
-    <a href="{{ route('space.photos', ['hash' => $space->hash ]) }}"><li><i class="material-icons left">add_a_photo</i>Photos</li></a>
-    <a href="{{ route('space.pricing', ['hash' => $space->hash ]) }}"><li><i class="material-icons left">receipt</i>Pricing</li></a>
-    <a href="{{ route('space.extras', ['hash' => $space->hash ]) }}"><li><i class="material-icons left">star</i>Extras</li></a>
+    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'basics' ]) }}"><li class="active"><i class="material-icons left">library_books</i>Basics</li></a>
+    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'description' ]) }}"><li><i class="material-icons left">border_color</i>Description</li></a>
+    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'location' ]) }}"><li><i class="material-icons left">location_on</i>Location</li></a>
+    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'photos' ]) }}"><li><i class="material-icons left">add_a_photo</i>Photos</li></a>
+    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'pricing' ]) }}"><li><i class="material-icons left">receipt</i>Pricing</li></a>
+    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'extras' ]) }}"><li><i class="material-icons left">star</i>Extras</li></a>
   </ul>
 @stop
 
@@ -22,7 +22,7 @@
   </div>
 
   <!-- Uddate Space Basics -->
-  <form class="form row" form action="{{ route('space.basics.update', ['hash' => $space->hash ]) }}" method="POST">
+  <form class="form row" form action="{{ route('space.router.update', ['hash' => $space->hash, 'route' => 'basics' ]) }}" method="POST">
     {{ csrf_field() }}
 
   <!-- Type of Property -->
@@ -170,7 +170,7 @@
   <div class="col s12 submit">
     <div class="left">
       <a href="{{ route('space.show', ['hash' => $space->hash ]) }}" class="btn btn-back">
-         @if($space->public == 'no') Preview @else Show @endif
+         @if($space->public == 'yes') Show @endif
       </a>
     </div>
 

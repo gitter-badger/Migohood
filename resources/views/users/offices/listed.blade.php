@@ -38,7 +38,7 @@
   <!-- Box Nothing -->
   <div class="box">
     <div class="box-nothing">
-      <i class="material-icons">location_city</i>
+      <i class="material-icons">work</i>
       <h5 class="light">Woops! It looks lonely here. </h5>
       <p class="light">You don't have any space, start one clicking bellow! </p>
       <a href="{{ url('create/spaces') }}" class="btn btn-new">Create Space</a>
@@ -46,99 +46,61 @@
   </div>
   <!-- Box Nothing -->
   @else
-
-  <div class="myplaces">
+  <div class="row">
     @foreach ($offices as $office)
-      <!-- Place -->
-      <div class="place-box row">
+      <div class="col s9">
+        <div class="listed">
+            <div class="listed_body row">
+                <!-- Img -->
+                <div class="col s4">
+                  <img class="materialboxed" src="{{ $office->thumbnail }}" alt="" />
+                </div>
 
-        <!-- Left -->
-        <div class="col s3 img">
-          <img src="{{ $office->thumbnail }}" alt="" />
-          <div class="change">
-            <a href="{{ route('office.edit', ['hash' => $office->hash ]) }} " class="btn">Edit</a>
-          </div>
+                <!-- Center -->
+                <div class="col s5 listed_content row">
+                    <div class="col s12">
+                      <h6 class="truncate">{{ $office->title }}</h6>
+                      <p><span class="location"><i class="material-icons">location_on</i>{{ $office->country }}, {{ $office->city}}</span></p>
+                      <p><span class="category office">{{ $office->type }} -  {{ $office->accomodance }}</span></p>
+                    </div>
+
+                    <div class="col s12 listed_content_bottom row">
+                      <div class="col s4 boxy tooltipped" data-position="bottom" data-delay="50" data-tooltip="Stars">
+                          {{ $office->stars }} <i class="material-icons stars">star</i>
+                      </div>
+
+                      <div class="col s4 boxy tooltipped" data-position="bottom" data-delay="50" data-tooltip="Recommends">
+                          {{ $office->recommends }} <i class="material-icons recommends">favorite</i>
+                      </div>
+
+                      <div class="col s4 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Comments">
+                          {{ $office->comments }} <i class="material-icons comments">forum</i>
+                      </div>
+                    </div>
+
+                </div>
+
+                <!-- Right-->
+                <div class="col s3">
+                  <div class="listed_price">
+                    <div class="listed_price_content">
+                        <h6>{{ $office->currency }}</h6>
+                        <h5 class="truncate"><span>$</span>{{ $office->price }}</h5>
+                        <p>Per {{ $office->per }}</p>
+                        <a href="{{ route('office.router', ['hash' => $office->hash, 'route' => 'basics' ]) }}" class="btn">Edit</a><br>
+                        <a href="{{ route('office.show', ['hash' => $office->hash ]) }}" class="link">Show</a> - <a href="#" class="link">Delete</a>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
         </div>
-        <!-- Left -->
-
-        <!-- Center -->
-        <div class="col s6 row">
-          <!-- Top -->
-          <div class="col s12 top">
-              <h6 class="truncate first">{{ $office->city }}, {{ $office->country }} </h6>
-              <h6 class="truncate light second">{{ $office->title }}</h6>
-              <h6 class="third"><span>{{ $office->type }} - {{ $office->accomodance }}</span></h6>
-          </div>
-          <!-- Top -->
-
-          <!-- Middle -->
-          <div class="col s12 middle">
-            <p class="truncate light">{{ $office->description }}</p>
-          </div>
-          <!-- Middle -->
-
-          <!-- Bottom -->
-          <div class="col s12 bottom row">
-
-            <div class="col s3 boxy row">
-              {{ $office->capacity }}
-              <i class="material-icons">group_add</i>
-            </div>
-
-            <div class="col s3 boxy">
-                {{ $office->wifi }}
-               <i class="material-icons">perm_scan_wifi</i>
-            </div>
-
-            <div class="col s3 boxy">
-              {{ $office->tv_cable }}
-              <i class="material-icons">tv</i>
-            </div>
-
-            <div class="col s3 boxy last">
-              {{ $office->bathroom }}
-              <i class="material-icons">hot_tub</i>
-            </div>
-
-            <div class="col s3 tag row">
-              Capacity
-            </div>
-
-            <div class="col s3 tag row">
-              Meeting Room
-            </div>
-
-            <div class="col s3 tag row">
-              TV Cable
-            </div>
-
-            <div class="col s3 tag row">
-              Bathrooms
-            </div>
 
 
-          </div>
-          <!-- Bottom -->
+      </div>
 
-        </div>
-        <!-- Center -->
-
-        <!-- Right -->
-        <div class="col s3 price">
-          <div class="price-body">
-            <h5 class="truncate light">{{ $office->price }}</h5>
-            <p class="second">{{ $office->currency }}</p>
-            <p class="third light">per {{ $office->per }}</p>
-          </div>
-          <a href="{{ route('office.show', ['hash' => $office->hash ]) }}" class="btn">Open</a>
-        </div>
-        <!-- Right -->
-    </div>
-   @endforeach
+     @endforeach
   </div>
-  <!-- My places -->
-
-
   @endif
 </div>
 </section>

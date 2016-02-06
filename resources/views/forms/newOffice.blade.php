@@ -1,21 +1,12 @@
+<!-- New Office -->
 <form class="form row" action="/office/create"  method="POST" id="new_space">
   {{ csrf_field() }}
 
 <div class="container row">
+
   <!-- Type  -->
   <div class="input-field col s12">
     <select name="type" required>
-      <option value="" disabled selected>Choose one</option>
-      <option value="Private"> Private</option>
-      <option value="Shared">Shared</option>
-    </select>
-    <label>Type</label>
-  </div>
-  <!-- Type -->
-
-  <!-- Accomodance  -->
-  <div class="input-field col s12">
-    <select name="accomodance" required>
       <option value="" disabled selected>Choose one</option>
       <option value="All Building"> All Building</option>
       <option value="Bristro Cafe"> Bristro Cafe </option>
@@ -25,6 +16,17 @@
       <option value="Co Working"> Co Working</option>
       <option value="Project Rooms"> Project Rooms</option>
       <option value="Phone Both">  Phone Both </option>
+    </select>
+    <label>Type of Property</label>
+  </div>
+  <!-- Type -->
+
+  <!-- Accomodance  -->
+  <div class="input-field col s12">
+    <select name="accomodance" required>
+      <option value="" disabled selected>Choose one</option>
+      <option value="Private"> Private</option>
+      <option value="Shared">Shared</option>
     </select>
     <label>Accomodance</label>
   </div>
@@ -67,3 +69,4 @@
 </div>
 
 </form>
+<!-- New Office -->

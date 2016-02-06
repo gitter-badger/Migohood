@@ -46,98 +46,61 @@
   </div>
   <!-- Box Nothing -->
   @else
-
-  <div class="myplaces">
+  <div class="row">
     @foreach ($spaces as $space)
-      <!-- Place -->
-      <div class="place-box row">
+      <div class="col s9">
+        <div class="listed">
+            <div class="listed_body row">
+                <!-- Img -->
+                <div class="col s4">
+                  <img class="materialboxed" src="{{ $space->thumbnail }}" alt="" />
+                </div>
 
-        <!-- Left -->
-        <div class="col s3 img">
-          <img src="{{ $space->thumbnail }}" alt="" />
-          <div class="change">
-            <a href="{{ route('space.basics', ['hash' => $space->hash ]) }}" class="btn">Edit</a>
-          </div>
+                <!-- Center -->
+                <div class="col s5 listed_content row">
+                    <div class="col s12">
+                      <h6 class="truncate">{{ $space->title }}</h6>
+                      <p><span class="location"><i class="material-icons">location_on</i>{{ $space->country }}, {{ $space->city}}</span></p>
+                      <p><span class="category space">{{ $space->type }} -  {{ $space->accomodance }}</span></p>
+                    </div>
+
+                    <div class="col s12 listed_content_bottom row">
+                      <div class="col s4 boxy tooltipped" data-position="bottom" data-delay="50" data-tooltip="Stars">
+                          {{ $space->stars }} <i class="material-icons stars">star</i>
+                      </div>
+
+                      <div class="col s4 boxy tooltipped" data-position="bottom" data-delay="50" data-tooltip="Recommends">
+                          {{ $space->recommends }} <i class="material-icons recommends">favorite</i>
+                      </div>
+
+                      <div class="col s4 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Comments">
+                          {{ $space->comments }} <i class="material-icons comments">forum</i>
+                      </div>
+                    </div>
+
+                </div>
+
+                <!-- Right-->
+                <div class="col s3">
+                  <div class="listed_price">
+                    <div class="listed_price_content">
+                        <h6>{{ $space->currency }}</h6>
+                        <h5 class="truncate"><span>$</span>{{ $space->price }}</h5>
+                        <p>Per {{ $space->per }}</p>
+                        <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'basics' ]) }}" class="btn">Edit</a><br>
+                        <a href="{{ route('space.show', ['hash' => $space->hash ]) }}" class="link">Show</a> - <a href="#" class="link">Delete</a>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
         </div>
-        <!-- Left -->
-
-        <!-- Center -->
-        <div class="col s6 row">
-          <!-- Top -->
-          <div class="col s12 top">
-              <h6 class="truncate first">{{ $space->city }}, {{ $space->country }} </h6>
-              <h6 class="truncate light second">{{ $space->title }}</h6>
-              <h6 class="third"><span>{{ $space->type }} - {{ $space->accomodance }}</span></h6>
-          </div>
-          <!-- Top -->
-
-          <!-- Middle -->
-          <div class="col s12 middle">
-            <p class="truncate light">{{ $space->description }}</p>
-          </div>
-          <!-- Middle -->
-
-          <!-- Bottom -->
-          <div class="col s12 bottom row">
-
-            <div class="col s3 boxy row">
-              {{ $space->capacity }}
-              <i class="material-icons">group_add</i>
-            </div>
-
-            <div class="col s3 boxy">
-              {{ $space->bedrooms }}
-               <i class="material-icons">store_mall_directory</i>
-            </div>
-
-            <div class="col s3 boxy">
-              {{ $space->beds }}
-              <i class="material-icons">hotel</i>
-            </div>
-
-            <div class="col s3 boxy last">
-              {{ $space->bathrooms }}
-              <i class="material-icons">hot_tub</i>
-            </div>
-
-            <div class="col s3 tag row">
-              Capacity
-            </div>
-
-            <div class="col s3 tag row">
-              Bedrooms
-            </div>
-
-            <div class="col s3 tag row">
-              Beds
-            </div>
-
-            <div class="col s3 tag row">
-              Bathrooms
-            </div>
 
 
-          </div>
-          <!-- Bottom -->
+      </div>
 
-        </div>
-        <!-- Center -->
-
-        <!-- Right -->
-        <div class="col s3 price">
-          <div class="price-body">
-            <h5 class="truncate light">{{ $space->price }}</h5>
-            <p class="second">{{ $space->currency }}</p>
-            <p class="third light">per {{ $space->per }}</p>
-          </div>
-          <a href="{{ route('space.show', ['hash' => $space->hash ]) }}" class="btn">Open</a>
-        </div>
-        <!-- Right -->
-    </div>
-   @endforeach
+     @endforeach
   </div>
-  <!-- My places -->
-
 
   @endif
 </div>

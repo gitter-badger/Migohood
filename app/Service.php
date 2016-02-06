@@ -14,7 +14,13 @@ class Service extends Model
      protected $fillable =
      [
        'hash',
+       'thumbnail',
+       'notpublic',
        'public',
+
+       'stars',
+       'recommends',
+       'comments',
 
        //Basic
        'type',
@@ -44,3 +50,4 @@ class Service extends Model
      {
          return $this->belongsTo('App\User');
      }
+}

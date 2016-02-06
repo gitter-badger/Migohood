@@ -21,13 +21,17 @@ class CreateServicesTable extends Migration
            $table->timestamps();
 
            $table->string('hash');
-           $table->string('public');
+           $table->string('thumbnail')->default('/img/app/thumbnail.png');
+           $table->string('notpublic')->default('null');
+           $table->string('public')->default('no');
+
+           $table->integer('stars')->default(0);
+           $table->integer('recommends')->default(0);
+           $table->integer('comments')->default(0);
 
            //Basics
            $table->string('type');
            $table->string('capacity')->default('null');
-
-           //Description
            $table->string('title')->default('null');
            $table->string('description')->default('null');
 

@@ -52,11 +52,11 @@
     <div class="col s3">
       <div class="not_listed">
         <div class="not_listed_body">
-          <img class="materialboxed" src="{{ $space->thumbnail}}" alt="" />
+          <img class="materialboxed" src="{{ $space->thumbnail }}" alt="" />
           <div class="not_listed_content center">
             <h6 class="light">{{ $space->type }} , {{ $space->accomodance }}</h6>
             <span>Last Updated {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $space->updated_at)->diffForHumans() }} </span>
-            <a href="{{ url($space->notpublic)}} "  class="btn">Continue Editing</a>
+            <a href="{{ url($space->notpublic) }}" class="btn">Continue Editing</a>
           </div>
         </div>
       </div>

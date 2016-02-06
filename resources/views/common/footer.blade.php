@@ -30,8 +30,8 @@
       <h5>Help</h5>
       <ul>
         <li><a href="{{ url('help') }}">Help Center</a></li>
-        <li><a href="{{ url('terms') }}">Term of Use</a></li>
-        <li><a href="{{ url('terms') }}">Privacy Policy</a></li>
+        <li><a href="{{ url('help/terms') }}">Term of Use</a></li>
+        <li><a href="{{ url('help/terms') }}">Privacy Policy</a></li>
         <li><a href="#!">Support</a></li>
       </ul>
      </div>

@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Auth;
 use DB;
+
 use App\Space;
+use App\Office;
+use App\Service;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -95,13 +100,19 @@ class AppController extends Controller
     //MyServices - Listed
     public function MyServicesListed()
     {
-      return view('users/services.listed');
+      $services = DB::table('services')
+                  ->where('user_id', Auth::user()->id)
+                  ->where('public', 'yes')->get();
+      return view('users/services.listed', ['services' => $services]);
     }
 
     //MyServices - Not Listed
     public function MyServicesNotListed()
     {
-      return view('users/services.notlisted');
+      $services = DB::table('services')
+                  ->where('user_id', Auth::user()->id)
+                  ->where('public', 'no')->get();
+      return view('users/services.notlisted', ['services' => $services]);
     }
 
 

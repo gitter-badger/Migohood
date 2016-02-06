@@ -22,7 +22,12 @@ class Office extends Model
   [
     'hash',
     'thumbnail',
+    'notpublic',
     'public',
+
+    'stars',
+    'recommends',
+    'comments',
 
     //Basic
     'type',

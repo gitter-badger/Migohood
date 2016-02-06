@@ -1,15 +1,14 @@
 @extends('layouts.edit')
 @section('title')
-  Photos - {{ $space->type }}, {{ $space->accomodance }}
+  Photos - {{ $office->type }}, {{ $office->accomodance }}
 @stop
 @section('menu')
   <ul>
-    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'basics' ]) }}"><li><i class="material-icons left">library_books</i>Basics</li></a>
-    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'description' ]) }}"><li><i class="material-icons left">border_color</i>Description</li></a>
-    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'location' ]) }}"><li><i class="material-icons left">location_on</i>Location</li></a>
-    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'photos' ]) }}"><li class="active"><i class="material-icons left">add_a_photo</i>Photos</li></a>
-    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'pricing' ]) }}"><li><i class="material-icons left">receipt</i>Pricing</li></a>
-    <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'extras' ]) }}"><li><i class="material-icons left">star</i>Extras</li></a>
+    <a href="{{ route('office.router', ['hash' => $office->hash, 'route' => 'basics' ]) }}"><li><i class="material-icons left">library_books</i>Basics</li></a>
+    <a href="{{ route('office.router', ['hash' => $office->hash, 'route' => 'location' ]) }}"><li><i class="material-icons left">location_on</i>Location</li></a>
+    <a href="{{ route('office.router', ['hash' => $office->hash, 'route' => 'photos' ]) }}"><li class="active"><i class="material-icons left">add_a_photo</i>Photos</li></a>
+    <a href="{{ route('office.router', ['hash' => $office->hash, 'route' => 'pricing' ]) }}"><li><i class="material-icons left">receipt</i>Pricing</li></a>
+    <a href="{{ route('office.router', ['hash' => $office->hash, 'route' => 'extras' ]) }}"><li><i class="material-icons left">star</i>Extras</li></a>
   </ul>
 @stop
 
@@ -23,12 +22,12 @@
      <div class="divider"></div>
   </div>
 
-  <!-- Uddate Space Thumbnail -->
-  <form class="form row" id="pic" action="{{ route('space.router.update', ['hash' => $space->hash, 'route' => 'thumbnail' ]) }}" method="POST" enctype="multipart/form-data">
+  <!-- Uddate Office Thumbnail -->
+  <form class="form row" id="pic" action="{{ route('office.router.update', ['hash' => $office->hash, 'route' => 'thumbnail' ]) }}" method="POST" enctype="multipart/form-data">
       {{ csrf_field() }}
 
       <div class="thumb center col s7">
-        <img class="materialboxed" src="{{ $space->thumbnail }}" alt="" />
+        <img class="materialboxed" src="{{ $office->thumbnail }}" alt="" />
       </div>
 
       <div class="col s5 file-field input-field">
@@ -46,7 +45,7 @@
      </div>
 
   </form>
-  <!-- Uddate Space Thumbnail -->
+  <!-- Uddate Office Thumbnail -->
 
   <!-- Title -->
   <div class="title">
@@ -56,8 +55,8 @@
      <div class="divider"></div>
   </div>
 
-    <!-- Uddate Space Gallery -->
-    <form class="" id="pic" action="{{ route('space.router.update', ['hash' => $space->hash, 'route' => 'gallery' ]) }}" method="post" enctype="multipart/form-data">
+    <!-- Uddate Office Gallery -->
+    <form class="" id="pic" action="{{ route('office.router.update', ['hash' => $office->hash, 'route' => 'gallery' ]) }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <input type="file" name="file[]" multiple><br><br>
         <div class="col s4 submit">
@@ -82,19 +81,19 @@
         </div>
         @endif
     </form>
-    <!-- Uddate Space Gallery -->
+    <!-- Uddate office Gallery -->
 
   <div class="form row">
     <!-- Submit -->
     <div class="col s12 submit">
       <div class="left">
-        <a href="{{ route('space.show', ['hash' => $space->hash ]) }}" class="btn btn-back">
-          @if($space->public == 'yes') Show @endif
+        <a href="{{ route('office.show', ['hash' => $office->hash ]) }}" class="btn btn-back">
+          @if($office->public == 'yes') Show @endif
         </a>
       </div>
 
       <div class="right">
-        <a href="{{ route('space.router', ['hash' => $space->hash, 'route' => 'pricing' ]) }}" class="btn btn-save" id="next">Save and Continue</a>
+        <a href="{{ route('office.router', ['hash' => $office->hash, 'route' => 'pricing' ]) }}" class="btn btn-save" id="next">Save and Continue</a>
       </div>
     </div>
     <!-- Submit -->
@@ -104,21 +103,21 @@
 @stop
 
 @section('info')
-  @if($space->public == 'no')
+  @if($office->public == 'no')
     <img src="/img/app/space.png" alt="" />
       <h4 class="light">It's done</h4>
       <p class="light">
-        Your new Space has been created, but.. It's not public yet. Please proceed to next steps
-        to have your space available for rent.
+        Your new Office has been created, but.. It's not public yet. Please proceed to next steps
+        to have your Office available for rent.
       </p>
   @else
   <img src="/img/app/graph.png" alt="" />
     <h4 class="light">It's done</h4>
     <p class="light">
-      Your Space is public now.. You can start making money.
+      Your Office is public now.. You can start making money.
       Off course you can proceed to next steps to improve your announce,
       giving more details or editing those that you provied before makes
-      your space better.
+      your office better.
     </p>
   @endif
 @stop

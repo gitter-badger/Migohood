@@ -27,8 +27,8 @@
     </div>
 
     <p class="center">
-      <input type="checkbox" name="agree" id="check" checked/>
-      <label for="check">I'm agree with <a href="#">Terms and conditions</a></label>
+      <input type="checkbox" name="agree" id="check"/>
+      <label for="check">I'm agree with <a href="{{ url('help/terms') }}">Terms and conditions</a></label>
     </p>
 
     <div class="panel-submit">

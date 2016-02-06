@@ -25,6 +25,10 @@ class Space extends Model
     'notpublic',
     'public',
 
+    'stars',
+    'recommends',
+    'comments',
+
     //Basic
     'type',
     'accomodance',

@@ -39,10 +39,10 @@
   <!-- Box Nothing -->
   <div class="box">
     <div class="box-nothing">
-      <i class="material-icons">location_city</i>
+      <i class="material-icons">work</i>
       <h5 class="light">Woops! It looks lonely here. </h5>
-      <p class="light">You don't have any space, start one clicking bellow! </p>
-      <a href="{{ url('create/spaces') }}" class="btn btn-new">Create Space</a>
+      <p class="light">You don't have any office, start one clicking bellow! </p>
+      <a href="{{ url('create/spaces') }}" class="btn btn-new">Create Office</a>
     </div>
   </div>
   <!-- Box Nothing -->
@@ -57,7 +57,7 @@
           <div class="not_listed_content center">
             <h6 class="light">{{ $office->type }} , {{ $office->accomodance }}</h6>
             <span>Last Updated {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $office->updated_at)->diffForHumans() }} </span>
-            <a href="{{ route('office.edit', ['hash' => $office->hash ]) }} "  class="btn">Continue Editing</a>
+            <a href="{{ url($office->notpublic) }}" class="btn">Continue Editing</a>
           </div>
         </div>
       </div>
