@@ -66,6 +66,7 @@ Route::get('auth/google/callback', 'Auth\AuthController@handleGoogleCallback');
    Routes for No Autenticated users
 ************************************/
 Route::get('spaces', 'AppController@spaces');             // Spaces...
+Route::get('offices', 'AppController@offices');           // Offices...
 Route::get('services', 'AppController@services');         // Services...
 
 
@@ -162,7 +163,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Show Service
     Route::get('service/{hash}', [
         'uses' => 'ServiceController@show',
-        'as' => 'service.show',    
+        'as' => 'service.show',
     ]);
 
     // Create service

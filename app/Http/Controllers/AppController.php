@@ -21,6 +21,12 @@ class AppController extends Controller
         return View('app.spaces');
       }
 
+      //Offices
+      public function offices() {
+        return View('app.offices');
+      }
+
+
       //Services
       public function services() {
         return View('app.services');
