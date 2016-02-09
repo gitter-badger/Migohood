@@ -30,11 +30,6 @@ class SpaceController extends Controller
         return view('errors.404');  //404 Not found
       }
 
-      //Is it not the owner?
-      if(Auth::user()->id != $space->user_id) {
-        return view('errors.400'); //400 Bad Request
-      }
-
       $photos = DB::table('photos')->where('owner_hash', $space->hash)->get();
 
       return view('spaces.show', ['space' => $space, 'photos' => $photos ]);
@@ -130,7 +125,7 @@ class SpaceController extends Controller
         }
 
     }
-    
+
 
     /****************************
             Routes - POST

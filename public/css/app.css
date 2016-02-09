@@ -1,62 +1,6 @@
 /*************
    SETTINGS
 **************/
-/*
-#search_box {
-  padding: 0px 22px;
-}
-
-#search_box input[type=text] {
-  background-color: #FFF;
-  height: 2rem;
-  border: 2px solid #E7E9EB;
-  border-radius: 5px;
-  line-height: 2rem;
-  font-size: 1rem;
-  margin: 10px 0 15px 0;
-  padding: 0px 5px;
-  display: block;
-  color: #475968;
-}
-
-Input - Focus
-#search_box input[type=text]:focus:not([readonly]) {
-  border: 2px solid #E7E9EB;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: #475968;
-}
-
-#search_box ::-webkit-input-placeholder {
-  color: #475968;
-}
-
-#search_box :-moz-placeholder {
-  color: #475968;
-}
-
-#search_box ::-moz-placeholder {
-  color: #475968;
-}
-
-#search_box :-ms-input-placeholder {
-  color: #475968;
-}
-
-#search_box input[type=text] + label {
-  font-size: 14px;
-  color: #475968;
-  font-weight: 500;
-}
-
-#search_box input[type=text]:focus:not([readonly]) + label {
-  font-size: 14px;
-  color: #475968;
-  font-weight: 500;
-}
-*/
-
 /* General */
 * { box-sizing: border-box; }
 
@@ -278,7 +222,6 @@ footer.page-footer .footer-copyright {
   vertical-align: middle;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  /*box-shadow: 0 0 1px rgba(0, 0, 0, 0);*/
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
@@ -310,6 +253,258 @@ footer.page-footer .footer-copyright {
   transform: translateY(0);
 }
 
+/***************
+  SEARCH NAVBAR
+****************/
+#search .navbar-fixed {
+  z-index: 997;
+}
+
+#search nav {
+  background: rgba(255, 255, 255, 0.9) !important;
+  /*background: #FFF !important;*/
+	box-shadow: none !important;
+	-webkit-box-shadow:none !important;
+  padding-left: 30px;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #F2F3F4;
+}
+
+#search i {
+  color: #999999;
+  vertical-align: middle;
+  line-height: 50px;
+  text-align: right;
+}
+
+#search .reservable i {
+  font-size: 18px;
+  line-height: 40px;
+}
+
+/* Input - Text */
+#search_box input[type=text] {
+  background: #FFF !important;
+  border: transparent;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 2px;
+  font-size: 13px;
+  margin: 0px;
+  margin-top: 5px;
+  border-right: 1px solid #D6D6D6;
+  font-weight: 500;
+}
+
+/* Input - Focus */
+#search_box input[type=text]:focus:not([readonly]) {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Input - Select */
+#search .select-wrapper input.select-dropdown {
+  background: #FFF !important;
+  border-right: 1px solid #D6D6D6;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 2px;
+  font-size: 13px;
+  margin: 0px;
+  margin-top: 5px;
+}
+
+/* Input - Select */
+#search .last .select-wrapper input.select-dropdown {
+  border-right: none !important;
+}
+
+#search_box .select-wrapper span.caret {
+  display: none;
+}
+
+/**** Input - Picker Date ****/
+
+/* Picker Date - Date (Background) */
+.picker__date-display {
+  text-align: center;
+  background-color: #02A4F5 !important;
+  color: #fff;
+  padding-bottom: 15px;
+  font-weight: 300;
+}
+
+/* Picker Date - Hover on next and previous */
+.picker__nav--prev:hover,
+.picker__nav--next:hover {
+  cursor: pointer;
+  color: #000000;
+  background: #FFF;
+}
+
+/* Picker Date - Top Week Day */
+.picker__weekday-display {
+  background-color: #0297E2;
+  color: #FFF;
+  padding: 10px;
+  font-weight: 400;
+  letter-spacing: .5;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Picker Date - Month */
+.picker__month-display {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+/* Picker Date - Day */
+.picker__day-display {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+/* Picker Date - Year */
+.picker__year-display {
+  font-size: 1.8rem;
+  color: #FFF;
+}
+
+/* Picker Date - Days */
+.picker__day--infocus {
+  color: #595959;
+  letter-spacing: -.3;
+  padding: .75rem 0;
+  font-weight: 400;
+  border: 1px solid transparent;
+}
+
+/* Picker Date - Days (Today) */
+.picker__day.picker__day--today {
+  color: #0297E2;
+  font-weight: bold;
+}
+
+/* Picker Date - Days (Selected) */
+.picker__day.picker__day--today.picker__day--selected {
+  color: #fff;
+}
+
+/* Picker Date - Days (Selected, hover and focus) */
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected {
+  border-radius: 4px;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  background-color: #0297E2;
+  color: #ffffff;
+}
+
+/* Picker Date - Close and Today button */
+.picker__close, .picker__today {
+  font-size: 1.1rem;
+  padding: 0 1rem;
+  color: #0297E2;
+}
+
+/* Picker Date - Close and Today button (Focus) */
+button.picker__today:focus, button.picker__clear:focus, button.picker__close:focus {
+  background-color: #D1EFFF;
+}
+
+#search nav .btn {
+	text-align: center;
+  vertical-align: middle;
+	padding: 0px 20px;
+	height: 35px;
+  margin-bottom: 8px;
+  line-height: 35px;
+	font-size: 12px !important;
+  color: #FFF;
+  background: #F2415E !important;
+	font-weight: 500;
+  font-weight: bold;
+	border-radius: 4px;
+	text-transform: capitalize !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+}
+
+#search nav .btn:hover {
+  background: #F4657D !important;
+}
+
+#search nav .searchable .container {
+  width: 85%;
+}
+
+#search nav .reservable .container {
+  width: 70%;
+}
+
+/***************
+    RESULTS
+****************/
+.results.container {
+  width: 95%;
+}
+
+.pagination li a {
+  color: #444;
+}
+
+.pagination li.active {
+  background-color: #F2415E;
+  color: #FFF;
+}
+
+.results .listed {
+  padding: 0px 5px;
+}
+
+.results .listed .listed_body img {
+  width: 100%;
+  height: 150px;
+  border-radius: 4px;
+}
+
+/* Listed - Content */
+.results .listed_body h6,
+.results .listed_body p {
+  margin-left: 12px !important;
+}
+
+.results .listed_body .listed_price .listed_price_content .btn {
+  padding: 0px 30px;
+  font-size: 14px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  text-transform: capitalize !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+  background: #02A4F5 !important;
+}
+
+.results .listed_body .listed_price .listed_price_content h5 {
+  font-weight: 600;
+  color: #02A4F5;
+  font-size: 25px;
+  margin: 0px;
+}
+
+.results .listed_body .listed_content h6 {
+  margin-bottom: 0px;
+}
+
+.results .listed_body .listed_content span.category {
+  padding: 3px 5px;
+  font-size: 11px;
+  border-radius: 3px;
+}
 
 /*******************
     BOX SETTINGS
@@ -969,7 +1164,6 @@ form p label a {
   font-weight: 300;
   font-size: 20px;
   margin-top: 16px;
-  margin-bottom: 5px;
   color: #293948;
 }
 

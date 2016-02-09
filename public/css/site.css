@@ -291,6 +291,7 @@ input[type=text] {
   border-bottom: 2px solid #F3F4F7;
   border-radius: 4px;
   padding: 1px 0px 1px 15px;
+  text-align: center;
   height: 32px !important;
   outline: none;
   font-weight: 300;

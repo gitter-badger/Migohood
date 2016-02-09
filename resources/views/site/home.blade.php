@@ -10,9 +10,10 @@
     <p class="light">Discovering places, offices and services near you <strong>has never been so easy!</strong></p>
 
     <!-- Form -->
-    <form class="row" action="" method="">
+    <form class="row" action="/search" method="GET" role="search" id="search_box">
+      {{ csrf_field() }}
       <div class="col s10">
-        <input placeholder="Start typing your city or country" type="text" name="" value="" required>
+        <input placeholder="Start typing your city or country" type="text" name="query_text" value="" required>
       </div>
 
       <div class="col s2">

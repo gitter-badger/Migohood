@@ -16,6 +16,9 @@
 // Home...
 Route::get('/', 'SiteController@home');
 
+// Search...
+Route::get('search', 'SiteController@search');
+
 
 /******************************
     Routes for HelpCenter
@@ -78,6 +81,11 @@ Route::group(['middleware' => 'auth'], function () {
   /******************************
           Routes for App
   ******************************/
+    // Search
+    Route::get('space/search', 'AppController@SpaceSearch');
+    Route::get('office/search', 'AppController@OfficeSearch');
+    Route::get('service/search', 'AppController@ServiceSearch');
+
     // Dashboard
     Route::get('dashboard', 'AppController@Dashboard');
 
@@ -111,14 +119,14 @@ Route::group(['middleware' => 'auth'], function () {
     /******************************
           Routes for Spaces
     ******************************/
-    // Show Space
+    // Create Space
+    Route::post('space/create', 'SpaceController@create');
+
+    // Show Office
     Route::get('space/{hash}', [
         'uses' => 'SpaceController@show',
         'as' => 'space.show',
     ]);
-
-    // Create Space
-    Route::post('space/create', 'SpaceController@create');
 
     // Space Router - Get
     Route::get('space/{hash}/{route}', [
@@ -131,6 +139,13 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'SpaceController@update',
         'as' => 'space.router.update',
     ]);
+
+    // Delete Space
+    /*
+    Route::delete('space/{hash}', [
+        'uses' => 'SpaceController@destroy',
+        'as' => 'space.delete',
+    ]);*/
 
 
     /******************************
@@ -156,6 +171,7 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'OfficeController@update',
         'as' => 'office.router.update',
     ]);
+
 
     /******************************
           Routes for Services

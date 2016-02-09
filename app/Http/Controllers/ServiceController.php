@@ -30,11 +30,6 @@ class ServiceController extends Controller
       return view('errors.404');  //404 Not found
     }
 
-    //Is it not the owner?
-    if(Auth::user()->id != $service->user_id) {
-      return view('errors.400'); //400 Bad Request
-    }
-
     $photos = DB::table('photos')->where('owner_hash', $service->hash)->get();
 
     return view('services.show', ['service' => $service, 'photos' => $photos ]);

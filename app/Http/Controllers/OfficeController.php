@@ -31,11 +31,6 @@ class OfficeController extends Controller
       return view('errors.404');  //404 Not found
     }
 
-    //Is it not the owner?
-    if(Auth::user()->id != $office->user_id) {
-      return view('errors.400'); //400 Bad Request
-    }
-
     $photos = DB::table('photos')->where('owner_hash', $office->hash)->get();
 
     return view('offices.show', ['office' => $office, 'photos' => $photos ]);
