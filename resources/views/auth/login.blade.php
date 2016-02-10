@@ -24,11 +24,11 @@
     </div>
 
     <div class="panel-social">
-      <a href="{{ url('auth/facebook') }}" class="btn btn-facebook">Log in with <span>Facebook</span></a>
+      <a href="{{ route('social.auth', ['provider' => 'facebook']) }}" class="btn btn-facebook">Log in with <span>Facebook</span></a>
     </div>
 
     <div class="panel-social">
-      <a href="{{ url('auth/google') }}" class="btn btn-google">Log in with <span>Google</span></a>
+      <a href="{{ route('social.auth', ['provider' => 'google']) }}" class="btn btn-google">Log in with <span>Google</span></a>
     </div>
 
     <div class="panel-options">

@@ -37,11 +37,11 @@
 
     <div class="container divider"></div>
     <div class="panel-social">
-      <a href="{{ url('auth/facebook') }}" class="btn btn-facebook">Sign up with <span>Facebook</span></a>
+      <a href="{{ route('social.auth', ['provider' => 'facebook']) }}" class="btn btn-facebook">Sign up with <span>Facebook</span></a>
     </div>
 
     <div class="panel-social">
-      <a href="{{ url('auth/google') }}" class="btn btn-google">Sign up with <span>Google</span></a>
+      <a href="{{ route('social.auth', ['provider' => 'google']) }}" class="btn btn-google">Sign up with <span>Google</span></a>
     </div>
 
     <div class="panel-options">

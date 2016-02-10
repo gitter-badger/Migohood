@@ -137,7 +137,8 @@ footer.page-footer .footer-copyright {
 }
 
 #main nav .right img {
-  width: 32px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   vertical-align: middle;
   margin-left: 6px;

@@ -6,6 +6,9 @@ use App\User;
 use Validator;
 use Auth;
 use Socialite;
+
+use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -71,71 +74,44 @@ class AuthController extends Controller
 
 
      /****************************
-              FACEBOOK
+          SOCIAL AUTHENTICATION
      ****************************/
-    public function redirectToFacebook()
+    // Redirect To Provider
+    public function redirectToProvider($provider)
     {
-      return Socialite::driver('facebook')->redirect();
+      return Socialite::driver($provider)->redirect();
     }
 
-    public function handleFacebookCallback()
+    // Handle Provider Callback
+    public function handleProviderCallback($provider, Request $request)
     {
-        try {
-            $user = Socialite::driver('facebook')->user();
-        } catch (ClientException $e) {
-            return redirect('auth/facebook');
-        }
+      // Denied?
+      if ($request->error == 'access_denied') {
+        return redirect('/auth/register')->withErrors(['User has canceled the social request']);;
+      }
 
-        $authUser = $this->findOrCreateUser($user);
+      // Handle the user
+      $user = Socialite::driver($provider)->user();
+      $authUser = $this->findOrCreateUser($user);
+      Auth::login($authUser, true);
 
-        Auth::login($authUser, true);
-
-        return redirect('/spaces');
+      return redirect('/spaces');
     }
 
-    /****************************
-             FACEBOOK
-    ****************************/
-    public function redirectToGoogle()
-    {
-      return Socialite::driver('google')->redirect();
-    }
+  // Create User
+   private function findOrCreateUser($ProviderUser)
+   {
+       $authUser = User::where('email', $ProviderUser->email)->first();
 
-    public function handleGoogleCallback()
-    {
+       if ($authUser){
+          return $authUser;
+       }
 
-        try {
-            $user = Socialite::driver('google')->user();
-        } catch (ClientException $e) {
-            return redirect('auth/google');
-        }
-
-        $authUser = $this->findOrCreateUser($user);
-
-        Auth::login($authUser, true);
-
-        return redirect('/spaces');
-    }
-
-        /**
-      * Return user if exists; create and return if doesn't
-      *
-      * @param $ProviderUser
-      * @return User
-      */
-     private function findOrCreateUser($ProviderUser)
-     {
-         $authUser = User::where('email', $ProviderUser->email)->first();
-
-         if ($authUser){
-             return $authUser;
-         }
-
-         return User::create([
-             'name' => $ProviderUser->name,
-             'email' => $ProviderUser->email,
-             'password'=>$ProviderUser->token,
-             'avatar' => $ProviderUser->avatar
-         ]);
-     }
+       return User::create([
+           'name' => $ProviderUser->name,
+           'email' => $ProviderUser->email,
+           'password'=>$ProviderUser->token,
+           'avatar' => $ProviderUser->avatar
+       ]);
+   }
 }

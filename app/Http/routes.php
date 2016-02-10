@@ -13,24 +13,16 @@
 /******************************
       Routes for MainSite
 ******************************/
-// Home...
-Route::get('/', 'SiteController@home');
-
-// Search...
-Route::get('search', 'SiteController@search');
+Route::get('/', 'SiteController@home');                     // Home...
+Route::get('search', 'SiteController@search');              // Search...
 
 
 /******************************
     Routes for HelpCenter
 ******************************/
-// Help...
-Route::get('help', 'SiteController@help');
-
-// Terms & Conditions ...
-Route::get('help/terms', 'SiteController@terms');
-
-// Terms & Conditions ...
-Route::get('help/terms_es', 'SiteController@terms_es');
+Route::get('help', 'SiteController@help');                  // Help...
+Route::get('help/terms', 'SiteController@terms');           // Terms & Conditions ...
+Route::get('help/terms_es', 'SiteController@terms_es');     // Terms & Conditions ...
 
 
 /******************************
@@ -56,13 +48,13 @@ Route::get('password/success', ['middleware' => 'auth', function () {
     return view('auth.success');
 }]);
 
-// Facebook Routes ...
-Route::get('auth/facebook', 'Auth\AuthController@redirectToFacebook');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleFacebookCallback');
+// Social Authentication ...
+Route::get('auth/{provider}', [
+    'uses' => 'Auth\AuthController@redirectToProvider',
+    'as' => 'social.auth',
+]);
 
-// Goole Routes ...
-Route::get('auth/google', 'Auth\AuthController@redirectToGoogle');
-Route::get('auth/google/callback', 'Auth\AuthController@handleGoogleCallback');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
 
 /************************************
