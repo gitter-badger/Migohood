@@ -3,6 +3,10 @@
   {{ $space->type }} - {{ $space->accomodance }}
     in {{ $space->city }}, {{ $space->country }}
 @stop
+@section('header')
+  <link href="/css/ninja-slider.css" rel="stylesheet" type="text/css" />
+  <script src="/js/ninja-slider.js" type="text/javascript"></script>
+@stop
 @section('content')
 
 
@@ -74,18 +78,48 @@
 <!-- Reserve NavBar -->
 @endif
 
-<section class="row">
+<section class="row show">
+  <!-- Pictures -->
+  <div class="col s4">
+     <div id="ninja-slider">
+         <div class="slider-inner">
+             <ul>
+                <li><a class="ns-img" href='{{ $space->thumbnail }}'></a></li>
+               @foreach ($photos as $photo)
+                <li><a class="ns-img" href='{{ $photo->path }}'></a></li>
+               @endforeach
+             </ul>
+             <div class="fs-icon" title="Expand/Close"></div>
+         </div>
+     </div>
+   </div>
+   <!-- Pictures -->
 
-    <!--<ul>
-      <li>Type - {{ $space->type }} </li>
-      <li>Type - {{ $space->accomodance }} </li>
-      <li>capacity - {{ $space->capacity }} </li>
-    </ul>-->
+   <div class="col s4">
+     <h4> {{ $space->title }}</h4>
+      <p><span class="stars">
+        <!-- Conditions here -->
+        <i class="material-icons filled">star</i>
+        <i class="material-icons filled">star</i>
+        <i class="material-icons filled">star</i>
+        <i class="material-icons not_filled">star</i>
+        <i class="material-icons not_filled">star</i>
+      </span></p>
 
-   <!--<img src=" {{ url($space->user->avatar) }}" alt="" />-->
+     <p><span class="location"><i class="material-icons">location_on</i>{{ $space->country }}, {{ $space->city}}</span></p>
+     <p><span class="category space">{{ $space->type }} -  {{ $space->accomodance }}</span></p>
+
+   </div>
+
+   <div class="col s4 show-pŕice">
+     a
+   </div>
+
+
 
     @if(Auth::user()->id  == $space->user_id)
       <a href=" {{ route('space.router', ['hash' => $space->hash, 'route' => 'basics' ]) }}">Edit</a>
+
     @else
       <a href=" #">reserve</a>
    @endif

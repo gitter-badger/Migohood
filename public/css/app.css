@@ -1164,21 +1164,24 @@ form p label a {
   padding: 3px 5px;
   font-size: 12px;
   border-radius: 3px;
+  font-weight: 500;
 }
 
 /* Type - Space */
 .listed_body .listed_content span.category.space {
-  border: 1px solid #FF4967;
+  border: 2px solid #FF4967;
   color: #FF4967;
 }
 
+/* Type - Office */
 .listed_body .listed_content span.category.office {
-  border: 1px solid #A32BFF;
+  border: 2px solid #A32BFF;
   color: #A22AFF;
 }
 
+/* Type - Service */
 .listed_body .listed_content span.category.service {
-  border: 1px solid #0090FF;
+  border: 2px solid #0090FF;
   color: #2699FF;
 }
 
@@ -1312,4 +1315,72 @@ form p label a {
 
 .not_listed_body  .btn:hover {
   background: #21B4FD !important;
+}
+
+/************
+    SHOW
+*************/
+.show {
+  margin: 10px 0px;
+  padding: 0px 30px;
+}
+
+.show h4 {
+  color: #304354;
+  margin-bottom: 2px;
+
+}
+.show p {
+  padding: 5px 0px !important;
+  margin: 0px !important;
+}
+
+.show span.stars i.filled {
+  color: #FFAE12;
+}
+
+.show span.stars i.not_filled {
+  color: #ffeac3;
+}
+
+
+.show span.location {
+  font-size: 15px;
+  color: #949CA3;
+}
+
+.show span.location i {
+  color: #909bA5;
+  font-size: 14px;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.show span.category {
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+/* Type - Space */
+.show span.category.space {
+  border: 2px solid #FF4967;
+  color: #FF4967;
+}
+
+/* Type - Office */
+.show span.category.office {
+  border: 2px solid #A32BFF;
+  color: #A22AFF;
+}
+
+/* Type - Service */
+.show span.category.service {
+  border: 2px solid #0090FF;
+  color: #2699FF;
+}
+
+.show-price {
+  
 }

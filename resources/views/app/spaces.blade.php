@@ -155,7 +155,7 @@
                     <h6>{{ $space->currency }}</h6>
                     <h5 class="truncate"><span>$</span>{{ $space->price }}</h5>
                     <p>Per {{ $space->per }}</p>
-                    <a href="{{ route('space.show', ['hash' => $space->hash ]) }}" class="btn">Show</a><br>                    
+                    <a href="{{ route('space.show', ['hash' => $space->hash ]) }}" class="btn">Show</a><br>
                 </div>
               </div>
             </div>
