@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-    Space - {{ $space->type }}, {{ $space->accomodance }}
+  {{ $space->type }} - {{ $space->accomodance }}
     in {{ $space->city }}, {{ $space->country }}
 @stop
 @section('content')
@@ -72,21 +72,17 @@
 </div>
 </div>
 <!-- Reserve NavBar -->
-
 @endif
-
-
-
-
 
 <section class="row">
 
-    -- Show --
-    <ul>
+    <!--<ul>
       <li>Type - {{ $space->type }} </li>
       <li>Type - {{ $space->accomodance }} </li>
       <li>capacity - {{ $space->capacity }} </li>
-    </ul>
+    </ul>-->
+
+   <!--<img src=" {{ url($space->user->avatar) }}" alt="" />-->
 
     @if(Auth::user()->id  == $space->user_id)
       <a href=" {{ route('space.router', ['hash' => $space->hash, 'route' => 'basics' ]) }}">Edit</a>

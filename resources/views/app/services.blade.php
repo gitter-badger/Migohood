@@ -89,7 +89,7 @@
     <div class="box-nothing">
       <i class="material-icons">mood_bad</i>
       <h5 class="light">Woops! It looks lonely here. </h5>
-      <p class="light">There are no Services that matchs with your search, start one clicking bellow! </p>
+      <p class="light">There are no services that matchs with your search, start one clicking bellow! </p>
       <a href="{{ url('create/services') }}" class="btn btn-new">Create Service</a>
     </div>
   </div>
@@ -144,7 +144,7 @@
                     <h6>{{ $service->currency }}</h6>
                     <h5 class="truncate"><span>$</span>{{ $service->price }}</h5>
                     <p>Per {{ $service->per }}</p>
-                    <a href="{{ route('service.show', ['hash' => $service->hash ]) }}" class="btn">Reserve</a><br>
+                    <a href="{{ route('service.show', ['hash' => $service->hash ]) }}" class="btn">Show</a><br>
                 </div>
               </div>
             </div>

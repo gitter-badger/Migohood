@@ -30,6 +30,7 @@ class SpaceController extends Controller
         return view('errors.404');  //404 Not found
       }
 
+      //Photos
       $photos = DB::table('photos')->where('owner_hash', $space->hash)->get();
 
       return view('spaces.show', ['space' => $space, 'photos' => $photos ]);
@@ -187,10 +188,9 @@ class SpaceController extends Controller
           $space->description = $request->description;
 
           //
-          /*
           if($space->public == 'no') {
             $space->notpublic = 'space/'.$hash.'/location';
-          }*/
+          }
 
           $space->save();
 
@@ -428,6 +428,45 @@ class SpaceController extends Controller
         }
 
     }
+
+    /*
+    public function destroy($hash)
+    {
+      //Search Space
+      $space = Space::where('hash', $hash)->first();
+
+      //Is it null?
+      if(is_null($space)) {
+        return view('errors.404');  //404 Not found
+      }
+
+      //Is it not the owner?
+      if(Auth::user()->id != $space->user_id) {
+        return view('errors.400'); //400 Bad Request
+      }
+
+      // Delete thumnail
+      if($space->thumbnail != '/img/app/thumbnail.png') {
+        File::delete($space->thumbnail);
+      }
+
+        //Search Gallery
+        $photos = DB::table('photos')->where('owner_hash', $space->hash);
+
+      // Delete all photos
+      foreach ($photos as $photo) {
+        File::delete($photo->path);
+      }
+
+      // Delete all rows
+      $photos = DB::table('photos')->where('owner_hash', $space->hash)->delete();
+
+      // Delete Space
+      $space->delete();
+
+      // Redirect
+      return back();
+    }*/
 
 
     /****************************

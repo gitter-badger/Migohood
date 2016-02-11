@@ -142,7 +142,7 @@
                     <h6>{{ $office->currency }}</h6>
                     <h5 class="truncate"><span>$</span>{{ $office->price }}</h5>
                     <p>Per {{ $office->per }}</p>
-                    <a href="{{ route('office.show', ['hash' => $office->hash ]) }}" class="btn">Reserve</a><br>
+                    <a href="{{ route('office.show', ['hash' => $office->hash ]) }}" class="btn">Show</a><br>
                 </div>
               </div>
             </div>

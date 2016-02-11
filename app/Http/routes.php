@@ -114,7 +114,7 @@ Route::group(['middleware' => 'auth'], function () {
     // Create Space
     Route::post('space/create', 'SpaceController@create');
 
-    // Show Office
+    // Show Space
     Route::get('space/{hash}', [
         'uses' => 'SpaceController@show',
         'as' => 'space.show',
@@ -134,7 +134,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Delete Space
     /*
-    Route::delete('space/{hash}', [
+    Route::post('space/{hash}/destroy', [
         'uses' => 'SpaceController@destroy',
         'as' => 'space.delete',
     ]);*/

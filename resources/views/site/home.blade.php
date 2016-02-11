@@ -69,7 +69,7 @@
     </div>
     <p class="second">
       If you are an announcer, you'll get paid when you confirme
-      your client arrive. And all transactions are cover.
+      your client arrive. And all transactions are covered.
     </p>
   </div>
   <!--<h5 class="light">What are you wating for?</h5>

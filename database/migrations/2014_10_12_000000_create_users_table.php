@@ -18,6 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->string('avatar')->default('/img/app/default.jpg');
+
+            $table->integer('stars')->default(0);
+            $table->integer('recommends')->default(0);
+            $table->integer('comments')->default(0);
+
             $table->rememberToken();
             $table->timestamps();
         });

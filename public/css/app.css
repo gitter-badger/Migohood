@@ -473,38 +473,18 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   border-radius: 4px;
 }
 
-/* Listed - Content */
-.results .listed_body h6,
-.results .listed_body p {
-  margin-left: 12px !important;
+.results .listed .listed_content {
+  padding-left: 12px !important;
 }
 
-.results .listed_body .listed_price .listed_price_content .btn {
-  padding: 0px 30px;
+.results .listed .listed_price .listed_price_content h6 {
+  margin: 5px 0px;
+}
+
+.results .listed .listed_price .listed_price_content .btn {
+  padding: 0px 35px;
   font-size: 14px;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  text-transform: capitalize !important;
-  box-shadow: none !important;
-  -webkit-box-shadow:none !important;
-  background: #02A4F5 !important;
-}
-
-.results .listed_body .listed_price .listed_price_content h5 {
-  font-weight: 600;
-  color: #02A4F5;
-  font-size: 25px;
-  margin: 0px;
-}
-
-.results .listed_body .listed_content h6 {
   margin-bottom: 0px;
-}
-
-.results .listed_body .listed_content span.category {
-  padding: 3px 5px;
-  font-size: 11px;
-  border-radius: 3px;
 }
 
 /*******************
@@ -1245,7 +1225,7 @@ form p label a {
 }
 
 .listed_body .listed_price .listed_price_content h5 span {
-  margin-right: 5px;
+/*  margin-right: 5px;*/
   font-size: 16px;
 }
 
@@ -1266,7 +1246,7 @@ form p label a {
 }
 
 .listed_body .listed_price .listed_price_content .btn {
-  padding: 0px 45px;
+  padding: 0px 30px;
   font-size: 14px;
   margin-bottom: 5px;
   border-radius: 4px;
@@ -1274,6 +1254,10 @@ form p label a {
   box-shadow: none !important;
   -webkit-box-shadow:none !important;
   background: #02A4F5 !important;
+}
+
+.listed_body .listed_price .listed_price_content .btn:hover {
+  background: #21B4FD !important;
 }
 
 .listed_body .listed_price .listed_price_content a.link {

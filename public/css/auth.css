@@ -239,4 +239,4 @@ select {
 
 /* Extra  */
 .btn-submit { text-transform: capitalize !important; }
-.btn-facebook span, .btn-gmail span { font-weight: 600; }
+.btn-facebook span, .btn-google span { font-weight: 600; }

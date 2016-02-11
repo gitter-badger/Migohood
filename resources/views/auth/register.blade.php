@@ -7,7 +7,7 @@
     {!! csrf_field() !!}
 
     <div class="input-field">
-      <input placeholder="Fullname" type="text" name="name" value="{{ old('name') }}" required>
+      <input placeholder="Name" type="text" name="name" value="{{ old('name') }}" required>
     </div>
 
     <div class="input-field">
