@@ -128,7 +128,7 @@
             <div class="col s4 listed_content row">
                 <div class="col s12">
                   <h6 class="truncate">{{ $space->title }}</h6>
-                  <p><span class="location"><i class="material-icons">location_on</i>{{ $space->country }}, {{ $space->city}}</span></p>
+                  <p><span class="location"><i class="material-icons">location_on</i>{{ $space->city }}, {{ $space->country }}</span></p>
                   <p><span class="category space">{{ $space->type }} -  {{ $space->accomodance }}</span></p>
                 </div>
 

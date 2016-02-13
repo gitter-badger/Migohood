@@ -18,7 +18,7 @@ class UserController extends Controller
     //Edit
     public function edit()
     {
-      return view('users.edit');
+      //return view('users.edit');
     }
 
     public function update(Request $request, $id)

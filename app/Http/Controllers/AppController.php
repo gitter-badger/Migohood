@@ -356,4 +356,11 @@ class AppController extends Controller
         return view('app.services', ['services' => $services]);
 
       }
+
+      // Book
+      public function book(Request $request) {
+         return $request->capacity;
+      }
+
+
 }

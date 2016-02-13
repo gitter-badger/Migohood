@@ -34,7 +34,7 @@
   <div class="input-field col s3">
     <select name="per" required>
       <option value="" disabled selected>Choose one</option>
-      <option value="Night" @if($service->per == 'Night') selected="selected" @endif>Night </option>
+      <option value="Night" @if($service->per == 'Day') selected="selected" @endif>Day </option>
       <option value="Week" @if($service->per == 'Week') selected="selected" @endif>Week</option>
       <option value="Month" @if($service->per == 'Month') selected="selected" @endif>Month</option>
     </select>

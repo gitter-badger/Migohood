@@ -110,7 +110,7 @@
             <div class="col s4 listed_content row">
                 <div class="col s12">
                   <h6 class="truncate">{{ $service->title }}</h6>
-                  <p><span class="location"><i class="material-icons">location_on</i>{{ $service->country }}, {{ $service->city}}</span></p>
+                  <p><span class="location"><i class="material-icons">location_on</i>{{ $service->city }}, {{ $service->country }}</span></p>
                   <p><span class="category service">
                     {{ $service->type }},
                       @if( $service->capacity == '1')
