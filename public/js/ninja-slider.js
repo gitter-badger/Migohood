@@ -3,7 +3,7 @@ var nsOptions =
 {
     sliderId: "ninja-slider",
     transitionType: "slide", //"fade", "slide", "zoom", "kenburns 1.2" or "none"
-    autoAdvance: true,
+    autoAdvance: false,
     delay: "default",
     transitionSpeed: "default",
     aspectRatio: "9:6",

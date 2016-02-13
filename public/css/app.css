@@ -505,6 +505,23 @@ footer.page-footer .footer-copyright {
   margin: 15px 20px;
 }
 
+.box-title {
+  color: #374551;
+  font-size: 14px;
+  border-bottom: 1px solid #DDDFE2;
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.box-title i.material-icons {
+  float: left;
+  font-size: 20px;
+  padding-right: 5px;
+  margin-left: 10px;
+  color: #374551;
+}
+
 /***************
   ALERT BOXES
 ****************/
