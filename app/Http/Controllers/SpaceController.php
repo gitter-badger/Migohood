@@ -330,95 +330,164 @@ class SpaceController extends Controller
           if($request->towels == 'yes') {
             $space->towels = $request->towels;
           }
+          else {
+            $space->towels = 'no';
+          }
 
           if($request->bed_sheets == 'yes') {
             $space->bed_sheets = $request->bed_sheets;
+          }
+          else {
+            $space->bed_sheets = 'no';
           }
 
           if($request->soap == 'yes') {
             $space->soap = $request->soap;
           }
+          else {
+            $space->soap = 'no';
+          }
 
           if($request->toilet_paper == 'yes') {
             $space->toilet_paper = $request->toilet_paper;
+          }
+          else {
+            $space->toilet_paper = 'no';
           }
 
           if($request->shampoo == 'yes') {
             $space->shampoo = $request->shampoo;
           }
+          else {
+            $space->shampoo = 'no';
+          }
 
           if($request->tv == 'yes') {
             $space->tv = $request->tv;
+          }
+          else {
+            $space->tv = 'no';
           }
 
           if($request->air_conditioning == 'yes') {
             $space->air_conditioning = $request->air_conditioning;
           }
+          else {
+            $space->air_conditioning = 'no';
+          }
 
           if($request->heating == 'yes') {
             $space->heating = $request->heating;
+          }
+          else {
+            $space->heating = 'no';
           }
 
           if($request->kitchen == 'yes') {
             $space->kitchen = $request->kitchen;
           }
+          else {
+            $space->kitchen = 'no';
+          }
 
           if($request->wifi == 'yes') {
             $space->wifi = $request->wifi;
+          }
+          else {
+            $space->wifi = 'no';
           }
 
           if($request->iron == 'yes') {
             $space->iron = $request->iron;
           }
+          else {
+            $space->iron = 'no';
+          }
 
           if($request->breakfast == 'yes') {
             $space->breakfast = $request->breakfast;
+          }
+          else {
+            $space->breakfast = 'no';
           }
 
           /* Other */
           if($request->hot_tub == 'yes') {
             $space->hot_tub = $request->hot_tub;
           }
+          else {
+            $space->hot_tub = 'no';
+          }
 
           if($request->washer == 'yes') {
             $space->washer = $request->washer;
+          }
+          else {
+            $space->washer = 'no';
           }
 
           if($request->pool == 'yes') {
             $space->pool = $request->pool;
           }
+          else {
+            $space->pool = 'no';
+          }
 
           if($request->dryer == 'yes') {
             $space->dryer = $request->dryer;
+          }
+          else {
+            $space->dryer = 'no';
           }
 
           if($request->parking == 'yes') {
             $space->parking = $request->parking;
           }
+          else {
+            $space->parking = 'no';
+          }
 
           if($request->gym == 'yes') {
             $space->gym = $request->gym;
+          }
+          else {
+            $space->gym = 'no';
           }
 
           if($request->elevator == 'yes') {
             $space->elevator = $request->elevator;
           }
+          else {
+            $space->elevator = 'no';
+          }
 
           if($request->workspace == 'yes') {
             $space->workspace = $request->workspace;
+          }
+          else {
+            $space->workspace = 'no';
           }
 
           /* Special */
           if($request->family_kid_friendly == 'yes') {
             $space->family_kid_friendly = $request->family_kid_friendly;
           }
+          else {
+            $space->family_kid_friendly = 'no';
+          }
 
           if($request->smoking_allowed == 'yes') {
             $space->smoking_allowed = $request->smoking_allowed;
           }
+          else {
+            $space->smoking_allowed = 'no';
+          }
 
           if($request->pets_allowed == 'yes') {
             $space->pets_allowed = $request->pets_allowed;
+          }
+          else {
+            $space->pets_allowed = 'no';
           }
 
           //

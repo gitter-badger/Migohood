@@ -20,6 +20,7 @@ class Service extends Model
 
        'stars',
        'recommends',
+       'votes',
        'comments',
 
        //Basic

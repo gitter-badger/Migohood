@@ -38,6 +38,7 @@ class User extends Model implements AuthenticatableContract,
 
       'stars',
       'recommends',
+      'votes',
       'comments'
     ];
 

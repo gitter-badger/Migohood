@@ -27,6 +27,7 @@ class Office extends Model
 
     'stars',
     'recommends',
+    'votes',
     'comments',
 
     //Basic

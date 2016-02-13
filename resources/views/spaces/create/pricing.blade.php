@@ -27,7 +27,7 @@
 
   <!-- Price -->
   <div class="input-field col s6">
-    <input Placeholder="Type a value here. Ex. 23.00" id="title" type="text" name="price" required @if($space->price != 'null') value="{{ $space->price }}" @endif>
+    <input Placeholder="Type a value here. Ex. 28.5" id="title" type="text" name="price" required @if($space->price != 'null') value="{{ $space->price }}" @endif>
     <label class="active" for="title">Price</label>
   </div>
   <!-- Price -->

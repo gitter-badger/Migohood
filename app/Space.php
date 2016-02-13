@@ -27,6 +27,7 @@ class Space extends Model
 
     'stars',
     'recommends',
+    'votes',
     'comments',
 
     //Basic

@@ -64,8 +64,6 @@ Route::get('spaces', 'AppController@spaces');             // Spaces...
 Route::get('offices', 'AppController@offices');           // Offices...
 Route::get('services', 'AppController@services');         // Services...
 
-Route::get('book', 'AppController@book');
-
 /************************************
      Routes for Autenticated users
 ************************************/
@@ -78,6 +76,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('space/search', 'AppController@SpaceSearch');
     Route::get('office/search', 'AppController@OfficeSearch');
     Route::get('service/search', 'AppController@ServiceSearch');
+
+    Route::get('book', 'AppController@book');
 
     // Dashboard
     Route::get('dashboard', 'AppController@Dashboard');

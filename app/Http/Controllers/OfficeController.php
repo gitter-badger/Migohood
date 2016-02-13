@@ -303,39 +303,66 @@ class OfficeController extends Controller
         if($request->bathroom == 'yes') {
           $office->bathroom = $request->bathroom;
         }
+        else {
+          $office->bathroom = 'no';
+        }
 
         if($request->tv_cable == 'yes') {
           $office->tv_cable = $request->tv_cable;
+        }
+        else {
+          $office->tv_cable = 'no';
         }
 
         if($request->air_conditioning == 'yes') {
           $office->air_conditioning = $request->air_conditioning;
         }
+        else {
+          $office->air_conditioning = 'no';
+        }
 
         if($request->heating == 'yes') {
           $office->heating = $request->heating;
         }
+        else {
+          $office->heating = 'no';
+        }
 
         if($request->wifi == 'yes') {
           $office->wifi = $request->wifi;
+        }
+        else {
+          $office->wifi = 'no';
         }
 
         /* Other */
         if($request->parking == 'yes') {
           $office->parking = $request->parking;
         }
+        else {
+          $office->parking = 'no';
+        }
 
         if($request->elevator == 'yes') {
           $office->elevator = $request->elevator;
+        }
+        else {
+          $office->elevator = 'no';
         }
 
         if($request->room_meeting == 'yes') {
           $office->room_meeting = $request->room_meeting;
         }
+        else {
+          $office->room_meeting = 'no';
+        }
 
         /* Special */
         if($request->smoking_allowed == 'yes') {
           $office->smoking_allowed = $request->smoking_allowed;
+        }
+        else {
+          $office->smoking_allowed = 'no';
         }
 
         //

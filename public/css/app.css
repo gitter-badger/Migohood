@@ -262,8 +262,8 @@ footer.page-footer .footer-copyright {
 }
 
 #search nav {
-  background: rgba(255, 255, 255, 0.9) !important;
-  /*background: #FFF !important;*/
+  /*background: rgba(255, 255, 255, 0.9) !important;*/
+  background: #FFF !important;
 	box-shadow: none !important;
 	-webkit-box-shadow:none !important;
   padding-left: 30px;
@@ -1506,3 +1506,50 @@ form p label a {
 .show .show-bottom .host .host-bottom i.stars { color: #FFAE12; }
 .show .show-bottom .host .host-bottom i.recommends { color: #FF4967; }
 .show .show-bottom .host .host-bottom i.comments { color: #3B4C60; }
+
+.show .show-bottom .facilities i {
+  color: #3E576C;
+  font-size: 42px;
+  margin-bottom: 0px !important;
+}
+
+.show .show-bottom .facilities .row {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.show .show-bottom .facilities .row.extras {
+  margin-top: 0px;
+}
+
+.show .show-bottom .facilities .row.extras i {
+  color: #3E576C;
+  font-size: 26px;
+  margin-bottom: 0px !important;
+  margin-top: 20px;
+}
+
+.show .show-bottom .facilities .row.extras p span.title {
+  color: #3E576C;
+  font-size: 12px;
+  margin-bottom: 0px !important;
+  margin-top: 10px;
+}
+
+
+.show .show-bottom .facilities p {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.show .show-bottom .facilities span.title {
+  color: #304354;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.show .show-bottom .facilities span.subtitle {
+  color: #374D60;
+  font-size: 13px;
+}

@@ -44,6 +44,18 @@
       <div class="input-field col s2 last">
         <select name="capacity">
           <option value="" disabled selected>Capacity</option>
+          @if($space->capacity == '1')
+            <option value="1"> 1 Guest</option>
+          @else
+            @for($i = 1; $i <=$space->capacity; $i++)
+              @if($i == '1')
+                <option value="1"> 1 Guest</option>
+              @else
+                <option value={{$i}} > {{ $i }} Guests</option>
+              @endif
+            @endfor
+          @endif
+
           @if( $space->capacity == '16+')
             <option value="1"> 1 Guest</option>
             <option value="2"> 2 Guests</option>
@@ -62,11 +74,7 @@
             <option value="15"> 15 Guests</option>
             <option value="16"> 16 Guests</option>
             <option value="16+"> 16+ Guests </option>
-          @else
-            @for($i = 1; $i <=$space->capacity; $i++)
-              <option value={{$i}} > {{ $i }} Guest</option>
-            @endfor
-          @endif  
+          @endif
         </select>
       </div>
       <!-- Capacity -->
@@ -143,7 +151,7 @@
              <i class="material-icons stars">star</i><span>{{ $space->stars }}</span>
          </div>
          <div class="col s4">
-            <i class="material-icons recommends">favorite</i><span>{{ $space->recommends }} <span class="of">/ 2</span></span>
+            <i class="material-icons recommends">favorite</i><span>{{ $space->recommends }}<span class="of">/ {{ $space->votes }}</span></span>
          </div>
          <div class="col s4">
            <i class="material-icons comments">forum</i><span>{{ $space->comments }}</span>
@@ -160,7 +168,7 @@
   <div class="col s12 show-bottom">
 
     <!-- Host Description -->
-    <div class="col s4 row host">
+    <div class="col s5 row host">
 
         <div class="col s4">
           <a href="#"><img src="{{ $space->user->avatar }}" alt="" /></a>
@@ -184,7 +192,6 @@
               <i class="material-icons comments">forum</i><span>{{ $space->user->comments }}</span>
             </div>
 
-
           </div>
 
         </div>
@@ -192,51 +199,72 @@
     </div>
     <!-- Host Description -->
 
-    <div class="col s8">
+    <!-- Facilities -->
+    <div class="col s7 facilities">
+
       <div class="show-bottom-title">
         <i class="material-icons">event_note</i>Facilities
       </div>
 
+      <!-- row -->
       <div class="row">
+        <!-- Capacity -->
         <div class="col s3">
-          <i class="material-icons">group_add</i><span>
+          <i class="material-icons">group</i>
+          <p><span class="title"> Capacity </span></p>
+          <p><span class="subtitle">
               @if( $space->capacity == 1)
-                {{ $space->capacity }} Person
+                {{ $space->capacity }} Guest
+              @else
+                {{ $space->capacity }} Guests
               @endif
-          </span>
-
-
+          </span></p>
         </div>
+        <!-- Capacity -->
 
+        <!-- Bedrooms -->
         <div class="col s3">
-          a
-
+          <i class="material-icons">domain</i>
+          <p><span class="title"> Bedrooms </span></p>
+          <p><span class="subtitle"> {{ $space->bedrooms }} </span></p>
         </div>
+        <!-- Bedrooms -->
 
+        <!-- Beds -->
+        <div class="col s3">
+          <i class="material-icons">hotel</i>
+          <p><span class="title"> Beds </span></p>
+          <p><span class="subtitle"> {{ $space->beds }} </span></p>
+        </div>
+        <!-- Beds -->
 
+        <!-- Bathrooms -->
+        <div class="col s3">
+          <i class="material-icons">hot_tub</i>
+          <p><span class="title"> Bathrooms </span></p>
+          <p><span class="subtitle"> {{ $space->bathrooms }} </span></p>
+        </div>
+        <!-- Bathrooms -->
       </div>
-    </div>
+      <!-- row -->
 
-    <!-- Comments -->
-    <div class="col s12">
+      <!-- Extras -->
       <div class="show-bottom-title">
-        <i class="material-icons">forum</i>Comments
+        <i class="material-icons">weekend</i>Extras
       </div>
-        <!-- Here -->
+
+      <div class="row extras">
+        @include('common.spaces-extras')
+      </div>
+      <!-- Extras -->
+
     </div>
-    <!-- Comments -->
+    <!-- Facilities -->
+
+
 
   </div>
   <!-- Bottom -->
-
-
-
-    @if(Auth::user()->id  == $space->user_id)
-      <a href=" {{ route('space.router', ['hash' => $space->hash, 'route' => 'basics' ]) }}">Edit</a>
-
-    @else
-      <a href=" #">reserve</a>
-   @endif
 
 </section>
 @stop

@@ -25,7 +25,7 @@
 
   <!-- Price -->
   <div class="input-field col s6">
-    <input Placeholder="Type a value here. Ex. 23.00" id="title" type="text" name="price" required @if($service->price != 'null') value="{{ $service->price }}" @endif>
+    <input Placeholder="Type a value here. Ex. 28.5" id="title" type="text" name="price" required @if($service->price != 'null') value="{{ $service->price }}" @endif>
     <label class="active" for="title">Price</label>
   </div>
   <!-- Price -->
@@ -34,7 +34,7 @@
   <div class="input-field col s3">
     <select name="per" required>
       <option value="" disabled selected>Choose one</option>
-      <option value="Night" @if($service->per == 'Day') selected="selected" @endif>Day </option>
+      <option value="Day" @if($service->per == 'Day') selected="selected" @endif>Day </option>
       <option value="Week" @if($service->per == 'Week') selected="selected" @endif>Week</option>
       <option value="Month" @if($service->per == 'Month') selected="selected" @endif>Month</option>
     </select>

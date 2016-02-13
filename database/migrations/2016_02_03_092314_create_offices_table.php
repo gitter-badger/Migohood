@@ -27,6 +27,7 @@ class CreateOfficesTable extends Migration
 
           $table->integer('stars')->default(0);
           $table->integer('recommends')->default(0);
+          $table->integer('votes')->default(0);
           $table->integer('comments')->default(0);
 
           //Basics
