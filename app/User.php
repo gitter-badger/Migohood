@@ -33,13 +33,22 @@ class User extends Model implements AuthenticatableContract,
       'name',
       'lastname',
       'email',
+      'homephone',
+      'cellphone',
       'avatar',
       'password',
 
       'stars',
       'recommends',
       'votes',
-      'comments'
+      'comments',
+
+      'country',
+      'city',
+      'address',
+      'location_references',
+      'zip'
+
     ];
 
     /**

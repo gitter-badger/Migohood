@@ -14,7 +14,7 @@
         <li><a href="{{ url('offices') }}">Offices</a></li>
         <li><a href="{{ url('services') }}">Services</a></li>
         <li><a href="#!">How it Works?</a></li>
-        <li><a href="#!">How to be a Host?</a></li>
+        <li><a href="#!">How to Start?</a></li>
       </ul>
     </div>
 
@@ -40,8 +40,8 @@
      <div class="col s2">
        <h5>Connect</h5>
        <ul>
-         <li><a href="#!">Facebook</a></li>
-         <li><a href="#!">Google</a></li>
+         <li><a href="https://www.facebook.com/MIGO-Hood-645705888876057/?fref=ts">Facebook</a></li>
+         <li><a href="mailto:migohosting@gmail.com" target="_top">Google</a></li>
          <li><a href="#!">Twitter</a></li>
          <li><a href="https://github.com/yammadev/Migohood">Github</a></li>
        </ul>

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Validator;
-//
+use DB;
+use File;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -15,74 +16,87 @@ class UserController extends Controller
     /*******************
            Users
     *******************/
-    //Edit
-    public function edit()
+    // Account
+    public function account()
     {
-      //return view('users.edit');
+      $user = Auth::user();
+      $countries =  DB::table('countries')->get();
+
+      return view('users/settings.account', ['user' => $user, 'countries' => $countries ]);
     }
 
-    public function update(Request $request, $id)
+    // Privacy
+    public function privacy()
     {
-        //
+      $user = Auth::user();
+
+      return view('users/settings.privacy', ['user' => $user ]);
     }
 
-    public function destroy($id)
+    // Payment
+    public function payment()
     {
-        //
+      $user = Auth::user();
+
+      return view('users/settings.payment', ['user' => $user ]);
     }
 
-    //AvatarUpdate
-    public function avatarUpdate(Request $request)
+    // Update Account
+    public function updateAccount(Request $request, $id)
     {
-        /*
-      //Validate the Request
-      $validator = Validator::make($request->all(), [
-        'image' => 'required|image',
-      ],
-      [
-        'image.required' => 'File is required',
-        'image.image' => 'File format not allowed',
-        //'image.size' => 'Max File size allowed is 1MB ',
-      ]);
 
-      //Did it Fail?
-      if ($validator->fails()) {
-        return redirect('settings/profile')->with('update_status', 'fail');
-      }
+      $user = Auth::user();
 
-      //No, It didn't
-        //So, get the user
+      $user->name = $request->name;
+      $user->lastname = $request->lastname;
+      $user->email = $request->email;
+      $user->cellphone = $request->cellphone;
+      $user->homephone = $request->homephone;
+      $user->country = $request->country;
+      $user->city = $request->city;
+      $user->address = $request->address;
+      $user->location_references = $request->location_references;
+      $user->zip = $request->zip;
+
+      $user->save();
+
+      return redirect('/settings/account');
+    }
+
+    // Update Avatar
+    public function updateAvatar(Request $request)
+    {
         $user = Auth::user();
 
-        // Set new Filename
-        $name = 'user_'.$user->id.'.'.$request->file('image')->getClientOriginalExtension();
+        $file = $request->file('file');
 
-        //User path is default?
-        if($user->path == '/img/app/default.jpg') {
-          //Move file to avatars folder
-          $request->file('image')->move('avatars', $name);
-          //Save new path
-          $user->update(['path'=>'avatars/'.$name]);
+        // If there is a file in the request, proceed
+        if(!empty($file)) {
 
-        }
-        else {
-          //Destroy last path
-          File::delete($user->path);
-          //Move file to avatars folder
-          $request->file('image')->move('avatars', $name);
-          //Save new path
-          $user->update(['path'=>'avatars/'.$name]);
-        }
+          // If avatar is default, do not delete, otherwise, overwrite
+          if($user->avatar != '/img/app/default.jpg') {
+            File::delete($user->avatar);
+          }
 
-        return redirect('settings/profile')->with('update_status', 'done');
-        */
+          // Filename
+          $filename = 'user_'.$user->id.'.'.$request->file('file')->getClientOriginalExtension();
+
+          // Store in 'thumbnails' folder
+          $request->file('file')->move('avatars', $filename);
+
+          // Link recently updated with avatar, which is the owner
+          $user->avatar = '/avatars'.'/'.$filename;
+
+            // Save new path
+            $user->save();
+          }
+
+          return redirect('/settings/account');
     }
 
     /*
       Todo
       Destroy profile pic!
-      Edit user
     */
-
 
 }

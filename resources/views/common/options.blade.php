@@ -13,10 +13,10 @@
     <i id="ico" class="right material-icons">arrow_drop_down</i></a>
 
     <ul class="dropdown-content" id="drop">
-      <li><a href="#!">Profile</a></li>
-      <li><a href="#!">Settings</a></li>
-      <li><a href="{{ url('help') }}">Help</a></li>
-      <li><a href="{{ url('auth/logout') }}">Log out</a></li>
+      <!--<li><a href="#!">Profile</a></li>-->
+      <li><a href="{{ url('/settings/account') }}">Settings</a></li>
+      <li><a href="{{ url('/help') }}">Help</a></li>      
+      <li><a href="{{ url('/auth/logout') }}">Log out</a></li>
     </ul>
   </li>
 
@@ -26,7 +26,7 @@
     <li><a href="{{ url('/offices') }}">Offices</a></li>
   <li><a href="{{ url('/services') }}">Services</a></li>
   <li><a href="{{ url('/help') }}">Help</a></li>
-  <li><a href="#">How to be a host?</a></li>
+  <li><a href="#">How to start?</a></li>
   <li><a href="{{ url('/auth/register') }}" class="btn btn-reg waves-effect waves-light">Sign up</a></li>
   <li><a href="{{ url('/auth/login') }}">Login</a></li>
 @endif

@@ -70,6 +70,27 @@ Route::get('services', 'AppController@services');         // Services...
 Route::group(['middleware' => 'auth'], function () {
 
   /******************************
+          Routes for User
+  ******************************/
+    // Settings
+    Route::get('settings/account', 'UserController@account');
+    Route::get('settings/privacy', 'UserController@privacy');
+    Route::get('settings/payment', 'UserController@payment');
+
+    // Settings - Account Update - Post
+    Route::post('settings/account/{id}/update', [
+        'uses' => 'UserController@updateAccount',
+        'as' => 'account.update',
+    ]);
+
+    // Settings - Account - Avatar Update - Post
+    Route::post('settings/account/{id}/avatar/update', [
+        'uses' => 'UserController@updateAvatar',
+        'as' => 'account.avatar.update',
+    ]);
+
+
+  /******************************
           Routes for App
   ******************************/
     // Search
@@ -77,36 +98,38 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('office/search', 'AppController@OfficeSearch');
     Route::get('service/search', 'AppController@ServiceSearch');
 
+    // Book
     Route::get('book', 'AppController@book');
 
     // Dashboard
-    Route::get('dashboard', 'AppController@Dashboard');
+    Route::get('dashboard', 'AppController@Dashboard');                         //Dashboard
+    Route::get('dashboard/reservations', 'AppController@Reservations');         //Dashboard - Reservations
+    Route::get('dashboard/my_rents', 'AppController@MyRents');                  //Dashboard - My Rents
+    Route::get('dashboard/pending_approval', 'AppController@PendingApproval');  //Dashboard - Pending Approval
+    Route::get('dashboard/pending_payment', 'AppController@PendingPayment');    //Dashboard - Pending Payment
+    Route::get('dashboard/transactions', 'AppController@Transactions');         //Dashboard - Trans
 
     // Inbox
-    Route::get('inbox', 'AppController@Inbox');                                // Inbox - Received
-    Route::get('inbox/sent', 'AppController@InboxSent');                       // Inbox - Sent
-    Route::get('inbox/archived', 'AppController@InboxArchived');               // Inbox - ArchivedAppController
+    Route::get('inbox', 'AppController@Inbox');                                 // Inbox - Received
+    Route::get('inbox/sent', 'AppController@InboxSent');                        // Inbox - Sent
+    Route::get('inbox/archived', 'AppController@InboxArchived');                // Inbox - ArchivedAppController
 
     // My Spaces
-    Route::get('myspaces', 'AppController@MySpacesListed');                    // My Spaces - Listed
-    Route::get('myspaces/notlisted', 'AppController@MySpacesNotListed');       // My Spaces - Not Listed
+    Route::get('myspaces', 'AppController@MySpacesListed');                     // My Spaces - Listed
+    Route::get('myspaces/notlisted', 'AppController@MySpacesNotListed');        // My Spaces - Not Listed
 
     // My Offices
-    Route::get('myoffices', 'AppController@MyOfficesListed');                  // My Offices - Listed
-    Route::get('myoffices/notlisted', 'AppController@MyOfficesNotListed');     // My Offices - Not Listed
+    Route::get('myoffices', 'AppController@MyOfficesListed');                   // My Offices - Listed
+    Route::get('myoffices/notlisted', 'AppController@MyOfficesNotListed');      // My Offices - Not Listed
 
     // My Services
-    Route::get('myservices', 'AppController@MyServicesListed');                // My Services - Listed
-    Route::get('myservices/notlisted', 'AppController@MyServicesNotListed');   // My Services - Not Listed
+    Route::get('myservices', 'AppController@MyServicesListed');                 // My Services - Listed
+    Route::get('myservices/notlisted', 'AppController@MyServicesNotListed');    // My Services - Not Listed
 
-    // Redirect to Create Spaces or Services (Modal)
-    Route::post('create', 'AppController@create');
-
-    // Show view for Create Spaces
-    Route::get('create/spaces', 'AppController@createSpaces');
-
-    // Show view for Create Services
-    Route::get('create/services', 'AppController@createServices');
+    // Create Resources
+    Route::post('create', 'AppController@create');                              // Redirect to Create Spaces or Services (Modal)
+    Route::get('create/spaces', 'AppController@createSpaces');                  // Show view for Create Spaces
+    Route::get('create/services', 'AppController@createServices');              // Show view for Create Services
 
 
     /******************************
@@ -132,13 +155,6 @@ Route::group(['middleware' => 'auth'], function () {
         'uses' => 'SpaceController@update',
         'as' => 'space.router.update',
     ]);
-
-    // Delete Space
-    /*
-    Route::post('space/{hash}/destroy', [
-        'uses' => 'SpaceController@destroy',
-        'as' => 'space.delete',
-    ]);*/
 
 
     /******************************

@@ -20,7 +20,7 @@ class AppController extends Controller
     /*******************
           Spaces
     *******************/
-    //Spaces
+    // Spaces
     public function spaces() {
       $spaces = DB::table('spaces')
                   ->where('public','yes')
@@ -31,7 +31,7 @@ class AppController extends Controller
       return view('app.spaces', ['spaces' => $spaces]);
     }
 
-    //Offices
+    // Offices
     public function offices() {
       $offices = DB::table('offices')
                   ->where('public','yes')
@@ -42,7 +42,7 @@ class AppController extends Controller
       return view('app.offices', ['offices' => $offices]);
     }
 
-    //Services
+    // Services
     public function services() {
       $services = DB::table('services')
                   ->where('public','yes')
@@ -53,28 +53,57 @@ class AppController extends Controller
       return view('app.services', ['services' => $services]);
     }
 
-    //Dashboard
+
+    /*******************
+         Dashboard
+    *******************/
+    // Dashboard
     public function Dashboard() {
-      return view('users.dashboard');
+      return view('users/dashboard.dashboard');
+    }
+
+    // Reservations
+    public function Reservations() {
+      return view('users/dashboard.reservations');
+    }
+
+    // MyRents
+    public function MyRents() {
+      return view('users/dashboard.my_rents');
+    }
+
+    // PendingApproval
+    public function PendingApproval() {
+      return view('users/dashboard.pending_approval');
+    }
+
+    // PendingPayment
+    public function PendingPayment() {
+      return view('users/dashboard.pending_payment');
+    }
+
+    // Transactions
+    public function Transactions() {
+      return view('users/dashboard.transactions');
     }
 
 
     /*******************
            Inbox
     *******************/
-     //Inbox
+     // Inbox
      public function Inbox()
      {
        return view('users/inbox.received');
      }
 
-     //Inbox - Sent
+     // Inbox - Sent
      public function InboxSent()
      {
        return view('users/inbox.sent');
      }
 
-     //Inbox - Trash
+     // Inbox - Trash
      public function InboxArchived()
      {
        return view('users/inbox.archived');
@@ -84,7 +113,7 @@ class AppController extends Controller
     /*******************
           My Spaces
     *******************/
-    //MySpaces - Listed
+    // MySpaces - Listed
     public function MySpacesListed()
     {
       $spaces = DB::table('spaces')
@@ -93,7 +122,7 @@ class AppController extends Controller
       return view('users/spaces.listed', ['spaces' => $spaces]);
     }
 
-    //MySpaces - Not Listed
+    // MySpaces - Not Listed
     public function MySpacesNotListed()
     {
       $spaces = DB::table('spaces')
@@ -106,7 +135,7 @@ class AppController extends Controller
     /*******************
           My Offices
     *******************/
-     //MyOffices - Listed
+     // MyOffices - Listed
      public function MyOfficesListed()
      {
        $offices = DB::table('offices')
@@ -115,7 +144,7 @@ class AppController extends Controller
        return view('users/offices.listed', ['offices' => $offices]);
      }
 
-     //MySpaces - Not Listed
+     // MySpaces - Not Listed
      public function MyOfficesNotListed()
      {
        $offices = DB::table('offices')
@@ -128,7 +157,7 @@ class AppController extends Controller
        /*******************
            My Services
        *******************/
-      //MyServices - Listed
+      // MyServices - Listed
       public function MyServicesListed()
       {
         $services = DB::table('services')
@@ -359,7 +388,7 @@ class AppController extends Controller
 
       // Book
       public function book(Request $request) {
-         return $request->capacity;
+         return 'Sorry, It is not available yet! With hope, it should be soon.';
       }
 
 

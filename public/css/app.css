@@ -976,6 +976,13 @@ form p label a {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+.avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
 #pic {
   padding: 15px 0px 15px 30px;
 }

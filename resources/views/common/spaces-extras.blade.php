@@ -29,7 +29,7 @@
 
 @if( $space->shampoo == 'yes')
 <div class="col s2">
-  <i class="material-icons">bubble_chart</i>
+  <i class="material-icons">whatshot</i>
   <p><span class="title"> Shampoo </span></p>
 </div>
 @endif

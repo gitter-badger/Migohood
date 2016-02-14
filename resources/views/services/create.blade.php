@@ -1,5 +1,5 @@
 @extends('layouts.edit')
-@section('title', 'Create Spaces')
+@section('title', 'Create Services')
 @section('content')
   <!-- Title -->
   <div class="title">
