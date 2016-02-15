@@ -39,7 +39,7 @@
 
 <div class="container col s10">
 
-
+@if (count($reservations) == 0)
   <!-- Box Nothing -->
   <div class="box">
     <div class="box-nothing">
@@ -49,6 +49,58 @@
     </div>
   </div>
   <!-- Box Nothing -->
+@else
+
+  <ul class="col s6 collection">
+    @foreach($reservations as $reservation)
+    <li class="collection-item avatar">
+
+      <img src="{{ App\User::where('id', $reservation->who_requests)->first()->avatar }}" alt="" class="circle">
+      <!-- Title -->
+      <span class="title">
+        <!-- Name -->
+        <strong>{{ App\User::where('id', $reservation->who_requests)->first()->name }}</strong> has requested to rent your
+
+          <!-- Type -->
+          @if ($reservation->announce_type == 'space')
+            <a href="{{ route('space.show', ['hash' => $reservation->announce_hash ]) }}"> Space </a>
+          @endif
+
+      </span>
+
+      <!-- When? -->
+      <p class="second">
+        <i class="material-icons">flight_land</i>
+          Arrives on <strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $reservation->when_stars)->format('m/d/Y') }}</strong>
+          and Take off on <strong>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $reservation->when_ends)->format('m/d/Y') }}</strong>
+      </p>
+
+      <!-- Come with -->
+      <p class="second">
+        <i class="material-icons">people</i>
+        for  @if($reservation->capacity == 1 )
+                <strong>{{ $reservation->capacity }} Guest </strong>
+             @else
+                <strong>{{ $reservation->capacity }} Guests </strong>
+             @endif
+      </p>
+
+      <!-- Third -->
+      <p class="third right">
+        <a href="{{ route('book.answer', ['hash' => $reservation->hash, 'answer' => 'yes' ]) }}">Accept</a>
+        <a href="{{ route('book.answer', ['hash' => $reservation->hash, 'answer' => 'no' ]) }}">Decline</a>
+      </p>
+
+    </li>
+
+    @endforeach
+  </ul>
+
+  <div class="center">
+    {!! $reservations->render() !!}
+  </div>
+
+@endif
 
   </div>
 

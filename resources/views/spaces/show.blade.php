@@ -9,7 +9,6 @@
 @stop
 @section('content')
 
-
 @if(Auth::user()->id  != $space->user_id)
 <!-- Reserve NavBar -->
 <div id="search">
@@ -17,7 +16,7 @@
 <nav role="navigation">
   <div class="nav-wrapper reservable">
 
-    <form class="container row" action="/book"  role="search" id="search_box">
+    <form class="container row" action="{{ route('book', ['hash' => $space->hash, 'type' => 'space' ]) }}"  role="search" id="search_box">
       {{ csrf_field() }}
 
       <div class="col s1">
@@ -25,7 +24,7 @@
       </div>
 
       <div class="col s2">
-        <input placeholder="Check In" type="date" name="check_in" class="datepicker">
+        <input placeholder="Check In" type="date" name="stars" class="datepicker">
       </div>
 
       <div class="col s1">
@@ -33,7 +32,7 @@
       </div>
 
       <div class="col s2">
-        <input  placeholder="Check Out" type="date" name="check_out" class="datepicker">
+        <input  placeholder="Check Out" type="date" name="ends" class="datepicker">
       </div>
 
       <div class="col s1">

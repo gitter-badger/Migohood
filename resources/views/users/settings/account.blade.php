@@ -21,7 +21,7 @@
 <form class="form row" id="pic" action="{{ route('account.avatar.update', ['id', $user->id ]) }}" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
 
-    <div class="avatar center col s6">
+    <div class="user_avatar center col s6">
       <img src="{{ $user->avatar }}" alt="" />
     </div>
 
@@ -46,7 +46,7 @@
   <!-- Title -->
   <div class="title">
      <h5>Personal Information</h5>
-     <p  class="light">Some description goes here. </p>
+     <p  class="light">Filling out your personal information makes your announces more reliable. </p>
      <div class="divider"></div>
   </div>
 
@@ -62,28 +62,28 @@
 
     <!-- LastName -->
     <div class="input-field col s6">
-      <input Placeholder="Type your lastname" id="lastname" type="text" name="lastname" required @if($user->lastname != 'null') value="{{ $user->lastname }}" @endif>
+      <input Placeholder="Type your lastname" id="lastname" type="text" name="lastname" @if($user->lastname != 'null') value="{{ $user->lastname }}" @endif>
       <label class="active" for="lastname">Lastname</label>
     </div>
     <!-- LastName -->
 
     <!-- Email -->
     <div class="input-field col s12">
-      <input Placeholder="Type your email" id="email" type="text" name="email" required @if($user->email != 'null') value="{{ $user->email }}" @endif>
+      <input Placeholder="Type your email" id="email" type="text" name="email" @if($user->email != 'null') value="{{ $user->email }}" @endif>
       <label class="active" for="email">Email</label>
     </div>
     <!-- Email -->
 
     <!-- Celphone -->
     <div class="input-field col s6">
-      <input Placeholder="Type your cellphone" id="cellphone" type="text" name="cellphone" required @if($user->cellphone != 'null') value="{{ $user->cellphone }}" @endif>
+      <input Placeholder="Type your cellphone" id="cellphone" type="text" name="cellphone" @if($user->cellphone != 'null') value="{{ $user->cellphone }}" @endif>
       <label class="active" for="cellphone">Cellphone</label>
     </div>
     <!-- Celphone -->
 
     <!-- Homephone -->
     <div class="input-field col s6">
-      <input Placeholder="Type your homephone" id="homephone" type="text" name="homephone" required @if($user->homephone != 'null') value="{{ $user->homephone }}" @endif>
+      <input Placeholder="Type your homephone" id="homephone" type="text" name="homephone" @if($user->homephone != 'null') value="{{ $user->homephone }}" @endif>
       <label class="active" for="homephone">Home phone</label>
     </div>
     <!-- Homephone -->

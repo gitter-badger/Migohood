@@ -10,7 +10,9 @@ use DB;
 use App\Space;
 use App\Office;
 use App\Service;
+use App\Reservation;
 
+use Carbon\Carbon;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -64,17 +66,30 @@ class AppController extends Controller
 
     // Reservations
     public function Reservations() {
-      return view('users/dashboard.reservations');
+      $reservations = DB::table('reservations')
+                ->where('who_rents', Auth::user()->id)
+                ->where('status','approved')->paginate(20);
+
+      return view('users/dashboard.reservations', ['reservations' => $reservations]);
     }
 
     // MyRents
     public function MyRents() {
-      return view('users/dashboard.my_rents');
+      $reservations = DB::table('reservations')
+                ->where('who_requests', Auth::user()->id)
+                ->where('status','approved')->paginate(20);
+
+      return view('users/dashboard.my_rents', ['reservations' => $reservations]);
     }
 
     // PendingApproval
     public function PendingApproval() {
-      return view('users/dashboard.pending_approval');
+        $reservations = DB::table('reservations')
+                  ->where('who_rents', Auth::user()->id)
+                  ->where('status','pending_approval')->paginate(20);
+
+      return view('users/dashboard.pending_approval', ['reservations' => $reservations]);
+
     }
 
     // PendingPayment
@@ -384,11 +399,6 @@ class AppController extends Controller
 
         return view('app.services', ['services' => $services]);
 
-      }
-
-      // Book
-      public function book(Request $request) {
-         return 'Sorry, It is not available yet! With hope, it should be soon.';
       }
 
 

@@ -56,7 +56,8 @@
           <div class="not_listed_content center">
             <h6 class="light">{{ $space->type }} , {{ $space->accomodance }}</h6>
             <span>Last Updated {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $space->updated_at)->diffForHumans() }} </span>
-            <a href="{{ url($space->notpublic) }}" class="btn">Continue Editing</a>
+            <a href="{{ url($space->notpublic) }}" class="btn">Continue Editing</a><br>
+            <a href="" class="link">Delete</a>
           </div>
         </div>
       </div>

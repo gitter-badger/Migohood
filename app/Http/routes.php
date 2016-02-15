@@ -99,7 +99,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('service/search', 'AppController@ServiceSearch');
 
     // Book
-    Route::get('book', 'AppController@book');
+    Route::get('book/{hash}/{type}', [
+        'uses' => 'ReservationController@book',
+        'as' => 'book',
+    ]);
+
+    Route::get('book/answer/{hash}/{answer}', [
+        'uses' => 'ReservationController@answer',
+        'as' => 'book.answer',
+    ]);
 
     // Dashboard
     Route::get('dashboard', 'AppController@Dashboard');                         //Dashboard
