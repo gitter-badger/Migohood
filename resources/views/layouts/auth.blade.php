@@ -11,21 +11,22 @@
       <link href="/css/materialize.min.css" rel="stylesheet" media="screen,projection"/>        <!-- Materialize core CSS -->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">     <!--Import Google Icon Font-->
       <link href="/css/auth.css" rel="stylesheet">                                              <!-- Style core CSS -->
+      <link href="/css/media.css" rel="stylesheet">                                             <!-- Responsive and media core CSS -->
   </head>
 <body>
 <main>
   <div class="container center">
-    <div class="panel" id=@yield('id')>
+    <div class="panel">
       <a href="{{ url('/') }}"><img src="/img/app/brand.png" alt=".." /></a>
-    <div class="container">
-      @include('errors.errors')
-      @yield('content')
-    </div>
+      <div class="container">
+        @include('errors.errors')
+        @yield('content')
+      </div>
     </div>
   </div>
 </main>
 <!-- Footer Img -->
-<div class="footer center">
+<div class="auth-img center">
   <img src="/img/site/back-foot02.png" alt=".." />
 </div>
 

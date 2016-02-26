@@ -14,16 +14,6 @@
       Routes for MainSite
 ******************************/
 Route::get('/', 'SiteController@home');                     // Home...
-Route::get('search', 'SiteController@search');              // Search...
-
-
-/******************************
-    Routes for HelpCenter
-******************************/
-Route::get('help', 'SiteController@help');                  // Help...
-Route::get('help/terms', 'SiteController@terms');           // Terms & Conditions ...
-Route::get('help/terms_es', 'SiteController@terms_es');     // Terms & Conditions ...
-
 
 /******************************
     Routes for Authentication
@@ -32,6 +22,7 @@ Route::get('help/terms_es', 'SiteController@terms_es');     // Terms & Condition
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
+Route::get('redirect', 'AppController@getredirect');
 
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
@@ -48,21 +39,19 @@ Route::get('password/success', ['middleware' => 'auth', function () {
     return view('auth.success');
 }]);
 
-// Social Authentication ...
+// Redirect To Provider...
 Route::get('auth/{provider}', [
     'uses' => 'Auth\AuthController@redirectToProvider',
     'as' => 'social.auth',
 ]);
 
+// Provider Callback...
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
-
 
 /************************************
    Routes for No Autenticated users
 ************************************/
-Route::get('spaces', 'AppController@spaces');             // Spaces...
-Route::get('offices', 'AppController@offices');           // Offices...
-Route::get('services', 'AppController@services');         // Services...
+Route::get('spaces', 'AppController@spaces');             // Spaces
 
 /************************************
      Routes for Autenticated users
@@ -70,148 +59,16 @@ Route::get('services', 'AppController@services');         // Services...
 Route::group(['middleware' => 'auth'], function () {
 
   /******************************
-          Routes for User
+          Routes for Admin
   ******************************/
-    // Settings
-    Route::get('settings/account', 'UserController@account');
-    Route::get('settings/privacy', 'UserController@privacy');
-    Route::get('settings/payment', 'UserController@payment');
-
-    // Settings - Account Update - Post
-    Route::post('settings/account/{id}/update', [
-        'uses' => 'UserController@updateAccount',
-        'as' => 'account.update',
-    ]);
-
-    // Settings - Account - Avatar Update - Post
-    Route::post('settings/account/{id}/avatar/update', [
-        'uses' => 'UserController@updateAvatar',
-        'as' => 'account.avatar.update',
-    ]);
+  Route::get('admin/panel', 'AdminController@panel');
 
 
   /******************************
           Routes for App
   ******************************/
-    // Search
-    Route::get('space/search', 'AppController@SpaceSearch');
-    Route::get('office/search', 'AppController@OfficeSearch');
-    Route::get('service/search', 'AppController@ServiceSearch');
-
-    // Book
-    Route::get('book/{hash}/{type}', [
-        'uses' => 'ReservationController@book',
-        'as' => 'book',
-    ]);
-
-    Route::get('book/answer/{hash}/{answer}', [
-        'uses' => 'ReservationController@answer',
-        'as' => 'book.answer',
-    ]);
-
-    // Dashboard
-    Route::get('dashboard', 'AppController@Dashboard');                         //Dashboard
-    Route::get('dashboard/reservations', 'AppController@Reservations');         //Dashboard - Reservations
-    Route::get('dashboard/my_rents', 'AppController@MyRents');                  //Dashboard - My Rents
-    Route::get('dashboard/pending_approval', 'AppController@PendingApproval');  //Dashboard - Pending Approval
-    Route::get('dashboard/pending_payment', 'AppController@PendingPayment');    //Dashboard - Pending Payment
-    Route::get('dashboard/transactions', 'AppController@Transactions');         //Dashboard - Trans
-
-    // Inbox
-    Route::get('inbox', 'AppController@Inbox');                                 // Inbox - Received
-    Route::get('inbox/sent', 'AppController@InboxSent');                        // Inbox - Sent
-    Route::get('inbox/archived', 'AppController@InboxArchived');                // Inbox - ArchivedAppController
-
-    // My Spaces
-    Route::get('myspaces', 'AppController@MySpacesListed');                     // My Spaces - Listed
-    Route::get('myspaces/notlisted', 'AppController@MySpacesNotListed');        // My Spaces - Not Listed
-
-    // My Offices
-    Route::get('myoffices', 'AppController@MyOfficesListed');                   // My Offices - Listed
-    Route::get('myoffices/notlisted', 'AppController@MyOfficesNotListed');      // My Offices - Not Listed
-
-    // My Services
-    Route::get('myservices', 'AppController@MyServicesListed');                 // My Services - Listed
-    Route::get('myservices/notlisted', 'AppController@MyServicesNotListed');    // My Services - Not Listed
-
-    // Create Resources
-    Route::post('create', 'AppController@create');                              // Redirect to Create Spaces or Services (Modal)
-    Route::get('create/spaces', 'AppController@createSpaces');                  // Show view for Create Spaces
-    Route::get('create/services', 'AppController@createServices');              // Show view for Create Services
-
-
-    /******************************
-          Routes for Spaces
-    ******************************/
-    // Create Space
-    Route::post('space/create', 'SpaceController@create');
-
-    // Show Space
-    Route::get('space/{hash}', [
-        'uses' => 'SpaceController@show',
-        'as' => 'space.show',
-    ]);
-
-    // Space Router - Get
-    Route::get('space/{hash}/{route}', [
-        'uses' => 'SpaceController@router',
-        'as' => 'space.router',
-    ]);
-
-    // Space Router Update - Post
-    Route::post('space/{hash}/{route}/update', [
-        'uses' => 'SpaceController@update',
-        'as' => 'space.router.update',
-    ]);
-
-
-    /******************************
-          Routes for Offices
-    ******************************/
-    // Show Office
-    Route::get('office/{hash}', [
-        'uses' => 'OfficeController@show',
-        'as' => 'office.show',
-    ]);
-
-    // Create office
-    Route::post('office/create', 'OfficeController@create');
-
-    // Office Router - Get
-    Route::get('office/{hash}/{route}', [
-        'uses' => 'OfficeController@router',
-        'as' => 'office.router',
-    ]);
-
-    // Office Router Update - Post
-    Route::post('office/{hash}/{route}/update', [
-        'uses' => 'OfficeController@update',
-        'as' => 'office.router.update',
-    ]);
-
-
-    /******************************
-          Routes for Services
-    ******************************/
-    // Show Service
-    Route::get('service/{hash}', [
-        'uses' => 'ServiceController@show',
-        'as' => 'service.show',
-    ]);
-
-    // Create service
-    Route::post('service/create', 'ServiceController@create');
-
-    // Office Router - Get
-    Route::get('service/{hash}/{route}', [
-        'uses' => 'ServiceController@router',
-        'as' => 'service.router',
-    ]);
-
-    // Office Router Update - Post
-    Route::post('service/{hash}/{route}/update', [
-        'uses' => 'ServiceController@update',
-        'as' => 'service.router.update',
-    ]);
+  // Create Resources
+  Route::get('create', 'AppController@getcreate');
+  Route::post('create', 'AppController@postcreate');
 
 });

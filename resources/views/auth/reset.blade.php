@@ -1,18 +1,6 @@
 @extends('layouts.auth')
 @section('title', 'Reset Password')
-@section('id', 'password')
 @section('content')
-<!-- Success -->
-@if (session('status'))
-   <div class="success-box">
-     <div class="success-title">
-       <i class="material-icons">check</i><strong>Yeah!</strong> It's done
-     </div>
-     <div class="alert-content">
-       {{ session('status') }}
-     </div>
-   </div>
-@endif
 
 <!-- Reset Password form -->
 <form action="/password/reset" method="POST">

@@ -2,6 +2,6 @@
 @section('title', 'Spaces')
 @section('content')
 
-
+hello admin
 
 @stop

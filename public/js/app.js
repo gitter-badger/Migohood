@@ -1,29 +1,44 @@
-//Hide from Alerts
-$('.close').click(function () {
-    $(this).parent().hide();
+// Radio Select
+$(".toggle-btn:not('.noscript') input[type=radio]").addClass("visuallyhidden");
+$(".toggle-btn:not('.noscript') input[type=radio]").change(function() {
+    if( $(this).attr("name") ) {
+        $(this).parent().addClass("success").siblings().removeClass("success")
+    } else {
+        $(this).parent().toggleClass("success");
+    }
 });
 
-//Div Selected
-$('.tab').click(function() {
-    $(this).addClass('active').siblings().removeClass('active');
-    $(this).find('input:radio')[0].checked = true;
+// When a radio is selected show a specific div
+$(document).ready(function() {
+   $('input[type="radio"]').click(function() {
+
+       if($(this).attr('id') == 'space') {
+          $('#space-form').show();
+       } 
+       else {
+          $('#space-form').hide();
+       }
+
+       if($(this).attr('id') == 'workspace') {
+          $('#workspace-form').show();
+       }
+       else {
+          $('#workspace-form').hide();
+       }
+
+       if($(this).attr('id') == 'parking') {
+          $('#parking-form').show();
+       }
+       else {
+          $('#parking-form').hide();
+       }
+
+       if($(this).attr('id') == 'service') {
+          $('#service-form').show();
+       }
+       else {
+          $('#service-form').hide();
+       }
+
+   });
 });
-
-//Hide and Show Elements
-function show( elem ) {
-    $('.dynamic_link').hide();
-    $('#'+elem).show();
-}
-
-//Show Input (Services)
-/*
-function ShowInput() {
-  var x = document.getElementById("Select").value;
-
-  if(x == 'Other') {
-    document.getElementById("other_service").style.display = 'block';
-  }
-  else {
-    document.getElementById("other_service").style.display = 'none';
-  }
-}*/

@@ -1,53 +1,63 @@
 <!-- Footer -->
 <footer class="page-footer">
-
+  <!-- Foot -->
   <div class="foot container row">
-
-    <div class="col s4 img">
+    <!-- Left -->
+    <div class="col m4 l4 img">
         <a href="{{ url('/') }}"><img src="/img/app/brand-white.png" alt=".."/></a>
+        <ul>
+          <li>Cambridge, Massachusetts</li>
+        </ul>
     </div>
 
-    <div class="col s2">
-      <h5>Find Out</h5>
-      <ul>
-        <li><a href="{{ url('spaces') }}">Spaces</a></li>
-        <li><a href="{{ url('offices') }}">Offices</a></li>
-        <li><a href="{{ url('services') }}">Services</a></li>
-        <li><a href="#!">How it Works?</a></li>
-        <li><a href="#!">How to Start?</a></li>
-      </ul>
+    <!-- Right -->
+    <div class="col l8 m12 s12 row">
+
+        <div class="col l3 m3 s6">
+        <h5>About</h5>
+        <ul>
+          <li><a href="#!">Company</a></li>
+          <li><a href="#!">Contact us</a></li>
+          <li><a href="#!">Press</a></li>
+        </ul>
+       </div>
+
+      <div class="col l3 m3 s6">
+        <h5>Help</h5>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Term of Use</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+       </div>
+
+       <div class="col l3 m3 s6 ">
+         <h5>Connect</h5>
+         <ul>
+           <li><a href="https://www.facebook.com/MIGO-Hood-645705888876057/?fref=ts">Facebook</a></li>
+           <li><a href="mailto:migohosting@gmail.com" target="_top">Google</a></li>
+           <li><a href="https://www.instagram.com/migohood/">Instagram</a></li>
+           <li><a href="https://github.com/yammadev/Migohood">Github</a></li>
+         </ul>
+        </div>
+
+        <div class="col l3 m3 s6">
+          <h5>Find Out</h5>
+          <ul>
+            <li><a href="#">Spaces</a></li>
+            <li><a href="#">Offices</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">How it Works?</a></li>
+            <li><a href="#">How to Start?</a></li>
+          </ul>
+        </div>
+
     </div>
-
-      <div class="col s2">
-      <h5>About</h5>
-      <ul>
-        <li><a href="#!">Company</a></li>
-        <li><a href="#!">Contact us</a></li>
-        <li><a href="#!">Press</a></li>
-      </ul>
-     </div>
-
-    <div class="col s2">
-      <h5>Help</h5>
-      <ul>
-        <li><a href="{{ url('help') }}">Help Center</a></li>
-        <li><a href="{{ url('help/terms') }}">Term of Use</a></li>
-        <li><a href="{{ url('help/terms') }}">Privacy Policy</a></li>
-        <li><a href="#!">Support</a></li>
-      </ul>
-     </div>
-
-     <div class="col s2">
-       <h5>Connect</h5>
-       <ul>
-         <li><a href="https://www.facebook.com/MIGO-Hood-645705888876057/?fref=ts">Facebook</a></li>
-         <li><a href="mailto:migohosting@gmail.com" target="_top">Google</a></li>
-         <li><a href="#!">Twitter</a></li>
-         <li><a href="https://github.com/yammadev/Migohood">Github</a></li>
-       </ul>
-      </div>
+    <!-- Right -->
 
   </div>
+  <!-- Foot -->
 
   <div class="footer-copyright">
     <div class="center">

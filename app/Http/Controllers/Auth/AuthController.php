@@ -28,7 +28,7 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-    protected $redirectPath = '/spaces';
+      protected $redirectPath = '/redirect';
 
     /**
      * Create a new authentication controller instance.
@@ -65,6 +65,8 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
+            'ip' => $_SERVER['REMOTE_ADDR'],
+            'role' => 'user',
             'name' => $data['name'],
             'email' => $data['email'],
             'avatar' => $data['avatar'],
@@ -95,7 +97,7 @@ class AuthController extends Controller
       $authUser = $this->findOrCreateUser($user);
       Auth::login($authUser, true);
 
-      return redirect('/spaces');
+      return redirect('/auth/redirect');
     }
 
   // Create User
@@ -108,6 +110,8 @@ class AuthController extends Controller
        }
 
        return User::create([
+           'ip' => $_SERVER['REMOTE_ADDR'],
+           'role' => 'user',
            'name' => $ProviderUser->name,
            'email' => $ProviderUser->email,
            'password'=>$ProviderUser->token,

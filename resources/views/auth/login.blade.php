@@ -1,6 +1,5 @@
 @extends('layouts.auth')
 @section('title', 'Login')
-@section('id', 'login')
 @section('content')
 <!-- Login form -->
 <form action="/auth/login" method="POST">

@@ -40,7 +40,7 @@ return [
       'client_secret' => env('FACEBOOK_KEY'),
       'redirect' => env('FACEBOOK_REDIRECT'),
     ],
-    
+
     'google' => [
       'client_id' => env('GOOGLE_ID'),
       'client_secret' => env('GOOGLE_KEY'),

@@ -28,27 +28,17 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable =
-    [
+    protected $fillable = [
+      'ip',
+      'role',
       'name',
-      'lastname',
       'email',
-      'homephone',
-      'cellphone',
-      'avatar',
       'password',
+      'avatar',
 
-      'stars',
-      'recommends',
-      'votes',
-      'comments',
-
-      'country',
-      'city',
-      'address',
-      'location_references',
-      'zip'
-
+      'status',  
+      'alerts',
+      'messages'
     ];
 
     /**
@@ -57,30 +47,4 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-
-    /**
-     * Get the Spaces for the User.
-     */
-    public function spaces()
-    {
-       return $this->hasMany('App\Space');
-    }
-
-    /**
-     * Get the Offices for the User.
-     */
-    public function offices()
-    {
-       return $this->hasMany('App\Office');
-    }
-
-
-    /**
-     * Get the Services for the User.
-     */
-    public function services()
-    {
-       return $this->hasMany('App\Service');
-    }
-
 }

@@ -7,7 +7,6 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "webpatser/laravel-countries": "dev-master",
         "laravel/socialite": "^2.0"
     },
     "require-dev": {

@@ -6,22 +6,18 @@
 body { display: flex; min-height: 80vh; flex-direction: column; }
 main { flex: 1 0 auto; }
 
-/*
-* Todo
-* - Media helpers
-*/
-
 .panel img {
   width: 270px;
 }
 
 .panel {
   background: none !important;
-	width: 420px; /*Media helper here*/
+	width: 420px;
 	margin: 0 auto;
+  margin-bottom: 10px;
 	vertical-align: middle;
   height: 70vh;
-  /*border: 1px solid red;*/ /*Debuggin */
+  padding: 50px 0px 20px 0px;
 }
 
 .panel img { margin-bottom: 15px; }
@@ -31,7 +27,7 @@ main { flex: 1 0 auto; }
 #password { padding: 100px 0px 0px 0px; }
 
 .panel .container {
-  width: 80%; /*Media helper here*/
+  width: 80%;
 }
 
 .panel-submit {
@@ -55,17 +51,15 @@ main { flex: 1 0 auto; }
 }
 
 .panel-options strong {
-  /*color: #0071EB;*/
   font-weight: bold;
 }
 
 /* Background img */
-.footer img {
+.auth-img img {
   position: relative;
-  width: 80%;
   height: auto;
-  z-index: -1;
-  bottom: 10vh;
+  z-index: -999;
+  bottom: 0;
   border-bottom: 2px solid #D2D7DC;
 }
 
@@ -131,21 +125,7 @@ form p label a {
 	border-right: 2px solid #0071EB;
 	border-bottom: 2px solid #0071EB;
 }
-/*
-select {
-  background: #F3F4F7;
-  border: 1px solid #F3F4F7;
-  border-radius: 4px;
-  padding: 1px 0px 1px 15px;
-  height: 32px !important;
-  outline: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: #44565B;
-  width: 105%;
-}
-*/
+
 /*************
     ALERT
 **************/

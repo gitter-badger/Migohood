@@ -1,6 +1,5 @@
 @extends('layouts.auth')
 @section('title', 'Register')
-@section('id', 'register')
 @section('content')
 <!-- Registration form -->
 <form action="/auth/register" method="POST">
@@ -26,9 +25,9 @@
       <input placeholder="Confirm Password" type="password" name="password_confirmation" required>
     </div>
 
-    <p class="center">
+    <p class="input-field">
       <input type="checkbox" name="agree" id="check"/>
-      <label for="check">I'm agree with <a href="{{ url('help/terms') }}">Terms and conditions</a></label>
+      <label for="check">I agree with <a href="#">Terms and conditions, Privacy Policy</a> and <a href="#">Guest and Refund Policy</a></label>
     </p>
 
     <div class="panel-submit">
@@ -48,5 +47,5 @@
      <a href="{{ url('auth/login') }}">Are you a member? <strong>Login now! </strong></a>
     </div>
 
-</form>
+</form><br>
 @stop

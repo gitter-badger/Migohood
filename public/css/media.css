@@ -1,0 +1,162 @@
+/*
+        -- POPULAR SCREEN SIZES --
+
+    Desktops & Laptops : 1224px 1600px
+    Large Screens: 1824px
+
+    Apple iPad Mini 1, 2, 3, 4 : 768px 1024px
+    Galaxy Tab 10.1 : 800px 1280px
+
+    Apple iPhone 4, 4s : 320px 480px
+    Apple iPhone 5, 5s : 320px 568px
+    Apple iPhone 6 : 375px 667px
+    Apple iPhone 6+ : 414px 736px
+
+    Galaxy S3, SIII, S4, S5, Note II, Note III,  : 360px 640px
+
+    HTC One : 360px 640px
+
+    Google Nexus 10 : 800px 1280px
+    Google Nexus 4 : 384px 567px
+    Google Nexus 5 : 360px 567px
+    Google Nexus 6 : 412px 659px
+    Google Nexus 7 : 600px 960px
+
+    Lumia 520 : 320px 533px
+
+*/
+
+/******************************************************
+   Med and Up - Large (Tablets to Desktops & Laptops)
+*******************************************************/
+@media only screen and (min-width: 993px) {
+  /* Auth */
+  .auth-img img { width: 60% !important;}
+
+  /* Site */
+  #home .box-search form { width: 50%; }
+  #home .box-search form .btn span { display: none; }
+  #home .foot-img img { width: 920px;}
+
+
+  /* App */
+  footer.page-footer .foot.container { width: 100%; }
+  #main nav .button-collapse { display: none; }
+  #main nav .nav-wrapper .center { display: none; }
+
+  .body.container { width: 98%; }
+  .box-create { padding: 10px 0px; }
+  .toggle-btn { margin: 20px 13px; }
+  
+}
+
+
+/******************************************
+      Med and Down (Tablets to mobil)
+*******************************************/
+@media only screen and (max-width: 992px) {
+  /* Auth */
+  .auth-img img { width: 80% !important; }
+
+  /* Site */
+  #home .box-search form { width: 60%; }
+  #home .foot-img img { width: 85%; }
+
+  /* App */
+  #main nav ul.right { display: none; }
+  #main nav .nav-wrapper .brand img.logo { display: none; }
+  footer.page-footer .foot .img { display: none; }
+  footer.page-footer .foot.container { width: 70%; }
+
+  .body.container { width: 98%; }
+  .box-title { text-align: center; }
+  .toggle-btn { margin: 20px 13px; }
+
+}
+
+
+/******************************************
+              Mobile Devices
+*******************************************/
+/* Mobile Large Screens */
+@media only screen and (max-width: 700px) {
+  /* Auth */
+  .auth-img img { display: none; }
+
+  /* Site */
+  #home .box-search h1 { font-size: 50px; }
+  #home .box-search form { width: 90%; }
+  #home .foot-img img { width: 95%; }
+
+  /* App */
+  footer.page-footer .foot.container { width: 80%;  }
+
+}
+
+/* Mobile Medium Screens */
+@media only screen and (max-width: 600px) {
+  /* Site */
+  #home .box-search h1 { font-size: 35px; }
+  #home .box-search form .btn { margin-left: 10px; }
+
+  /* App */
+  footer.page-footer .foot.container { width: 70%; }
+  footer.page-footer .footer-copyright { font-size: 11px; }
+
+}
+
+/* Mobile Small Screens */
+@media only screen and (max-width: 414px) {
+
+  /* Auth */
+  .panel { width: 250px; }
+  .panel img { width: 220px; }
+  .panel .container { width: 100%; }
+
+  /* Site */
+  #home .box-search h1 { font-size: 28px; }
+  #home .box-search p.first { font-size: 16px; }
+  .page-foot h4 { font-size: 25px; }
+  .page-foot p { font-size: 14px; }
+  .page-foot .back img { width: 95%; }
+
+  /* App */
+  footer.page-footer .foot.container { width: 100%; }
+  footer.page-footer .footer-copyright { font-size: 10px; }
+
+}
+
+/******************************************
+            Specific Media Width
+*******************************************/
+@media only screen and (max-width: 730px) {
+  .toggle-btn { margin: 20px 8px; }
+}
+
+@media only screen and (max-width: 680px) {
+  .toggle-btn { margin: 20px 3px; }
+}
+
+@media only screen and (max-width: 661px) {
+  .toggle-btn { margin: 20px 3px; }
+  .box-body { margin: 15px 3px; }
+}
+
+@media only screen and (max-width: 618px) {
+  .toggle-btn { margin: 10px 1px; }
+  .box-body { margin: 15px 0px; }
+}
+
+@media only screen and (max-width: 520px) {
+  .toggle-btn { width: 120px; margin: 5px 20px; }
+}
+
+@media only screen and (max-width: 416px) {
+  .toggle-btn { margin: 5px 3px; }
+}
+
+@media only screen and (max-width: 330px) {
+  .toggle-btn { width: 90px; margin: 5px 3px; }
+  .toggle-btn i { font-size: 40px; }
+  .toggle-btn span { font-size: 12px; }
+}
