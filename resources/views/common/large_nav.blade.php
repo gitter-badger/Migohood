@@ -19,10 +19,10 @@
   @else
 
     <!-- No Authenticated users -->
-    <li><a href="{{ url('/spaces') }}">Spaces</a></li>
-    <li><a href="#">Workspaces</a></li>
-    <li><a href="#">Parking Lots</a></li>
-    <li><a href="#">Services</a></li>
+    <li><a href="{{ route('router', ['route' => 'spaces' ]) }}">Spaces</a></li>
+    <li><a href="{{ route('router', ['route' => 'workspaces' ]) }}">Workspaces</a></li>
+    <li><a href="{{ route('router', ['route' => 'parking_lots' ]) }}">Parking Lots</a></li>
+    <li><a href="{{ route('router', ['route' => 'services' ]) }}">Services</a></li>
     <li><a href="#">Host</a></li>
     <li><a href="#">Help</a></li>
     <li><a href="{{ url('/auth/register') }}" class="btn waves-effect waves-light">Sign up</a></li>

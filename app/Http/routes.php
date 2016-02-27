@@ -51,7 +51,11 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 /************************************
    Routes for No Autenticated users
 ************************************/
-Route::get('spaces', 'AppController@spaces');             // Spaces
+// Get Routes (Spaces, Workspaces, Parking Lots, Services)
+Route::get('{route}', [
+    'uses' => 'AppController@getroute',
+    'as' => 'router',
+]);
 
 /************************************
      Routes for Autenticated users
@@ -67,8 +71,14 @@ Route::group(['middleware' => 'auth'], function () {
   /******************************
           Routes for App
   ******************************/
-  // Create Resources
+  // Get Create Resources
   Route::get('create', 'AppController@getcreate');
-  Route::post('create', 'AppController@postcreate');
+
+  // Post Create Resources
+  Route::post('create/{resource}', [
+      'uses' => 'AppController@postcreate',
+      'as' => 'create',
+  ]);
+
 
 });

@@ -46,8 +46,9 @@
 
   .body.container { width: 98%; }
   .box-create { padding: 10px 0px; }
+  .box-create .subtitle { margin-left: 10%;}
   .toggle-btn { margin: 20px 13px; }
-  
+
 }
 
 
@@ -70,6 +71,7 @@
 
   .body.container { width: 98%; }
   .box-title { text-align: center; }
+  .box-create .subtitle { text-align: center; }
   .toggle-btn { margin: 20px 13px; }
 
 }
@@ -149,6 +151,7 @@
 
 @media only screen and (max-width: 520px) {
   .toggle-btn { width: 120px; margin: 5px 20px; }
+  .box-create .subtitle { margin: 15px 0px; }
 }
 
 @media only screen and (max-width: 416px) {

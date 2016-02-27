@@ -36,9 +36,7 @@ class User extends Model implements AuthenticatableContract,
       'password',
       'avatar',
 
-      'status',  
-      'alerts',
-      'messages'
+      'status'
     ];
 
     /**
@@ -47,4 +45,5 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
 }

@@ -1,6 +1,5 @@
 // Radio Select
-$(".toggle-btn:not('.noscript') input[type=radio]").addClass("visuallyhidden");
-$(".toggle-btn:not('.noscript') input[type=radio]").change(function() {
+$(".toggle-btn input[type=radio]").change(function() {
     if( $(this).attr("name") ) {
         $(this).parent().addClass("success").siblings().removeClass("success")
     } else {
@@ -10,11 +9,11 @@ $(".toggle-btn:not('.noscript') input[type=radio]").change(function() {
 
 // When a radio is selected show a specific div
 $(document).ready(function() {
-   $('input[type="radio"]').click(function() {
+   $('.option.toggle-btn input[type="radio"]').click(function() {
 
        if($(this).attr('id') == 'space') {
           $('#space-form').show();
-       } 
+       }
        else {
           $('#space-form').hide();
        }

@@ -49,6 +49,8 @@ main { flex: 1 0 auto; }
   transform: translateY(0);
 }
 
+.variable { display: none; }
+
 /***************
      FOOTER
 ****************/
@@ -220,27 +222,68 @@ footer.page-footer .footer-copyright {
   font-weight: bold;
 }
 
-#main nav .right #drop-not {
-  min-width: 300px !important;
+#main nav .right #notifications {
+  min-width: 210px !important;
 }
 
-/*
-#main nav .right #drop li {
-  min-height: 45px !important;
-  line-height: 45px !important;
+#main nav .right #notifications .nothing  {
+  text-align: center;
 }
 
-#main nav .right #drop li:hover {
-  background: #FAF6FE !important;
+#main nav .right #notifications .nothing i {
+  color: #E8E9EB;
+  font-size: 50px;
+  margin-top: 10px;
 }
 
-#main nav .right #drop li > a {
+#main nav .right #notifications .nothing li.alert {
+  min-height: 35px !important;
+  line-height: 35px !important;
+  color: #B2B7BE;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  cursor: default;
+  background: none !important;
+}
+
+#main nav .right #notifications li {
+  min-height: 30px !important;
+  line-height: 30px !important;
+}
+
+#main nav .right #notifications li:hover {
+  background: none !important;
+}
+
+#main nav .right #notifications li > a {
   font-size: 13px !important;
   color: #505050 !important;
   font-weight: normal !important;
-  line-height: 45px !important;
-  margin-left: 16px;
-}*/
+  line-height: 35px !important;
+  margin-left: 8px;
+  text-transform: none;
+}
+/* Color */
+#main nav .right #notifications li.new-space { border-left: 5px solid #1ADB78; }      /* Green */
+#main nav .right #notifications li.new-workspace { border-left: 5px solid #FFD006; }  /* Yellow */
+#main nav .right #notifications li.new-parking { border-left: 5px solid #A05DEC; }    /* Violet */
+#main nav .right #notifications li.new-service { border-left: 5px solid #FE5956; }    /* Pink */
+
+#main nav .right #notifications li.view-all {
+  min-height: 20px !important;
+  line-height: 20px !important;
+}
+
+#main nav .right #notifications li.view-all a {
+  font-size: 13px !important;
+  line-height: 20px !important;
+  text-align: center;
+  color: #02A4F5 !important;
+  margin: 10px 0px;
+
+}
+
 
 /* Main side nav properties */
 #main nav .side-nav .guest-menu {
@@ -343,53 +386,98 @@ footer.page-footer .footer-copyright {
 }
 
 /*  Create */
-.box-create span.subtitle {
+.box-create .subtitle span {
   font-weight: bold;
   color: #444E57;
   font-size: 14px;
 }
 
-/*  Create - Toggle Buttons */
+.box-create .form {
+  display: none;
+}
+
+.box-create .next {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.box-create .btn {
+	text-align: center;
+  vertical-align: middle;
+	height: 40px;
+	font-size: 16px !important;
+	font-weight: 500;
+  font-weight: bold;
+	border-radius: 4px;
+	text-transform: uppercase !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+  width: 150px;
+  background: #1ADB78;
+}
+
+.box-create .btn:hover {
+  background: #24E582;
+}
+
+/* Square Toggle-btn */
+.toggle-btn-grp {
+  text-align: center;
+}
+
 .toggle-btn {
-  padding: 10px; /* Intern padding */
+  padding: 10px;
   width: 110px;
   text-align: center;
   border-radius: 4px;
   display:inline-block;
   font-weight: bold;
   cursor: pointer;
-
-  border: 2px solid #34BAFD !important;
-  color: #0EADFD;
+  border: 2px solid #C2CDD1 !important;
+  color: #AEB8BE;
+  /*border: 2px solid #016394 !important;
+  color: #016394;*/
 }
 
 .toggle-btn i {
   font-size: 50px;
-  color: #0EADFD;
+  color: #C2CDD1;
+  /*color: #016394;*/
 }
 
-.toggle-btn span {
-  font-size: 14px;
-}
+.toggle-btn span { font-size: 14px; }
+.toggle-btn span i { display: none; }
 
 .toggle-btn:hover {
-  border: 2px solid #028ACE !important;
-  background: rgba(208, 239, 255, 0.2);
-  color: #027DBB;
-}
-
-.toggle-btn:hover i {
+  border: 2px solid #016394 !important;
+  background: rgba(208, 239, 255, 0.1);
   color: #016394;
+  /*background: rgba(208, 239, 255, 0.2);*/
 }
 
+.toggle-btn:hover i { color: #016394; }
+
+/* Square Toggle-btn success */
 .toggle-btn.success {
   border: 2px solid #016394 !important;
   background: rgba(208, 239, 255, 0.2);
   color: #016394;
 }
 
-.toggle-btn.success i {
-  color: #016394;
+.toggle-btn.success:hover { background: rgba(208, 239, 255, 0.3); }
+.toggle-btn.success i { color: #016394; }
+
+.toggle-btn.success span i {
+  background: #1ADB78;
+  padding: 3px;
+  color: #FFF;
+  border-radius: 50%;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  float: right;
+  top: 0;
+  margin-left: -20px;
 }
 
 /* Info Boxes */

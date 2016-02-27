@@ -9,12 +9,6 @@ use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
      //Home
      public function home() {
          return view('site.home');

@@ -16,28 +16,32 @@
       <div class="box-create">
 
       <!-- Toggle Btn Group -->
-        <div class="toggle-btn-grp center">
+        <div class="toggle-btn-grp">
 
-          <label onclick="" class="toggle-btn">
-            <input type="radio" name="typeof" id="space"/>
+          <label onclick="" class="option toggle-btn success">
+            <span><i class="material-icons">check</i></span>
+            <input type="radio" name="option" id="space"/>
             <i class="material-icons">place</i><br>
             <span>Space</span>
           </label>
 
-          <label onclick="" class="toggle-btn">
-            <input type="radio" name="typeof" id="workspace"/>
+          <label onclick="" class="option toggle-btn">
+            <span><i class="material-icons">check</i></span>
+            <input type="radio" name="option" id="workspace"/>
             <i class="material-icons">work</i><br>
             <span>Workspace</span>
           </label>
 
-          <label onclick="" class="toggle-btn">
-            <input type="radio" name="typeof" id="parking"/>
+          <label onclick="" class="option toggle-btn">
+            <span><i class="material-icons">check</i></span>
+            <input type="radio" name="option" id="parking"/>
             <i class="material-icons">directions_car</i><br>
             <span>Parking Lot</span>
           </label>
 
-          <label onclick="" class="toggle-btn">
-            <input type="radio" name="typeof" id="service"/>
+          <label onclick="" class="option toggle-btn">
+            <span><i class="material-icons">check</i></span>
+            <input type="radio" name="option" id="service"/>
             <i class="material-icons">local_play</i><br>
             <span>Service</span>
           </label>
@@ -46,19 +50,19 @@
         <!-- End of Toggle Btn Group -->
 
         <!-- Create Forms -->
-        <div id="space-form" style="display:none">
-          Space Form
+        <div class="form" id="space-form" style="display: block; ">
+          @include('common/forms.create-space')
         </div>
 
-        <div id="workspace-form" style="display:none">
+        <div class="form" id="workspace-form">
           Workspace Form
         </div>
 
-        <div id="parking-form" style="display:none">
+        <div class="form" id="parking-form">
           Parking Form
         </div>
 
-        <div id="service-form" style="display:none">
+        <div class="form" id="service-form">
           Service Form
         </div>
         <!-- End of Create Forms -->
