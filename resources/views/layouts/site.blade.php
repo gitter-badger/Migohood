@@ -44,11 +44,10 @@
   <p>Join and Discover a community of locals host willing to serve and share the world</p>
   <a href="{{ url('/auth/register') }}" class="btn btn-reg waves-effect waves-light">Register Now </a><span>or</span>
   <a href="#" class="btn btn-read waves-effect waves-dark">Read more</a>
-
-  <div class="back">
-    <img src="/img/site/back-foot02.png" alt=".." />
-  </div>
 </section>
+<div class="back">
+  <img src="/img/site/back-foot02.png" alt=".." />
+</div>
 <!-- Foot -->
 
 @include('common.footer')

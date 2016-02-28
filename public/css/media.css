@@ -30,13 +30,10 @@
    Med and Up - Large (Tablets to Desktops & Laptops)
 *******************************************************/
 @media only screen and (min-width: 993px) {
-  /* Auth */
-  .auth-img img { width: 60% !important;}
-
   /* Site */
   #home .box-search form { width: 50%; }
   #home .box-search form .btn span { display: none; }
-  #home .foot-img img { width: 920px;}
+  #home .foot-img img { width: 920px; }
 
 
   /* App */
@@ -56,9 +53,6 @@
       Med and Down (Tablets to mobil)
 *******************************************/
 @media only screen and (max-width: 992px) {
-  /* Auth */
-  .auth-img img { width: 80% !important; }
-
   /* Site */
   #home .box-search form { width: 60%; }
   #home .foot-img img { width: 85%; }
@@ -100,6 +94,8 @@
   /* Site */
   #home .box-search h1 { font-size: 35px; }
   #home .box-search form .btn { margin-left: 10px; }
+  .back { display: none; }
+  .page-foot { padding-bottom: 40px; }
 
   /* App */
   footer.page-footer .foot.container { width: 70%; }
@@ -119,6 +115,7 @@
   #home .box-search h1 { font-size: 28px; }
   #home .box-search p.first { font-size: 16px; }
   .page-foot h4 { font-size: 25px; }
+  .page-foot .btn { padding: 0px 10px; }
   .page-foot p { font-size: 14px; }
   .page-foot .back img { width: 95%; }
 

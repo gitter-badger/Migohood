@@ -38,27 +38,4 @@
 </section>
 <!-- Welcome -->
 
-<!--
-<section id="download">
-  <div class="row">
-
-    <div class="col s6 download-img hide-on-small-only">
-      <img src="/img/site/iPhones.png" alt="" />
-    </div>
-
-    <div class="col s6 center download-box">
-          <h4>Get the app!</h4>
-          <p>Available coming soon</p>
-
-          <a href="#!" style="margin-right: 10px;"><img src="/img/site/apple.png" alt="" /></a>
-          <a href="#!"><img src="/img/site/android.png" alt="" /></a>
-    </div>
-
-  </div>-->
-
-</section>
-
-
-
-
 @stop

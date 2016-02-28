@@ -3,7 +3,7 @@
 *******************/
 /* Page-Foot */
 .page-foot {
-  padding: 30px 0px 40px 0px;
+  padding: 10px 3px 0px 3px;
   display: inline-block;
 }
 
@@ -63,13 +63,12 @@
 
 /* Background img */
 .back {
-  margin-bottom: -50px;
+  margin-bottom: -30px;
   margin-top: 0px;
 }
 
 .back img {
-  width: 900px;
-  border-bottom: 2px solid #D2D7DC;
+  width: 100%;
 }
 
 /*******************

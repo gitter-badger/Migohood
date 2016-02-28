@@ -3,28 +3,21 @@
 **************/
 /* General */
 * { box-sizing: border-box; }
-body { display: flex; min-height: 80vh; flex-direction: column; }
+body { display: flex; min-height: 100vh; flex-direction: column; }
 main { flex: 1 0 auto; }
 
 .panel img {
   width: 270px;
+  margin-bottom: 15px;
 }
 
 .panel {
   background: none !important;
 	width: 420px;
 	margin: 0 auto;
-  margin-bottom: 10px;
 	vertical-align: middle;
-  height: 70vh;
-  padding: 50px 0px 20px 0px;
+  padding: 20px 0px 30px 0px;
 }
-
-.panel img { margin-bottom: 15px; }
-
-#register { padding: 40px 20px 0px 20px; }
-#login { padding: 80px 20px 0px 20px; }
-#password { padding: 100px 0px 0px 0px; }
 
 .panel .container {
   width: 80%;
@@ -33,13 +26,13 @@ main { flex: 1 0 auto; }
 .panel-submit {
   margin: 0 auto;
   margin-left: 15px;
-  padding-top: 15px;
+  padding-top: 12px;
 }
 
 .panel-social {
   margin: 0 auto;
   margin-left: 15px;
-  padding-top: 15px;
+  padding-top: 12px;
 }
 
 .panel-options {
@@ -59,8 +52,10 @@ main { flex: 1 0 auto; }
   position: relative;
   height: auto;
   z-index: -999;
+  position: fixed;
   bottom: 0;
-  border-bottom: 2px solid #D2D7DC;
+  left: 0;
+  width: 100%;
 }
 
 /*************
