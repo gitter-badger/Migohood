@@ -1,9 +1,9 @@
 <!-- User Menu -->
-<li><a href="{{ route('router', ['route' => 'spaces' ]) }}">Spaces</a></li>
-<li><a href="{{ route('router', ['route' => 'workspaces' ]) }}">Workspaces</a></li>
-<li><a href="{{ route('router', ['route' => 'parkinglots' ]) }}">Parking Lots</a></li>
-<li><a href="{{ route('router', ['route' => 'services' ]) }}">Services</a></li>
-<li><a href="#">Dashboard</a></li>
+<li><a href="{{ route('resource', ['resource' => 'spaces' ]) }}">Spaces</a></li>
+<li><a href="{{ route('resource', ['resource' => 'workspaces' ]) }}">Workspaces</a></li>
+<li><a href="{{ route('resource', ['resource' => 'parkinglots' ]) }}">Parking Lots</a></li>
+<li><a href="{{ route('resource', ['resource' => 'services']) }}">Services</a></li>
+<li><a href="{{ route('route', ['base'=> 'dashboard', 'route' => 'panel' ]) }}">Dashboard</a></li>
 <li><a href="{{ url('/create') }}" class="btn waves-effect waves-light"><i class="material-icons">library_add</i>Host</a></li>
 
 <!-- Notifications - Dropdown -->
@@ -20,13 +20,20 @@
     @if( $alerts == 0 )<div class="nothing"><i class="material-icons">alarm_off</i><li class="alert">You have no alerts</li></div>@else
 
     <!-- If there are notifications -->
-    <span class="variable">{{ $notifications=App\Notification::where('user_id', Auth::user()->id)->take(10)->get() }}</span>
+    <span class="variable">{{ $notifications = App\Notification::where('user_id', Auth::user()->id)
+                                                                    ->take(10)->orderBy('created_at', 'desc')
+                                                                    ->get() }}</span>
       <!-- List of notifications -->
      @foreach( $notifications as $notification)
-        <li class="{{ $notification->type }}"><a href="#"> {{ $notification->description }} </a></li>
+        <li class="string">
+          <a href="{{ url($notification->link) }}">
+            <span>{{ $notification->description }}</span> <br>
+            <span class="time"> {{ $notification->created_at->diffForHumans() }}</span>
+          </a>
+        </li>
      @endforeach
         <!-- If notifications is more than 10 -->
-        @if( $alerts > 10 ) <li class="view-all"><a href="#">View More</a></li> @endif
+        @if( $alerts > 10 ) <li class="view-all"><a href="{{ route('route', ['base'=> 'dashboard', 'route' => 'history']) }}">View More</a></li> @endif
    @endif
   </ul>
 </li>

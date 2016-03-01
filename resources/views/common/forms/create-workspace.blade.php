@@ -1,8 +1,8 @@
-<form action="{{ route('create', ['resource' => 'space' ]) }}" method="POST">
+<form action="{{ route('create', ['resource' => 'workspace' ]) }}" method="POST">
     {{ csrf_field() }}
 
     <div class="subtitle">
-      <span>Type of Space</span>
+      <span>Type of Workspace</span>
     </div>
 
     <!-- First Toggle Btn Group -->
@@ -11,36 +11,36 @@
       <label onclick="" class="toggle-btn success">
         <span><i class="material-icons">check</i></span>
         <input type="radio" name="type" value="apartment" checked/>
-        <i class="material-icons">business</i><br>
-        <span>Apartment</span>
+        <i class="material-icons">business_center</i><br>
+        <span>Business Center</span>
       </label>
 
       <label onclick="" class="toggle-btn">
         <span><i class="material-icons">check</i></span>
         <input type="radio" name="type" value="house"/>
-        <i class="material-icons">store</i><br>
-        <span>House</span>
+        <i class="material-icons">pages</i><br>
+        <span>Corporate Office</span>
       </label>
 
       <label onclick="" class="toggle-btn">
         <span><i class="material-icons">check</i></span>
         <input type="radio" name="type" value="B &amp; B"/>
-        <i class="material-icons">local_cafe</i><br>
-        <span>B &amp; B</span>
+        <i class="material-icons">flip</i><br>
+        <span>Coworking Space</span>
       </label>
 
       <label onclick="" class="toggle-btn">
         <span><i class="material-icons">check</i></span>
         <input type="radio" name="type" value="other"/>
-        <i class="material-icons">directions_boat</i><br>
-        <span>Other</span>
+        <i class="material-icons">view_compact</i><br>
+        <span>Other Workspace</span>
       </label>
 
     </div>
     <!-- End of First Toggle Btn Group -->
 
     <div class="subtitle">
-      <span>Room Type</span>
+      <span>Workspace Type</span>
     </div>
 
     <!-- Second Toggle Btn Group -->

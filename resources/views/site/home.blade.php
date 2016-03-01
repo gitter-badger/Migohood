@@ -38,4 +38,47 @@
 </section>
 <!-- Welcome -->
 
+<!-- Why -->
+<section class="row" id="why">
+  <div class="container center">
+    <div class="col s6 m3 l3">
+      <img src="/img/site/web.png" alt="" />
+      <h5 class="web">Register </h5>
+      <p class="second">
+        Become a Migo and start sharing and serving what’s yours with the World.
+      </p>
+    </div>
+
+    <div class="col s6 m3 l3">
+      <img src="/img/site/new.png" alt="" />
+      <h5 class="new">Post a Listing </h5>
+      <p class="second">
+        List your spaces, workspaces, parking and any service you can provide
+      </p>
+    </div>
+
+    <div class="col s6 m3 l3">
+      <img src="/img/site/search.png" alt="" />
+      <h5 class="search"> Discover Places &amp; Services</h5>
+      <p class="second">
+        Find hosts with unique spaces, workspaces, and services like never before.
+      </p>
+    </div>
+
+    <div class="col s6 m3 l3 ">
+      <img src="/img/site/pay.png" alt="" />
+      <h5 class="pay"> Make &amp; Save Money </h5>
+    </div>
+    <p class="second">
+      Get paid when you host, cutback your expenses while you travel, and start saving money
+    </p>
+
+  </div>
+
+</section>
+<!-- Why -->
+
+
+
+
 @stop

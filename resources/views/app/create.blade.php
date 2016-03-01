@@ -21,7 +21,7 @@
           <label onclick="" class="option toggle-btn success">
             <span><i class="material-icons">check</i></span>
             <input type="radio" name="option" id="space"/>
-            <i class="material-icons">place</i><br>
+            <i class="material-icons">location_city</i><br>
             <span>Space</span>
           </label>
 
@@ -55,15 +55,15 @@
         </div>
 
         <div class="form" id="workspace-form">
-          Workspace Form
+          @include('common/forms.create-workspace')
         </div>
 
         <div class="form" id="parking-form">
-          Parking Form
+          @include('common/forms.create-parkinglot')
         </div>
 
         <div class="form" id="service-form">
-          Service Form
+          @include('common/forms.create-service')
         </div>
         <!-- End of Create Forms -->
 

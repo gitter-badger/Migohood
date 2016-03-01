@@ -1,7 +1,6 @@
 @extends('layouts.app')
-@section('title', $route)
+@section('title', 'Spaces')
 @section('content')
-
 
 
 @stop

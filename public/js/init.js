@@ -1,7 +1,7 @@
-//SideNav
+// SideNav
 $(".button-collapse").sideNav();
 
-//Dropdown-Options
+// Dropdown-Options
 $('.dropdown-options').dropdown({
     constrain_width: false, // Allows a custom width
     hover: true,            // Activate on hover
@@ -10,7 +10,7 @@ $('.dropdown-options').dropdown({
   }
 );
 
-//Dropdown-Notifications
+// Dropdown-Notifications
 $('.dropdown-notifications').dropdown({
     constrain_width: false, // Allows a custom width
     hover: true,            // Activate on hover
@@ -18,3 +18,8 @@ $('.dropdown-notifications').dropdown({
     alignment: 'left'       // Displays dropdown with edge aligned to the left of button
   }
 );
+
+// Tabs
+$(document).ready(function(){
+  $('ul.tabs').tabs();
+});

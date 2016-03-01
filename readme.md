@@ -1,3 +1,138 @@
+# Routes
+
+## Routes for Main site
+
+
+- GET: /
+
+## Routes for Authentication
+
+
+#### Authentication routes...
+
+- GET: /auth/login
+- POST: /auth/login
+- GET: /auth/logout
+- GET: /redirect
+
+#### Registration routes...
+- GET: /auth/register
+- POST: /auth/register
+
+#### Password reset link request routes...
+- GET: /password/email
+- POST: /password/email
+
+#### Password reset routes...
+- GET: /password/reset/{token}
+```sh
+
+  GET : /password/reset/SomeRandomString
+
+```
+- POST: /password/reset
+- GET: /password/success
+
+#### Redirect To Provider...
+- GET: /auth/{provider}
+```sh
+
+  GET : /auth/facebook
+  GET : /auth/google
+
+```
+#### Provider Callback...
+- GET: /auth/{provider}/callback
+```sh
+
+  GET : /auth/facebook/callback
+  GET : /auth/google/callback
+
+```
+
+## Routes for No Autenticated users
+
+
+- GET: /{resource}
+```sh
+
+  GET : /spaces
+
+  GET : /workspaces
+  GET : /parkinglots
+  GET : /services
+
+```
+
+## Routes for Autenticated users
+
+
+#### Routes for Admin
+
+- GET: /admin/panel
+
+#### Routes for App
+
+- GET: /create
+- POST: /create/{resource}
+```sh
+
+  POST : /create/space
+
+  POST : /create/workspace
+  POST : /create/parkinglot
+  POST : /create/service
+
+```
+
+- GET: /{resource}/{hash}/{route}
+```sh
+
+  GET : /space/hash/basics
+  GET : /space/hash/description
+
+  GET : /space/hash/location
+  GET : /space/hash/photos
+  GET : /space/hash/pricing
+  GET : /space/hash/extras
+
+  GET : /workspace/hash/basics
+  GET : /workspace/hash/description
+  GET : /workspace/hash/location
+  GET : /workspace/hash/photos
+  GET : /workspace/hash/pricing
+  GET : /workspace/hash/extras
+
+  GET : /parkinglot/hash/basics
+  GET : /parkinglot/hash/description
+  GET : /parkinglot/hash/location
+  GET : /parkinglot/hash/photos
+  GET : /parkinglot/hash/pricing
+
+  GET : /service/hash/basics
+  GET : /service/hash/description
+  GET : /service/hash/location
+  GET : /service/hash/photos
+  GET : /service/hash/pricing
+
+```
+
+- [GET]: /{base}/{route}
+```sh
+
+  GET : /dashboard/panel
+  GET : /dashboard/reservations
+  GET : /dashboard/inbox
+  GET : /dashboard/myspaces
+  GET : /dashboard/mywokspaces
+  GET : /dashboard/myparkinglots
+  GET : /dashboard/myservices
+  GET : /dashboard/transactions
+  GET : /dashboard/history
+  GET : /dashboard/settings
+
+```
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

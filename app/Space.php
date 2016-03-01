@@ -24,6 +24,10 @@ class Space extends Model
       'thumbnail',
       'status',
 
+      'stars',
+      'likes',
+      'reviews',
+
       'type',
       'room',
       'capacity'

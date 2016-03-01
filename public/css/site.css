@@ -172,3 +172,23 @@
   -moz-box-shadow: none;
   box-shadow: none;
 }
+
+/***************
+      WHY
+****************/
+#why {
+  background: #FBFBFB;
+  padding: 12px 0px;
+}
+
+#why img { width: 120px; }
+
+#why h5 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#why h5.web { color: #FFA94D; }
+#why h5.new { color: #9587F4; }
+#why h5.search { color: #6BB2F2; }
+#why h5.pay { color: #75CC95; }

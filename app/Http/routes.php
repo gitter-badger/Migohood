@@ -15,6 +15,7 @@
 ******************************/
 Route::get('/', 'SiteController@home');                     // Home...
 
+
 /******************************
     Routes for Authentication
 ******************************/
@@ -22,7 +23,7 @@ Route::get('/', 'SiteController@home');                     // Home...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
-Route::get('redirect', 'AppController@getredirect');
+Route::get('redirect', 'AppController@getRedirect');
 
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
@@ -48,19 +49,22 @@ Route::get('auth/{provider}', [
 // Provider Callback...
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
+
 /************************************
    Routes for No Autenticated users
 ************************************/
-// Get Routes (Spaces, Workspaces, Parking Lots, Services)
-Route::get('{route}', [
-    'uses' => 'AppController@getroute',
-    'as' => 'router',
+// Get Routes
+Route::get('{resource}', [
+    'uses' => 'AppController@getResource',
+    'as' => 'resource',
 ]);
+
 
 /************************************
      Routes for Autenticated users
 ************************************/
 Route::group(['middleware' => 'auth'], function () {
+
 
   /******************************
           Routes for Admin
@@ -78,6 +82,25 @@ Route::group(['middleware' => 'auth'], function () {
   Route::post('create/{resource}', [
       'uses' => 'AppController@postcreate',
       'as' => 'create',
+  ]);
+
+  // Resource Router - Get
+  Route::get('{resource}/{hash}/{route}', [
+      'uses' => 'AppController@resourceRouter',
+      'as' => 'resource.router',
+  ]);
+
+  // Resource Route - Update
+  /*
+  Route::get('{resource}/{hash}/{route}/update', [
+      'uses' => 'AppController@resourceRouterUpdate',
+      'as' => 'resource.router.update',
+  ]);*/
+
+  // Get Routes
+  Route::get('{base}/{route}', [
+      'uses' => 'AppController@getRoute',
+      'as' => 'route',
   ]);
 
 
