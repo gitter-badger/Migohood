@@ -89,8 +89,8 @@
 ```sh
 
   GET : /space/hash/basics
+  
   GET : /space/hash/description
-
   GET : /space/hash/location
   GET : /space/hash/photos
   GET : /space/hash/pricing
