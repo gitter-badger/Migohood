@@ -48,7 +48,7 @@ class Space extends Model
 
       'country',
       'city',
-      'location_references'
+      'location_references',
       'latitude',
       'longitude'
 

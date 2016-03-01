@@ -35,6 +35,10 @@ main { flex: 1 0 auto; }
   padding-top: 12px;
 }
 
+.panel-agree {
+  padding-bottom: 15px;
+}
+
 .panel-social {
   margin: 0 auto;
   margin-left: 15px;

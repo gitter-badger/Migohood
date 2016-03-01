@@ -212,6 +212,11 @@ class AppController extends Controller
         $space->parking = $request->parking;
       }
 
+      // Space - Description
+      if($route == 'location') {
+        
+      }
+
       $space->save();
 
       return $space;

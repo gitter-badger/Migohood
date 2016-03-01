@@ -25,7 +25,7 @@
       <input placeholder="Confirm Password" type="password" name="password_confirmation" required>
     </div>
 
-    <p class="input-field">
+    <p class="input-field panel-agree">
       <input type="checkbox" name="agree" id="check"/>
       <label for="check">I agree with <a href="#">Terms and conditions, Privacy Policy</a> and <a href="#">Guest and Refund Policy</a></label>
     </p>
