@@ -20,8 +20,8 @@ class AppController extends Controller
    /****************************
           Extra Functions
    ****************************/
-     // Redirect
-     public function getRedirect() {
+    // Redirect
+    public function getRedirect() {
 
        if(Auth::check()){
           // Redirect User
@@ -36,21 +36,21 @@ class AppController extends Controller
        }
 
         return view('errors.400'); //400 Bad Request
-     }
+    }
 
-     // Get Resource
-     public function getResource($resource) {
+    // Get Resource
+    public function getResource($resource) {
         return view('app.'.$resource);
-     }
+    }
 
-     // Get Route
-     public function getRoute($base, $route){
+    // Get Route
+    public function getRoute($base, $route){
         // User/Folder/View
         return view('users/'.$base.'/'.$route, ['route' => $route]);
-     }
+    }
 
-     // Create Notification
-     public function createNotification($type, $hash) {
+    // Create Notification
+    public function createNotification($type, $hash) {
         // New Notification
         $notification = new Notification;
         $notification->type = $type;
@@ -146,20 +146,75 @@ class AppController extends Controller
         'route' => $route
       ]);
 
-      /*
+    }
+
+    // Resource Router - POST
+    public function resourceRouterUpdate(Request $request, $resource, $hash, $route, $next) {
+
+      // Search hash in the table of the resource
+      $search = DB::table($resource.'s')
+                      ->where('hash', $hash)->first();
+
+      // Is it null?
+      if(is_null($search)) {
+          return view('errors.404'); // 404 Resource Not Found
+      }
+
+      //Is it not the owner?
+      if(Auth::user()->id != $search->user_id) {
+          return view('errors.400'); // 400 Bad request
+      }
+
+      // Save Request if it's Space
       if($resource == 'space') {
-          return view('resources/spaces/edit'.'.'.$route, [
-            'space' => $search,
-            'route' => $route
-          ]);
+        $search = $this->SpaceUpdate($request, $hash, $route);
+      }
+
+      /*if($resource == 'workspace') {
+        $search = $this->WorkspaceUpdate($request, $hash, $route);
       }*/
 
+      // Redirect
+      return redirect()->route('resource.router', [
+        'resource' => $resource,
+        'hash' => $search->hash,
+        'route' => $request->next
+      ]);
 
-      /*
-      if($resource == 'workspace') {
-          return view('workspaces/edit'.$route, ['workspace' => $resource ]);
-      }*/
+    }
 
+    // Space Update - POST
+    public function SpaceUpdate(Request $request, $hash, $route) {
+      // Search Space
+      $space = Space::where('hash', $hash)->first();
+
+      // Space - Basics
+      if($route == 'basics') {
+        $space->type = $request->type;
+        $space->room = $request->room;
+        $space->capacity = $request->capacity;
+        $space->bedrooms = $request->bedrooms;
+        $space->beds = $request->beds;
+        $space->bathrooms = $request->bathrooms;
+      }
+
+      // Space - Description
+      if($route == 'description') {
+        $space->title = $request->title;
+        $space->description = $request->description;
+        $space->pets_allowed = $request->pets_allowed;
+        $space->events_allowed = $request->events_allowed;
+        $space->production_allowed = $request->production_allowed;
+        $space->family_friendly = $request->family_friendly;
+        $space->business_guest = $request->business_guest;
+        $space->smoke_free = $request->smoke_free;
+        $space->gym = $request->gym;
+        $space->parking = $request->parking;
+      }
+
+      $space->save();
+
+      return $space;
     }
 
 }

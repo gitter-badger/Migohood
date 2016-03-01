@@ -89,8 +89,8 @@
 ```sh
 
   GET : /space/hash/basics
-  
   GET : /space/hash/description
+
   GET : /space/hash/location
   GET : /space/hash/photos
   GET : /space/hash/pricing
@@ -114,6 +114,16 @@
   GET : /service/hash/location
   GET : /service/hash/photos
   GET : /service/hash/pricing
+
+```
+
+- GET: /{resource}/{hash}/{route}/{next}/update
+```sh
+
+  GET : /space/hash/basics/description/update
+  GET : /space/hash/description/location/update
+  GET : /space/hash/location/photos/update
+
 
 ```
 

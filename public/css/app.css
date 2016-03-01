@@ -415,7 +415,7 @@ footer.page-footer .footer-copyright {
   background: #FFF !important;
   border-radius: 4px;
   border: 1px solid #E7E7E7;
-  margin: 5px 0px 0px 0px;
+  margin-top: 5px;
 }
 
 .box-body {
@@ -437,6 +437,36 @@ footer.page-footer .footer-copyright {
   padding-right: 5px;
   margin-left: 10px;
   color: #444E57;
+}
+
+.box-body .title{
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.box-body .next {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.box-body .btn {
+	text-align: center;
+  vertical-align: middle;
+	height: 40px;
+	font-size: 16px !important;
+	font-weight: 500;
+  font-weight: bold;
+	border-radius: 4px;
+	text-transform: uppercase !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+  width: 160px;
+  background: #1ADB78;
+}
+
+.box-body .btn:hover {
+  background: #24E582;
 }
 
 
@@ -576,6 +606,81 @@ footer.page-footer .footer-copyright {
   background: #21B4FD !important;
 }
 
+/***************
+    INFO BOX
+****************/
+.info {
+  margin: 5px 0px 0px 0px;
+  position: relative;
+  background: #FFF;
+  border: 1px solid #E7E7E7;
+  border-radius: 4px;
+}
+
+.info-body {
+  padding: 2px 20px;
+  text-align: center;
+}
+
+.info-body h4, .info-body h5 {
+  margin: 0px;
+  color: #2A3036;
+}
+
+.info-body img {
+  width: 110px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/***************
+    MENU BOX
+****************/
+.menu {
+  padding: 10px 0px;
+  font-size: 14px;
+}
+
+.menu li {
+  padding: 6px 0px;
+  line-height: 23px;
+  color: #2A3036;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.menu li i {
+  margin-left: 16px;
+  margin-right: 10px;
+  font-size: 18px;
+  line-height: 23px;
+  vertical-align: middle;
+}
+
+.menu li.active {
+  font-weight: 600;
+  background: #E7E9EB;
+}
+
+.menu li:hover {
+  background: #E7E9EB;
+}
+
+.menu li span {
+  margin-right: 10px;
+  float: right;
+}
+
+#app_extended .menu li {
+  padding: 3px 0px;
+}
+
+#app_extended .menu li i {
+  margin-left: 10px;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
 
 /***************
   BOX CONTENT
@@ -636,87 +741,156 @@ footer.page-footer .footer-copyright {
   color: #6F7E8E;
 }
 
-div.secondary-content a i {
+.box-content div.secondary-content a i {
   color: #6F7E8E;
   font-size: 16px;
 }
 
-span.lil-title {
+.box-content span.lil-title {
   font-weight: bold;
 }
 
 /***************
-    MENU BOX
+    BOX BODY
 ****************/
-.menu {
-  padding: 10px 0px;
-  font-size: 14px;
-}
-
-.menu li {
-  padding: 6px 0px;
-  line-height: 23px;
-  color: #2A3036;
-  font-weight: 400;
-  margin-top: 5px;
-}
-
-.menu li i {
-  margin-left: 16px;
-  margin-right: 10px;
-  font-size: 18px;
-  line-height: 23px;
-  vertical-align: middle;
-}
-
-.menu li.active {
-  font-weight: 600;
-  background: #E7E9EB;
-}
-
-.menu li:hover {
-  background: #E7E9EB;
-}
-
-.menu li span {
-  margin-right: 10px;
-  float: right;
-}
-
-#app_extended .menu li {
-  padding: 3px 0px;
-}
-
-#app_extended .menu li i {
-  margin-left: 10px;
-  margin-right: 5px;
-  font-size: 18px;
-}
-
-
-/***************
-    INFO BOX
-****************/
-.info {
-  margin: 5px 0px 0px 0px;
-  position: relative;
-  background: #FFF;
-  border: 1px solid #E7E7E7;
+/* Input - Select */
+.box-body .select-wrapper input.select-dropdown {
+  border: 1px solid #E7E9EB !important;
+  height: 3rem;
   border-radius: 4px;
+  line-height: 3rem;
+  font-size: 1rem;
+  margin: 10px 0 15px 0;
+  padding: 0px 5px;
+  display: block;
+  color: #475968;
 }
 
-.info-body {
-  padding: 2px 20px;
-  text-align: center;
+.box-body .select-wrapper span.caret {
+  color: initial;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 16px;
 }
 
-.info-body h4, .info-body h5 {
-  margin: 0px;
-  color: #2A3036;
+.box-body .select-wrapper + label {
+  position: absolute;
+  top: -16px;
+  font-size: 14px;
+  color: #475968;
+  font-weight: 500;
 }
 
-.info-body img {
-  width: 110px;
-  margin-top: 30px;
-  margin-bottom: 20px;
+.box-body .select-wrapper ul {
+  max-height: 220px;
+}
+
+.box-body .select-wrapper ul li > span {
+	color: #475968;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Input - Text Area */
+.box-body textarea.materialize-textarea {
+  border-radius: 4px;
+  background: #FAFAFA !important;
+  border: 1px solid #E7E9EB !important;
+  border-bottom: 1px solid #E7E9EB !important;
+  margin-top: 10px;
+  padding-left: 10px;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+}
+
+.box-body textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #E7E9EB !important;
+}
+
+.box-body textarea.materialize-textarea:focus:not([readonly]) + label {
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+  font-size: 14px;
+  color: #475968;
+  font-weight: 500;
+}
+
+.box-body label.text-area {
+  font-size: 14px !important;
+  color: #475968;
+  font-weight: 500;
+}
+
+.box-body textarea.materialize-textarea.valid,
+.box-body textarea.materialize-textarea:focus.valid {
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+}
+
+/* Input - Text */
+.box-body input[type=text] {
+  background: #FAFAFA !important;
+  height: 3rem;
+  border: 1px solid #E7E9EB !important;
+  height: 3rem;
+  border-radius: 4px;
+  line-height: 3rem;
+  padding-left: 10px;
+  margin-top: 10px;
+  color: #475968;
+}
+
+.box-body input[type=text]:focus:not([readonly]) {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #475968;
+}
+
+.box-body ::-webkit-input-placeholder { color: #475968; }
+.box-body :-moz-placeholder { /* Firefox 18- */ color: #475968; }
+.box-body ::-moz-placeholder { /* Firefox 19+ */ color: #475968; }
+.box-body :-ms-input-placeholder { color: #475968; }
+
+.box-body input[type=text] + label {
+  font-size: 14px !important;
+  color: #475968;
+  font-weight: 500;
+}
+
+.box-body input[type=text]:focus:not([readonly]) + label {
+  font-size: 14px;
+  color: #475968;
+  font-weight: 500;
+}
+
+/* Checkbox */
+
+.box-body .checkboxes {
+  padding: 0px 20px 20px 20px;
+}
+
+.box-body .subtitle span {
+  font-weight: bold;
+  color: #444E57;
+  font-size: 14px;
+  margin-left: 14px;
+}
+
+
+/* Checkbox - Label */
+[type="checkbox"] + label {
+  color: #44565B;
+}
+
+/* Checkbox - Before + label */
+[type="checkbox"] + label:before {
+  border: 2px solid #3B444C;
+}
+
+/* Checkbox - Checked */
+[type="checkbox"]:checked + label:before {
+	border-right: 2px solid #0071EB;
+	border-bottom: 2px solid #0071EB;
 }

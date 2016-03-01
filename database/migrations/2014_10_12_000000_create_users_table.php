@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->string('avatar')->default('/img/app/default.jpg');
 
-            $table->string('status')->default('normal');  //Normal, Verified, Blocked          
+            $table->string('status')->default('normal');  //Normal, Verified, Blocked
 
             $table->rememberToken();
             $table->timestamps();

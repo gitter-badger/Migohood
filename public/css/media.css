@@ -69,7 +69,6 @@
   .toggle-btn { margin: 20px 13px; }
 
   #app_extended .menu { display: none; }
-  #app_extended .row .col.m9 { width: 100%; }
 }
 
 
@@ -90,6 +89,7 @@
   footer.page-footer .foot.container { width: 95%;  }
   #edit .menu { display: none; }
   #edit .row .col.m9 { width: 100%; }
+  .box-body .next { text-align: center; }
 }
 
 /* Mobile Medium Screens */

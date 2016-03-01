@@ -30,7 +30,28 @@ class Space extends Model
 
       'type',
       'room',
-      'capacity'
+      'capacity',
+      'bedrooms',
+      'beds',
+      'bathrooms',
+
+      'title',
+      'description',
+      'pets_allowed',
+      'events_allowed',
+      'production_allowed',
+      'family_friendly',
+      'business_guest',
+      'smoke_free',
+      'gym',
+      'parking',
+
+      'country',
+      'city',
+      'location_references'
+      'latitude',
+      'longitude'
+
 
     ];
 

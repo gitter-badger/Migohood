@@ -23,3 +23,14 @@ $('.dropdown-notifications').dropdown({
 $(document).ready(function(){
   $('ul.tabs').tabs();
 });
+
+// Select
+$(document).ready(function() {
+  $('select').material_select();
+});
+
+// Textarea1 Resize
+$('#textarea1').trigger('autoresize');
+
+// Textarea2 Resize
+$('#textarea2').trigger('autoresize');

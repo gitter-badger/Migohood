@@ -91,11 +91,10 @@ Route::group(['middleware' => 'auth'], function () {
   ]);
 
   // Resource Route - Update
-  /*
-  Route::get('{resource}/{hash}/{route}/update', [
+  Route::post('{resource}/{hash}/{route}/{next}/update', [
       'uses' => 'AppController@resourceRouterUpdate',
       'as' => 'resource.router.update',
-  ]);*/
+  ]);
 
   // Get Routes
   Route::get('{base}/{route}', [
