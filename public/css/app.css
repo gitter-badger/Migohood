@@ -293,15 +293,12 @@ footer.page-footer .footer-copyright {
 
 /* Main side nav properties */
 #main nav .side-nav .guest-menu {
-  background: #02A4F5 !important;
   border-top: 6px solid #0297E1;
+  padding: 30px 0px;
+  background: #02A4F5 url("/img/app/back.png");
+  background-size: 180px;
+  background-repeat: repeat;
   width: 100%;
-}
-
-#main nav .side-nav .guest-menu img {
-  width: 160px;
-  margin-top: 50px;
-  margin-bottom: 20px;
 }
 
 #main nav .side-nav .user-menu {

@@ -15,8 +15,6 @@ use App\Http\Controllers\Controller;
 
 class AppController extends Controller
 {
-
-
    /****************************
           Extra Functions
    ****************************/
@@ -29,8 +27,8 @@ class AppController extends Controller
             return redirect ('/spaces');
           }
 
-          // Redirect Admin and Workers
-          if(Auth::user()->role == 'admin' || Auth::user()->role == 'worker') {
+          // Redirect Admin to Panel
+          if(Auth::user()->role == 'admin') {
             return redirect ('/admin/panel');
           }
        }
@@ -212,10 +210,24 @@ class AppController extends Controller
         $space->parking = $request->parking;
       }
 
-      // Space - Description
+      // Space - Location
       if($route == 'location') {
-        
+        $space->city_id = $request->city;
+        $space->address = $request->address;
+        $space->location_references = $request->location_references;
       }
+
+      /* TODO: validate here some like:
+        public function SpaceValidate($hash) {
+          // Search Space
+          $space = Space::where('hash', $hash)->first();
+
+          if(...)
+
+          return 'not_listed' or 'listed'
+
+        }
+        */
 
       $space->save();
 

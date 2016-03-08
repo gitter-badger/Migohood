@@ -46,11 +46,11 @@ class Space extends Model
       'gym',
       'parking',
 
-      'country',
-      'city',
-      'location_references',
+      'city_id',
+      'address',
       'latitude',
-      'longitude'
+      'longitude',
+      'location_references'
 
 
     ];

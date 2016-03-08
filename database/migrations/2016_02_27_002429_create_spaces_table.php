@@ -39,12 +39,11 @@ class CreateSpacesTable extends Migration
           $table->string('parking')->nullable();
 
           // Location
-          $table->string('country')->nullable();
-          $table->string('city')->nullable();
+          $table->integer('city_id')->nullable();
           $table->string('address')->nullable();
-          $table->string('location_references')->nullable();
-          $table->float('latitude');
-          $table->float('longitude');
+          $table->longText('location_references')->nullable();
+          $table->double('latitude', 18, 15)->nullable();
+          $table->double('longitude', 18, 15)->nullable();
 
           $table->integer('stars')->default(0);
           $table->integer('likes')->default(0);

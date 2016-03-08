@@ -103,4 +103,11 @@ Route::group(['middleware' => 'auth'], function () {
   ]);
 
 
+  /******************************
+        Routes for Maps
+  ******************************/
+  // Get City Json
+  Route::get('request/json/city/{id}', 'MapController@getIndividualCity');
+
+
 });

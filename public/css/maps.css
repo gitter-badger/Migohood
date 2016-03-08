@@ -1,0 +1,9 @@
+/*******************
+  GENERAL SETTINGS
+*******************/
+#location_map {
+  width: 100%;
+  height: 280px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}

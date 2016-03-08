@@ -12,10 +12,6 @@
         @include('common/navbar.large_nav_admins')
      @endif
 
-     @if(Auth::user()->role == 'worker')
-        @include('common/navbar.large_nav_workers')
-     @endif
-
   @else
 
     <!-- No Authenticated users -->
