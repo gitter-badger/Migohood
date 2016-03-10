@@ -20,7 +20,7 @@
   </div>
   <!-- End of Title -->
 
-  <!-- Update Space Basics -->
+  <!-- Update Space Location -->
   <form action="{{ route('resource.router.update', [
     'resource'=> 'space',
     'hash' => $resource->hash,
@@ -30,12 +30,7 @@
 
     {{ csrf_field() }}
 
-    <!--
-    <div class="subtitle">
-      <span>Address</span>
-    </div>-->
-
-    <!-- Type of Property -->
+    <!-- City -->
     <div class="input-field col s12 m6 l4">
       <select name="city" id="city" required>
         <option value="" disabled selected>Choose one</option>
@@ -46,7 +41,7 @@
       </select>
       <label>City</label>
     </div>
-    <!-- End of Type of Property -->
+    <!-- End of City -->
 
     <!-- Adress -->
     <div class="input-field col s12 m6 l8">
@@ -62,6 +57,19 @@
     </div>
     <!-- End of Location References -->
 
+    <!-- Variables -->
+    <span class="variable">{{ $cities=App\City::all() }}</span>
+    @foreach($cities as $city)
+        @if($resource->city_id != NULL and $resource->city_id == $city->id)
+          <input type="hidden" name="current_city" id="current_city" value="{{ $city->name }}, {{ $city->state }}, {{ $city->country }}">
+          @break
+        @endif
+    @endforeach
+
+      <input type="hidden" name="latitude" id="lat" @if($resource->latitude != NULL) value="{{ $resource->latitude }}" @endif>
+      <input type="hidden" name="longitude" id="lng" @if($resource->longitude != NULL) value="{{ $resource->longitude }}" @endif>
+    <!-- End of Variables -->
+
     <!-- Next Button -->
     <div class="col s12 next">
       <button type="submit" class="btn ">NEXT</button>
@@ -69,7 +77,7 @@
     <!-- End of Next Button -->
 
   </form>
-  <!-- End of Update Space Basics -->
+  <!-- End of Update Space Location -->
 
 @stop
 
@@ -77,6 +85,4 @@
   <!-- Location Map -->
   <div id="location_map"></div>
   <!-- End of Location Map -->
-  <h5 class="light">Don't worry</h5>
-  <p class="light">Only people with a confirmed reservation will know your exact address</p>
 @stop

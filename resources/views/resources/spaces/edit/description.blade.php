@@ -12,7 +12,7 @@
   </div>
   <!-- End of Title -->
 
-  <!-- Update Space Basics -->
+  <!-- Update Space Description -->
   <form class="" action="{{ route('resource.router.update', [
     'resource'=> 'space',
     'hash' => $resource->hash,
@@ -79,7 +79,7 @@
     <!-- End of Next Button -->
 
   </form>
-  <!-- End of Update Space Basics -->
+  <!-- End of Update Space Description -->
 
 @stop
 

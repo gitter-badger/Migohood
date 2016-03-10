@@ -26,8 +26,8 @@
   <a href="{{ route('resource.router', [
     'resource'=> 'space',
     'hash' => $resource->hash,
-    'route' => 'pricing'
-    ]) }}"><li @if($route == 'pricing') class="active" @endif><i class="material-icons left">receipt</i>Pricing</li></a>
+    'route' => 'price'
+    ]) }}"><li @if($route == 'price') class="active" @endif><i class="material-icons left">receipt</i>Price</li></a>
 
   <a href="{{ route('resource.router', [
     'resource'=> 'space',

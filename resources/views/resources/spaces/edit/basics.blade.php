@@ -41,10 +41,8 @@
         <option value="Boat" @if($resource->type == 'Boat') selected="selected" @endif> Boat</option>
         <option value="Plane" @if($resource->type == 'Plane') selected="selected" @endif> Plane</option>
         <option value="Camper/RV" @if($resource->type == 'Camper/RV') selected="selected" @endif> Camper/RV</option>
-        <option value="Igloo" @if($resource->type == 'Igloo') selected="selected" @endif> Igloo</option>
         <option value="LightHouse" @if($resource->type == 'LightHouse') selected="selected" @endif> LightHouse</option>
         <option value="Yurt" @if($resource->type == 'Yurt') selected="selected" @endif> Yurt</option>
-        <option value="Cave" @if($resource->type == 'Cave') selected="selected" @endif> Cave</option>
         <option value="Island" @if($resource->type == 'Island') selected="selected" @endif> Island</option>
         <option value="Chalet" @if($resource->type == 'Chalet') selected="selected" @endif> Chalet</option>
         <option value="Train" @if($resource->type == 'Train') selected="selected" @endif> Train</option>
@@ -65,7 +63,7 @@
     </div>
     <!-- End of Type of Room -->
 
-    <!-- Capacity -->
+    <!-- Guests -->
     <div class="input-field col s12 m6 l4">
       <select name="capacity" required>
         <option value="" disabled selected>Choose one</option>
@@ -86,9 +84,9 @@
         <option value="15" @if($resource->capacity == '15') selected="selected" @endif> 15 Guests</option>
         <option value="16" @if($resource->capacity == '16') selected="selected" @endif> 16 Guests</option>
       </select>
-      <label>Capacity</label>
+      <label>Guests</label>
     </div>
-    <!-- End of Capacity -->
+    <!-- End of Guests -->
 
     <!-- Bedrooms -->
     <div class="input-field col s12 m6 l4">

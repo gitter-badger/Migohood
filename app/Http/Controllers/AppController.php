@@ -215,6 +215,8 @@ class AppController extends Controller
         $space->city_id = $request->city;
         $space->address = $request->address;
         $space->location_references = $request->location_references;
+        $space->latitude = $request->latitude;
+        $space->longitude = $request->longitude;
       }
 
       /* TODO: validate here some like:

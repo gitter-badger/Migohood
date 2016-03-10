@@ -1,8 +1,8 @@
 <!-- Admin Menu -->
-<li><a href="#">Dashboard</a></li>
-<li><a href="#">Users</a></li>
+<li><a href="{{ url('admin/panel' )}}">Dashboard</a></li>
+<!--<li><a href="#">Users</a></li>
 <li><a href="#">Workers</a></li>
-<li><a href="#">Payments</a></li>
+<li><a href="#">Payments</a></li>-->
 <li><a href="#">Cases</a></li>
 <li><a href="#">Users Verifications</a></li>
 <!-- User - Dropdown -->

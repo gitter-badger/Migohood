@@ -126,6 +126,9 @@ footer.page-footer .footer-copyright {
 
   #app #main nav .right .btn:hover { background: #0297E1 !important; }
 
+  /* Panel nav */
+  #panel body { background: #FFF !important; }
+  #panel #main nav { background: #02A4F5 !important; }
 
 /* Main nav Properties */
 #main nav {
@@ -863,7 +866,6 @@ footer.page-footer .footer-copyright {
 }
 
 /* Checkbox */
-
 .box-body .checkboxes {
   padding: 0px 20px 20px 20px;
 }

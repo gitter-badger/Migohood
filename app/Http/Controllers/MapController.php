@@ -23,7 +23,10 @@ class MapController extends Controller
       // Return Json with info
        return response()->json([
          'lat' => $city->latitude,
-         'lng' => $city->longitude
+         'lng' => $city->longitude,
+         'name' => $city->name,
+         'state' => $city->state,
+         'country' => $city->country
        ]);
 
      }

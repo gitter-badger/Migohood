@@ -3,7 +3,7 @@
 *******************/
 /* Page-Foot */
 .page-foot {
-  padding: 10px 3px 0px 3px;
+  padding: 20px 3px;
   display: inline-block;
 }
 
@@ -59,16 +59,6 @@
   color: #444E57;
   font-size: 16px;
   font-weight: 400;
-}
-
-/* Background img */
-.back {
-  margin-bottom: -30px;
-  margin-top: 0px;
-}
-
-.back img {
-  width: 100%;
 }
 
 /*******************
@@ -177,8 +167,8 @@
       WHY
 ****************/
 #why {
-  background: #FBFBFB;
-  padding: 12px 0px;
+  background: #F7F7F7;
+  padding: 20px 0px;
 }
 
 #why img { width: 120px; }

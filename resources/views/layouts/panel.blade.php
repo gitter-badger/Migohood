@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="site">
+<html lang="en" id="panel">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,11 +21,11 @@
        <div class="nav-wrapper">
 
          <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-         <div class="center"><a href="{{ url('/') }}" class="brand"><img src="/img/app/brand.png" alt=".."/></a></div>
-         <a href="{{ url('/') }}" class="brand"><img class="logo" src="/img/app/brand.png" alt=".."/></a>
+         <div class="center"><a href="{{ url('/') }}" class="brand"><img src="/img/app/brand-white.png" alt=".."/></a></div>
+         <a href="{{ url('/') }}" class="brand"><img class="logo" src="/img/app/brand-white.png" alt=".."/></a>
 
-         @include('common.large_nav')
-         @include('common.side_nav')
+          @include('common.large_nav')
+          @include('common.side_nav')
 
        </div>
       </nav>
@@ -34,22 +34,28 @@
   <!-- Navbar -->
 
 <body>
-<main>
-  @yield('content')
-</main>
+<main id="app_extended">
 
-<!-- Foot -->
-<section class="center page-foot">
-  <h4>What are you wating for?</h4>
-  <p>Join and Discover a community of locals host willing to serve and share the world</p>
-  <a href="{{ url('/auth/register') }}" class="btn btn-reg waves-effect waves-light">Register Now </a><span>or</span>
-  <a href="#" class="btn btn-read waves-effect waves-dark">Read more</a>
-</section>
-<!--
-<div class="back">
-  <img src="/img/site/back-foot02.png" alt=".." />
-</div>-->
-<!-- Foot -->
+  <!-- Body -->
+  <div class="body container row">
+
+    <!-- Menu Left -->
+    <div class="col m3 l2">
+      <div class="menu">
+        <ul>@yield('menu')</ul>
+     </div>
+    </div>
+    <!-- End of Menu Left -->
+
+    <!-- Content -->
+    <div class="col s12 m9 l10">
+        @yield('content')
+    <!-- End of Content -->
+
+  </div>
+  <!-- End of Body -->
+
+</main>
 
 @include('common.footer')
 
@@ -59,4 +65,4 @@
 <script src="/js/jquery.min.js" type="text/javascript"></script>                <!-- Jquery core JS -->
 <script src="/js/materialize.min.js" type="text/javascript"></script>           <!-- Materialize core JS -->
 <script src="/js/init.js" type="text/javascript"></script>                      <!-- Init Custom JS File -->
-<!--<script src="/js/app.js" type="text/javascript"></script>          -->             <!-- App Custom JS File-->
+<script src="/js/app.js" type="text/javascript"></script>                       <!-- App Custom JS File-->

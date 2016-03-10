@@ -40,7 +40,7 @@
     <!-- End of First Toggle Btn Group -->
 
     <div class="subtitle">
-      <span>Workspace Type</span>
+      <span>Workspace Accomodance</span>
     </div>
 
     <!-- Second Toggle Btn Group -->
