@@ -2,7 +2,7 @@
 
 ## Routes for Main site
 ```sh
-  GET:  /
+GET:  /
 ```
 
 
@@ -11,39 +11,39 @@
 
 #### Authentication routes...
 ```sh
-  GET:  /auth/login
-  POST: /auth/login
-  GET:  /auth/logout
-  GET:  /redirect
+GET:  /auth/login
+POST: /auth/login
+GET:  /auth/logout
+GET:  /redirect
 ```
 
 #### Registration routes...
 ```sh
-  GET:  /auth/register
-  POST: /auth/register
+GET:  /auth/register
+POST: /auth/register
 ```
 
 #### Password reset link request routes...
 ```sh
-  GET:  /password/email
-  POST: /password/email
+GET:  /password/email
+POST: /password/email
 ```
 
 #### Password reset routes...
 ```sh
-  GET:  /password/reset/{token}
-  POST: /password/reset
-  GET:  /password/success
+GET:  /password/reset/{token}
+POST: /password/reset
+GET:  /password/success
 ```
 
 #### Redirect To Provider...
 ```sh
-  GET:  /auth/{provider}
+GET:  /auth/{provider}
 ```
 
 #### Provider Callback...
 ```sh
-  GET:  /auth/{provider}/callback
+GET:  /auth/{provider}/callback
 ```
 
 
@@ -51,7 +51,7 @@
 
 
 ```sh
-  GET:  /{resource}
+GET:  /{resource}
 ```
 
 
@@ -60,22 +60,22 @@
 
 #### Routes for Admin
 ```sh
-  GET:  /admin/panel
+GET:  /admin/panel
 ```
 
 #### Routes for App
 ```sh
-  GET:  /create
-  POST: /create/{resource}
-  GET:  /{resource}/{hash}/{route}
-  GET:  /{resource}/{hash}/{route}/{next}/update
-  GET:  /{base}/{route}
-  POST: /thumbnail/upload/{resource}/{hash}
+GET:  /create
+POST: /create/{resource}
+GET:  /{resource}/{hash}/{route}
+GET:  /{resource}/{hash}/{route}/{next}/update
+GET:  /{base}/{route}
+POST: /thumbnail/upload/{resource}/{hash}
 ```
 
 #### Routes for Maps
 ```sh
-  GET: /request/json/city/{id}
+GET: /request/json/city/{id}
 ```
 
 ## Laravel PHP Framework
