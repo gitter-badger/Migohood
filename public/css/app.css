@@ -877,7 +877,6 @@ footer.page-footer .footer-copyright {
   margin-left: 14px;
 }
 
-
 /* Checkbox - Label */
 [type="checkbox"] + label {
   color: #44565B;
@@ -892,4 +891,25 @@ footer.page-footer .footer-copyright {
 [type="checkbox"]:checked + label:before {
 	border-right: 2px solid #0071EB;
 	border-bottom: 2px solid #0071EB;
+}
+
+/* Photos */
+/* Photos - Hides controls for dropzone.js */
+.single-dropzone .dz-image-preview,
+.single-dropzone .dz-file-preview {
+    display: none;
+}
+
+/* Photos - Thumbnail Preview */
+.thumb-preview img {
+  border-radius: 4px;
+}
+
+.thumb-button .btn {
+  background: #02A4F5 !important;
+  color: #FFF;
+}
+
+.thumb-button .btn:hover {
+  background: #0297E1 !important;
 }

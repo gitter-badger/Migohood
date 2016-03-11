@@ -12,11 +12,8 @@ $(document).ready(function(){
     setMap(city_lat, city_lng, 'far');                              // Set Default Map
   }
   else {
-    setMap(document.getElementById('lat').value,                    // Set Current Map
-           document.getElementById('lng').value,
-           'near');
-
-    global_query = document.getElementById('current_city').value;   // Set Current City
+    setMap(document.getElementById('lat').value, document.getElementById('lng').value, 'near');   // Set Current Map
+    global_query = document.getElementById('current_city').value;                                 // Set Current City
   }
 
   // Get the option selected in cities dropdown select

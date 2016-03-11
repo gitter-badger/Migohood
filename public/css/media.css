@@ -47,6 +47,9 @@
 
   #app_extended .l9 { width: 78%; }
   #app_extended .l3 { width: 22%; }
+
+  .single-dropzone .thumb-preview img { width: 380px; height: 220px; }
+
 }
 
 /******************************************
@@ -69,6 +72,9 @@
   .toggle-btn { margin: 20px 13px; }
 
   #app_extended .menu { display: none; }
+
+  .single-dropzone .thumb-preview img { width: 90%; height: 280px; }
+
 }
 
 
@@ -90,6 +96,9 @@
   #edit .menu { display: none; }
   #edit .row .col.m9 { width: 100%; }
   .box-body .next { text-align: center; }
+
+  .single-dropzone .thumb-preview img { width: 100%; height: 320px; }
+
 }
 
 /* Mobile Medium Screens */
@@ -102,6 +111,8 @@
   /* App */
   footer.page-footer .foot.container { width: 80%; }
   footer.page-footer .footer-copyright { font-size: 11px; }
+
+  .single-dropzone .thumb-preview img { width: 80%; height: 250px; }
 
 }
 
@@ -123,6 +134,8 @@
   /* App */
   footer.page-footer .foot.container { width: 100%; }
   footer.page-footer .footer-copyright { font-size: 10px; }
+
+  .single-dropzone .thumb-preview img { width: 100%;  height: 230px; }
 
 }
 

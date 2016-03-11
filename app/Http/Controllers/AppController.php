@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Auth;
 use DB;
+use File;
+use Input;
 
 use App\Space;
 use App\Notification;
@@ -38,7 +40,7 @@ class AppController extends Controller
 
     // Get Resource
     public function getResource($resource) {
-        return view('app.'.$resource);
+        return view('app.'.$resource); // TODO Search and return -> resource;
     }
 
     // Get Route
@@ -153,6 +155,7 @@ class AppController extends Controller
       $search = DB::table($resource.'s')
                       ->where('hash', $hash)->first();
 
+      /*
       // Is it null?
       if(is_null($search)) {
           return view('errors.404'); // 404 Resource Not Found
@@ -161,7 +164,7 @@ class AppController extends Controller
       //Is it not the owner?
       if(Auth::user()->id != $search->user_id) {
           return view('errors.400'); // 400 Bad request
-      }
+      }*/
 
       // Save Request if it's Space
       if($resource == 'space') {
@@ -235,5 +238,39 @@ class AppController extends Controller
 
       return $space;
     }
+
+    // Resource Router - POST
+    public function resourceThumbnailUpload($resource, $hash) {
+
+      // If is there a file in the Request, proceed:
+      if(Input::hasFile('file')) {
+
+          // Search hash in the table of the resource
+          if($resource == 'space'){
+            $search = Space::where('hash', $hash)->first();
+          }
+
+          // If thumbnail is default, do not delete, otherwise do it
+          if($search->thumbnail != '/img/app/thumbnail.png') {
+            File::delete(public_path().$search->thumbnail);
+          }
+
+          // Upload an image to the directory and return the filepath
+          $file = Input::file('file');                                          // File
+          $filepath = '/photos/thumbnails/'.$resource.'s/';                     // Filepath
+          $filename = time().'_'.$hash.'.'.$file->getClientOriginalExtension(); // Filename
+          $file->move(public_path().$filepath, $filename);                      // Move to folder
+
+          $search->thumbnail = $filepath.$filename;                             // Set new thumbnail to resource
+          $search->save();                                                      // Save resource
+
+          return response()->json(['path'=> $search->thumbnail], 200);          // Return response
+      }
+      // Otherwise,
+      else {
+        return response()->json(false, 200);
+      }
+    }
+
 
 }

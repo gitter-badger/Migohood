@@ -96,6 +96,12 @@ Route::group(['middleware' => 'auth'], function () {
       'as' => 'resource.router.update',
   ]);
 
+  // Resource Thumnail - Update
+  Route::post('thumbnail/upload/{resource}/{hash}', [
+      'uses' => 'AppController@resourceThumbnailUpload',
+      'as' => 'resorce.thumbnail.upload',
+  ]);
+
   // Get Routes
   Route::get('{base}/{route}', [
       'uses' => 'AppController@getRoute',
@@ -104,7 +110,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
   /******************************
-        Routes for Maps
+          Routes for Maps
   ******************************/
   // Get City Json
   Route::get('request/json/city/{id}', 'MapController@getIndividualCity');
