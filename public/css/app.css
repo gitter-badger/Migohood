@@ -274,13 +274,6 @@ footer.page-footer .footer-copyright {
   font-size: 12px;
 }
 
-/* Color */
-/*
-#main nav .right #notifications li.string span.new-space { border-left: 5px solid #1ADB78; }
-#main nav .right #notifications li.string span.new-workspace { border-left: 5px solid #FFD006; }
-#main nav .right #notifications li.string span.new-parking { border-left: 5px solid #A05DEC; }
-#main nav .right #notifications li.string span.new-service { border-left: 5px solid #FE5956; }
-*/
 #main nav .right #notifications li.view-all {
   min-height: 20px !important;
   line-height: 20px !important;
@@ -447,7 +440,7 @@ footer.page-footer .footer-copyright {
 .box-body .next {
   margin-top: 20px;
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .box-body .btn {
@@ -606,6 +599,7 @@ footer.page-footer .footer-copyright {
   background: #21B4FD !important;
 }
 
+
 /***************
     INFO BOX
 ****************/
@@ -749,6 +743,7 @@ footer.page-footer .footer-copyright {
 .box-content span.lil-title {
   font-weight: bold;
 }
+
 
 /***************
     BOX BODY
@@ -912,4 +907,23 @@ footer.page-footer .footer-copyright {
 
 .thumb-button .btn:hover {
   background: #0297E1 !important;
+}
+
+.gallery-button .btn {
+	text-align: center;
+  vertical-align: middle;
+	height: 40px;
+	font-size: 16px !important;
+	font-weight: 500;
+  font-weight: bold;
+	border-radius: 4px;
+	text-transform: uppercase !important;
+  box-shadow: none !important;
+  -webkit-box-shadow:none !important;
+  width: auto;
+  background: #1ADB78;
+}
+
+.gallery-button .btn:hover {
+  background: #24E582;
 }

@@ -11,6 +11,7 @@ use Input;
 
 use App\Space;
 use App\Notification;
+use App\Photo;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -60,6 +61,11 @@ class AppController extends Controller
 
         if($type == 'new-space'){
           $notification->description = 'New Space has been created';
+          $notification->link = '/dashboard/myspaces';
+        }
+
+        if($type == 'space-listed'){
+          $notification->description = 'Your Space is listed now';
           $notification->link = '/dashboard/myspaces';
         }
 
@@ -175,6 +181,20 @@ class AppController extends Controller
         $search = $this->WorkspaceUpdate($request, $hash, $route);
       }*/
 
+
+      // !!!
+      if($next == 'finish') {
+
+        // Create a New Notification
+        $this->createNotification('space-listed', $hash);
+
+        return redirect()->route('route', [
+          'base'=> 'dashboard',
+          'route' => 'myspaces'
+        ]);
+      }
+
+
       // Redirect
       return redirect()->route('resource.router', [
         'resource' => $resource,
@@ -221,6 +241,51 @@ class AppController extends Controller
         $space->latitude = $request->latitude;
         $space->longitude = $request->longitude;
       }
+
+      // Space - Price
+      if($route == 'price') {
+        $space->price = $request->price;
+        $space->per = $request->per;
+        $space->currency = $request->currency;
+        $space->check_in = $request->check_in;
+        $space->check_out = $request->check_out;
+      }
+
+      // Space - Extras
+      if($route == 'extras') {
+        $space->towels = $request->towels;
+        $space->bed_sheets = $request->bed_sheets;
+        $space->soap = $request->soap;
+        $space->shampoo = $request->shampoo;
+        $space->toilet_paper = $request->toilet_paper;
+        $space->towels = $request->towels;
+        $space->cleaning_kit = $request->cleaning_kit;
+        $space->iron = $request->iron;
+        $space->hair_dryer = $request->hair_dryer;
+        $space->elevator = $request->elevator;
+        $space->hot_tub = $request->hot_tub;
+        $space->washer = $request->washer;
+        $space->dishwasher = $request->dishwasher;
+
+        $space->wheelchair_access = $request->wheelchair_access;
+        $space->AC = $request->AC;
+        $space->heat = $request->heat;
+        $space->ByB = $request->ByB;
+        $space->workspace = $request->workspace;
+        $space->pool = $request->pool;
+        $space->sauna = $request->sauna;
+        $space->terrace = $request->terrace;
+        $space->wheelchair_access = $request->wheelchair_access;
+        $space->chef = $request->chef;
+        $space->translator = $request->translator;
+        $space->flexible_check_in = $request->flexible_check_in;
+        $space->flexible_check_out = $request->flexible_check_out;
+
+        // !!!!!
+        $space->status = 'listed';
+
+       }
+
 
       /* TODO: validate here some like:
         public function SpaceValidate($hash) {
@@ -270,6 +335,55 @@ class AppController extends Controller
       else {
         return response()->json(false, 200);
       }
+    }
+
+    // Resource Router - POST
+    public function resourceGalleryUpload(Request $request, $resource, $hash) {
+      //Get all files in the request
+      $files = $request->file('file');
+
+       //If it is not null, proceed
+      if ($request->hasFile('file')) {
+
+        //Count
+        $i = '0';
+
+        foreach($files as $file) {
+          //New file name
+          $filename = $i++.'_'.$hash.'.'.$file->getClientOriginalExtension();
+
+          //New Path
+          $new_path = '/photos/galleries/'.$resource.'s/'.$filename;
+
+          //Search if exists
+          $search = Photo::where('path', $new_path)->first();
+
+            if(!is_null($search)){
+              $search->delete();      //Delete if exists
+            }
+
+          // Move file to 'photos' folder
+          $file->move('photos/galleries/'.$resource.'s', $filename);
+
+           //Save Photos Paths in DB
+           $photo = new Photo;
+           $photo->resource = $resource;
+           $photo->hash = $hash;
+           $photo->path = $new_path;
+           $photo->save();
+        }
+
+      }
+
+      // TODO Dynamic Multiple fiels load
+
+      // Redirect
+      return redirect()->route('resource.router', [
+        'resource' => $resource,
+        'hash' => $hash,
+        'route' => 'price'
+      ]);
+
     }
 
 

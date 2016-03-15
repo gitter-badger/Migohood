@@ -99,7 +99,13 @@ Route::group(['middleware' => 'auth'], function () {
   // Resource Thumnail - Update
   Route::post('thumbnail/upload/{resource}/{hash}', [
       'uses' => 'AppController@resourceThumbnailUpload',
-      'as' => 'resorce.thumbnail.upload',
+      'as' => 'resource.thumbnail.upload',
+  ]);
+
+  // Resource Thumnail - Update
+  Route::post('gallery/upload/{resource}/{hash}', [
+      'uses' => 'AppController@resourceGalleryUpload',
+      'as' => 'resource.gallery.upload',
   ]);
 
   // Get Routes

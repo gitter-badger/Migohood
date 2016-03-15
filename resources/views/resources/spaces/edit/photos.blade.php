@@ -1,10 +1,10 @@
 @extends('layouts.edit')
 @section('title', 'Space - Location')
 @section('header')
-  <link href="/css/dropzone.min.css" rel="stylesheet">                        <!-- Dropzone Style core CSS -->
-  <script src="/js/jquery.min.js" type="text/javascript"></script>            <!-- Jquery core JS -->
-  <script src="/js/dropzone.min.js" type="text/javascript"></script>          <!-- Dropzone core JS -->
-  <script src="/js/resource_dropzone.js" type="text/javascript"></script>     <!-- Resource Dropzone core JS -->
+  <script src="/js/jquery.min.js" type="text/javascript"></script>      <!-- Jquery core JS -->
+  <link href="/css/dropzone.min.css" rel="stylesheet">                  <!-- Dropzone Style core CSS -->
+  <script src="/js/dropzone.min.js" type="text/javascript"></script>    <!-- Dropzone core JS -->
+  <script src="/js/thumbnail.js" type="text/javascript"></script>       <!-- Resource Dropzone core JS -->
 @stop
 
 @section('menu')
@@ -19,7 +19,8 @@
   </div>
   <!-- End of Title -->
 
-  <form action="{{ route('resorce.thumbnail.upload', [
+  <!-- Upload Space Thumbnail -->
+  <form action="{{ route('resource.thumbnail.upload', [
     'resource'=> 'space',
     'hash' => $resource->hash
     ]) }}"
@@ -36,6 +37,7 @@
     </div>
 
   </form>
+  <!-- End of Upload Space Thumbnail -->
 
   <!-- Title -->
   <div class="title">
@@ -44,9 +46,23 @@
   </div>
   <!-- End of Title -->
 
-  <div class="col s12 next">
-    <button class="btn ">NEXT</button>
-  </div>
+  <span class="variable">$photos = App\Photo::where('hash', $resource->hash )->get()</span>
+
+  <!-- Uddate Space Gallery -->
+  <form action="{{ route('resource.gallery.upload', [
+     'resource' => 'space',
+     'hash' => $resource->hash
+    ]) }}" id="gall" method="POST" files="true" class="center" enctype="multipart/form-data">
+
+    {{ csrf_field() }}
+
+      <input type="file" name="file[]" multiple><br><br>
+      <div class="gallery-button next">
+         <button class="btn"><i class="material-icons left">photo_library</i>Save and Next</button>
+      </div>
+
+  </form>
+  <!-- Uddate Space Gallery -->
 
 @stop
 

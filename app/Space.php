@@ -21,7 +21,6 @@ class Space extends Model
     protected $fillable = [
       'user_id',
       'hash',
-      'thumbnail',
       'status',
 
       'stars',
@@ -50,8 +49,40 @@ class Space extends Model
       'address',
       'latitude',
       'longitude',
-      'location_references'
+      'location_references',
 
+      'thumbnail',
+      'price',
+      'per',
+      'currency',
+      'check_in',
+      'check_out',
+
+      'towels',
+      'bed_sheets',
+      'soap',
+      'shampoo',
+      'toilet_paper',
+      'cleaning_kit',
+      'iron',
+      'hair_dryer',
+      'elevator',
+      'hot_tub',
+      'washer',
+      'dishwasher',
+      'wheelchair_access',
+      'AC',
+      'heat',
+      'B&B',
+      'workspace',
+      'pool',
+      'sauna',
+      'terrace',
+      'chef',
+      'translator',
+      'chef',
+      'flexible_check_in',
+      'flexible_check_out'  
 
     ];
 
