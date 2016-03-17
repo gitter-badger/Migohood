@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
             $table->string('avatar')->default('/img/app/default.jpg');
-
+            
             $table->string('status')->default('active');  // Active, Verified, Blocked
 
             $table->rememberToken();

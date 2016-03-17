@@ -15,10 +15,10 @@
   @else
 
     <!-- No Authenticated users -->
-    <li><a href="{{ route('resource', ['resource' => 'spaces' ]) }}">Spaces</a></li>
-    <li><a href="{{ route('resource', ['resource' => 'workspaces' ]) }}">Workspaces</a></li>
-    <li><a href="{{ route('resource', ['resource' => 'parking_lots' ]) }}">Parking Lots</a></li>
-    <li><a href="{{ route('resource', ['resource' => 'services' ]) }}">Services</a></li>
+    <li><a href="{{ route('get.resource', ['resource' => 'spaces' ]) }}">Spaces</a></li>
+    <li><a href="#">Workspaces</a></li>
+    <li><a href="#">Parking Lots</a></li>
+    <li><a href="#">Services</a></li>
     <li><a href="#">Host</a></li>
     <li><a href="#">Help</a></li>
     <li><a href="{{ url('/auth/register') }}" class="btn waves-effect waves-light">Sign up</a></li>

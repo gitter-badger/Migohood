@@ -1,6 +1,6 @@
 <!-- Admin Menu -->
 <p class="etiquette">Admin</p>
-  <li><a href="#"><i class="material-icons left">people</i> Users </a></li>
+  <li><a href="{{ url('/admin/panel') }}"><i class="material-icons left">people</i> Users </a></li>
   <li><a href="#"><i class="material-icons left">business_center</i> Workers </a></li>
   <li><a href="#"><i class="material-icons left">library_books</i> Payments </a></li>
 

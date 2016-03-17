@@ -684,14 +684,15 @@ footer.page-footer .footer-copyright {
 }
 
 .box-content .collection {
+  background-color: #FFF;
   border: 1px solid transparent !important;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
 .box-content .collection .collection-item {
-  background-color: #FFF;
   margin-bottom: 6px;
   border-radius: 3px;
-  border-bottom: 1px solid #E7E7E7;
+  /* #E7E7E7; */
 }
 
 .box-content .collection .collection-item.avatar img {

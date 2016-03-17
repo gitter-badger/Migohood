@@ -8,8 +8,8 @@ $(document).ready(function(){
 
   // If it hasn't been selected a city, user won't be able to typing an address
   if(document.getElementById('city').value == '') {
-    $(" #address ").prop('disabled', true);                         // Disable the address input
-    setMap(city_lat, city_lng, 'far');                              // Set Default Map
+    $(" #address ").prop('disabled', true);         // Disable the address input
+    setMap(city_lat, city_lng, 'far');              // Set Default Map
   }
   else {
     setMap(document.getElementById('lat').value, document.getElementById('lng').value, 'near');   // Set Current Map
@@ -23,10 +23,10 @@ $(document).ready(function(){
         // Call to method that Return json with city's info
         $.getJSON("/request/json/city/" + $( this ).val())
           .done(function ( data ) {
-              setMap(data.lat, data.lng, 'far');                                        // Set new map
-              setMarker(data.lat, data.lng);                                            // Set new marker
-              $(" #address ").prop('disabled', false);                                  // Enable the address input
-              global_query = data.name + ', ' + data.state + ', ' + data.country;       // Set City selected as a variable
+              setMap(data.lat, data.lng, 'far');                                    // Set new map
+              setMarker(data.lat, data.lng);                                        // Set new marker
+              $(" #address ").prop('disabled', false);                              // Enable the address input
+              global_query = data.name + ', ' + data.state + ', ' + data.country;   // Set City selected as a variable
           });
 
       });

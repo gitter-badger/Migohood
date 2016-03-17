@@ -1,3 +1,7 @@
+# Security Vulnerabilities
+
+If you discover a security vulnerability within [Migohood](http://www.migohood.com), please send an e-mail at [developer@migohood.com](mailto:developer@migohood.com) All security vulnerabilities will be promptly addressed and recompensed.
+
 # Routes
 
 ## Routes for Main site
@@ -47,15 +51,15 @@ GET:  /auth/{provider}/callback
 ```
 
 
-## Routes for No Autenticated users
+## Routes for No Authenticated users
 
 
 ```sh
-GET:  /{resource}
+GET:  /app/get/{resource}
 ```
 
 
-## Routes for Autenticated users
+## Routes for Authenticated users
 
 
 #### Routes for Admin
@@ -65,12 +69,12 @@ GET:  /admin/panel
 
 #### Routes for App
 ```sh
-GET:  /create
-POST: /create/{resource}
-GET:  /{resource}/{hash}/{route}
-GET:  /{resource}/{hash}/{route}/{next}/update
-GET:  /{base}/{route}
-POST: /thumbnail/upload/{resource}/{hash}
+GET:  /app/create
+POST: /app/create/{resource}
+GET:  /app/{resource}/{hash}/{route}
+GET:  /app/{resource}/{hash}/{route}/{next}/update
+GET:  /app/{base}/{route}
+POST: /app/thumbnail/upload/{resource}/{hash}
 ```
 
 #### Routes for Maps
@@ -78,7 +82,13 @@ POST: /thumbnail/upload/{resource}/{hash}
 GET: /request/json/city/{id}
 ```
 
-## Laravel PHP Framework
+## Routes for Extra Functions
+```sh
+GET: /thumbnails/{resource}/{filename}  
+```
+
+
+# Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)

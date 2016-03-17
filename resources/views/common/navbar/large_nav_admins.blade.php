@@ -1,11 +1,8 @@
 <!-- Admin Menu -->
-<li><a href="{{ url('admin/panel' )}}">Dashboard</a></li>
-<!--<li><a href="#">Users</a></li>
-<li><a href="#">Workers</a></li>
-<li><a href="#">Payments</a></li>-->
+<li><a href="{{ url('/admin/panel' )}}">Dashboard</a></li>
 <li><a href="#">Cases</a></li>
 <li><a href="#">Users Verifications</a></li>
-<!-- User - Dropdown -->
+<!-- Admin - Dropdown -->
 <li><a class="dropdown-options" href="#" data-activates="drop">
   {{ Auth::user()->name }}
   <img src ="{{ url(Auth::user()->avatar) }}" alt="..."/>
@@ -17,4 +14,4 @@
     <li><a href="{{ url('/auth/logout') }}">Log out</a></li>
   </ul>
 </li>
-<!-- User - Dropdown -->
+<!-- End of Admin - Dropdown -->

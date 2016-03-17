@@ -21,12 +21,11 @@
    @else
 
       <!-- No Authenticated users -->
-      <!--<div class="guest-menu"></div>-->
       <p class="etiquette">Explore</p>
-      <li><a href="{{ route('resource', ['resource' => 'spaces' ]) }}"><i class="material-icons left">location_city</i> Spaces </a></li>
-      <li><a href="{{ route('resource', ['resource' => 'workspaces' ]) }}"><i class="material-icons left">work</i> Workspaces </a></li>
-      <li><a href="{{ route('resource', ['resource' => 'parkinglots' ]) }}"><i class="material-icons left">directions_car</i> Parking Lots </a></li>
-      <li><a href="{{ route('resource', ['resource' => 'services' ]) }}"><i class="material-icons left">local_play</i> Services </a></li>
+      <li><a href="{{ route('get.resource', ['resource' => 'spaces' ]) }}"><i class="material-icons left">location_city</i> Spaces </a></li>
+      <li><a href="#"><i class="material-icons left">work</i> Workspaces </a></li>
+      <li><a href="#"><i class="material-icons left">directions_car</i> Parking Lots </a></li>
+      <li><a href="#"><i class="material-icons left">local_play</i> Services </a></li>
       <li><a href="#"><i class="material-icons left">school</i> Host</a></li>
       <li><a href="#"><i class="material-icons left">help</i> Help</a></li>
 

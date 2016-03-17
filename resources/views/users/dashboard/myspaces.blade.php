@@ -23,8 +23,10 @@
   <div class="box-content">
 
     <!-- Spaces Listed -->
-    <span class="variable">{{ $listed = App\Space::where('user_id', Auth::user()->id)->where('status', 'listed')->get() }}</span>
-
+    <span class="variable">{{ $listed = App\Space::where('user_id', Auth::user()->id)
+                                                   ->where('status', 'listed')
+                                                   ->orderBy('created_at', 'desc')
+                                                   ->get() }}</span>
     @if( $listed->count() > 0)
     <div class="col s12 l6">
 
@@ -33,9 +35,18 @@
       <ul class="collection">
         @foreach($listed as $listed)
           <li class="collection-item avatar">
-            <img src="{{ url($listed->thumbnail) }}" alt="">
-            <span class="title">{{ $listed->type }}</span>
-            <p class="second"><span class="category space">{{ $listed->room }} Room</span> </p>
+            <img
+                  @if($listed->thumbnail == '/img/app/thumbnail.png')
+                    src="{{ url( $listed->thumbnail ) }}"
+                  @else
+                    src="{{ route('get.thumbnail', [
+                      'resource' => 'space',
+                      'filename' => $listed->thumbnail
+                      ]) }}"
+                  @endif
+            alt=""/>
+            <span class="title">{{ $listed->title }}</span>
+            <p class="second"><span class="category space">{{ $listed->type }} - {{ $listed->room }} Room</span> </p>
             <span class="tird"> Created {{ $listed->created_at->diffForHumans() }}</span>
 
             <div class="secondary-content">
@@ -61,6 +72,7 @@
     <!-- Spaces Not Listed -->
     <span class="variable">{{ $not_listed = App\Space::where('user_id', Auth::user()->id)
                                                       ->where('status', 'not_listed')
+                                                      ->orderBy('created_at', 'desc')
                                                       ->get() }}</span>
     @if( $not_listed->count() > 0)
 
@@ -71,10 +83,19 @@
       <ul class="collection">
         @foreach($not_listed as $not_listed)
           <li class="collection-item avatar">
-            <img src="{{ url($not_listed->thumbnail) }}" alt="">
+            <img
+                  @if($not_listed->thumbnail == '/img/app/thumbnail.png')
+                    src="{{ url( $not_listed->thumbnail ) }}"
+                  @else
+                    src="{{ route('get.thumbnail', [
+                      'resource' => 'space',
+                      'filename' => $not_listed->thumbnail
+                      ]) }}"
+                  @endif
+            alt=""/>
             <span class="title">{{ $not_listed->type }}</span>
             <p class="second"><span class="category space">{{ $not_listed->room }} Room</span> </p>
-            <span class="tird"> Created {{ $not_listed->created_at->diffForHumans() }}</span>
+            <span class="tird"> Updated {{ $not_listed->created_at->diffForHumans() }}</span>
 
             <div class="secondary-content">
 

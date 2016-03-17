@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-          'ip' => '::1',
+          'ip' => '127.0.0.1',
           'role' => 'admin',
           'name' => env('ADM_NAME'),
           'email' => env('ADM_EMAIL'),

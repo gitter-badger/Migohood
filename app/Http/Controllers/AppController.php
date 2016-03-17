@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 
 use Auth;
 use DB;
-use File;
 use Input;
+use File;
+use Storage;
+use Response;
 
 use App\Space;
 use App\Notification;
@@ -18,38 +20,49 @@ use App\Http\Controllers\Controller;
 
 class AppController extends Controller
 {
-   /****************************
-          Extra Functions
-   ****************************/
+    /****************************
+         Resources Functions
+    ****************************/
     // Redirect
     public function getRedirect() {
+       // Check if user is authenticated
+       if(Auth::check()) {
 
-       if(Auth::check()){
           // Redirect User
           if(Auth::user()->role == 'user') {
-            return redirect ('/spaces');
+            return redirect ('/app/get/spaces');
           }
 
           // Redirect Admin to Panel
           if(Auth::user()->role == 'admin') {
             return redirect ('/admin/panel');
           }
+
        }
 
         return view('errors.400'); //400 Bad Request
     }
 
     // Get Resource
-    public function getResource($resource) {
-        return view('app.'.$resource); // TODO Search and return -> resource;
+    public function getResource($resource){
+
+       // Get Spaces
+       if($resource = 'spaces') {
+         return view('app.spaces'); // TODO Search and return->spaces
+       }
+
     }
 
     // Get Route
     public function getRoute($base, $route){
-        // User/Folder/View
+        // Users/Folder/View
         return view('users/'.$base.'/'.$route, ['route' => $route]);
     }
 
+
+    /****************************
+          Extra Functions
+    ****************************/
     // Create Notification
     public function createNotification($type, $hash) {
         // New Notification
@@ -61,12 +74,12 @@ class AppController extends Controller
 
         if($type == 'new-space'){
           $notification->description = 'New Space has been created';
-          $notification->link = '/dashboard/myspaces';
+          $notification->link = '/app/dashboard/myspaces';
         }
 
         if($type == 'space-listed'){
-          $notification->description = 'Your Space is listed now';
-          $notification->link = '/dashboard/myspaces';
+          $notification->description = 'Your Space is listed now!';
+          $notification->link = '/app/dashboard/myspaces';
         }
 
         /*
@@ -86,6 +99,19 @@ class AppController extends Controller
       } while (!is_null($search));                            //Do while search != null
 
       return $hash;
+    }
+
+    // Get Thumbnail
+    public function getThumbnail($resource, $filename){
+      $path = storage_path().'/app/thumbnails/'.$resource.'s/'.$filename;
+
+      $file = File::get($path);
+      $type = File::mimeType($path);
+
+      $response = Response::make($file, 200);
+      $response->header("Content-Type", $type);
+
+      return $response;
     }
 
 
@@ -160,17 +186,6 @@ class AppController extends Controller
       // Search hash in the table of the resource
       $search = DB::table($resource.'s')
                       ->where('hash', $hash)->first();
-
-      /*
-      // Is it null?
-      if(is_null($search)) {
-          return view('errors.404'); // 404 Resource Not Found
-      }
-
-      //Is it not the owner?
-      if(Auth::user()->id != $search->user_id) {
-          return view('errors.400'); // 400 Bad request
-      }*/
 
       // Save Request if it's Space
       if($resource == 'space') {
@@ -315,21 +330,31 @@ class AppController extends Controller
             $search = Space::where('hash', $hash)->first();
           }
 
+          /*
+          if($resource == 'workspace'){
+            $search = Workspace::where('hash', $hash)->first();
+          }*/
+
           // If thumbnail is default, do not delete, otherwise do it
           if($search->thumbnail != '/img/app/thumbnail.png') {
-            File::delete(public_path().$search->thumbnail);
+              Storage::delete('/thumbnails/'.$resource.'s/'.$search->thumbnail);
           }
 
           // Upload an image to the directory and return the filepath
-          $file = Input::file('file');                                          // File
-          $filepath = '/photos/thumbnails/'.$resource.'s/';                     // Filepath
-          $filename = time().'_'.$hash.'.'.$file->getClientOriginalExtension(); // Filename
-          $file->move(public_path().$filepath, $filename);                      // Move to folder
+          $file = Input::file('file');                                            // File
+          $filename = time().'_'.$hash.'.'.$file->getClientOriginalExtension();   // Filename
+          Storage::put(                                                           // Move to folder
+                        'thumbnails/'.$resource.'s/'.$filename,                   // Filepath
+                        file_get_contents($file->getRealPath())                   // Save img 
+          );
+          /*$filepath = storage_path()'photos/thumbnails/'.$resource.'s';
+          $file->move($filepath, $filename);
+          */
 
-          $search->thumbnail = $filepath.$filename;                             // Set new thumbnail to resource
-          $search->save();                                                      // Save resource
+          $search->thumbnail = $filename;         // Set new thumbnail to resource
+          $search->save();                        // Save resource
 
-          return response()->json(['path'=> $search->thumbnail], 200);          // Return response
+          return response()->json(['file_name'=> $filename, 'resource' => $resource ], 200);   // Return response
       }
       // Otherwise,
       else {

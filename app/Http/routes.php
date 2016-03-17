@@ -51,17 +51,16 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 
 
 /************************************
-   Routes for No Autenticated users
+  Routes for No Authenticated users
 ************************************/
-// Get Routes
-Route::get('{resource}', [
+Route::get('app/get/{resource}', [
     'uses' => 'AppController@getResource',
-    'as' => 'resource',
+    'as' => 'get.resource',
 ]);
 
 
 /************************************
-     Routes for Autenticated users
+  Routes for Authenticated users
 ************************************/
 Route::group(['middleware' => 'auth'], function () {
 
@@ -76,40 +75,40 @@ Route::group(['middleware' => 'auth'], function () {
           Routes for App
   ******************************/
   // Get Create Resources
-  Route::get('create', 'AppController@getcreate');
+  Route::get('app/create', 'AppController@getcreate');
 
   // Post Create Resources
-  Route::post('create/{resource}', [
+  Route::post('app/create/{resource}', [
       'uses' => 'AppController@postcreate',
       'as' => 'create',
   ]);
 
   // Resource Router - Get
-  Route::get('{resource}/{hash}/{route}', [
+  Route::get('app/{resource}/{hash}/{route}', [
       'uses' => 'AppController@resourceRouter',
       'as' => 'resource.router',
   ]);
 
   // Resource Route - Update
-  Route::post('{resource}/{hash}/{route}/{next}/update', [
+  Route::post('app/{resource}/{hash}/{route}/{next}/update', [
       'uses' => 'AppController@resourceRouterUpdate',
       'as' => 'resource.router.update',
   ]);
 
-  // Resource Thumnail - Update
-  Route::post('thumbnail/upload/{resource}/{hash}', [
+  // Resource Thumbnail - Update
+  Route::post('app/thumbnail/upload/{resource}/{hash}', [
       'uses' => 'AppController@resourceThumbnailUpload',
       'as' => 'resource.thumbnail.upload',
   ]);
 
-  // Resource Thumnail - Update
-  Route::post('gallery/upload/{resource}/{hash}', [
+  // Resource Gallery - Update
+  Route::post('app/gallery/upload/{resource}/{hash}', [
       'uses' => 'AppController@resourceGalleryUpload',
       'as' => 'resource.gallery.upload',
   ]);
 
   // Get Routes
-  Route::get('{base}/{route}', [
+  Route::get('app/{base}/{route}', [
       'uses' => 'AppController@getRoute',
       'as' => 'route',
   ]);
@@ -123,3 +122,13 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 });
+
+
+/******************************
+  Routes for Extra Functions
+******************************/
+// Get Img from storage
+Route::get('thumbnails/{resource}/{filename}', [
+    'uses' => 'AppController@getThumbnail',
+    'as' => 'get.thumbnail',
+]);

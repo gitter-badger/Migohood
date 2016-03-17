@@ -16,10 +16,10 @@
       <div class="col l3 m3 s6">
         <h5>Find Out</h5>
         <ul>
-          <li><a href="{{ route('resource', ['resource' => 'spaces' ]) }}">Spaces</a></li>
-          <li><a href="{{ route('resource', ['resource' => 'workspaces' ]) }}">Workspaces</a></li>
-          <li><a href="{{ route('resource', ['resource' => 'parkinglots' ]) }}">Parking Lots</a></li>
-          <li><a href="{{ route('resource', ['resource' => 'services']) }}">Services</a></li>
+          <li><a href="{{ route('get.resource', ['resource' => 'spaces' ]) }}">Spaces</a></li>
+          <li><a href="#">Workspaces</a></li>
+          <li><a href="#">Parking Lots</a></li>
+          <li><a href="#">Services</a></li>
           <li><a href="#">Host</a></li>
         </ul>
        </div>

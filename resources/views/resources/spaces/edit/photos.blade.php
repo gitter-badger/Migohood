@@ -28,8 +28,17 @@
 
     {{ csrf_field() }}
 
-    <div class="thumb-preview">
-      <img id="thumb-pic" class="z-depth-1" src="{{ url( $resource->thumbnail ) }}" alt="" />
+    <div class="thumb-preview"><!-- ALERT -->
+      <img id="thumb-pic" class="z-depth-1"
+        @if($resource->thumbnail == '/img/app/thumbnail.png')
+          src="{{ url( $resource->thumbnail ) }}"
+        @else
+          src="{{ route('get.thumbnail', [
+            'resource' => 'space',
+            'filename' => $resource->thumbnail
+            ]) }}"
+        @endif
+      />
     </div>
 
     <div class="thumb-button"><br>
