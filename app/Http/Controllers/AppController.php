@@ -23,6 +23,8 @@ class AppController extends Controller
     /****************************
          Resources Functions
     ****************************/
+
+
     // Redirect
     public function getRedirect() {
        // Check if user is authenticated
@@ -43,6 +45,7 @@ class AppController extends Controller
         return view('errors.400'); //400 Bad Request
     }
 
+
     // Get Resource
     public function getResource($resource){
 
@@ -52,6 +55,7 @@ class AppController extends Controller
        }
 
     }
+
 
     // Get Route
     public function getRoute($base, $route){
@@ -91,19 +95,21 @@ class AppController extends Controller
         $notification->save();
     }
 
+
     // Create Hash
     public function createHash($resource) {
       do {  $hash = str_random(14);                           // Create hash
             $search = DB::table($resource.'s')                // Search hash in the table of the resource
                           ->where('hash', $hash)->first();
-      } while (!is_null($search));                            //Do while search != null
+      } while (!is_null($search));                            // Do while search != null
 
       return $hash;
     }
 
-    // Get Thumbnail
-    public function getThumbnail($resource, $filename){
-      $path = storage_path().'/app/thumbnails/'.$resource.'s/'.$filename;
+
+    // Get Img from Storage
+    public function getImgFromStorage($folder, $resource, $filename) {
+      $path = storage_path().'/app/'.$folder.'/'.$resource.'s/'.$filename;
 
       $file = File::get($path);
       $type = File::mimeType($path);
@@ -118,10 +124,13 @@ class AppController extends Controller
     /****************************
           Create Functions
     ****************************/
+
+
     // Create - Get
     public function getcreate() {
        return view('app.create');
     }
+
 
     // Create - Post
     public function postcreate(Request $request, $resource) {
@@ -154,6 +163,7 @@ class AppController extends Controller
       */
     }
 
+
     // Resource Router - Get
     public function resourceRouter($resource, $hash, $route) {
 
@@ -180,6 +190,7 @@ class AppController extends Controller
 
     }
 
+
     // Resource Router - POST
     public function resourceRouterUpdate(Request $request, $resource, $hash, $route, $next) {
 
@@ -200,9 +211,6 @@ class AppController extends Controller
       // !!!
       if($next == 'finish') {
 
-        // Create a New Notification
-        $this->createNotification('space-listed', $hash);
-
         return redirect()->route('route', [
           'base'=> 'dashboard',
           'route' => 'myspaces'
@@ -218,6 +226,7 @@ class AppController extends Controller
       ]);
 
     }
+
 
     // Space Update - POST
     public function SpaceUpdate(Request $request, $hash, $route) {
@@ -296,30 +305,20 @@ class AppController extends Controller
         $space->flexible_check_in = $request->flexible_check_in;
         $space->flexible_check_out = $request->flexible_check_out;
 
-        // !!!!!
-        $space->status = 'listed';
-
+        // !!
+        $this->validateResource('space', $hash);
        }
 
 
-      /* TODO: validate here some like:
-        public function SpaceValidate($hash) {
-          // Search Space
-          $space = Space::where('hash', $hash)->first();
-
-          if(...)
-
-          return 'not_listed' or 'listed'
-
-        }
-        */
+       // $this->validateResource('space', $hash);
 
       $space->save();
 
       return $space;
     }
 
-    // Resource Router - POST
+
+    // Resource Thumbnail - POST
     public function resourceThumbnailUpload($resource, $hash) {
 
       // If is there a file in the Request, proceed:
@@ -345,16 +344,14 @@ class AppController extends Controller
           $filename = time().'_'.$hash.'.'.$file->getClientOriginalExtension();   // Filename
           Storage::put(                                                           // Move to folder
                         'thumbnails/'.$resource.'s/'.$filename,                   // Filepath
-                        file_get_contents($file->getRealPath())                   // Save img 
+                        file_get_contents($file->getRealPath())                   // Save img
           );
-          /*$filepath = storage_path()'photos/thumbnails/'.$resource.'s';
-          $file->move($filepath, $filename);
-          */
 
           $search->thumbnail = $filename;         // Set new thumbnail to resource
           $search->save();                        // Save resource
 
-          return response()->json(['file_name'=> $filename, 'resource' => $resource ], 200);   // Return response
+          // Return response
+          return response()->json(['file_name'=> $filename, 'resource' => $resource ], 200);
       }
       // Otherwise,
       else {
@@ -362,52 +359,80 @@ class AppController extends Controller
       }
     }
 
-    // Resource Router - POST
+
+    // Resource Gallery - POST
     public function resourceGalleryUpload(Request $request, $resource, $hash) {
-      //Get all files in the request
-      $files = $request->file('file');
 
-       //If it is not null, proceed
-      if ($request->hasFile('file')) {
+      // If is there a file in the Request, proceed
+      if (Input::hasFile('file')) {
 
-        //Count
-        $i = '0';
-
-        foreach($files as $file) {
-          //New file name
-          $filename = $i++.'_'.$hash.'.'.$file->getClientOriginalExtension();
-
-          //New Path
-          $new_path = '/photos/galleries/'.$resource.'s/'.$filename;
-
-          //Search if exists
-          $search = Photo::where('path', $new_path)->first();
-
-            if(!is_null($search)){
-              $search->delete();      //Delete if exists
-            }
-
-          // Move file to 'photos' folder
-          $file->move('photos/galleries/'.$resource.'s', $filename);
-
-           //Save Photos Paths in DB
-           $photo = new Photo;
-           $photo->resource = $resource;
-           $photo->hash = $hash;
-           $photo->path = $new_path;
-           $photo->save();
+        // Search hash in the table of the resource
+        if($resource == 'space'){
+          $search = Space::where('hash', $hash)->first();
         }
 
+        /*
+        if($resource == 'workspace'){
+          $search = Workspace::where('hash', $hash)->first();
+        }*/
+
+        $files = Input::file('file');   // Files
+
+        $i = '1';                       // Count
+
+        foreach($files as $file) {    // Upload an image to the directory and return the filepath
+          $filename = $i++.'_'.time().'_'.$hash.'.'.$file->getClientOriginalExtension();  // Filename
+          Storage::put(                                           // Move to folder
+                        'galleries/'.$resource.'s/'.$filename,    // File path
+                        file_get_contents($file->getRealPath())   // Save img
+          );
+
+          //Save Photos Paths in DB
+          $photo = new Photo;                     // New Photo in DB
+          $photo->resource = $resource;           // Type of Resouce
+          $photo->hash = $hash;                   // Hash of the resource
+          $photo->path = $filename;               // Filename
+          $photo->save();                         // Save
+
+        }
+
+        // Return response
+        return back();
+      }
+      else {
+        return back();
       }
 
-      // TODO Dynamic Multiple fiels load
+    }
 
-      // Redirect
-      return redirect()->route('resource.router', [
-        'resource' => $resource,
-        'hash' => $hash,
-        'route' => 'price'
-      ]);
+
+    // Validate Resources
+    public function validateResource($resource, $hash) {
+
+      // Spaces
+      if($resource == 'space'){
+        // Search Space
+        $search = Space::where('hash', $hash)->first();
+
+        // TODO SOME VALIDATION HERE
+        $search->status = 'listed';     // If valid, then listed
+        $search->save();                // Save Status
+
+        // Create a New Notification
+        $this->createNotification('space-listed', $hash);
+      }
+
+      /* TODO: validate here some like:
+        public function SpaceValidate($hash) {
+          // Search Space
+          $space = Space::where('hash', $hash)->first();
+
+          if(...)
+
+          return 'not_listed' or 'listed'
+
+        }
+        */
 
     }
 

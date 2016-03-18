@@ -128,7 +128,7 @@ Route::group(['middleware' => 'auth'], function () {
   Routes for Extra Functions
 ******************************/
 // Get Img from storage
-Route::get('thumbnails/{resource}/{filename}', [
-    'uses' => 'AppController@getThumbnail',
-    'as' => 'get.thumbnail',
+Route::get('imgs/{folder}/{resource}/{filename}', [
+    'uses' => 'AppController@getImgFromStorage',
+    'as' => 'get.imgFromStorage',
 ]);

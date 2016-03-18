@@ -16,7 +16,7 @@ $(document).ready(function() {
           $('.dz-file-preview').hide();
         });
         this.on("success", function(file, res){
-          $('#thumb-pic').attr('src', '/thumbnails/' + res.resource + '/' + res.file_name);    // Change pic src
+          $('#thumb-pic').attr('src', '/imgs/thumbnails/' + res.resource + '/' + res.file_name);    // Change pic src
         });
       }
   }; var thumb = new Dropzone("#thumb");              // Initialize dropzone

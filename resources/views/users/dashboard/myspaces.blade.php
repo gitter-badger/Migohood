@@ -39,12 +39,13 @@
                   @if($listed->thumbnail == '/img/app/thumbnail.png')
                     src="{{ url( $listed->thumbnail ) }}"
                   @else
-                    src="{{ route('get.thumbnail', [
+                    src="{{ route('get.imgFromStorage', [
+                      'folder' => 'thumbnails',
                       'resource' => 'space',
                       'filename' => $listed->thumbnail
                       ]) }}"
                   @endif
-            alt=""/>
+            alt="... "/>
             <span class="title">{{ $listed->title }}</span>
             <p class="second"><span class="category space">{{ $listed->type }} - {{ $listed->room }} Room</span> </p>
             <span class="tird"> Created {{ $listed->created_at->diffForHumans() }}</span>
@@ -87,12 +88,13 @@
                   @if($not_listed->thumbnail == '/img/app/thumbnail.png')
                     src="{{ url( $not_listed->thumbnail ) }}"
                   @else
-                    src="{{ route('get.thumbnail', [
+                    src="{{ route('get.imgFromStorage', [
+                      'folder' => 'thumbnails',
                       'resource' => 'space',
                       'filename' => $not_listed->thumbnail
                       ]) }}"
                   @endif
-            alt=""/>
+            alt="... "/>
             <span class="title">{{ $not_listed->type }}</span>
             <p class="second"><span class="category space">{{ $not_listed->room }} Room</span> </p>
             <span class="tird"> Updated {{ $not_listed->created_at->diffForHumans() }}</span>
