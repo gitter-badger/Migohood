@@ -33,6 +33,8 @@
   </header>
   <!-- Navbar -->
 
+  @yield('search')
+
 <body>
 <main>
   @yield('content')

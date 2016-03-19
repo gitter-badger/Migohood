@@ -1,11 +1,11 @@
 @extends('layouts.edit')
 @section('title', 'Space - Location')
 @section('header')
-  <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>  <!-- Google Maps core JS -->
-  <script src="/js/gmaps.min.js" type="text/javascript"></script>                                 <!-- Gmaps core JS -->
-  <link href="/css/maps.css" rel="stylesheet">                                                    <!-- Maps Style core CSS -->
-  <script src="/js/jquery.min.js" type="text/javascript"></script>                                <!-- Jquery core JS -->
-  <script src="/js/location_map.js" type="text/javascript"></script>                              <!-- Location Map core JS -->
+  <script src="http://maps.google.com/maps/api/js" type="text/javascript"></script>   <!-- Google Maps core JS -->
+  <script src="/js/gmaps.min.js" type="text/javascript"></script>                     <!-- Gmaps core JS -->
+  <link href="/css/maps.css" rel="stylesheet">                                        <!-- Maps Style core CSS -->
+  <script src="/js/jquery.min.js" type="text/javascript"></script>                    <!-- Jquery core JS -->
+  <script src="/js/location_map.js" type="text/javascript"></script>                  <!-- Location Map core JS -->
 @stop
 
 @section('menu')

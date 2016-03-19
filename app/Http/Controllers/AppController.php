@@ -51,7 +51,14 @@ class AppController extends Controller
 
        // Get Spaces
        if($resource = 'spaces') {
-         return view('app.spaces'); // TODO Search and return->spaces
+
+          $search = DB::table('spaces')
+                      ->where('status','listed')
+                      ->orderBy('created_at', 'desc')
+                      ->paginate(6);
+
+          return view('app.spaces', ['resources' => $search]);
+
        }
 
     }

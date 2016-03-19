@@ -19,6 +19,7 @@ $(document).ready(function(){
   // Get the option selected in cities dropdown select
   $("#city").change(function () {
     $("#city option:selected").each(function() {
+        if($(this).val()!=''){
 
         // Call to method that Return json with city's info
         $.getJSON("/request/json/city/" + $( this ).val())
@@ -28,7 +29,8 @@ $(document).ready(function(){
               $(" #address ").prop('disabled', false);                              // Enable the address input
               global_query = data.name + ', ' + data.state + ', ' + data.country;   // Set City selected as a variable
           });
-
+          
+        }
       });
     }).change();
 

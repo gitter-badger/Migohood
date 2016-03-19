@@ -56,7 +56,7 @@ class CreateSpacesTable extends Migration
           $table->string('thumbnail')->default('/img/app/thumbnail.png');
 
           // Price
-          $table->decimal('price', 5, 2)->nullable();
+          $table->decimal('price', 11, 2)->nullable();
           $table->string('per')->nullable();
           $table->string('currency')->default('USD');
 

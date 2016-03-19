@@ -47,9 +47,11 @@
 
   #app_extended .l9 { width: 78%; }
   #app_extended .l3 { width: 22%; }
+  .hide-info { display: none; visibility: hidden !important; }
 
   .single-dropzone .thumb-preview img { width: 380px; height: 220px; }
   .gallery-div { width: 100%;  max-width: 1024px; }
+  .app-body { margin-bottom: -20px; }
 
 }
 
@@ -76,6 +78,7 @@
 
   .single-dropzone .thumb-preview img { width: 90%; height: 280px; }
   .gallery-div { width: 82%; }
+  .resource-map { display: none; visibility: hidden !important; }
 }
 
 

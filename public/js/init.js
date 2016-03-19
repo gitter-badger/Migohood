@@ -1,36 +1,26 @@
-// SideNav
-$(".button-collapse").sideNav();
-
-// Dropdown-Options
-$('.dropdown-options').dropdown({
-    constrain_width: false, // Allows a custom width
-    hover: true,            // Activate on hover
-    belowOrigin: true,      // Displays dropdown below the activator
-    alignment: 'left'       // Displays dropdown with edge aligned to the left of button
-  }
-);
-
-// Dropdown-Notifications
-$('.dropdown-notifications').dropdown({
-    constrain_width: false, // Allows a custom width
-    hover: true,            // Activate on hover
-    belowOrigin: true,      // Displays dropdown below the activator
-    alignment: 'left'       // Displays dropdown with edge aligned to the left of button
-  }
-);
-
-// Tabs
 $(document).ready(function(){
-  $('ul.tabs').tabs();
+
+  // Dropdown-Options
+  $('.dropdown-options').dropdown({
+      constrain_width: false, // Allows a custom width
+      hover: true,            // Activate on hover
+      belowOrigin: true,      // Displays dropdown below the activator
+      alignment: 'left'       // Displays dropdown with edge aligned to the left of button
+    }
+  );
+
+  // Dropdown-Notifications
+  $('.dropdown-notifications').dropdown({
+      constrain_width: false, // Allows a custom width
+      hover: true,            // Activate on hover
+      belowOrigin: true,      // Displays dropdown below the activator
+      alignment: 'left'       // Displays dropdown with edge aligned to the left of button
+    }
+  );
+
+  $(".button-collapse").sideNav();          // SideNav
+  $('select').material_select();            // Select
+  $('#textarea1').trigger('autoresize');    // Textarea1 Resize
+  $('#textarea2').trigger('autoresize');    // Textarea2 Resize
+
 });
-
-// Select
-$(document).ready(function() {
-  $('select').material_select();
-});
-
-// Textarea1 Resize
-$('#textarea1').trigger('autoresize');
-
-// Textarea2 Resize
-$('#textarea2').trigger('autoresize');

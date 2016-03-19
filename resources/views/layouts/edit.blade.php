@@ -58,7 +58,7 @@
     <!-- End of Box -->
 
     <!-- Info Right -->
-    <div class="col l3 right hide-on-med-and-down">
+    <div class="col l3 right">
       <div class="info">
        <div class="info-body">
            @yield('info')
