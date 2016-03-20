@@ -229,7 +229,7 @@ footer.page-footer .footer-copyright {
 }
 
 #main nav .right #notifications {
-  max-width: 210px !important;
+  min-width: 210px !important;
 }
 
 #main nav .right #notifications .nothing  {
