@@ -1,6 +1,6 @@
 [
   {
-    "latitude":"4.710988599999999",
+    "latitude": "4.710988599999999",
     "longitude": "-74.072092",
     "name": "Bogotá",
     "state": "Cundinamarca",
@@ -8,59 +8,59 @@
   },
 
   {
-    "latitude":"10.3910485",
+    "latitude": "10.3910485",
     "longitude": "-75.47942569999998",
     "name": "Cartagena",
     "state": "Bolívar",
-    "country":"Colombia"
+    "country": "Colombia"
   },
 
   {
-    "latitude":"11.233109",
+    "latitude": "11.233109",
     "longitude": "-74.19291900000002",
     "name": "Santa Marta",
     "state": "Magdalena",
-    "country":"Colombia"
+    "country": "Colombia"
   },
 
   {
-    "latitude":"6.244203",
+    "latitude": "6.244203",
     "longitude": "-75.58121189999997",
     "name": "Medellín",
     "state": "Antioquia",
-    "country":"Colombia"
+    "country": "Colombia"
   },
 
   {
-    "latitude":"42.3600825",
+    "latitude": "42.3600825",
     "longitude": "-71.05888010000001",
     "name": "Boston",
     "state": "Massachusetts",
-    "country":"United States"
+    "country": "United States"
   },
 
   {
-    "latitude":"42.3736158",
+    "latitude": "42.3736158",
     "longitude": "-71.1097335",
     "name": "Cambridge",
     "state": "Massachusetts",
-    "country":"United States"
+    "country": "United States"
   },
 
   {
-    "latitude":"40.7127837",
+    "latitude": "40.7127837",
     "longitude": "-74.00594130000002",
     "name": "New York",
     "state": "New York",
-    "country":"United States"
+    "country": "United States"
   },
 
   {
-    "latitude":"25.7616798",
+    "latitude": "25.7616798",
     "longitude": "-80.19179020000001",
     "name": "Miami",
     "state": "Florida",
-    "country":"United States"
+    "country": "United States"
   }
 
 ]

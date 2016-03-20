@@ -229,7 +229,7 @@ footer.page-footer .footer-copyright {
 }
 
 #main nav .right #notifications {
-  min-width: 210px !important;
+  max-width: 210px !important;
 }
 
 #main nav .right #notifications .nothing  {
@@ -266,13 +266,18 @@ footer.page-footer .footer-copyright {
   font-size: 13px !important;
   color: #505050 !important;
   font-weight: normal !important;
-  line-height: 35px !important;
+  line-height: 30px !important;
   margin-left: 8px;
   text-transform: none;
+  display: block !important;
 }
 
 #main nav .right #notifications li a span.time {
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: bold;
+  display: block !important;
+  margin-top: -10px !important;
+
 }
 
 #main nav .right #notifications li.view-all {
@@ -882,13 +887,6 @@ footer.page-footer .footer-copyright {
 	border-bottom: 2px solid #0071EB;
 }
 
-/* Photos */
-/* Photos - Hides controls for dropzone.js */
-.single-dropzone .dz-image-preview,
-.single-dropzone .dz-file-preview {
-  display: none;
-}
-
 /* Photos - Thumbnail */
 .thumb-preview img {
   border-radius: 4px;
@@ -904,7 +902,7 @@ footer.page-footer .footer-copyright {
 }
 
 /* Photos - Gallery */
-.multiple-dropzone img {
+.multiple-photos img {
   width: 100%;
   height: 150px;
   border-radius: 4px;
@@ -1004,14 +1002,6 @@ footer.page-footer .footer-copyright {
 /* Body */
 .body { margin-top: 12px; }
 
-/* Search nav */
-#search nav {
-  background: #FFF !important;
-  box-shadow: none !important;
-  -webkit-box-shadow:none !important;
-  padding: 0px 20px;
-}
-
 /* App Body */
 .app-body .pagination li a {
   color: #444;
@@ -1032,6 +1022,10 @@ footer.page-footer .footer-copyright {
   background: #FFF;
   border: 1px solid #E7E7E7;
   margin: 10px 0px;
+}
+
+.listed-box .tooltipped{
+  cursor: pointer;
 }
 
 .listed-box img {
@@ -1087,28 +1081,27 @@ footer.page-footer .footer-copyright {
 }
 
 .listed-body span.category.space  {
-  border: 2px solid #FF4967;
-  color: #FF4967;
+  border: 2px solid #EF1C3F;
+  color: #EF1C3F;
 }
 
 .listed-body .extra {
-  padding: 6px !important;
+  padding: 2px !important;
 }
 
 .listed-body .extra .tooltipped {
-  cursor: pointer;
   margin-right: 10px;
 }
 
 .listed-body .extra i {
   color: #293948;
-  font-size: 16px;
+  font-size: 13px;
   vertical-align: middle;
 }
 
 .listed-body .extra span.information {
   color: #293948;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
 }
 

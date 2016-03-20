@@ -23,8 +23,6 @@ class AppController extends Controller
     /****************************
          Resources Functions
     ****************************/
-
-
     // Redirect
     public function getRedirect() {
        // Check if user is authenticated
@@ -55,7 +53,7 @@ class AppController extends Controller
           $search = DB::table('spaces')
                       ->where('status','listed')
                       ->orderBy('created_at', 'desc')
-                      ->paginate(6);
+                      ->paginate(12);
 
           return view('app.spaces', ['resources' => $search]);
 
@@ -68,63 +66,6 @@ class AppController extends Controller
     public function getRoute($base, $route){
         // Users/Folder/View
         return view('users/'.$base.'/'.$route, ['route' => $route]);
-    }
-
-
-    /****************************
-          Extra Functions
-    ****************************/
-    // Create Notification
-    public function createNotification($type, $hash) {
-        // New Notification
-        $notification = new Notification;
-        $notification->type = $type;
-        $notification->user_id = Auth::user()->id;
-
-        // Create Custom Notifications
-
-        if($type == 'new-space'){
-          $notification->description = 'New Space has been created';
-          $notification->link = '/app/dashboard/myspaces';
-        }
-
-        if($type == 'space-listed'){
-          $notification->description = 'Your Space is listed now!';
-          $notification->link = '/app/dashboard/myspaces';
-        }
-
-        /*
-        if($type == 'new-workspace'){
-
-        } */
-
-        // Save Notification
-        $notification->save();
-    }
-
-
-    // Create Hash
-    public function createHash($resource) {
-      do {  $hash = str_random(14);                           // Create hash
-            $search = DB::table($resource.'s')                // Search hash in the table of the resource
-                          ->where('hash', $hash)->first();
-      } while (!is_null($search));                            // Do while search != null
-
-      return $hash;
-    }
-
-
-    // Get Img from Storage
-    public function getImgFromStorage($folder, $resource, $filename) {
-      $path = storage_path().'/app/'.$folder.'/'.$resource.'s/'.$filename;
-
-      $file = File::get($path);
-      $type = File::mimeType($path);
-
-      $response = Response::make($file, 200);
-      $response->header("Content-Type", $type);
-
-      return $response;
     }
 
 
@@ -324,30 +265,28 @@ class AppController extends Controller
       return $space;
     }
 
-
     // Resource Thumbnail - POST
     public function resourceThumbnailUpload($resource, $hash) {
 
-      // If is there a file in the Request, proceed:
-      if(Input::hasFile('file')) {
+      // If is there a file in the Request, proceed
+      if (Input::hasFile('pic')) {
 
-          // Search hash in the table of the resource
-          if($resource == 'space'){
-            $search = Space::where('hash', $hash)->first();
-          }
+        // Search hash in the table of the resource
+        if($resource == 'space'){
+          $search = Space::where('hash', $hash)->first();
+        }
 
-          /*
-          if($resource == 'workspace'){
-            $search = Workspace::where('hash', $hash)->first();
-          }*/
+        // If thumbnail is default, do not delete, otherwise do it
+        if($search->thumbnail != '/img/app/thumbnail.png') {
+           File::delete(storage_path().'/thumbnails/'.$resource.'s/'.$search->thumbnail);
+        }
 
-          // If thumbnail is default, do not delete, otherwise do it
-          if($search->thumbnail != '/img/app/thumbnail.png') {
-              Storage::delete('/thumbnails/'.$resource.'s/'.$search->thumbnail);
-          }
+        /*
+        if($resource == 'workspace'){
+          $search = Workspace::where('hash', $hash)->first();
+        }*/
 
-          // Upload an image to the directory and return the filepath
-          $file = Input::file('file');                                            // File
+          $file = Input::file('pic');
           $filename = time().'_'.$hash.'.'.$file->getClientOriginalExtension();   // Filename
           Storage::put(                                                           // Move to folder
                         'thumbnails/'.$resource.'s/'.$filename,                   // Filepath
@@ -357,18 +296,20 @@ class AppController extends Controller
           $search->thumbnail = $filename;         // Set new thumbnail to resource
           $search->save();                        // Save resource
 
-          // Return response
-          return response()->json(['file_name'=> $filename, 'resource' => $resource ], 200);
+
+
+        // Return response
+        return back();
       }
-      // Otherwise,
       else {
-        return response()->json(false, 200);
+        return back();
       }
+
     }
 
 
     // Resource Gallery - POST
-    public function resourceGalleryUpload(Request $request, $resource, $hash) {
+    public function resourceGalleryUpload($resource, $hash) {
 
       // If is there a file in the Request, proceed
       if (Input::hasFile('file')) {
@@ -440,8 +381,75 @@ class AppController extends Controller
 
         }
         */
-
     }
+
+
+    /****************************
+          Extra Functions
+    ****************************/
+    // Create Notification
+    public function createNotification($type, $hash) {
+        // New Notification
+        $notification = new Notification;
+        $notification->type = $type;
+        $notification->user_id = Auth::user()->id;
+
+        // Create Custom Notifications
+
+        if($type == 'new-space'){
+          $notification->description = 'New Space has been created';
+          $notification->link = '/app/dashboard/myspaces';
+        }
+
+        if($type == 'space-listed'){
+          $notification->description = 'Your Space is listed now!';
+          $notification->link = '/app/dashboard/myspaces';
+        }
+
+        /*
+        if($type == 'new-workspace'){
+
+        } */
+
+        // Save Notification
+        $notification->save();
+    }
+
+
+    // Create Hash
+    public function createHash($resource) {
+      do {  $hash = str_random(14);                           // Create hash
+            $search = DB::table($resource.'s')                // Search hash in the table of the resource
+                          ->where('hash', $hash)->first();
+      } while (!is_null($search));                            // Do while search != null
+
+      return $hash;
+    }
+
+
+    // Get Img from Storage
+    public function getImgFromStorage($folder, $resource, $filename) {
+      $path = storage_path().'/app/'.$folder.'/'.$resource.'s/'.$filename;
+
+      $file = File::get($path);                 // Get File
+      $type = File::mimeType($path);            // Extract Mimetype
+      $response = Response::make($file, 200);   // HTTP Response
+      $response->header("Content-Type", $type); // Content-Type
+
+      return $response;                         // Return
+    }
+
+
+    // Delete Img from Storage
+    public function deleteImgFromStorage($folder, $resource, $filename) {
+      $search = Photo::where('path', $filename)->first();   // Found row in DB
+      $search->delete();    // Delete it
+                            // Delete Real File
+      File::delete(storage_path().'/app/'.$folder.'/'.$resource.'s/'.$filename);
+
+      return back();        // Return
+    }
+
 
 
 }

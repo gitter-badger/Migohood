@@ -5,26 +5,13 @@
   <script src="/js/gmaps.min.js" type="text/javascript"></script>                     <!-- Gmaps core JS -->
   <link href="/css/maps.css" rel="stylesheet">                                        <!-- Maps Style core CSS -->
   <script src="/js/jquery.min.js" type="text/javascript"></script>                    <!-- Jquery core JS -->
-  <script src="/js/space_map.js" type="text/javascript"></script>                     <!-- Space Map Style Core css -->
-@stop
-
-@section('search')
-  <div class="navbar-fixed" id="search">
-    <nav role="navigation">
-     <div class="nav-wrapper">
-
-
-
-     </div>
-    </nav>
-  </div>
-
 @stop
 
 @section('content')
 
 <!-- App Body -->
 <div class="app-body row">
+
   @if( $resources->count() == 0)
     <!-- Box Nothing -->
     <div class="col s12">
@@ -32,7 +19,7 @@
         <i class="material-icons">pin_drop</i>
         <h5 class="light">Woops! It looks lonely here. </h5>
         <p class="light">There are no spaces, start one clicking bellow! </p>
-        <a href="{{ url('create') }}" class="btn btn-new">Create Space</a>
+        <a href="{{ url('app/create') }}" class="btn btn-new">Create Space</a>
       </div>
     </div>
     <!-- Box Nothing -->
@@ -43,7 +30,7 @@
     @foreach($resources as $resource)
 
       <!-- Left Column -->
-      <div class="col m6 l4">
+      <div class="col s12 m6 l4">
 
         <!-- Listed Box -->
         <div class="listed-box">
@@ -75,7 +62,7 @@
               </p>
 
               <h6 class="truncate">{{ $resource->title }}</h6>
-              <p>
+              <p class="truncate">
                 <span class="variable">{{ $city = App\City::where('id', $resource->city_id)->first() }}</span>
                 <span class="location"><i class="material-icons">location_on</i>{{ $city->name }}, {{ $city->country }}</span>
               </p>
@@ -112,12 +99,15 @@
             <!-- Price & Button -->
             <div class="listed-bottom row">
               <!-- Price -->
-              <div class="col s9">
+              <div class="col s9 tooltipped" data-position="bottom"
+                  data-delay="10" data-tooltip='{{ $resource->price }}
+                                                {{ $resource->currency }} per
+                                                {{ $resource->per }}'>
                 <div class="price-box">
                   <p class="currency-box">
                     <span class="currency">{{ $resource->currency }}</span>
                   </p>
-                  <p>
+                  <p class="truncate">
                     <span class="sign">$</span>
                      <span class="price">{{ $resource->price }}</span>
                      <span class="per"> /{{ $resource->per }}</span>
@@ -148,13 +138,38 @@
     <div class="col s12">
       <div class="center">
         {!! $resources->render() !!}
+
+        <!--<span class="variable" id="field" data-field-id='{!! $resources->count() !!}' ></span>-->
       </div>
     </div>
     <!-- End of Pagination -->
 
   </div>
 
-  <div class="resource-map col l4" id="space_map"></div>
+  <div class="resource-map col l4" id="resource_map"></div>
+
+  <script type="text/javascript">
+      var map;                            // Default Map Variable
+      var city_lat = '42.3736158';        // Default city latitude
+      var city_lng = '-71.1097335';       // Default city longitude
+
+      // When Document Ready execute :
+      $(document).ready(function(){
+
+        map = new GMaps({
+          div: '#resource_map',
+          lat: city_lat,
+          lng: city_lng,
+          zoom: 12
+        });
+
+        /*
+        var fieldId = $('#field').data("field-id");
+
+        alert(fieldId);*/
+
+      });
+  </script>
 
   @endif
 

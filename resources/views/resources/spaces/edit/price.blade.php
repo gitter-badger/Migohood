@@ -47,7 +47,7 @@
       <select name="currency" required>
         <option value="" disabled selected>Choose one</option>
         <option value="USD" @if($resource->currency == 'USD') selected="selected" @endif> USD </option>
-        <option value="COP" @if($resource->room == 'COP') selected="selected" @endif> COP </option>
+        <option value="COP" @if($resource->currency == 'COP') selected="selected" @endif> COP </option>
       </select>
       <label>Currency</label>
     </div>

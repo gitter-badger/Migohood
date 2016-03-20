@@ -85,6 +85,8 @@ GET: /request/json/city/{id}
 ## Routes for Extra Functions
 ```sh
 GET: /imgs/{folder}/{resource}/{filename}  
+GET: /imgs/{folder}/{resource}/{filename}/delete  
+
 ```
 
 

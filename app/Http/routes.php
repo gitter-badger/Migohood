@@ -58,6 +58,9 @@ Route::get('app/get/{resource}', [
     'as' => 'get.resource',
 ]);
 
+/* !! */
+Route::get('help', 'MapController@help');
+
 
 /************************************
   Routes for Authenticated users
@@ -131,4 +134,10 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('imgs/{folder}/{resource}/{filename}', [
     'uses' => 'AppController@getImgFromStorage',
     'as' => 'get.imgFromStorage',
+]);
+
+// Delete Img from storage
+Route::get('imgs/{folder}/{resource}/{filename}/delete', [
+    'uses' => 'AppController@deleteImgFromStorage',
+    'as' => 'delete.imgFromStorage',
 ]);

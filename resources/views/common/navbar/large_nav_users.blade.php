@@ -11,8 +11,8 @@
 
   <span class="variable">{{ $alerts = App\Notification::where('user_id', Auth::user()->id)->count() }}</span>
 
-  <!-- If notifications is more than 10 -->
-  @if( $alerts > 10 ) <span> +10 </span> @else <span> {{ $alerts }} </span> @endif
+  <!-- If notifications is more than 6 -->
+  @if( $alerts > 100  ) <span> +100 </span> @else <span> {{ $alerts }} </span> @endif
 
   <i class="left material-icons">notifications</i></a>
   <ul class="dropdown-content" id="notifications">
@@ -21,19 +21,19 @@
 
     <!-- If there are notifications -->
     <span class="variable">{{ $notifications = App\Notification::where('user_id', Auth::user()->id)
-                                                                    ->take(10)->orderBy('created_at', 'desc')
+                                                                    ->take(5)->orderBy('created_at', 'desc')
                                                                     ->get() }}</span>
       <!-- List of notifications -->
      @foreach( $notifications as $notification)
         <li class="string">
           <a href="{{ url($notification->link) }}">
-            <span>{{ $notification->description }}</span> <br>
+            <span>{{ $notification->description }}</span>
             <span class="time"> {{ $notification->created_at->diffForHumans() }}</span>
           </a>
         </li>
      @endforeach
         <!-- If notifications is more than 10 -->
-        @if( $alerts > 10 ) <li class="view-all"><a href="{{ route('route', ['base'=> 'dashboard', 'route' => 'history']) }}">View More</a></li> @endif
+        @if( $alerts > 5 ) <li class="view-all"><a href="{{ route('route', ['base'=> 'dashboard', 'route' => 'history']) }}">View All</a></li> @endif
    @endif
   </ul>
 </li>
@@ -42,7 +42,7 @@
 <!-- Messages -->
 <li><a class="dropdown-notifications">
   <span class="variable">{{ $messages=App\Message::where('to', Auth::user()->id)->count() }}</span>
-  @if( $messages > 10 )  <span> +10 </span> @else <span> {{ $messages }} </span> @endif
+  @if( $messages > 100 )  <span> +100 </span> @else <span> {{ $messages }} </span> @endif
   <i class="left material-icons">mail</i></a>
 </li>
 <!-- End of messages -->

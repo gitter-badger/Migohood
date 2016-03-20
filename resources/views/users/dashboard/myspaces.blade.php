@@ -13,7 +13,7 @@
       <i class="material-icons">pin_drop</i>
       <h5 class="light">Woops! It looks lonely here. </h5>
       <p class="light">You don't have any space, start one clicking bellow! </p>
-      <a href="{{ url('create') }}" class="btn btn-new">Create Space</a>
+      <a href="{{ url('/app/create') }}" class="btn btn-new">Create Space</a>
     </div>
   </div>
   <!-- Box Nothing -->

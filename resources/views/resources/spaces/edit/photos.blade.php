@@ -2,10 +2,7 @@
 @section('title', 'Space - Location')
 @section('header')
   <script src="/js/jquery.min.js" type="text/javascript"></script>      <!-- Jquery core JS -->
-  <link href="/css/dropzone.min.css" rel="stylesheet">                  <!-- Dropzone Style core CSS -->
-  <script src="/js/dropzone.min.js" type="text/javascript"></script>    <!-- Dropzone core JS -->
-  <script src="/js/thumbnail.js" type="text/javascript"></script>       <!-- Thumbnail Dropzone core JS -->
-  <script src="/js/gallery.js" type="text/javascript"></script>         <!-- Gallery Dropzone core JS -->
+  <script src="/js/pictures.js" type="text/javascript"></script>        <!-- Pictures core JS -->
 @stop
 
 @section('menu')
@@ -24,11 +21,11 @@
   <form action="{{ route('resource.thumbnail.upload', [
     'resource'=> 'space',
     'hash' => $resource->hash
-    ]) }}"
-    id="thumb" method="POST" files="true" class="center single-dropzone">
+    ]) }}" method="POST" files="true" class="center single-photo" enctype="multipart/form-data">
 
     {{ csrf_field() }}
 
+    <!-- Preview -->
     <div class="thumb-preview">
       <img id="thumb-pic" class="z-depth-1"
         @if($resource->thumbnail == '/img/app/thumbnail.png')
@@ -42,10 +39,20 @@
         @endif
       alt="thumbnail" />
     </div>
+    <!-- End of Preview -->
 
+    <!-- Input -->
+    <div class="variable">
+      <input id="thumb-input" type="file" name="pic" accept="image/*">
+      <button type="submit" id="thumb-send"></button>
+    </div>
+    <!-- End of Input -->
+
+    <!-- Submit -->
     <div class="thumb-button"><br>
       <button id="thumb-submit" class="btn">Upload</button>
     </div>
+    <!-- End of Submit -->
 
   </form>
   <!-- End of Upload Space Thumbnail -->
@@ -61,7 +68,7 @@
   <form action="{{ route('resource.gallery.upload', [
      'resource' => 'space',
      'hash' => $resource->hash
-    ]) }}" id="gallery" method="POST" files="true" class="center multiple-dropzone" enctype="multipart/form-data">
+    ]) }}" method="POST" files="true" class="center multiple-photos" enctype="multipart/form-data">
 
     {{ csrf_field() }}
 
@@ -74,7 +81,11 @@
           @foreach ($photos as $photo)
             <div class="col s12 m6 l4">
               <div class="deleteable">
-                <a href="#"><i class="material-icons">close</i></a>
+                <a href="{{ route('delete.imgFromStorage', [
+                        'folder' => 'galleries',
+                        'resource' => 'space',
+                        'filename' => $photo->path
+                        ]) }}"> <i class="material-icons">close</i></a>
               </div>
               <img class="z-depth-1"
                    src="{{ route('get.imgFromStorage', [
@@ -84,24 +95,28 @@
                         ]) }}"
                     alt="..." />
             </div>
-
           @endforeach
         @endif
 
         <div class="col s12 m6 l4">
           <div class="gallery-button">
 
+           <!-- Input -->
            <div class="variable">
               <input id="gallery-input" type="file" name="file[]" multiple accept="image/*">
               <button type="submit" id="gallery-send"></button>
             </div>
+            <!-- End of Input -->
 
+            <!-- Submit -->
             <div id="gallery-submit">
                 <div class="gallery-button-body center">
                   <i class="material-icons">add_a_photo</i><br>
                   <span>Add Pictures</span>
                 </div>
             </div>
+            <!-- End of Submit -->
+
           </div>
         </div>
 
@@ -109,7 +124,6 @@
     <!-- End of Div -->
   </form>
   <!-- End of Uddate Space Gallery -->
-
 
 
   <!-- Next Button -->

@@ -7,7 +7,9 @@
   margin: 10px 0px;
 }
 
-#space_map {
+#resource_map {
   height: 100vh;
-  margin: 10px 0px;
+  position: fixed !important;
+  top: 56px;
+  right: 0px;
 }
