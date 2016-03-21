@@ -83,13 +83,20 @@ Route::group(['middleware' => 'auth'], function () {
       'as' => 'create',
   ]);
 
+  // Resource Show - Get
+  /*
+  Route::get('app/show/{resource}/{hash}', [
+      'uses' => 'AppController@resourceShow',
+      'as' => 'resource.show',
+  ]);*/
+
   // Resource Router - Get
   Route::get('app/{resource}/{hash}/{route}', [
       'uses' => 'AppController@resourceRouter',
       'as' => 'resource.router',
   ]);
 
-  // Resource Route - Update
+  // Resource Router - Update
   Route::post('app/{resource}/{hash}/{route}/{next}/update', [
       'uses' => 'AppController@resourceRouterUpdate',
       'as' => 'resource.router.update',
@@ -114,7 +121,6 @@ Route::group(['middleware' => 'auth'], function () {
   ]);
 
 });
-
 
 /******************************
         Routes for Maps

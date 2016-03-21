@@ -14,14 +14,10 @@ class CreateNotificationsTable extends Migration
     {
       Schema::create('notifications', function (Blueprint $table) {
         $table->increments('id');
-        
         $table->integer('user_id');
-        $table->string('type');         // New, Edit, Delete, Message, Reservation
         $table->string('description');
         $table->string('link');
-
         $table->timestamps();
-
       });
     }
 
