@@ -16,7 +16,7 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->string('resource');
             $table->string('hash');
-            $table->string('path');
+            $table->string('filename');
             $table->timestamps();
         });
     }

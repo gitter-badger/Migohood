@@ -45,7 +45,7 @@ class AppController extends Controller
 
 
     // Get Resource
-    public function getResource($resource){
+    public function getResource($resource) {
 
        // Get Spaces
        if($resource = 'spaces') {
@@ -63,7 +63,7 @@ class AppController extends Controller
 
 
     // Get Route
-    public function getRoute($base, $route){
+    public function getRoute($base, $route) {
         // Users/Folder/View
         return view('users/'.$base.'/'.$route, ['route' => $route]);
     }
@@ -272,31 +272,29 @@ class AppController extends Controller
       if (Input::hasFile('pic')) {
 
         // Search hash in the table of the resource
-        if($resource == 'space'){
-          $search = Space::where('hash', $hash)->first();
-        }
+          if($resource == 'space') {
+            $search = Space::where('hash', $hash)->first();
+          }
+
+          /*
+          if($resource == 'workspace'){
+            $search = Workspace::where('hash', $hash)->first();
+          }*/
+
+        $path = 'uploads/thumbnails/'.$resource.'s/';               // Path
 
         // If thumbnail is default, do not delete, otherwise do it
         if($search->thumbnail != '/img/app/thumbnail.png') {
-           File::delete(storage_path().'/thumbnails/'.$resource.'s/'.$search->thumbnail);
+            if(File::exists($path.$search->thumbnail)) {
+              File::delete($path.$search->thumbnail);       // Delete if exists
+            }
         }
 
-        /*
-        if($resource == 'workspace'){
-          $search = Workspace::where('hash', $hash)->first();
-        }*/
-
-          $file = Input::file('pic');
-          $filename = time().'_'.$hash.'.'.$file->getClientOriginalExtension();   // Filename
-          Storage::put(                                                           // Move to folder
-                        'thumbnails/'.$resource.'s/'.$filename,                   // Filepath
-                        file_get_contents($file->getRealPath())                   // Save img
-          );
-
-          $search->thumbnail = $filename;         // Set new thumbnail to resource
-          $search->save();                        // Save resource
-
-
+        $file = Input::file('pic');           // File
+        $filename = time().'_'.$hash.'.'.$file->getClientOriginalExtension();   // Filename
+        $file->move($path, $filename);        // Move to Path
+        $search->thumbnail = $filename;       // Set new thumbnail to resource
+        $search->save();                      // Save resource
 
         // Return response
         return back();
@@ -315,33 +313,31 @@ class AppController extends Controller
       if (Input::hasFile('file')) {
 
         // Search hash in the table of the resource
-        if($resource == 'space'){
-          $search = Space::where('hash', $hash)->first();
-        }
+          if($resource == 'space') {
+            $search = Space::where('hash', $hash)->first();
+          }
 
-        /*
-        if($resource == 'workspace'){
-          $search = Workspace::where('hash', $hash)->first();
-        }*/
+          /*
+          if($resource == 'workspace'){
+            $search = Workspace::where('hash', $hash)->first();
+          }*/
 
-        $files = Input::file('file');   // Files
+        $path = 'uploads/galleries/'.$resource.'s/';    // Path
+        $files = Input::file('file');                   // Files
 
-        $i = '1';                       // Count
+        $i = '1';                                       // Count
 
-        foreach($files as $file) {    // Upload an image to the directory and return the filepath
+        // Upload each image to the directory and return the filepath
+        foreach($files as $file) {
           $filename = $i++.'_'.time().'_'.$hash.'.'.$file->getClientOriginalExtension();  // Filename
-          Storage::put(                                           // Move to folder
-                        'galleries/'.$resource.'s/'.$filename,    // File path
-                        file_get_contents($file->getRealPath())   // Save img
-          );
+          $file->move($path, $filename);
 
           //Save Photos Paths in DB
           $photo = new Photo;                     // New Photo in DB
           $photo->resource = $resource;           // Type of Resouce
           $photo->hash = $hash;                   // Hash of the resource
-          $photo->path = $filename;               // Filename
+          $photo->filename = $filename;           // Filename
           $photo->save();                         // Save
-
         }
 
         // Return response
@@ -358,7 +354,7 @@ class AppController extends Controller
     public function validateResource($resource, $hash) {
 
       // Spaces
-      if($resource == 'space'){
+      if($resource == 'space') {
         // Search Space
         $search = Space::where('hash', $hash)->first();
 
@@ -396,18 +392,18 @@ class AppController extends Controller
 
         // Create Custom Notifications
 
-        if($type == 'new-space'){
+        if($type == 'new-space') {
           $notification->description = 'New Space has been created';
           $notification->link = '/app/dashboard/myspaces';
         }
 
-        if($type == 'space-listed'){
+        if($type == 'space-listed') {
           $notification->description = 'Your Space is listed now!';
           $notification->link = '/app/dashboard/myspaces';
         }
 
         /*
-        if($type == 'new-workspace'){
+        if($type == 'new-workspace') {
 
         } */
 
@@ -429,27 +425,22 @@ class AppController extends Controller
 
     // Get Img from Storage
     public function getImgFromStorage($folder, $resource, $filename) {
-      $path = storage_path().'/app/'.$folder.'/'.$resource.'s/'.$filename;
-
-      $file = File::get($path);                 // Get File
-      $type = File::mimeType($path);            // Extract Mimetype
-      $response = Response::make($file, 200);   // HTTP Response
-      $response->header("Content-Type", $type); // Content-Type
-
-      return $response;                         // Return
+      $path = 'uploads/'.$folder.'/'.$resource.'s/';  // Path
+      return redirect('/'.$path.$filename);           // Return
     }
 
 
     // Delete Img from Storage
     public function deleteImgFromStorage($folder, $resource, $filename) {
-      $search = Photo::where('path', $filename)->first();   // Found row in DB
-      $search->delete();    // Delete it
-                            // Delete Real File
-      File::delete(storage_path().'/app/'.$folder.'/'.$resource.'s/'.$filename);
+      $path = 'uploads/'.$folder.'/'.$resource.'s/';              // Path
+
+      if(File::exists($path.$filename)) {
+        File::delete($path.$filename);                            // Delete real Path
+        Photo::where('filename', $filename)->first()->delete();   // Found row in DB and Delete
+      }
 
       return back();        // Return
     }
-
 
 
 }

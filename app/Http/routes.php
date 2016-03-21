@@ -58,9 +58,6 @@ Route::get('app/get/{resource}', [
     'as' => 'get.resource',
 ]);
 
-/* !! */
-Route::get('help', 'MapController@help');
-
 
 /************************************
   Routes for Authenticated users
@@ -116,22 +113,23 @@ Route::group(['middleware' => 'auth'], function () {
       'as' => 'route',
   ]);
 
-
-  /******************************
-          Routes for Maps
-  ******************************/
-  // Get City Json
-  Route::get('request/json/city/{id}', 'MapController@getIndividualCity');
-
-
 });
+
+
+/******************************
+        Routes for Maps
+******************************/
+// Get City Json
+Route::get('request/json/city/{id}', 'MapController@getIndividualCity');
+/* !! */
+Route::get('help', 'MapController@help');
 
 
 /******************************
   Routes for Extra Functions
 ******************************/
 // Get Img from storage
-Route::get('imgs/{folder}/{resource}/{filename}', [
+Route::get('uploads/{folder}/{resource}/{filename}', [
     'uses' => 'AppController@getImgFromStorage',
     'as' => 'get.imgFromStorage',
 ]);

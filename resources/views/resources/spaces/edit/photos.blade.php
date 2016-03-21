@@ -84,14 +84,14 @@
                 <a href="{{ route('delete.imgFromStorage', [
                         'folder' => 'galleries',
                         'resource' => 'space',
-                        'filename' => $photo->path
+                        'filename' => $photo->filename
                         ]) }}"> <i class="material-icons">close</i></a>
               </div>
               <img class="z-depth-1"
                    src="{{ route('get.imgFromStorage', [
                         'folder' => 'galleries',
                         'resource' => 'space',
-                        'filename' => $photo->path
+                        'filename' => $photo->filename
                         ]) }}"
                     alt="..." />
             </div>

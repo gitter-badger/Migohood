@@ -21,7 +21,7 @@ class Photo extends Model
     protected $fillable = [
       'hash',
       'resource',
-      'path'
+      'filename'
 
     ];
 }
