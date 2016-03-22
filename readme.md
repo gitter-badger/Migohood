@@ -1,5 +1,7 @@
 # Security Vulnerabilities
 
+[![Join the chat at https://gitter.im/yammadev/Migohood](https://badges.gitter.im/yammadev/Migohood.svg)](https://gitter.im/yammadev/Migohood?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 If you discover a security vulnerability within [Migohood](http://www.migohood.com), please send an e-mail at [developer@migohood.com](mailto:developer@migohood.com) All security vulnerabilities will be promptly addressed and recompensed.
 
 # Routes
@@ -80,6 +82,7 @@ POST: /app/thumbnail/upload/{resource}/{hash}
 #### Routes for Maps
 ```sh
 GET: /request/json/city/{id}
+GET: /request/json/{resource}
 ```
 
 ## Routes for Extra Functions
